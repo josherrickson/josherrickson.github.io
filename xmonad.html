@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> XMonad Setup </title>
+    <meta name="Author" content="Josh Errickson">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, Causal, Causal Inference, Ben Hansen, Statistics" lang="en-us">
+    <link rel="stylesheet" href="http://openfontlibrary.org/face/didact-gothic" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="links">
+        <ul>
+          <li><a href="index.html">homepage</a></li>
+          <li><a href="code.html">code</a></li>
+          <li><a href="files/josherrickson_cv.pdf">curriculum vitae</a></li>
+          <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License"
+          style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></li>
+        </ul>
+      </div>
+      <h1> Josh Errickson </h1>
+      <h2> XMonad Setup </h2>
+      <p>
+        Install <code>XMonad</code>, <code>XMobar</code>, <code>dmenu</code>
+        and <code>trayer</code> on your system. There are alternatives to some
+        of these, but I've found each of them to be lightweight & stable.
+      </p>
+      <p>
+        Get the following files from my <a href="https://www.github.com/josherrickson/dotfiles">dotfiles repository</a> and put them
+        inside <code>~/.xmonad</code>.
+      </p>
+      <ul class="blank">
+        <li><b>xmonad.hs</b>, this contains settings
+        specific to XMonad tiling, and launches XMobar.</li>
+        <li><b>xmobar.rc</b>, this contains the layout for
+          XMobar (Note: the syntax for this file doesn't allow comments, so
+          check <a href="http://projects.haskell.org/xmobar">the official
+          FAQ</a> for configuration details).</li>
+        <li><b>xmonad-init</b>, this will be executed on
+        startup of XMonad, and can contain any auxilary programs you want to
+        run, especially trayer.  It must contain the line <code>exec
+        xmonad</code>. It also needs to be executable (<code>chmod +x
+        xmonad-init</code>).
+      </ul>
+      <p>
+        Finally, find the
+        file <code>/usr/share/xsessions/xmonad.desktop</code>. The line
+        beginning with <code>Exec</code> must be
+      </p>
+      <pre>
+Exec=/path/to/xmonad-init </pre>
+      <p>
+        Now, when logging in, choose the xmonad option.
+      </p>
+    </div>
+  </body>
+</html>

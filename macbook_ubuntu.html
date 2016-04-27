@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title> Useful Commands for Running Ubuntu on a Macbook </title>
+    <meta name="Author" content="Josh Errickson">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, Causal, Causal Inference, Ben Hansen, Statistics" lang="en-us">
+    <link rel="stylesheet" href="http://openfontlibrary.org/face/didact-gothic" type="text/css" media="screen">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="links">
+        <ul>
+          <li><a href="index.html">homepage</a></li>
+          <li><a href="code.html">code</a></li>
+          <li><a href="files/josherrickson_cv.pdf">curriculum vitae</a></li>
+          <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License"
+          style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></li>
+        </ul>
+      </div>
+      <h1> Josh Errickson </h1>
+      <h2> Useful Commands for Running Ubuntu on a Macbook </h2>
+      <p>
+        Note: These are based on Ubuntu 12.04 on a Macbook 7,1.
+      </p>
+      <ul>
+        <li>To control the keyboard backlight, use
+          <pre> echo 0 | sudo tee -a /sys/class/leds/smc::kbd_backlight/brightness </pre>
+          0 turns it off, 255 is fullest brightness.
+        </li>
+        <li>By default, the headphone jack has a bright red LED shining in it. This turns it off.
+          <pre> amixer set IEC958 off</pre>
+        </li>
+        <li>Some commands to make the trackpad perform like it does in OS X. The first disables tap-to-click completely, the second allows
+        horizontal scrolling, and the last supposedly tries to stop accidental palm presses (though its not foolproof).
+<pre>synclient MaxTapTime=0
+synclient HorizTwoFingerScroll=1
+synclient PalmDetect=1
+</pre>
+        </li>
+        <li>If the Macbook won't goto sleep automatically when the lid is closed, you can run the following before closing it.
+          <pre> sudo /etc/acpi/sleep.sh</pre>
+          Alternatively, install package <code>uswsusp</code>, and run the following.
+          <pre> sudo s2ram --force</pre>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
