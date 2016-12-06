@@ -1,37 +1,26 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
-    <title> Getting WICD to connect to MWireless </title>
-    <meta name="Author" content="Josh Errickson">
-    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, Causal, Causal Inference, Ben Hansen, Statistics" lang="en-us">
-    <link rel="stylesheet" href="http://openfontlibrary.org/face/didact-gothic" type="text/css" media="screen">
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <title>Making RStudio respect the $PATH on OS X</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
 
   <body>
-    <div id="main">
-      <div id="links">
-        <ul>
-          <li><a href="index.html">homepage</a></li>
-          <li><a href="code.html">code</a></li>
-          <li><a href="files/josherrickson_cv.pdf">curriculum vitae</a></li>
-          <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></li>
-        </ul>
-      </div>
-      <h1> Josh Errickson </h1>
-      <h2> Making RStudio respect the $PATH on OS X </h2>
-      <p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
-      <pre>echo PATH=$PATH > ~/.Renviron</pre>
-      <p>then RStudio will source this file when opening.</p>
-      <p>You will have to re-run the command if you update your $PATH.</p>
-      <p>You can check if this is working by running</p>
-      <pre>system("echo $PATH")</pre>
-      <p>
-        Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a>
-      </p>
-    </div>
+    <h1>Josh Errickson</h1>
+    <h2>Making RStudio respect the $PATH on OS X</h2>
+    <p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
+    <pre>
+      echo PATH=$PATH > ~/.Renviron</pre>
+    <p>then RStudio will source this file when opening.</p>
+    <p>You will have to re-run the command if you update your $PATH.</p>
+    <p>You can check if this is working by running</p>
+    <pre>
+      system("echo $PATH")</pre>
+    <p>
+      Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a>
+    </p>
   </body>
 </html>

@@ -1,256 +1,243 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
-    <title> Org-Agenda as a Calendar </title>
-    <meta name="Author" content="Josh Errickson">
-    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, Causal, Causal Inference, Ben Hansen, Statistics" lang="en-us">
-    <link rel="stylesheet" href="http://openfontlibrary.org/face/didact-gothic" type="text/css" media="screen">
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <title>Org-Agenda as a Calendar</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
 
   <body>
-    <div id="main">
-      <div id="links">
-        <ul>
-          <li><a href="index.html">homepage</a></li>
-          <li><a href="code.html">code</a></li>
-          <li><a href="files/josherrickson_cv.pdf">curriculum vitae</a></li>
-          <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></li>
-        </ul>
-      </div>
-      <h1> Josh Errickson </h1>
-      <h2> Org-Agenda as a Calendar </h2>
-      <p>
-        I've been looking for an offline calendaring solution that will allow smooth syncing via Dropbox or an
-        alternative. I originally tried <a href="https://www.mozilla.org/projects/calendar/sunbird/">Sunbird</a> but
-        there was always issues with duplicate events. I've been wanting a plain-text variant to avoid these issues, but
-        the existing solutions are not ideal.
-      </p>
-      <p>
-        Simultaneously, I've been looking for an excuse to learn <a href="http://orgmode.org">org-mode</a> for a
-        while. It is always hyped as a terrific solution to any outlining scenario (which, truly, calendaring is), but
-        has a steep learning curve for anything past a very basic outline.
-      </p>
-      <p>
-        After spending months periodically searching online for a good tutorial on using org-mode as a calendar, I
-        found no complete tutorial, but I began to accumulate enough bits and pieces to figure out the setup. The below
-        is both for my benefit, to document how my system works in the event of data-loss or memory-loss, and to
-        attempt a unified tutorial on org-mode calendaring.
-      </p>
-      <p>
-        This setup was accomplished on Emacs 24.3.50.1 (though I suspect earlier 24.x versions will suffice) with
-        org-mode 8.0.3 (again, I suspect earlier 8.x versions will work).
-      </p>
-      <h3> Preliminaries </h3>
-      <p>
-        First, decide where you are going to keep your files. I'd suggest their own directly,
-        maybe <code>~/.emacs.d/org</code>. Create the directory. <code>touch</code> a file in there named
-        <code>whatever.org</code>. You'll probably want multiple files for each type of calender (to avoid any
-        one getting overwhelmingly large) but you can create the rest later.
-      </p>
-      <p>
-        Orgmode's categories are analogous to individual calendars in Google Calender or iCal. You can put each event
-        into a category, and then do things such as color them by category, or show only certain categories.
-      </p>
-      <p>
-        There are two ways to organize your categories. First, just have one per file. I prefer this option as it
-        keeps from having too long of a file, and I find it easier to think of each category as completely
-        independent. The second way would be to use a single file, and have each category in its own subgroup.
-      </p>
-      <h3> Begin creating some events </h3>
-      <p>
-        As I've said, at its core, orgmode is an outlining system, so org-mode files tend to (generally) follow this
-        syntax:
-      </p>
-      <pre>
-* First level
-** Second level
-*** Third level
-** back to second
-* New first level
-** Second level under second top </pre>
-      <p>
-        So the single <code>*</code> is the top-most level, <code>**</code> is nested below it, etc.
-      </p>
-      <p>
-        Calendar events will follow the same structure. Generally, you'll have the top level by a category, and then
-        all events under that category will be in the second level, but you could add more structure to it by
-        nesting a sub-category with its own events.
-      </p>
-      <p>
-        Here's some very simple events.
-      </p>
-      <pre>
-* Work
-** Meeting with Bob
-   <2013-06-12 Wed 13:00-14:00>
-** Call with Sally
-   <2013-06-14 Fri 3:30pm> </pre>
-      <p>
-        The time stamp should be fairly self-explanatory. The day of the week and time are both completely
-        optional. For time, note that two times separated by a <code>-</code> are the duration of the event, while a
-        single time is simply a start-time (a reminder perhaps). You can enter military time or am/pm. (Note, for
-        future snippets, I will often ignore the <code>*</code> level, just assume they're in a larger file under a
-        top level.)
-      </p>
-      <p>
-        To make an event spanning multiple days (or a longer alternative to the duration above), use this.
-      </p>
-      <pre>
-** Trip to LA
-   <2013-07-10>--<2013-07-15></pre>
-      <p>
-        Finally, for a recurring event, you can do this.
-      </p>
-      <pre>
-** Team Meeting
-   <2013-05-10 Fri 10:00-11:00am +1w></pre>
-      <p>
-        The <code>+1w</code> implies that this event will repeat every week at the same time & date, ad
-        infinitum. The number can be changed, and the usual codes can replace <code>w</code>
-        (e.g. <code>d</code> for days, etc) (See below for more advanced repeating events.)
-      </p>
-      <h3> Viewing your agenda </h3>
-      <p>
-        Now, some editing of your config file (<code>.emacs</code> or <code>init.el</code>, either
-        in <code>~</code> or <code>~/.emacs.d/</code>). First, you'll need to add
-      </p>
-      <pre>
-&lt;setq org-agenda-files '("~/.emacs.d/org")&gt; </pre>
-      <p>
-        Of course, change that directory as needed. All <code>.org</code> files living there will be used
-        for the calendar, assuming an event has a time-stamp.
-      </p>
-      <p>
-        Now, call <code>M-x org-agenda</code> to view your calendar. (Note: You can use <code>C-h f
-          org-agenda</code> to see the default key-bindings, and you can use a line
-        like <code>(global-set-key (kbd "C-c a") 'org-agenda)</code> to modify it.)
-      </p>
-      <p>
-        Hopefully, you now see your weekly schedule! You can visit
-        the <a href="http://orgmode.org/manual/Agenda-commands.html">Org manual</a> for a full list of key
-        bindings, but the most useful ones are
-      </p>
-      <ul class="blank">
-        <li> <code>f</code> and <code>b</code>: Go forward or backwards in time.</li>
-        <li> <code>v</code> followed by <code>m</code>, <code>y</code> or <code>w</code>: View a month, a year,
-          or a week at a time respectively.</li>
-        <li> <code>.</code>: Return to today.</li>
-        <li> <code>Enter</code>: While your cursor is on an event, open that event in its original
-          file.</li>
-        <li> <code>f</code> and <code>b</code>: Go forward or backwards in time.</li>
-        <li> <code>r</code>: Rebuild the agenda (if you've been editing files).</li>
-      </ul>
+    <h1>Josh Errickson</h1>
+    <h2>Org-Agenda as a Calendar</h2>
+    <p>
+      I've been looking for an offline calendaring solution that will allow smooth syncing via Dropbox or an
+      alternative. I originally tried <a href="https://www.mozilla.org/projects/calendar/sunbird/">Sunbird</a> but
+      there was always issues with duplicate events. I've been wanting a plain-text variant to avoid these issues, but
+      the existing solutions are not ideal.
+    </p>
+    <p>
+      Simultaneously, I've been looking for an excuse to learn <a href="http://orgmode.org">org-mode</a> for a
+      while. It is always hyped as a terrific solution to any outlining scenario (which, truly, calendaring is), but
+      has a steep learning curve for anything past a very basic outline.
+    </p>
+    <p>
+      After spending months periodically searching online for a good tutorial on using org-mode as a calendar, I
+      found no complete tutorial, but I began to accumulate enough bits and pieces to figure out the setup. The below
+      is both for my benefit, to document how my system works in the event of data-loss or memory-loss, and to
+      attempt a unified tutorial on org-mode calendaring.
+    </p>
+    <p>
+      This setup was accomplished on Emacs 24.3.50.1 (though I suspect earlier 24.x versions will suffice) with
+      org-mode 8.0.3 (again, I suspect earlier 8.x versions will work).
+    </p>
+    <h3> Preliminaries </h3>
+    <p>
+      First, decide where you are going to keep your files. I'd suggest their own directly,
+      maybe <code>~/.emacs.d/org</code>. Create the directory. <code>touch</code> a file in there named
+      <code>whatever.org</code>. You'll probably want multiple files for each type of calender (to avoid any
+      one getting overwhelmingly large) but you can create the rest later.
+    </p>
+    <p>
+      Orgmode's categories are analogous to individual calendars in Google Calender or iCal. You can put each event
+      into a category, and then do things such as color them by category, or show only certain categories.
+    </p>
+    <p>
+      There are two ways to organize your categories. First, just have one per file. I prefer this option as it
+      keeps from having too long of a file, and I find it easier to think of each category as completely
+      independent. The second way would be to use a single file, and have each category in its own subgroup.
+    </p>
+    <h3> Begin creating some events </h3>
+    <p>
+      As I've said, at its core, orgmode is an outlining system, so org-mode files tend to (generally) follow this
+      syntax:
+    </p>
+    <pre>
+      * First level
+      ** Second level
+      *** Third level
+      ** back to second
+      * New first level
+      ** Second level under second top </pre>
+    <p>
+      So the single <code>*</code> is the top-most level, <code>**</code> is nested below it, etc.
+    </p>
+    <p>
+      Calendar events will follow the same structure. Generally, you'll have the top level by a category, and then
+      all events under that category will be in the second level, but you could add more structure to it by
+      nesting a sub-category with its own events.
+    </p>
+    <p>
+      Here's some very simple events.
+    </p>
+    <pre>
+      * Work
+      ** Meeting with Bob
+      <2013-06-12 Wed 13:00-14:00>
+        ** Call with Sally
+        <2013-06-14 Fri 3:30pm> </pre>
+    <p>
+      The time stamp should be fairly self-explanatory. The day of the week and time are both completely
+      optional. For time, note that two times separated by a <code>-</code> are the duration of the event, while a
+      single time is simply a start-time (a reminder perhaps). You can enter military time or am/pm. (Note, for
+      future snippets, I will often ignore the <code>*</code> level, just assume they're in a larger file under a
+      top level.)
+    </p>
+    <p>
+      To make an event spanning multiple days (or a longer alternative to the duration above), use this.
+    </p>
+    <pre>
+      ** Trip to LA
+      <2013-07-10>--<2013-07-15></pre>
+    <p>
+      Finally, for a recurring event, you can do this.
+    </p>
+    <pre>
+      ** Team Meeting
+      <2013-05-10 Fri 10:00-11:00am +1w></pre>
+    <p>
+      The <code>+1w</code> implies that this event will repeat every week at the same time & date, ad
+      infinitum. The number can be changed, and the usual codes can replace <code>w</code>
+      (e.g. <code>d</code> for days, etc) (See below for more advanced repeating events.)
+    </p>
+    <h3> Viewing your agenda </h3>
+    <p>
+      Now, some editing of your config file (<code>.emacs</code> or <code>init.el</code>, either
+      in <code>~</code> or <code>~/.emacs.d/</code>). First, you'll need to add
+    </p>
+    <pre>
+      &lt;setq org-agenda-files '("~/.emacs.d/org")&gt; </pre>
+    <p>
+      Of course, change that directory as needed. All <code>.org</code> files living there will be used
+      for the calendar, assuming an event has a time-stamp.
+    </p>
+    <p>
+      Now, call <code>M-x org-agenda</code> to view your calendar. (Note: You can use <code>C-h f
+        org-agenda</code> to see the default key-bindings, and you can use a line
+      like <code>(global-set-key (kbd "C-c a") 'org-agenda)</code> to modify it.)
+    </p>
+    <p>
+      Hopefully, you now see your weekly schedule! You can visit
+      the <a href="http://orgmode.org/manual/Agenda-commands.html">Org manual</a> for a full list of key
+      bindings, but the most useful ones are
+    </p>
+    <ul class="blank">
+      <li> <code>f</code> and <code>b</code>: Go forward or backwards in time.</li>
+      <li> <code>v</code> followed by <code>m</code>, <code>y</code> or <code>w</code>: View a month, a year,
+        or a week at a time respectively.</li>
+      <li> <code>.</code>: Return to today.</li>
+      <li> <code>Enter</code>: While your cursor is on an event, open that event in its original
+        file.</li>
+      <li> <code>f</code> and <code>b</code>: Go forward or backwards in time.</li>
+      <li> <code>r</code>: Rebuild the agenda (if you've been editing files).</li>
+    </ul>
 
-      <h3> Categories </h3>
-      <p>
-        By default, the file-name of your <code>.org</code> file are your file-name, so if you named your
-        file <code>calendar.org</code>, you might be seeing
-        <pre>
-Wednesday  12 June 2013
-  calendar:    1:00pm- 2:00pm Meeting with Bob</pre>
-      <p>
-        The <code>calendar:</code> tag can be made more informative by use PROPERTIES. For example, taking the
-        sample from above,
-      </p>
+    <h3> Categories </h3>
+    <p>
+      By default, the file-name of your <code>.org</code> file are your file-name, so if you named your
+      file <code>calendar.org</code>, you might be seeing
       <pre>
-* Work
-  :CATEGORY: Work
-** Meeting with Bob
-   <2013-06-12 Wed 13:00-14:00>
-** Call with Sally
-   <2013-06-14 Fri 3:30pm> </pre>
-      <p>
-        Now, the calender would look like
-      </p>
-      <pre>
-Wednesday  12 June 2013
-  Work:        1:00pm- 2:00pm Meeting with Bob</pre>
-      <p>
-        The <code>:CATEGORY</code> will apply to a given event and all below it. So if you have your work
-        file, you can add a second level, for example <code>** Off-site Events</code>, give it a category
-        like <code>:CATEGORY: Off-site</code> and then put events below it, <code>*** An off-site
+        Wednesday  12 June 2013
+        calendar:    1:00pm- 2:00pm Meeting with Bob</pre>
+    <p>
+      The <code>calendar:</code> tag can be made more informative by use PROPERTIES. For example, taking the
+      sample from above,
+    </p>
+    <pre>
+      * Work
+      :CATEGORY: Work
+      ** Meeting with Bob
+      <2013-06-12 Wed 13:00-14:00>
+        ** Call with Sally
+        <2013-06-14 Fri 3:30pm> </pre>
+    <p>
+      Now, the calender would look like
+    </p>
+    <pre>
+      Wednesday  12 June 2013
+      Work:        1:00pm- 2:00pm Meeting with Bob</pre>
+    <p>
+      The <code>:CATEGORY</code> will apply to a given event and all below it. So if you have your work
+      file, you can add a second level, for example <code>** Off-site Events</code>, give it a category
+      like <code>:CATEGORY: Off-site</code> and then put events below it, <code>*** An off-site
         visit</code>, then even if this is nested in the Work file, it will have the <code>Off-site:</code>
-        category.
-      </p>
-      <h3> Useful config settings </h3>
-      <p>
-        Here's some settings I find useful. These go in your config file as above.
-      </p>
-      <p>
-        A week starts on Sunday as opposed to Monday:
-      </p>
-      <pre>
-&lt;setq org-agenda-start-on-weekday 0&gt;</pre>
-      <p>
-        Use 12-hour clock instead of 24-hour in agenda view:
-      </p>
-      <pre>
-&lt;setq org-agenda-timegrid-use-ampm 1&gt;</pre>
-      <p>
-        By default, the time-grid is only shown today if you have any events, this makes it always show
-        today regardless of events.
-      </p>
-      <pre>
-&lt;setq org-agenda-time-grid '((daily today today)
-                             #("----------------" 0 16 (org-heading t))
-                             (800 1000 1200 1400 1600 1800 2000)))&gt;</pre>
+      category.
+    </p>
+    <h3> Useful config settings </h3>
+    <p>
+      Here's some settings I find useful. These go in your config file as above.
+    </p>
+    <p>
+      A week starts on Sunday as opposed to Monday:
+    </p>
+    <pre>
+      &lt;setq org-agenda-start-on-weekday 0&gt;</pre>
+    <p>
+      Use 12-hour clock instead of 24-hour in agenda view:
+    </p>
+    <pre>
+      &lt;setq org-agenda-timegrid-use-ampm 1&gt;</pre>
+    <p>
+      By default, the time-grid is only shown today if you have any events, this makes it always show
+      today regardless of events.
+    </p>
+    <pre>
+      &lt;setq org-agenda-time-grid '((daily today today)
+      #("----------------" 0 16 (org-heading t))
+      (800 1000 1200 1400 1600 1800 2000)))&gt;</pre>
 
-      <h3> Some advanced features </h3>
-      <h4> Color-coding </h4>
-      <p>
-        The following fairly self-explanatory code in your config file will color events. You can use
-        <a href="http://raebear.net/comp/emacscolors.html">this page</a> to get a list of colors. Simply
-        modify the list of <code>(color-org-header "tag" "color")</code> to your needs.
-      </p>
-      <pre>
-(add-hook 'org-finalize-agenda-hook
-          (lambda ()
-            (save-excursion
-              (color-org-header "Personal:"  "green")
-              (color-org-header "Birthdays:" "gold")
-              (color-org-header "Work:"      "orange")
-              (color-org-header "Off-site:"  "SkyBlue4"))))
+    <h3> Some advanced features </h3>
+    <h4> Color-coding </h4>
+    <p>
+      The following fairly self-explanatory code in your config file will color events. You can use
+      <a href="http://raebear.net/comp/emacscolors.html">this page</a> to get a list of colors. Simply
+      modify the list of <code>(color-org-header "tag" "color")</code> to your needs.
+    </p>
+    <pre>
+      (add-hook 'org-finalize-agenda-hook
+      (lambda ()
+      (save-excursion
+      (color-org-header "Personal:"  "green")
+      (color-org-header "Birthdays:" "gold")
+      (color-org-header "Work:"      "orange")
+      (color-org-header "Off-site:"  "SkyBlue4"))))
 
-(defun color-org-header (tag col)
-  ""
-  (interactive)
-  (goto-char (point-min))
-  (while (re-search-forward tag nil t)
-    (add-text-properties (match-beginning 0) (point-at-eol)
-                         `(face (:foreground ,col)))))</pre>
-      <h4> Complicated scheduling </h4>
-      <p>
-        You can use diary sexp entries to do more complicated scheduling. There are plenty of places online to
-        see details, for example <a href=http://orgmode.org/worg/org-faq.html#Appointments/Diary>here</a>,
-        but here's an example to get you started.
-      </p>
-      <pre>
-** 10:00-11:30am Twice weekly!
-   <%%(org-class 2013 9 3 2013 12 11 1)>
-   <%%(org-class 2013 9 3 2013 12 11 3)></pre>
-      <p>
-        This says this event is scheduled from 9/3/2013 to 12/11/2013, on every Monday (the final 1 in the
-        first time-stamp) and Wednesday (the final 3 in the second time-stamp). Note that the time is in
-        the <code>**</code> line!
-      </p>
-      <h4> Birthdays and Holidays </h4>
-      <p>
-        Without further comment, here's a neat way to have holidays and birthdays in your agenda.
-      </p>
-      <pre>
-* Birthday
-#+CATEGORY: Holidays
-%%(org-calendar-holiday)
-#+CATEGORY: Birthdays
-%%(diary-anniversary  9 12 1957) John, %d y.o.
-%%(diary-anniversary  4  3 1962) Sally, %d y.o.</pre>
-      <p>
-        <b>Future goals</b>: Auto-removing past events
-      </p>
-    </div>
+      (defun color-org-header (tag col)
+      ""
+      (interactive)
+      (goto-char (point-min))
+      (while (re-search-forward tag nil t)
+      (add-text-properties (match-beginning 0) (point-at-eol)
+      `(face (:foreground ,col)))))</pre>
+    <h4> Complicated scheduling </h4>
+    <p>
+      You can use diary sexp entries to do more complicated scheduling. There are plenty of places online to
+      see details, for example <a href=http://orgmode.org/worg/org-faq.html#Appointments/Diary>here</a>,
+      but here's an example to get you started.
+    </p>
+    <pre>
+      ** 10:00-11:30am Twice weekly!
+      <%%(org-class 2013 9 3 2013 12 11 1)>
+      <%%(org-class 2013 9 3 2013 12 11 3)></pre>
+    <p>
+      This says this event is scheduled from 9/3/2013 to 12/11/2013, on every Monday (the final 1 in the
+      first time-stamp) and Wednesday (the final 3 in the second time-stamp). Note that the time is in
+      the <code>**</code> line!
+    </p>
+    <h4> Birthdays and Holidays </h4>
+    <p>
+      Without further comment, here's a neat way to have holidays and birthdays in your agenda.
+    </p>
+    <pre>
+      * Birthday
+      #+CATEGORY: Holidays
+      %%(org-calendar-holiday)
+      #+CATEGORY: Birthdays
+      %%(diary-anniversary  9 12 1957) John, %d y.o.
+      %%(diary-anniversary  4  3 1962) Sally, %d y.o.</pre>
+    <p>
+      <b>Future goals</b>: Auto-removing past events
+    </p>
   </body>
 </html>

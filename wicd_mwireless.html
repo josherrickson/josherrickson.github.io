@@ -1,43 +1,30 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
-    <title> Getting WICD to connect to MWireless </title>
-    <meta name="Author" content="Josh Errickson">
-    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, Causal, Causal Inference, Ben Hansen, Statistics" lang="en-us">
-    <link rel="stylesheet" href="http://openfontlibrary.org/face/didact-gothic" type="text/css" media="screen">
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <title>Getting WICD to connect to MWireless</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
   </head>
 
   <body>
-    <div id="main">
-      <div id="links">
-        <ul>
-          <li><a href="index.html">homepage</a></li>
-          <li><a href="code.html">code</a></li>
-          <li><a href="files/josherrickson_cv.pdf">curriculum vitae</a></li>
-          <li><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></li>
-        </ul>
-      </div>
-      <h1> Josh Errickson </h1>
-      <h2> Getting WICD to connect to MWireless </h2>
-      <b>Note:</b> There's apparently a bug which results in "Bad Password" errors. Using PEAP with GTC may work.
-      <ol>
-        <li> Save the file <a href="files/peap-mschapv2">peap-mschapv2</a> in
-          <code>/etc/wicd/encrytion/templates</code>.</li>
-        <li> In the same directory, append the line "peap-mschapv2" to the end
-          of file <code>active</code>.</li>
-        <li> Restart WICD, and when connecting to MWireless, choose the new
-          PEAP-MSCHAPV2 encryption option. Identity and Password are your Kerberos
-          account, and Path to CA cert is the path to the security certificate
-          available
-          <a href="http://www.itcom.itd.umich.edu/wireless/connect/linux.php">here</a>.</li>
-      </ol>
-      <p>
-        Reference: <a href="http://kb.iu.edu/data/bbtc.html">http://kb.iu.edu/data/bbtc.html</a>
-      </p>
-    </div>
+    <h1>Josh Errickson</h1>
+    <h2>Getting WICD to connect to MWireless</h2>
+    <b>Note:</b> There's apparently a bug which results in "Bad Password" errors. Using PEAP with GTC may work.
+    <ol>
+      <li> Save the file <a href="files/peap-mschapv2">peap-mschapv2</a> in
+        <code>/etc/wicd/encrytion/templates</code>.</li>
+      <li> In the same directory, append the line "peap-mschapv2" to the end
+        of file <code>active</code>.</li>
+      <li> Restart WICD, and when connecting to MWireless, choose the new
+        PEAP-MSCHAPV2 encryption option. Identity and Password are your Kerberos
+        account, and Path to CA cert is the path to the security certificate
+        available
+        <a href="http://www.itcom.itd.umich.edu/wireless/connect/linux.php">here</a>.</li>
+    </ol>
+    <p>
+      Reference: <a href="http://kb.iu.edu/data/bbtc.html">http://kb.iu.edu/data/bbtc.html</a>
+    </p>
   </body>
 </html>
