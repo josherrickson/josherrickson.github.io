@@ -1,8 +1,3 @@
----
-layout: page
----
-
-
 Office: 3555 Rackham
 Phone: 734-647-6961
 Email: jerrick (at) umich.edu
