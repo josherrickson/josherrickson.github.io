@@ -31,10 +31,11 @@
         <pre>
           alias git='scl enable rh-git29 httpd24 -- git'
         </pre>
-        Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</li>
+        <p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
+        <p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>.</p></li>
       <li>Next, you'll do a bare-repo clone on the server:
         <pre>
-          git clone --bare <repo>
+          git clone --bare [repo address]
         </pre>
         If you've never pushed your git repo up to a server you can clone from, instead you must copy over the .git folder and run
         <pre>
