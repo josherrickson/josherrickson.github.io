@@ -1,7 +1,4 @@
----
-layout: page
----
-
+# Josh Errickson
 
 Office: 3555 Rackham
 Phone: 734-647-6961
