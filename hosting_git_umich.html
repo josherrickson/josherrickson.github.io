@@ -32,16 +32,21 @@
           alias git='scl enable rh-git29 httpd24 -- git'
         </pre>
         <p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
-        <p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>.</p></li>
+        <p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login first.)</p></li>
       <li>Next, you'll do a bare-repo clone on the server:
         <pre>
           git clone --bare [repo address]
         </pre>
-        If you've never pushed your git repo up to a server you can clone from, instead you must copy over the .git folder and run
+        <p>If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo, instead you can init the repo and
+        then add it as the remote.</p>
+        <p>On the server, create a directory called "[repo name].git". Within it, run:</p>
         <pre>
-          git config --bool core.bare true
+          git init --bare
         </pre>
-        in the directory.</li>
+        <p>Finally, locally, run:</p>
+        <pre>
+          git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
+        </pre>
       <li>You can now push and pull from the server.</li>
     </ol>
   </body>
