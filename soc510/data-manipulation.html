@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Stata (SOC 510)</title>
+  <meta name="description" content="Introduction to Stata (SOC 510)">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Stata (SOC 510)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Stata (SOC 510)" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2017-09-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-management.html">
+<link rel="next" href="programming.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Introduction to Stata</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#stata-14-vs-stata-15"><i class="fa fa-check"></i><b>1.1.1</b> Stata 14 vs Stata 15</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.3</b> Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#the-stata-environment"><i class="fa fa-check"></i><b>2.1</b> The Stata Environment</a></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#do-files"><i class="fa fa-check"></i><b>2.4</b> Do-files</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="basics.html"><a href="basics.html#comments"><i class="fa fa-check"></i><b>2.4.1</b> Comments</a></li>
+<li class="chapter" data-level="2.4.2" data-path="basics.html"><a href="basics.html#version-control"><i class="fa fa-check"></i><b>2.4.2</b> Version control</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#basic-command-syntax"><i class="fa fa-check"></i><b>2.5</b> Basic command syntax</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="basics.html"><a href="basics.html#referring-to-variables"><i class="fa fa-check"></i><b>2.5.1</b> Referring to variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#stata-help"><i class="fa fa-check"></i><b>2.6</b> Stata Help</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="basics.html"><a href="basics.html#short-commands"><i class="fa fa-check"></i><b>2.6.1</b> Short commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="basics.html"><a href="basics.html#set-more-off"><i class="fa fa-check"></i><b>2.7</b> <code>set more off</code></a></li>
+<li class="chapter" data-level="2.8" data-path="basics.html"><a href="basics.html#working-directory"><i class="fa fa-check"></i><b>2.8</b> Working directory</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="basics.html"><a href="basics.html#file-paths"><i class="fa fa-check"></i><b>2.8.1</b> File paths</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html"><i class="fa fa-check"></i><b>3</b> Working with Data Sets</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#built-in-data"><i class="fa fa-check"></i><b>3.1</b> Built-in data</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.3</b> Saving data</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#preserverestore"><i class="fa fa-check"></i><b>3.4</b> <code>preserve</code>/<code>restore</code></a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#exercise-1"><i class="fa fa-check"></i><b>3.5</b> Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>4</b> Data Management</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-management.html"><a href="data-management.html#describe"><i class="fa fa-check"></i><b>4.1</b> <code>describe</code></a></li>
+<li class="chapter" data-level="4.2" data-path="data-management.html"><a href="data-management.html#labels"><i class="fa fa-check"></i><b>4.2</b> Labels</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.2.1</b> <code>label variable</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.2.2</b> <code>label values</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.3</b> Managing variables</a></li>
+<li class="chapter" data-level="4.4" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.4</b> Summarizing the data</a></li>
+<li class="chapter" data-level="4.5" data-path="data-management.html"><a href="data-management.html#exercise-2"><i class="fa fa-check"></i><b>4.5</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation.html"><a href="data-manipulation.html#generate"><i class="fa fa-check"></i><b>5.1</b> <code>generate</code></a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-manipulation.html"><a href="data-manipulation.html#extension-to-generate"><i class="fa fa-check"></i><b>5.1.1</b> Extension to <code>generate</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#replace"><i class="fa fa-check"></i><b>5.2</b> <code>replace</code></a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#conditional-variable-generation"><i class="fa fa-check"></i><b>5.2.1</b> Conditional variable generation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#missing-values"><i class="fa fa-check"></i><b>5.3</b> Missing values</a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#subsetting"><i class="fa fa-check"></i><b>5.4</b> Subsetting</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="data-manipulation.html"><a href="data-manipulation.html#by-and-bysort"><i class="fa fa-check"></i><b>5.4.1</b> <code>by</code> and <code>bysort</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-manipulation.html"><a href="data-manipulation.html#keep-drop"><i class="fa fa-check"></i><b>5.4.2</b> <code>keep</code>, <code>drop</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#sorting"><i class="fa fa-check"></i><b>5.5</b> Sorting</a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#exercise-3"><i class="fa fa-check"></i><b>5.6</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="programming.html"><a href="programming.html"><i class="fa fa-check"></i><b>6</b> Programming</a><ul>
+<li class="chapter" data-level="6.1" data-path="programming.html"><a href="programming.html#macros"><i class="fa fa-check"></i><b>6.1</b> Macros</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="programming.html"><a href="programming.html#class-and-return"><i class="fa fa-check"></i><b>6.1.1</b> Class and Return</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="programming.html"><a href="programming.html#loops"><i class="fa fa-check"></i><b>6.2</b> loops</a></li>
+<li class="chapter" data-level="6.3" data-path="programming.html"><a href="programming.html#suppressing-output-and-errors"><i class="fa fa-check"></i><b>6.3</b> Suppressing output and errors</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="programming.html"><a href="programming.html#capture"><i class="fa fa-check"></i><b>6.3.1</b> <code>capture</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="programming.html"><a href="programming.html#quietly"><i class="fa fa-check"></i><b>6.3.2</b> <code>quietly</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Stata (SOC 510)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-manipulation" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Data Manipulation</h1>
+<p>
+Let’s reload the “auto” data to discard any changes made in previous sections and to start fresh.
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+</code></pre>
+<div id="generate" class="section level2">
+<h2><span class="header-section-number">5.1</span> <code>generate</code></h2>
+<p>
+The <code>generate</code> command can be used to create new variables which are functions of existing variables. For example, if we look at the variable label for <code>weight</code>, we see that it is measured in pounds.
+</p>
+<pre><code>. describe weight
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+weight          int     %8.0gc                Weight (lbs.)
+
+</code></pre>
+<p>
+Let’s create a second weight variable measured in tons. The syntax for <code>generate</code> is straightforward,
+</p>
+<pre><code>generate &lt;new varname&gt; = &lt;function of old variables&gt;
+</code></pre>
+<pre><code>. generate weight2 = weight/2000
+
+</code></pre>
+<p>
+The <code>list</code> command can be used to output some data, let’s use it here to output the first 5 rows’ <code>weight</code> and <code>weight2</code> variables:
+</p>
+<pre><code>. list weight* in 1/5
+
+     +------------------+
+     | weight   weight2 |
+     |------------------|
+  1. |  2,930     1.465 |
+  2. |  3,350     1.675 |
+  3. |  2,640      1.32 |
+  4. |  3,250     1.625 |
+  5. |  4,080      2.04 |
+     +------------------+
+
+</code></pre>
+<p>
+If you check the arithmetic, you’ll see that we’ve got the right answer. We should probably add a variable label to our new <code>weight</code>
+</p>
+<pre><code>. label variable weight2 &quot;Weight (tons)&quot;
+
+. describe weight*
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+weight          int     %8.0gc                Weight (lbs.)
+weight2         float   %9.0g                 Weight (tons)
+
+</code></pre>
+<p>
+In addition to direct arithmetic equations, we can use a number of functions to perform calculations. For example, a common transformation is to take the log of any dollar amount variable, in our case <code>price</code>. This is done because typical dollar amount variables, such as price or salary, tend to be very right-skewed - most people make $30k-50k, and a few people make 6 or 7 digit incomes.
+</p>
+<pre><code>. generate logprice = log(price)
+
+. label variable logprice &quot;Log price&quot;
+
+. list *price in 1/5
+
+     +------------------+
+     | price   logprice |
+     |------------------|
+  1. | 4,099   8.318499 |
+  2. | 4,749    8.46569 |
+  3. | 3,799   8.242494 |
+  4. | 4,816   8.479699 |
+  5. | 7,827   8.965335 |
+     +------------------+
+
+</code></pre>
+<p>
+In that command, <code>log</code> is the function name, and it is immediately followed by parentheses which enclose the variable to operate on. Read the parentheses as “of”, so that <code>log(price)</code> is read as “log of price”.
+</p>
+<p>
+There are a lot of functions that can be used. We list some commonly used mathematical functions below for your convenience:
+</p>
+<ul>
+<li>
+<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>: Standard arithmetic
+</li>
+<li>
+<code>abs( )</code>: returns the absolute value
+</li>
+<li>
+<code>exp( )</code>: returns the exponential function of (e^x)
+</li>
+<li>
+<code>log( )</code> or <code>ln( )</code>: returns the natural logarithm of the argument
+</li>
+<li>
+<code>round( )</code>: returns the rounded value
+</li>
+<li>
+<code>sqrt( )</code>: returns the square root
+</li>
+</ul>
+<p>
+Stata also offers functions for string variables, such as:
+</p>
+<ul>
+<li>
+<code>length( )</code>: returns the length of the string
+</li>
+<li>
+<code>lower( )</code>: returns the string in lower-case letters
+</li>
+<li>
+<code>ltrim( )</code>: returns the string with any leading spaces stripped
+</li>
+<li>
+<code>rtrim( )</code>: returns the string with any trailing spaces stripped
+</li>
+<li>
+<code>string( )</code>: converts a numeric value to a string value
+</li>
+<li>
+<code>upper( )</code>: returns the string in upper-case letters
+</li>
+</ul>
+<p>
+You can see a full accounting of all functions you can use in this setting in
+</p>
+<pre><code>help functions
+</code></pre>
+<div id="extension-to-generate" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Extension to <code>generate</code></h3>
+<p>
+The command <code>egen</code> offers some functionality that <code>generate</code> lacks, for example creating the mean of several variables
+</p>
+<pre><code>egen &lt;newvar&gt; = rowmean(var1, var2, var3)
+</code></pre>
+<p>
+The functions which <code>egen</code> support are fairly esoteric; you can see the full list in the help:
+</p>
+<pre><code>help egen
+</code></pre>
+</div>
+</div>
+<div id="replace" class="section level2">
+<h2><span class="header-section-number">5.2</span> <code>replace</code></h2>
+<p>
+<a href="data-manipulation.html#generate">Earlier</a> we created the <code>weight2</code> variable which changed the units on weight from pounds to tons. What if, instead of creating a new variable, we tried to just change the existing <code>weight</code> variable.
+</p>
+<pre><code>. generate weight = weight/2000
+variable weight already defined
+r(110);
+
+</code></pre>
+<p>
+Here Stata refuses to proceed since <code>weight</code> is already defined. To overwrite <code>weight</code>, we’ll instead need to use the <code>replace</code> command.
+</p>
+<pre><code>. replace weight = weight/2000
+variable weight was int now float
+(74 real changes made)
+
+. list weight in 1/5
+
+     +--------+
+     | weight |
+     |--------|
+  1. |  1.465 |
+  2. |  1.675 |
+  3. |   1.32 |
+  4. |  1.625 |
+  5. |   2.04 |
+     +--------+
+
+</code></pre>
+<p>
+<code>replace</code> features syntax identical to <code>generate</code>.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>
+</p>
+<div id="conditional-variable-generation" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Conditional variable generation</h3>
+<p>
+One frequent task is recoding variables. This can be “binning” continuous variables into a few categories, re-ordering an ordinal variables, or collapsing categories in an already-categorical variable. There are also multi-variable versions; e.g. combining multiple variables into one.
+</p>
+<p>
+The general workflow with these cases will be to optionally use <code>generate</code> to create the new variable, then use <code>replace</code> to conditional replace the original or new variable.
+</p>
+<p>
+As a first example, let’s collapse the <code>rep78</code> variable into a low/mid/high cost of maintenance categorical variable (1 repair, 2-3 repairs, 4-5 repairs). First, we’ll generate the new variable.
+</p>
+<pre><code>. generate cost_maint = 1
+
+. tab cost_maint
+
+ cost_maint |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |         74      100.00      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+Without any variables or conditions, every row is set to 1. We’ll let the 1 represent the “low” category, so next we’ll replace it with 2 for cars in the “mid” category.
+</p>
+<pre><code>. replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+(38 real changes made)
+
+. tab cost_maint
+
+ cost_maint |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |         36       48.65       48.65
+          2 |         38       51.35      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+The <code>&amp;</code> is an “and”; the statement <code>if rep78 &gt;= 2 &amp; rep78 &lt;= 3</code> returns either true or false; true only if both <code>rep78 &gt;= 2</code> and <code>rep78 &lt;= 3</code> are true. Alternatively, we could have used <code>if rep78 == 2 | rep78 == 3</code>, where <code>|</code> means “or” and the double equals is testing equality; the statement returns true if <code>rep78</code> is identically equal to 2 <em>or</em> 3.
+</p>
+<p>
+Finish with the “high” category.
+</p>
+<pre><code>. replace cost_maint = 3 if rep78 &gt; 3
+(34 real changes made)
+
+. tab cost_maint
+
+ cost_maint |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.70        2.70
+          2 |         38       51.35       54.05
+          3 |         34       45.95      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+There’s one additional complication. Stata represents missing values by <code>.</code>, and <code>.</code> has a value of positive infinity. That means that
+</p>
+<span class="math display">\[ 400 \lt . \]</span>
+<p>
+is true! There is some discussion <a href="http://www.stata.com/support/faqs/data-management/logical-expressions-and-missing-values/">on the Stata FAQs</a> that goes into the rationale behind it, but the short version is that this slightly complicates variable generation but greatly simplifies and protects <a href="data-manipulation.html#keep-drop">data management tasks</a>.
+</p>
+<p>
+The complication referred to can be seen in row 3 here:
+</p>
+<pre><code>. list make rep78 cost_maint in 1/5, abbr(100)
+
+     +------------------------------------+
+     | make            rep78   cost_maint |
+     |------------------------------------|
+  1. | AMC Concord         3            2 |
+  2. | AMC Pacer           3            2 |
+  3. | AMC Spirit          .            3 |
+  4. | Buick Century       3            2 |
+  5. | Buick Electra       4            3 |
+     +------------------------------------+
+
+</code></pre>
+<p>
+(The <code>abbr</code> option changes the number of displayed characters for string variables, I set it to a large value here so the whole make can be seen.)
+</p>
+<p>
+The AMC Spirit has a high repair cost even though we do not have its repair record. We can fix this easily.
+</p>
+<pre><code>. replace cost_maint = rep78 if rep78 &gt;= .
+(5 real changes made, 5 to missing)
+
+. tab cost_maint, missing
+
+ cost_maint |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.70        2.70
+          2 |         38       51.35       54.05
+          3 |         29       39.19       93.24
+          . |          5        6.76      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+The <code>missing</code> option to <code>tab</code> forces it to show a row for any missing values. Without it, missing rows are suppressed.
+</p>
+<p>
+Perhaps a more natural way to do the above replacement would be
+</p>
+<pre><code>replace cost_maint = . if rep78 == .
+</code></pre>
+<p>
+In other words, if <code>rep78</code> is missing, make <code>cost_maint</code> missing. Instead, the version run above says, if <code>rep78</code> is missing or larger, replace <code>cost_maint</code> with <code>rep78</code>. See <a href="data-manipulation.html#missing-values">below</a> for further explanation of this.
+</p>
+<p>
+To summarize, we used the following commands:
+</p>
+<pre><code>generate cost_maint = 1
+replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace cost_maint = 3 if rep78 &gt; 3
+replace cost_maint = rep78 if rep78 &gt;= .
+</code></pre>
+<p>
+There are various other ways it could have been done, such as:
+</p>
+<pre><code>generate cost_maint = 1 if rep78 == 1
+replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace cost_maint = 3 if rep78 &gt; 3 &amp; rep78 &lt; .
+replace cost_maint = rep78 if rep78 &gt;= .
+</code></pre>
+<pre><code>generate cost_maint = rep78
+replace cost_maint = 1 if rep78 == 1
+replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace cost_maint = 3 if rep78 &gt; 3 &amp; rep78 &lt; .
+</code></pre>
+<p>
+Of course, we could also generate it in the reverse order (3 to 1).
+</p>
+</div>
+</div>
+<div id="missing-values" class="section level2">
+<h2><span class="header-section-number">5.3</span> Missing values</h2>
+<p>
+As we mentioned briefly earlier, Stata treats missing values as large positive numbers. In fact, Stata actually supports 27 different missing values, <code>.</code>, <code>.a</code>, <code>.b</code>, …, <code>.z</code>. This is to allow granularity in the reason for missingness; for example, perhaps you can code that <code>.</code> is random missingness (e.g. coffee spilled on a paper survey and blotted out an answer), while <code>.r</code> is for missingness due to refusal to answer and <code>.n</code> is for nonresponse.
+</p>
+<p>
+These missing values are ordered as expected, such that:
+</p>
+<pre><code>. &lt; .a &lt; .b &lt; ... &lt; .z
+</code></pre>
+<p>
+That means that a logical statement such as <code>variable &lt; .f</code> will return true if <code>variable</code> is <code>.</code> or <code>.c</code>, but false if <code>variable</code> is <code>.k</code> and <code>.v</code> (and of course for all other <code>._</code>’s as appropriate). This is why, <a href="data-manipulation.html#replace">above</a>, we used
+</p>
+<pre><code>replace cost_maint = rep78 if rep78 &gt;= .
+</code></pre>
+<p>
+The conditional, <code>rep78 &gt;= .</code>, catches both <code>.</code> and all <code>.a</code>, <code>.b</code>, etc, because all are greater than <code>.</code>. Once we’ve identified which rows contain <code>rep78</code> with some missing flag, we replace <code>cost_maint</code> with <code>rep78</code> to maintain the proper distinction between types of missingness; if we didn’t care about those in <code>cost_maint</code>, we could have used <code>replace cost_maint = .</code> instead.
+</p>
+<p>
+Stata has a shortcut to testing missingness that avoids worrying about the order, using the <code>missing</code> or <code>mi</code> function. We could have written:
+</p>
+<pre><code>replace cost_maint = rep78 if missing(rep78)
+replace cost_maint = rep78 if mi(rep78)
+</code></pre>
+<p>
+To check for non-missing values, use <code>!mi(rep78)</code> (the <code>!</code> is a negation; whatever the expression to the right of it returns (true or false), it switches to the opposte).
+</p>
+<p>
+Note that when running (most) statistical analyses, Stata will ignore the differentiation between types of missingness and instead use casewise (drop any row containing any missingness in variables involved in the analysis) or pairwise (consider each pair of variables; drop a row’s pair if either is missing).
+</p>
+</div>
+<div id="subsetting" class="section level2">
+<h2><span class="header-section-number">5.4</span> Subsetting</h2>
+<p>
+Almost any Stata command which operates on variables can operate on a subset of the data instead of the entire data, using the conditional statements we just learned. Specifically, we can append the <code>if &lt;condition&gt;</code> to a command, and the command will be executed as if the data for which the conditional does not return True does not exist. This is equivalent to throwing away some data and then performing the command. In general, you should avoid discarding data as you never know when you will possible use it. Of course, you could use <a href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a> to temporarily remove the data, but using the conditional subsetting is more straightforward.
+</p>
+<pre><code>. summ price
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         74    6165.257    2949.496       3291      15906
+
+</code></pre>
+<p>
+This gives us a summary of price across all cars. What if we wanted to look at the summary only for non-foreign cars?
+</p>
+<pre><code>. tab foreign
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+. summ price if foreign == 0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         52    6072.423    3097.104       3291      15906
+
+</code></pre>
+<p>
+First, we check the label to make sure we’re looking at the appropriate value of <code>foreign</code>. Now, notice that “Obs”, the number of rows of the data, is only 52 as we expect! If we look also at foreign cars,
+</p>
+<pre><code>. summ price if foreign == 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         22    6384.682    2621.915       3748      12990
+
+</code></pre>
+<p>
+we see that American cars are cheaper on average<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>.
+</p>
+<div id="by-and-bysort" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> <code>by</code> and <code>bysort</code></h3>
+<p>
+To look at the average price for American and foreign cars, we ran two individual commands. If we wanted to look at the summaries by <code>rep78</code>, that would take 6 commands (values 1 through 5 and <code>.</code>)!
+</p>
+<p>
+Instead, we can use <code>by</code> and <code>bysort</code> to perform the same operation over each unique value in a variable. For example, we could repeat the above with:
+</p>
+<pre><code>. by foreign: summ price
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Domestic
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         52    6072.423    3097.104       3291      15906
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Foreign
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         22    6384.682    2621.915       3748      12990
+
+
+</code></pre>
+<p>
+There is a strong assumption here that <code>foreign</code> is already sorted. If <code>foreign</code> were not sorted (or if you simply did not want to check/assume it was), you could instead use
+</p>
+<pre><code>bysort foreign: summ price
+</code></pre>
+<p>
+<code>bysort</code> is identical to <a href="data-manipulation.html#sorting">sorting</a> first and running the <code>by</code> statement afterwards. In general, it is recommended to always use <code>bysort</code> instead of <code>by</code>, <em>unless</em> you believe the data is already sorted and want an error if that assumption is violated.
+</p>
+<p>
+Note that sorting does change the order of the variables, you may want to save or preserve the data beforehand so you can return to the original sorting easily.
+</p>
+<p>
+<code>bysort</code>’s variables cannot be conditional statements, so if you wanted to for example get summaries by low and high mileage cars, you’d need to generate a dummy variable first.
+</p>
+<pre><code>. gen highmileage = mpg &gt; 20
+
+. bysort highmileage: summ price
+
+-------------------------------------------------------------------------------
+-&gt; highmileage = 0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         38    6937.316    3262.392       3291      14500
+
+-------------------------------------------------------------------------------
+-&gt; highmileage = 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         36    5350.306    2358.612       3299      15906
+
+
+</code></pre>
+<p>
+<code>bysort</code> can take two or more variables, and performs its commands within each unique combination of the variable. For example,
+</p>
+<pre><code>. bysort foreign highmileage: summ price
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Domestic, highmileage = 0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         33    6585.606    3149.214       3291      14500
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Domestic, highmileage = 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         19    5181.105    2867.906       3299      15906
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Foreign, highmileage = 0
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |          5      9258.6    3369.459       5719      12990
+
+-------------------------------------------------------------------------------
+-&gt; foreign = Foreign, highmileage = 1
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         17    5539.412    1686.472       3748       9735
+
+
+</code></pre>
+</div>
+<div id="keep-drop" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> <code>keep</code>, <code>drop</code></h3>
+<p>
+If you do want to discard data, you can use <code>keep</code> or <code>drop</code> to do so. They each can perform on variables:
+</p>
+<pre><code>keep &lt;var1&gt; &lt;var2&gt; ...
+drop &lt;var1&gt; &lt;var2&gt; ...
+</code></pre>
+<p>
+or on observations:
+</p>
+<pre><code>keep if &lt;conditional&gt;
+drop if &lt;conditional&gt;
+</code></pre>
+<p>
+Note that these <em>cannot</em> be combined:
+</p>
+<pre><code>. drop turn if mpg &gt; 20
+invalid syntax
+r(198);
+
+</code></pre>
+<p>
+<code>keep</code> removes all variables except the listed variables, or removes any row which the conditional does not return true.
+</p>
+<p>
+<code>drop</code> removes any listed variables, or removes any row which the conditional returns true.
+</p>
+</div>
+</div>
+<div id="sorting" class="section level2">
+<h2><span class="header-section-number">5.5</span> Sorting</h2>
+<p>
+We already saw sorting <a href="data-manipulation.html#by-and-bysort">in the context of <code>bysort</code></a>. We can also sort as a standalone operation. As before, consider saving or preserving first.
+</p>
+<p>
+We’ll open a clean version of “auto” first:
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+</code></pre>
+<p>
+The <code>gsort</code> function takes a list of variables to order by.
+</p>
+<pre><code>. gsort rep78 price
+
+. list rep78 price in 1/5
+
+     +---------------+
+     | rep78   price |
+     |---------------|
+  1. |     1   4,195 |
+  2. |     1   4,934 |
+  3. |     2   3,667 |
+  4. |     2   4,010 |
+  5. |     2   4,060 |
+     +---------------+
+
+</code></pre>
+<p>
+Stata first sorts the data by <code>rep78</code>, ascending (so the lowest value is in row 1). Then within each set of rows that have a common value of <code>rep78</code>, it sorts by <code>price</code>.
+</p>
+<p>
+You can append “+” or “-” to each variable to change whether it is ascending or descending. Without a prefix, the variable is sorted ascending.
+</p>
+<pre><code>. gsort +rep78 -price
+
+. list rep78 price in 1/5
+
+     +----------------+
+     | rep78    price |
+     |----------------|
+  1. |     1    4,934 |
+  2. |     1    4,195 |
+  3. |     2   14,500 |
+  4. |     2    6,342 |
+  5. |     2    5,886 |
+     +----------------+
+
+</code></pre>
+<p>
+Recall that missing values (<code>.</code>) are <a href="data-manipulation.html#missing-values">larger than any other values</a>. When sorting with missing values, they follow this rule as well. If you want to treat missing values as smaller than all other values, you can pass the <code>mfirst</code> option to <code>gsort</code>. Note this does <em>not</em> make missingness “less than” anywhere else, only for the purposes of the current search.
+</p>
+<p>
+Sorting strings does work and it does it alphabetically. All capital letters are “less than” all lower case letters, and a blank string (“”) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, “”, “EEE”, the sorted ascending order would be “”, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
+</p>
+<p>
+As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to conditionally sort; that is, passing something like <code>sort &lt;varname&gt; in &lt;condition&gt;</code> would sort only those rows for which the condition is true, the remaining rows remain <em>in their exact same position</em>.
+</p>
+</div>
+<div id="exercise-3" class="section level2">
+<h2><span class="header-section-number">5.6</span> Exercise 3</h2>
+<p>
+If you haven’t already, open the “RDSL.subset” data.
+</p>
+<p>
+(Note: Any “interpretation” or “explanation” in this exercise is for illustrative purposes only as I have no idea what the details of this data are!)
+</p>
+<ol>
+<li>
+Create a new variable, <code>school_primary_focus</code>, which attempts to represent whether someone’s primary focus is their schooling. This variable should be a binary variable with a value of 1 if the student has a GPA greater than 2.8 and is enrolled full time.
+</li>
+<li>
+The variable <code>bage1stsex</code>, representing age at 1st sex, has some very low values - some that are errors (e.g. 0 or 1) and some that are hopefully errors (below 7). Replace values of 0 or 1 with a missing “.”, and replace values between 2-7 with missing “.a”.
+</li>
+<li>
+Look at a table (<code>tab</code>) of public assistance. Compare it with the table of public assistant amongst blacks and non-blacks. Notice any relationships?
+</li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="9">
+<li id="fn9"><p><code>generate</code> has a few features we do not discuss which <code>replace</code> does not support. Namely, <code>generate</code> can set the <a href="data-management.html#compress">type</a> manually (instead of letting Stata choose the best type automatically), and <code>generate</code> can place the new variable as desired rather than <a href="data-management.html#managing-variables">using <code>order</code></a>. Clearly, neither of these features are needed for <code>replace</code>.<a href="data-manipulation.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>Note that this is not a statistical claim, we would have to do a two-sample t-test to make any statistical claim.<a href="data-manipulation.html#fnref10">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-management.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
