@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Intermediate Stata (Statistical Modeling)</title>
+  <meta name="description" content="Intermediate Stata (Statistical Modeling)">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intermediate Stata (Statistical Modeling)" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2017-10-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="visualization.html">
+<link rel="next" href="regression.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Intermediate Stata (Statistical Modeling)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.3</b> Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>2</b> Summarizing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#describe-summarize-codebook"><i class="fa fa-check"></i><b>2.1</b> <code>describe</code>, <code>summarize</code>, <code>codebook</code></a></li>
+<li class="chapter" data-level="2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#mean"><i class="fa fa-check"></i><b>2.2</b> <code>mean</code></a></li>
+<li class="chapter" data-level="2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#estimation-commands"><i class="fa fa-check"></i><b>2.3</b> Estimation Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#postestimation-commands"><i class="fa fa-check"></i><b>2.3.1</b> Postestimation commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#storing-and-restoring-estimation-commands"><i class="fa fa-check"></i><b>2.3.2</b> Storing and restoring estimation commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#tab"><i class="fa fa-check"></i><b>2.4</b> <code>tab</code></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#two-way-tables"><i class="fa fa-check"></i><b>2.4.1</b> Two-way tables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#generating-dummy-variables"><i class="fa fa-check"></i><b>2.4.2</b> Generating dummy variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="summarizing-data.html"><a href="summarizing-data.html#correlate"><i class="fa fa-check"></i><b>2.5</b> <code>correlate</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="summarizing-data.html"><a href="summarizing-data.html#varlists-in-stata"><i class="fa fa-check"></i><b>2.5.1</b> varlists in Stata</a></li>
+<li class="chapter" data-level="2.5.2" data-path="summarizing-data.html"><a href="summarizing-data.html#pairwise-completion-vs-complete-case"><i class="fa fa-check"></i><b>2.5.2</b> Pairwise completion vs complete case</a></li>
+<li class="chapter" data-level="2.5.3" data-path="summarizing-data.html"><a href="summarizing-data.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5.3</b> Spearman correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="summarizing-data.html"><a href="summarizing-data.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Visualization</a><ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#the-graph-command"><i class="fa fa-check"></i><b>3.1</b> The <code>graph</code> command</a></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#other-graphs"><i class="fa fa-check"></i><b>3.2</b> Other graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#plotting-by-group"><i class="fa fa-check"></i><b>3.3</b> Plotting by group</a></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#getting-help-on-graphs"><i class="fa fa-check"></i><b>3.4</b> Getting help on Graphs</a></li>
+<li class="chapter" data-level="3.5" data-path="visualization.html"><a href="visualization.html#displaying-multiple-graphs-simultaneously"><i class="fa fa-check"></i><b>3.5</b> Displaying multiple graphs simultaneously</a></li>
+<li class="chapter" data-level="3.6" data-path="visualization.html"><a href="visualization.html#exercise-2"><i class="fa fa-check"></i><b>3.6</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Univariate (and some Bivariate) Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#one-sample-t-test"><i class="fa fa-check"></i><b>4.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.2</b> Two-sample t-test</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#independent"><i class="fa fa-check"></i><b>4.2.1</b> Independent</a></li>
+<li class="chapter" data-level="4.2.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#paired"><i class="fa fa-check"></i><b>4.2.2</b> Paired</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#chi-square-test"><i class="fa fa-check"></i><b>4.3</b> Chi-square test</a></li>
+<li class="chapter" data-level="4.4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#exercise-3"><i class="fa fa-check"></i><b>4.4</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.5" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#citations"><i class="fa fa-check"></i><b>4.5</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="regression.html"><a href="regression.html#terminology"><i class="fa fa-check"></i><b>5.1</b> Terminology</a></li>
+<li class="chapter" data-level="5.2" data-path="regression.html"><a href="regression.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="regression.html"><a href="regression.html#fitting-the-model"><i class="fa fa-check"></i><b>5.2.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="5.2.2" data-path="regression.html"><a href="regression.html#including-categorical-predictors"><i class="fa fa-check"></i><b>5.2.2</b> Including categorical predictors</a></li>
+<li class="chapter" data-level="5.2.3" data-path="regression.html"><a href="regression.html#interactions"><i class="fa fa-check"></i><b>5.2.3</b> Interactions</a></li>
+<li class="chapter" data-level="5.2.4" data-path="regression.html"><a href="regression.html#robust-standard-errors"><i class="fa fa-check"></i><b>5.2.4</b> Robust standard errors</a></li>
+<li class="chapter" data-level="5.2.5" data-path="regression.html"><a href="regression.html#assumptions"><i class="fa fa-check"></i><b>5.2.5</b> Assumptions</a></li>
+<li class="chapter" data-level="5.2.6" data-path="regression.html"><a href="regression.html#miscellaneous-concerns"><i class="fa fa-check"></i><b>5.2.6</b> Miscellaneous concerns</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="regression.html"><a href="regression.html#exercise-4"><i class="fa fa-check"></i><b>5.3</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.4" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="regression.html"><a href="regression.html#fitting-the-logistic-model"><i class="fa fa-check"></i><b>5.4.1</b> Fitting the logistic model</a></li>
+<li class="chapter" data-level="5.4.2" data-path="regression.html"><a href="regression.html#categorical-variables-and-interactions"><i class="fa fa-check"></i><b>5.4.2</b> Categorical Variables and Interactions</a></li>
+<li class="chapter" data-level="5.4.3" data-path="regression.html"><a href="regression.html#logistic-regression-assumptions"><i class="fa fa-check"></i><b>5.4.3</b> Logistic regression assumptions</a></li>
+<li class="chapter" data-level="5.4.4" data-path="regression.html"><a href="regression.html#logistic-goodness-of-fit"><i class="fa fa-check"></i><b>5.4.4</b> Logistic goodness of fit</a></li>
+<li class="chapter" data-level="5.4.5" data-path="regression.html"><a href="regression.html#separation"><i class="fa fa-check"></i><b>5.4.5</b> Separation</a></li>
+<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous."><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous.</a></li>
+<li class="chapter" data-level="5.4.7" data-path="regression.html"><a href="regression.html#logit-vs-logistic"><i class="fa fa-check"></i><b>5.4.7</b> <code>logit</code> vs <code>logistic</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#other-regression-models"><i class="fa fa-check"></i><b>5.5</b> Other regression models</a></li>
+<li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
+<li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
+<li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
+<li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
+<li class="chapter" data-level="6.5" data-path="mixed-models.html"><a href="mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>6.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="6.6" data-path="mixed-models.html"><a href="mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>6.6</b> Convergence issues</a></li>
+<li class="chapter" data-level="6.7" data-path="mixed-models.html"><a href="mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>6.7</b> Logistic Mixed Model</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="mixed-models.html"><a href="mixed-models.html#meqrlogit"><i class="fa fa-check"></i><b>6.7.1</b> <code>meqrlogit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="mixed-models.html"><a href="mixed-models.html#exercise-6"><i class="fa fa-check"></i><b>6.8</b> Exercise 6</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="survey-data.html"><a href="survey-data.html"><i class="fa fa-check"></i><b>7</b> Survey Data</a><ul>
+<li class="chapter" data-level="7.1" data-path="survey-data.html"><a href="survey-data.html#definitions"><i class="fa fa-check"></i><b>7.1</b> Definitions</a></li>
+<li class="chapter" data-level="7.2" data-path="survey-data.html"><a href="survey-data.html#describing-the-survey"><i class="fa fa-check"></i><b>7.2</b> Describing the survey</a></li>
+<li class="chapter" data-level="7.3" data-path="survey-data.html"><a href="survey-data.html#subset-analyses-for-complex-sample-survey-data"><i class="fa fa-check"></i><b>7.3</b> Subset analyses for complex sample survey data</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="multiple-imputation.html"><a href="multiple-imputation.html"><i class="fa fa-check"></i><b>8</b> Multiple Imputation</a><ul>
+<li class="chapter" data-level="8.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#missing-at-random"><i class="fa fa-check"></i><b>8.1</b> Missing at random</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.3</b> Setting up data</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#imputing-transformations"><i class="fa fa-check"></i><b>8.3.1</b> Imputing transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.4</b> Performing the imputation</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#choosing-the-number-of-imputations"><i class="fa fa-check"></i><b>8.4.1</b> Choosing the number of imputations</a></li>
+<li class="chapter" data-level="8.4.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-variables"><i class="fa fa-check"></i><b>8.4.2</b> <code><em>mi</em></code> variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.5</b> Analyzing <code>mi</code> data</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-postestimation"><i class="fa fa-check"></i><b>8.5.1</b> MI Postestimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.6</b> Manual MI</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.6.1</b> Rubin’s rules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.7</b> Removing the MI data</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.8</b> Survey and multiple imputation</a></li>
+<li class="chapter" data-level="8.9" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.9</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> Exercise solutions</a><ul>
+<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1-1"><i class="fa fa-check"></i><b>9.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2-1"><i class="fa fa-check"></i><b>9.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3-1"><i class="fa fa-check"></i><b>9.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4-1"><i class="fa fa-check"></i><b>9.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5-1"><i class="fa fa-check"></i><b>9.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6-1"><i class="fa fa-check"></i><b>9.6</b> Exercise 6</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intermediate Stata (Statistical Modeling)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="univariate-and-some-bivariate-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Univariate (and some Bivariate) Analysis</h1>
+<p>
+We start with analyzing single variables at a time, and then quickly discuss a chi-squared test which is a bivariate analysis. While these tests form the basis of many other methods, by themselves they are of limited us. All the tests we discuss here come with two very strong assumptions:
+</p>
+<ol>
+<li>
+No other measured or unmeasured variables play a role in any relationship.
+</li>
+<li>
+The relationship is the same for any subpopulation of your data.
+</li>
+</ol>
+<p>
+To see why these assumptions are so strong, lets consider the <a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test">two-sample t-test</a>. We’ll discuss them in depth below, but the short version is that a two-sample t-test compares whether two groups have the same average value. If you were comparing average height between two groups, perhaps you’d find that one group was much taller than the other. But what if the shorter group was almost entirely made of children? We have no way of knowing whether the difference between groups is due to this or due to real differences.
+</p>
+<p>
+For the second assumption, imagine some scenario where you have two groups. Among men, there is a large difference between groups, whereas among women, there is no difference between groups. On average (assuming a roughly 50/50 gender split), you’d see a moderate difference. But no one actually has a moderate difference! The two subgroups have different effects, so the two-sample t-test captures neither!
+</p>
+<p>
+That said, there are a few situations where these tests are useful as stand-alone tests.
+</p>
+<ol>
+<li>
+Exploratory/descriptive/pilot studies: Situations when are you not making strong claims, merely describing something you see in the data.
+</li>
+<li>
+Very small sample sizes: While not ideal, small sample sizes can’t handle more complicated analysis, so these simple ones are all you have.
+</li>
+<li>
+In randomized controlled experiments (such as in a lab): In these situations, you truly can ensure that both those assumptions are met. Just randomization is not sufficient, as the benefit of randomization is only guaranteed <em>theoretically</em> for <em>infinitely large samples</em>. Randomization helps a lot, but it’s not perfect!
+</li>
+</ol>
+<p>
+Reload the auto data set
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+</code></pre>
+<div id="one-sample-t-test" class="section level2">
+<h2><span class="header-section-number">4.1</span> One-sample t-test</h2>
+<p>
+A one-sample t-test tests whether the mean of a variable is equal to some constant. It is not needed a lot of the time (if we hypothesize that the average test score is 70, and every students get above an 80, why would we need to test this?), but we introduce it here just as a basis of further methods.
+</p>
+<p>
+There are several assumptions necessary for a one-sample t-test, most of which are trivial/not that important. The two relatively important ones are
+</p>
+<ol>
+<li>
+Independence. Each value must come from an independent source. If you have repeated measures (e.g. two different measures for the same person), this is violated. See the section of <a href="mixed-models.html">mixed models</a> for dealing with this sort of data.
+</li>
+<li>
+The distribution of the <em>mean</em> is normal. Note that this assumption is <em>not</em> about the data itself. This assumption is valid if <em>either</em> the sample suggests that the data is normal (a bell-curve) <em>or</em> the sample size is large (above ~30)<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. If this assumption does not hold, we generally still use the t-test, although there are tests called “non-parametric” tests which do not require this assumption. Not everyone is convinced they are necessary.
+</li>
+</ol>
+<p>
+There is no way to test the independence assumption, you must determine this based upon your knowledge of the data.
+</p>
+<p>
+We can try and determine whether the normal distribution is valid for the data, but note that failing to find this does not imply the normality of the mean assumption is violated. This can be checked with a histogram or a qq-plot.
+</p>
+<p>
+Let’s test whether the average mileage in the data is different from 20.
+</p>
+<pre><code>. hist mpg, normal
+(bin=8, start=12, width=3.625)
+
+</code></pre>
+<img src="Graph11.svg" >
+<p>
+In a histogram, we are looking for violations from the bell-shape of a normal curve. We added the normal curve to the plot by the <code>normal</code> option. We can see that while the data is not perfectly normal, it also is not too far off. We can look at a qq-plot for further details.
+</p>
+<pre><code>. qnorm mpg
+
+</code></pre>
+<img src="Graph12.svg" >
+<p>
+With a qq-plot, we are looking for the points to roughly fall in a straight line, alone the 45-degree line. Here we see some mild violations of those, especially at either end.
+</p>
+<p>
+Put together, this indicates that normality is not perfect, but its also not a terrible violation.
+</p>
+<p>
+However, we don’t really care! The sample size is large enough that that assumption is valid. We can therefore perform our test using the <code>ttest</code> command.
+</p>
+<pre><code>. ttest mpg == 20
+
+One-sample t test
+------------------------------------------------------------------------------
+Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+     mpg |      74     21.2973    .6725511    5.785503     19.9569    22.63769
+------------------------------------------------------------------------------
+    mean = mean(mpg)                                              t =   1.9289
+Ho: mean = 20                                    degrees of freedom =       73
+
+    Ha: mean &lt; 20               Ha: mean != 20                 Ha: mean &gt; 20
+ Pr(T &lt; t) = 0.9712         Pr(|T| &gt; |t|) = 0.0576          Pr(T &gt; t) = 0.0288
+
+</code></pre>
+<p>
+Our null hypothesis, the claim we are trying to see whether we have the evidence to reject, is that the average <code>mpg</code> in the population represented by this data is 20. We sometimes also just call 20, the value the null hypothesis is testing, the null hypothesis (e.g. “We are testing against the null hypothesis of 20.”).
+</p>
+<p>
+Looking at the analysis, we see that we get some summary statistics. The 95% confidence interval represents the range which, if we were to draw repeated samples of the same size (74) from the population of all cars, we would expect 95% of the estimated means to fall in that range.
+</p>
+<p>
+Below that, we see some details of the test being run. The important detail is that the null Hypothesis (<code>Ho</code>) is what you meant for it to be.
+</p>
+<p>
+Finally, we get our p-values. There are three separate ones given for three different alternative hypotheses - testing whether the mean is less than 20, greater than 20, or simply not equal to 20. Each p-value represents the probability of observing a mean as extreme as the one we saw if 20 was the true population mean. In other words, we get the following three interpretations:
+</p>
+<ul>
+<li>
+There is 97.12% chance that if the true mean were 20, we would observe a sample mean of 21.2973 or lower.
+</li>
+<li>
+There is 2.88% chance that if the true mean were 20, we would observe a sample mean of 21.2973 or higher.
+</li>
+<li>
+There is 5.76% chance that if the true mean were 20, we would observe a sample mean of 21.2973 or higher <em>or</em> a sample mean of 18.7027.
+</li>
+</ul>
+<p>
+The last interpretation (corresponding to <code>Ha: mean != 20</code> from the output) is known as the two-sided p-value, and should be your default. The other two, known as one-sided p-values, can be used if a priori you decide that you’re only interested in one direction.
+</p>
+<p>
+The typical threshold used is p = .05, so we would fail to reject the null hypothesis (since .0576 &gt; .05), although this is extremely close to significant!
+</p>
+<p>
+(Of course that first p-value &amp; interpretation is unnecessary - the observed test statistic is greater than 20, so there’s no chance we’d be able to make the argument that the true mean is less than 20!)
+</p>
+</div>
+<div id="two-sample-t-test" class="section level2">
+<h2><span class="header-section-number">4.2</span> Two-sample t-test</h2>
+<p>
+While the one-sided t-test isn’t used very often, the two-sample version is. There are two different variations of it.
+</p>
+<div id="independent" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Independent</h3>
+<p>
+The independent two-sample t-test arises when you have two independent groups which have the same measurement, and you wish to test whether the mean of the two groups is equivalent. The same basic assumptions, independence (although here it’s both within group [each observation is independent from each other] and between groups [the two groups are independent, e.g. these are not repeated measures on the same person]) and normality of the mean.
+</p>
+<p>
+For example in our data, we can test whether foreign and American cars have the same average mileage. We will again use the <code>ttest</code> command, though slightly differently.
+</p>
+<pre><code>. ttest mpg, by(foreign)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+Domestic |      52    19.82692     .657777    4.743297    18.50638    21.14747
+ Foreign |      22    24.77273     1.40951    6.611187    21.84149    27.70396
+---------+--------------------------------------------------------------------
+combined |      74     21.2973    .6725511    5.785503     19.9569    22.63769
+---------+--------------------------------------------------------------------
+    diff |           -4.945804    1.362162               -7.661225   -2.230384
+------------------------------------------------------------------------------
+    diff = mean(Domestic) - mean(Foreign)                         t =  -3.6308
+Ho: diff = 0                                     degrees of freedom =       72
+
+    Ha: diff &lt; 0                 Ha: diff != 0                 Ha: diff &gt; 0
+ Pr(T &lt; t) = 0.0003         Pr(|T| &gt; |t|) = 0.0005          Pr(T &gt; t) = 0.9997
+
+</code></pre>
+<p>
+The output is very similar to <a href="univariate-and-some-bivariate-analysis.html#one-sample-t-test">above</a>. We get some descriptives by group, and combined, as well as a confidence interval for the difference. Notice that the null hypothesis (<code>Ho</code>) is simply 0 because we are testing whether the difference between the groups is statistically significant, regardless of the actual values of the means.
+</p>
+<p>
+The p-values have the same interpretation, though in terms of the difference of means rather than just the means. More-so than even in the one-sided test, you should use the two-sided p-value, so our p-value is 0.0005. Just as a note, do not report this p-value as 0 if you round! Instead, report that the p-value is less than .01 or less than .001.
+</p>
+<p>
+However, there is an additional assumption here that we neglected; namely that the variance of the two groups is equivalent. If you make this assumption, then the above analysis is sufficient. However, if you don’t make this assumption, you can instead run the two-sample t-test with unequal variances by adding the <code>unequal</code> option.
+</p>
+<pre><code>. ttest mpg, by(foreign) unequal
+
+Two-sample t test with unequal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+Domestic |      52    19.82692     .657777    4.743297    18.50638    21.14747
+ Foreign |      22    24.77273     1.40951    6.611187    21.84149    27.70396
+---------+--------------------------------------------------------------------
+combined |      74     21.2973    .6725511    5.785503     19.9569    22.63769
+---------+--------------------------------------------------------------------
+    diff |           -4.945804    1.555438               -8.120053   -1.771556
+------------------------------------------------------------------------------
+    diff = mean(Domestic) - mean(Foreign)                         t =  -3.1797
+Ho: diff = 0                     Satterthwaite's degrees of freedom =  30.5463
+
+    Ha: diff &lt; 0                 Ha: diff != 0                 Ha: diff &gt; 0
+ Pr(T &lt; t) = 0.0017         Pr(|T| &gt; |t|) = 0.0034          Pr(T &gt; t) = 0.9983
+
+</code></pre>
+<p>
+The unequal test is slightly more conservative, but there has been some work (e.g. <a href="univariate-and-some-bivariate-analysis.html#citations">Delacre et al 2017</a>, <a href="univariate-and-some-bivariate-analysis.html#citations">Ruxton 2006</a>) showing that you should always use the unequal version.
+</p>
+<p>
+The equal variance version (the first one we ran) is known as Student’s<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> t-test, and the unequal variance version (with the <code>unequal</code> option) is known as Welch’s t-test.
+</p>
+<p>
+If you want to test whether the variance between the two groups is equal, you can use <code>sdtest</code> in a similar fashion to <code>ttest</code> (<code>sdtest mpg, by(foreign)</code>).
+</p>
+</div>
+<div id="paired" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Paired</h3>
+<p>
+We noted in the assumptions above that we need the two groups to be independent. What if they aren’t? An example of paired data would include before-and-after measures or measures from two family members. In both cases, it is reasonable to assume the two measures from the same person or family are more similar than a measure from one person against a measure from another person.
+</p>
+<p>
+The auto data set does not have a good example of paired data, so lets use the “bpwide” data instead.
+</p>
+<pre><code>. sysuse bpwide, clear
+(fictional blood-pressure data)
+
+. list in 1/5
+
+     +-----------------------------------------------+
+     | patient    sex   agegrp   bp_bef~e   bp_after |
+     |-----------------------------------------------|
+  1. |       1   Male    30-45        143        153 |
+  2. |       2   Male    30-45        163        170 |
+  3. |       3   Male    30-45        153        168 |
+  4. |       4   Male    30-45        153        142 |
+  5. |       5   Male    30-45        146        141 |
+     +-----------------------------------------------+
+
+</code></pre>
+<p>
+We have measures from different patients, including a before and after measure of the blood pressure. We again use <code>ttest</code> to perform the test:
+</p>
+<pre><code>. ttest bp_after == bp_before
+
+Paired t test
+------------------------------------------------------------------------------
+Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+bp_after |     120    151.3583    1.294234    14.17762    148.7956     153.921
+bp_bef~e |     120      156.45    1.039746    11.38985    154.3912    158.5088
+---------+--------------------------------------------------------------------
+    diff |     120   -5.091667    1.525736     16.7136   -8.112776   -2.070557
+------------------------------------------------------------------------------
+     mean(diff) = mean(bp_after - bp_before)                      t =  -3.3372
+ Ho: mean(diff) = 0                              degrees of freedom =      119
+
+ Ha: mean(diff) &lt; 0           Ha: mean(diff) != 0           Ha: mean(diff) &gt; 0
+ Pr(T &lt; t) = 0.0006         Pr(|T| &gt; |t|) = 0.0011          Pr(T &gt; t) = 0.9994
+
+</code></pre>
+<p>
+We see that the blood pressure after is slightly lower (151 vs 156), and the two-sided p-value is statistically significant!
+</p>
+<p>
+While we technically used the paired t-test for this, behind the scenes, this is identical to generating a difference variable (e.g. post score - pre score) and performing the <a href="univariate-and-some-bivariate-analysis.html#one-sample-t-test">one-sample t-test</a>:
+</p>
+<pre><code>. gen bp_change = bp_after - bp_before
+
+. ttest bp_change == 0
+
+One-sample t test
+------------------------------------------------------------------------------
+Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+bp_cha~e |     120   -5.091667    1.525736     16.7136   -8.112776   -2.070557
+------------------------------------------------------------------------------
+    mean = mean(bp_change)                                        t =  -3.3372
+Ho: mean = 0                                     degrees of freedom =      119
+
+    Ha: mean &lt; 0                 Ha: mean != 0                 Ha: mean &gt; 0
+ Pr(T &lt; t) = 0.0006         Pr(|T| &gt; |t|) = 0.0011          Pr(T &gt; t) = 0.9994
+
+</code></pre>
+</div>
+</div>
+<div id="chi-square-test" class="section level2">
+<h2><span class="header-section-number">4.3</span> Chi-square test</h2>
+<p>
+While t-tests can technically be used with binary data or ordinal variables<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>, they cannot with non-ordinal. If we want to compare two categorical or binary variables, we can instead use a <span class="math inline">\(\chi^2\)</span> test (<span class="math inline">\(\chi\)</span> is a Greek letter which is spelled “chi” in English, and rhymes with “why”). There are a few variations on the <span class="math inline">\(\chi^2\)</span> test, the version we talk of here is a test of association, where we are testing the null hypothesis that the distribution of one variable is the same at every level of another variable. Let’s return to the auto data set, and compare <code>rep78</code> (Repair Record 1978) and <code>foreign</code>. We’ll start by looking at a crosstab.
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+. tab foreign rep78
+
+           |                   Repair Record 1978
+  Car type |         1          2          3          4          5 |     Total
+-----------+-------------------------------------------------------+----------
+  Domestic |         2          8         27          9          2 |        48 
+   Foreign |         0          0          3          9          9 |        21 
+-----------+-------------------------------------------------------+----------
+     Total |         2          8         30         18         11 |        69 
+
+
+</code></pre>
+<p>
+If you’re not familiar with crosstabs, each cell represents the number of observations which fall into the category - for example, there are 8 cars which are both Domestic and have a Repair record of 2.
+</p>
+<p>
+We can think of testing whether the association between these two variables exists from either direction - we can either ask “Is the probability of a car having a specific repair record the same among domestic cars as among foreign cars”, or “Is the probability of a car being foreign or domestic the same across all levels of repair record”. We test it by adding the <code>chi2</code> option to <code>tab</code>:
+</p>
+<pre><code>. tab foreign rep78, chi2
+
+           |                   Repair Record 1978
+  Car type |         1          2          3          4          5 |     Total
+-----------+-------------------------------------------------------+----------
+  Domestic |         2          8         27          9          2 |        48 
+   Foreign |         0          0          3          9          9 |        21 
+-----------+-------------------------------------------------------+----------
+     Total |         2          8         30         18         11 |        69 
+
+          Pearson chi2(4) =  27.2640   Pr = 0.000
+
+</code></pre>
+<p>
+Here we can see that the p-value (<code>pr</code>) associated with the <span class="math inline">\(\chi^2\)</span> test is very low (less than .001, p-values are never 0<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>!), so we can reject the null hypothesis and claim there is evidence of a statistically significant association between <code>foreign</code> and <code>rep78</code>.
+</p>
+<p>
+Note that the <span class="math inline">\(\chi^2\)</span> test ignores scale - if we had 4,800 Domestic cars instead of 48, and the percentage at each Repair Record were the same (e.g. instead of 8 Domestic cars with Repair Record of 2, we had 800), we would get the same test result.
+</p>
+<p>
+Finally, the critiques <a href="univariate-and-some-bivariate-analysis.html">above</a> about the lack of usefulness of t-tests extends to <span class="math inline">\(\chi^2\)</span> tests as well.
+</p>
+</div>
+<div id="exercise-3" class="section level2">
+<h2><span class="header-section-number">4.4</span> Exercise 3</h2>
+<p>
+Load up the NHANES data.
+</p>
+<pre><code>sysuse nhanes2, clear
+</code></pre>
+<ol>
+<li>
+We don’t care about normality assumptions here. Why?
+</li>
+<li>
+The average height of all <em>men</em> in America is 5’9&quot; (176 cm). Does this sample appear representative of this fact? (E.g. is there evidence that the average in the sample differs from this?)
+</li>
+<li>
+We would expect height and weight to differ by gender. Is there any evidence that age does?
+</li>
+<li>
+Take a look at a crosstab of <code>race</code> and <code>diabetes</code>. Does it look like the percentage of diabetics is the same across race? The <code>col</code> or <code>row</code> option might help here. Test this with a <span class="math inline">\(\chi^2\)</span> test.
+</li>
+</ol>
+</div>
+<div id="citations" class="section level2">
+<h2><span class="header-section-number">4.5</span> Citations</h2>
+<ul>
+<li>
+Delacre, Marie, Daniël Lakens, and Christophe Leys. “Why Psychologists Should by Default Use Welch’s t-test Instead of Student’s t-test.” International Review of Social Psychology 30.1 (2017).
+</li>
+<li>
+Ruxton, Graeme D. “The unequal variance t-test is an underused alternative to Student’s t-test and the Mann–Whitney U test.” Behavioral Ecology 17.4 (2006): 688-690.
+</li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>This is by the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>.<a href="univariate-and-some-bivariate-analysis.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Named not for students in a class, but the pseudonym for statistician William Sealy Gosset. Gosset worked at the Guinness brewery when he was performing some of his seminal work and wasn’t allowed to publish under his own name, so he used the pseudonym Student.<a href="univariate-and-some-bivariate-analysis.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>Categorical variables that are ordered in some sense - e.g. clothing sizes of small, medium and large.<a href="univariate-and-some-bivariate-analysis.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>Unless you’re in a pathological setting, i.e. you’re testing whether the average height of a population is less than 6 feet, and somehow you get an average height of -20 feet….<a href="univariate-and-some-bivariate-analysis.html#fnref6">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

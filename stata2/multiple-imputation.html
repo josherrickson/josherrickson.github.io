@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Intermediate Stata (Statistical Modeling)</title>
+  <meta name="description" content="Intermediate Stata (Statistical Modeling)">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intermediate Stata (Statistical Modeling)" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2017-10-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="survey-data.html">
+<link rel="next" href="exercise-solutions.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Intermediate Stata (Statistical Modeling)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.3</b> Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>2</b> Summarizing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#describe-summarize-codebook"><i class="fa fa-check"></i><b>2.1</b> <code>describe</code>, <code>summarize</code>, <code>codebook</code></a></li>
+<li class="chapter" data-level="2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#mean"><i class="fa fa-check"></i><b>2.2</b> <code>mean</code></a></li>
+<li class="chapter" data-level="2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#estimation-commands"><i class="fa fa-check"></i><b>2.3</b> Estimation Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#postestimation-commands"><i class="fa fa-check"></i><b>2.3.1</b> Postestimation commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#storing-and-restoring-estimation-commands"><i class="fa fa-check"></i><b>2.3.2</b> Storing and restoring estimation commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#tab"><i class="fa fa-check"></i><b>2.4</b> <code>tab</code></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#two-way-tables"><i class="fa fa-check"></i><b>2.4.1</b> Two-way tables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#generating-dummy-variables"><i class="fa fa-check"></i><b>2.4.2</b> Generating dummy variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="summarizing-data.html"><a href="summarizing-data.html#correlate"><i class="fa fa-check"></i><b>2.5</b> <code>correlate</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="summarizing-data.html"><a href="summarizing-data.html#varlists-in-stata"><i class="fa fa-check"></i><b>2.5.1</b> varlists in Stata</a></li>
+<li class="chapter" data-level="2.5.2" data-path="summarizing-data.html"><a href="summarizing-data.html#pairwise-completion-vs-complete-case"><i class="fa fa-check"></i><b>2.5.2</b> Pairwise completion vs complete case</a></li>
+<li class="chapter" data-level="2.5.3" data-path="summarizing-data.html"><a href="summarizing-data.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5.3</b> Spearman correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="summarizing-data.html"><a href="summarizing-data.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Visualization</a><ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#the-graph-command"><i class="fa fa-check"></i><b>3.1</b> The <code>graph</code> command</a></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#other-graphs"><i class="fa fa-check"></i><b>3.2</b> Other graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#plotting-by-group"><i class="fa fa-check"></i><b>3.3</b> Plotting by group</a></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#getting-help-on-graphs"><i class="fa fa-check"></i><b>3.4</b> Getting help on Graphs</a></li>
+<li class="chapter" data-level="3.5" data-path="visualization.html"><a href="visualization.html#displaying-multiple-graphs-simultaneously"><i class="fa fa-check"></i><b>3.5</b> Displaying multiple graphs simultaneously</a></li>
+<li class="chapter" data-level="3.6" data-path="visualization.html"><a href="visualization.html#exercise-2"><i class="fa fa-check"></i><b>3.6</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Univariate (and some Bivariate) Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#one-sample-t-test"><i class="fa fa-check"></i><b>4.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.2</b> Two-sample t-test</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#independent"><i class="fa fa-check"></i><b>4.2.1</b> Independent</a></li>
+<li class="chapter" data-level="4.2.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#paired"><i class="fa fa-check"></i><b>4.2.2</b> Paired</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#chi-square-test"><i class="fa fa-check"></i><b>4.3</b> Chi-square test</a></li>
+<li class="chapter" data-level="4.4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#exercise-3"><i class="fa fa-check"></i><b>4.4</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.5" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#citations"><i class="fa fa-check"></i><b>4.5</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="regression.html"><a href="regression.html#terminology"><i class="fa fa-check"></i><b>5.1</b> Terminology</a></li>
+<li class="chapter" data-level="5.2" data-path="regression.html"><a href="regression.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="regression.html"><a href="regression.html#fitting-the-model"><i class="fa fa-check"></i><b>5.2.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="5.2.2" data-path="regression.html"><a href="regression.html#including-categorical-predictors"><i class="fa fa-check"></i><b>5.2.2</b> Including categorical predictors</a></li>
+<li class="chapter" data-level="5.2.3" data-path="regression.html"><a href="regression.html#interactions"><i class="fa fa-check"></i><b>5.2.3</b> Interactions</a></li>
+<li class="chapter" data-level="5.2.4" data-path="regression.html"><a href="regression.html#robust-standard-errors"><i class="fa fa-check"></i><b>5.2.4</b> Robust standard errors</a></li>
+<li class="chapter" data-level="5.2.5" data-path="regression.html"><a href="regression.html#assumptions"><i class="fa fa-check"></i><b>5.2.5</b> Assumptions</a></li>
+<li class="chapter" data-level="5.2.6" data-path="regression.html"><a href="regression.html#miscellaneous-concerns"><i class="fa fa-check"></i><b>5.2.6</b> Miscellaneous concerns</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="regression.html"><a href="regression.html#exercise-4"><i class="fa fa-check"></i><b>5.3</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.4" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="regression.html"><a href="regression.html#fitting-the-logistic-model"><i class="fa fa-check"></i><b>5.4.1</b> Fitting the logistic model</a></li>
+<li class="chapter" data-level="5.4.2" data-path="regression.html"><a href="regression.html#categorical-variables-and-interactions"><i class="fa fa-check"></i><b>5.4.2</b> Categorical Variables and Interactions</a></li>
+<li class="chapter" data-level="5.4.3" data-path="regression.html"><a href="regression.html#logistic-regression-assumptions"><i class="fa fa-check"></i><b>5.4.3</b> Logistic regression assumptions</a></li>
+<li class="chapter" data-level="5.4.4" data-path="regression.html"><a href="regression.html#logistic-goodness-of-fit"><i class="fa fa-check"></i><b>5.4.4</b> Logistic goodness of fit</a></li>
+<li class="chapter" data-level="5.4.5" data-path="regression.html"><a href="regression.html#separation"><i class="fa fa-check"></i><b>5.4.5</b> Separation</a></li>
+<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous."><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous.</a></li>
+<li class="chapter" data-level="5.4.7" data-path="regression.html"><a href="regression.html#logit-vs-logistic"><i class="fa fa-check"></i><b>5.4.7</b> <code>logit</code> vs <code>logistic</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#other-regression-models"><i class="fa fa-check"></i><b>5.5</b> Other regression models</a></li>
+<li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
+<li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
+<li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
+<li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
+<li class="chapter" data-level="6.5" data-path="mixed-models.html"><a href="mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>6.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="6.6" data-path="mixed-models.html"><a href="mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>6.6</b> Convergence issues</a></li>
+<li class="chapter" data-level="6.7" data-path="mixed-models.html"><a href="mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>6.7</b> Logistic Mixed Model</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="mixed-models.html"><a href="mixed-models.html#meqrlogit"><i class="fa fa-check"></i><b>6.7.1</b> <code>meqrlogit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="mixed-models.html"><a href="mixed-models.html#exercise-6"><i class="fa fa-check"></i><b>6.8</b> Exercise 6</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="survey-data.html"><a href="survey-data.html"><i class="fa fa-check"></i><b>7</b> Survey Data</a><ul>
+<li class="chapter" data-level="7.1" data-path="survey-data.html"><a href="survey-data.html#definitions"><i class="fa fa-check"></i><b>7.1</b> Definitions</a></li>
+<li class="chapter" data-level="7.2" data-path="survey-data.html"><a href="survey-data.html#describing-the-survey"><i class="fa fa-check"></i><b>7.2</b> Describing the survey</a></li>
+<li class="chapter" data-level="7.3" data-path="survey-data.html"><a href="survey-data.html#subset-analyses-for-complex-sample-survey-data"><i class="fa fa-check"></i><b>7.3</b> Subset analyses for complex sample survey data</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="multiple-imputation.html"><a href="multiple-imputation.html"><i class="fa fa-check"></i><b>8</b> Multiple Imputation</a><ul>
+<li class="chapter" data-level="8.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#missing-at-random"><i class="fa fa-check"></i><b>8.1</b> Missing at random</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.3</b> Setting up data</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#imputing-transformations"><i class="fa fa-check"></i><b>8.3.1</b> Imputing transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.4</b> Performing the imputation</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#choosing-the-number-of-imputations"><i class="fa fa-check"></i><b>8.4.1</b> Choosing the number of imputations</a></li>
+<li class="chapter" data-level="8.4.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-variables"><i class="fa fa-check"></i><b>8.4.2</b> <code><em>mi</em></code> variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.5</b> Analyzing <code>mi</code> data</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-postestimation"><i class="fa fa-check"></i><b>8.5.1</b> MI Postestimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.6</b> Manual MI</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.6.1</b> Rubin’s rules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.7</b> Removing the MI data</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.8</b> Survey and multiple imputation</a></li>
+<li class="chapter" data-level="8.9" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.9</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> Exercise solutions</a><ul>
+<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1-1"><i class="fa fa-check"></i><b>9.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2-1"><i class="fa fa-check"></i><b>9.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3-1"><i class="fa fa-check"></i><b>9.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4-1"><i class="fa fa-check"></i><b>9.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5-1"><i class="fa fa-check"></i><b>9.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6-1"><i class="fa fa-check"></i><b>9.6</b> Exercise 6</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intermediate Stata (Statistical Modeling)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multiple-imputation" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Multiple Imputation</h1>
+<p>
+Multiple imputation is a common approach to addressing missing data issues. When there is missing data, the default results are often obtained with complete case analysis (using only observations with complete data) can produce biased results <a href="multiple-imputation.html#missing-at-random">though not always</a>. Additionally, complete case analysis can have a severe negative effect on the power by greatly reducing the sample size.
+</p>
+<p>
+Imputation in general is the idea of filling in missing values to simulate having complete data. Some simpler forms of imputation include:
+</p>
+<ul>
+<li>
+Mean imputation. Replace each missing value with the mean of the variable for all non-missing observations.
+</li>
+<li>
+Cold deck imputation. Replace each missing value with the value from another observation which is similar to the one with the missing value.
+</li>
+<li>
+Regression imputation. Fit a regression model and replace each missing value with its predicted value.
+</li>
+</ul>
+<p>
+There are various pros and cons to each approach, but in general, none are as powerful or as commonly used as multiple imputation. Multiple imputation (or MI) is a three step procedure:
+</p>
+<ol>
+<li>
+For each missing value, obtain a distribution for it. Sample from these distributions to obtain imputed values that have some randomness built in. Do this repeatedly to create <span class="math inline">\(M\)</span> total imputed data sets. Each of these <span class="math inline">\(M\)</span> data sets is identical on non-missing values but will (almost certainly) differ on the imputed values.
+</li>
+<li>
+Perform your statistical analysis on each of the <span class="math inline">\(M\)</span> imputed data sets separately.
+</li>
+<li>
+Pool your results together in a specific fashion to account for the uncertainty in imputations.
+</li>
+</ol>
+<p>
+Thankfully, for simple analyses (e.g. most regression models), Stata will perform all three steps for you automatically. We will briefly discuss later how to <a href="multiple-imputation.html#manual-mi">perform MI if Stata doesn’t support it</a>.
+</p>
+<div id="missing-at-random" class="section level2">
+<h2><span class="header-section-number">8.1</span> Missing at random</h2>
+<p>
+There can be many causes of missing data. We can classify the reason data is missing into one of three categories:
+</p>
+<ol>
+<li>
+<strong>Missing completely at random (MCAR)</strong>: This is missingness that is truly random - there is no cause of the missingness, it’s just due to chance. For example, you’re entering paper surveys into a spreadsheet and spill coffee on them, obscuring a few answers.
+</li>
+<li>
+<strong>Missing at random (MAR)</strong>: The missingness here is due to observed data but not unobserved data. For example, women may be less likely to report their age, regardless of what their actual age is.
+</li>
+<li>
+<strong>Missing not at random (MNAR)</strong>: Here the missingness is due to the missing value. For example, individuals with higher salary may be less willing to answer survey questions about their salary.
+</li>
+</ol>
+<p>
+There is no statistical test<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a> to distinguish between these categories; instead you must use your knowledge of the data and its collection to argue which category it falls under.
+</p>
+<p>
+This is important because most imputation methods (including MI) require MCAR or MAR for the data. If the data is MNAR, there is very little you can do. Generally if you believe the data is MNAR, you can assume MAR but discuss that a severe limitation of your analysis is the MAR assumption is likely invalid.
+</p>
+</div>
+<div id="mi" class="section level2">
+<h2><span class="header-section-number">8.2</span> <code>mi</code></h2>
+<p>
+The <code>mi</code> set of commands in Stata perform the steps of multiple imputation. There are three steps, with a preliminary step to examine the missingness. We’ll be using the “mheart5” data from Stata’s website which has some missing data.
+</p>
+<pre><code>. webuse mheart5, clear
+(Fictional heart attack data)
+
+. describe, short
+
+Contains data from http://www.stata-press.com/data/r15/mheart5.dta
+  obs:           154                          Fictional heart attack data
+ vars:             6                          19 Jun 2016 10:50
+ size:         1,848                          
+Sorted by: 
+
+. summarize
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+      attack |        154    .4480519    .4989166          0          1
+      smokes |        154    .4155844    .4944304          0          1
+         age |        142    56.43324    11.59131   20.73613   83.78423
+         bmi |        126    25.23523    4.029325   17.22643   38.24214
+      female |        154    .2467532    .4325285          0          1
+-------------+---------------------------------------------------------
+      hsgrad |        154    .7532468    .4325285          0          1
+
+</code></pre>
+<p>
+We see from the summary that both <code>age</code> and <code>bmi</code> have some missing data.
+</p>
+</div>
+<div id="setting-up-data" class="section level2">
+<h2><span class="header-section-number">8.3</span> Setting up data</h2>
+<p>
+We need to tell Stata how we’re going to be doing the imputations. First, use the <code>mi set</code> command to determine how the multiple data sets will be stored. Really which option you choose is up to you, I prefer to “<code>flong</code>” option, where each imputed data set is stacked on top of each other. If you have very large data, you might prefer “<code>wide</code>”, “<code>mlong</code>” or “<code>mlongsep</code>”, the last of which stores each imputed data set in a separate file. See <code>help mi styles</code> for more details. (Ultimately the decision is not that important, as you can switch later using <code>mi convert &lt;new style&gt;</code>.)
+</p>
+<pre><code>. mi set flong
+
+</code></pre>
+<p>
+Next, we need to tell Stata what each variable will be used for. The options are
+</p>
+<ul>
+<li>
+imputed: A variable with missing data that needs to be imputed.
+</li>
+<li>
+regular: Any variable that is complete or does not need imputation.
+</li>
+</ul>
+<p>
+Technically we only need specify the imputed variables, as anything unspecified is assumed to be regular. We saw <a href="multiple-imputation.html#mi">above</a> that <code>age</code> and <code>bmi</code> have missing values:
+</p>
+<pre><code>. mi register imputed age bmi
+(28 m=0 obs. now marked as incomplete)
+
+</code></pre>
+<p>
+We can examine our setup with <code>mi describe</code>:
+</p>
+<pre><code>. mi describe
+
+  Style:  flong
+          last mi update 03oct2017 16:36:54, 0 seconds ago
+
+  Obs.:   complete          126
+          incomplete         28  (M = 0 imputations)
+          ---------------------
+          total             154
+
+  Vars.:  imputed:  2; age(12) bmi(28)
+
+          passive:  0
+
+          regular:  0
+
+          system:   3; _mi_m _mi_id _mi_miss
+
+         (there are 4 unregistered variables; attack smokes female hsgrad)
+
+</code></pre>
+<p>
+We see 126 complete observations with 28 incomplete, the two variables to be imputed, and the 4 unregistered variables which will automatically be registered as regular.
+</p>
+<div id="imputing-transformations" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Imputing transformations</h3>
+<p>
+What happens if you had a transform of a variable? Say you had a variable for salary, and wanted to use a log transformation?
+</p>
+<p>
+You can find literature suggesting either transforming first and then imputing, or imputing first and then transforming. Our suggestion, following current statistical literature is to <strong>transform first, impute second</strong>.(<a href="univariate-and-some-bivariate-analysis.html#citations">Hippel 2009</a>)
+</p>
+<p>
+Stata technically supports the other option via <code>mi register passive</code>, but we don’t recommend it’s usage. Instead, transform your original data, then flag both the variable and its transformations as “imputed”
+</p>
+</div>
+</div>
+<div id="performing-the-imputation" class="section level2">
+<h2><span class="header-section-number">8.4</span> Performing the imputation</h2>
+<p>
+Now that we’ve got the MI set up, we can perform the actual procedure. There are a very wide number of variations on how this imputation can be done (including defining your own!). You can see these as the options to <code>mi impute</code>. We’ll just be focusing on the “chained” approach, which is a good approach to start with.
+</p>
+<p>
+The syntax for this is a bit complicated, but straightforward once you understand it.
+</p>
+<pre><code>mi impute chained (&lt;method 1&gt;) &lt;variables to impute with method 1&gt; ///
+                  (&lt;method 2&gt;) &lt;variables to impute with method 2&gt; ///
+                  = &lt;all non-imputed variables&gt;, add(&lt;number of imputations&gt;)
+</code></pre>
+<p>
+The “<methods>” are essentially what type of model you would use to predict the outcome. For example, for continuous data, use <code>regress</code>. For binary data use <code>logit</code>. It also supports <code>ologit</code> (ordinal logistic regression, multiple categories with ordering), <code>mlogit</code> (multinomial logistic regression, multiple categories without ordering), <code>poisson</code> or <code>nbreg</code> (poisson regression or negative binomial regression, for count data), as well as some others. See <code>help mi impute chained</code> under “uvmethod” for the full list.
+</p>
+<p>
+The <code>add( )</code> option specifies how many imputed data sets to generate, we’ll discuss <a href="multiple-imputation.html#choosing-the-number-of-imputations">below</a> how to choose this.
+</p>
+<p>
+Continuing with our example might make this more clear. To perform our imputation, we would use
+</p>
+<pre><code>. mi impute chained (regress) bmi age = attack smokes female hsgrad, add(5)
+note: missing-value pattern is monotone; no iteration performed
+
+Conditional models (monotone):
+               age: regress age attack smokes female hsgrad
+               bmi: regress bmi age attack smokes female hsgrad
+
+Performing chained iterations ...
+
+Multivariate imputation                     Imputations =        5
+Chained equations                                 added =        5
+Imputed: m=1 through m=5                        updated =        0
+
+Initialization: monotone                     Iterations =        0
+                                                burn-in =        0
+
+               bmi: linear regression
+               age: linear regression
+
+------------------------------------------------------------------
+                   |               Observations per m             
+                   |----------------------------------------------
+          Variable |   Complete   Incomplete   Imputed |     Total
+-------------------+-----------------------------------+----------
+               bmi |        126           28        28 |       154
+               age |        142           12        12 |       154
+------------------------------------------------------------------
+(complete + incomplete = total; imputed is the minimum across m
+ of the number of filled-in observations.)
+
+</code></pre>
+<p>
+Since both <code>bmi</code> and <code>age</code> are continuous variables, we use method <code>regress</code>. Imagine if we were also imputing <code>smokes</code>, a binary variable. Then the imputation (after running <code>mi register imputed smokes</code>) would be:
+</p>
+<pre><code>mi impute chained (regress) bmi age (logit) smokes = attack female hsgrad, add(5)
+</code></pre>
+<p>
+Here, <code>regress</code> was used for <code>bmi</code> and <code>age</code>, and <code>logit</code> was used for <code>smokes</code>.
+</p>
+<div id="choosing-the-number-of-imputations" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Choosing the number of imputations</h3>
+<p>
+Classic literature has suggested you need only 5 imputations to obtain valid results, though some modern literature (<a href="univariate-and-some-bivariate-analysis.html#citations">Graham 2007</a>) suggest needing many more, 20 or even 100. If your data is not too large, 100 is a great choice. You can always try running the entire procedure with 5 imputations twice. If your results differ, you should try running many more imputations to stabilize the estimates.
+</p>
+</div>
+<div id="mi-variables" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> <code><em>mi</em></code> variables</h3>
+<p>
+After you’ve performed your imputation<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a>, three new variables are added to your data, and your data gets <span class="math inline">\(M\)</span> additional copies of itself. In the example <a href="multiple-imputation.html#performing-the-imputation">above</a>, we added 5 imputations, so there are a total of 6 copies of the data - the raw data (with the missing values), and 5 copies with imputed values. The new variables added are:
+</p>
+<ul>
+<li>
+<code>_mi_id</code> is the ID number of each row corresponding to its position in the original data
+</li>
+<li>
+<code>_mi_miss</code> flags whether the row had missing data originally.
+</li>
+<li>
+<code>_mi_m</code> is which data-set we’re looking at. 0 represents the unimputed data, 1 represents the first imputation, 2 the second, etc.
+</li>
+</ul>
+</div>
+</div>
+<div id="analyzing-mi-data" class="section level2">
+<h2><span class="header-section-number">8.5</span> Analyzing <code>mi</code> data</h2>
+<p>
+Now that we’ve got the data set up for multiple imputations, and done the imputation, most of the hard part is over. Analyzing MI data is straightforward, usually. (When it isn’t, you can do this <a href="multiple-imputation.html#manual-mi">manually</a>.)
+</p>
+<p>
+Basically, take any analysis command you would normally run, e.g. <code>regress y x</code>, and preface it by <code>mi estimate:</code>. Let’s try to predict the odds of a heart attack based upon other characteristics in the data. We would run a <a href="regression.html#logistic-regression">logistic regression model</a>,
+</p>
+<pre><code>logit attack smokes age bmi female hsgrad
+</code></pre>
+<p>
+So to run it with multiple imputations:
+</p>
+<pre><code>. mi estimate: logit attack smokes age bmi female hsgrad
+
+Multiple-imputation estimates                   Imputations       =          5
+Logistic regression                             Number of obs     =        154
+                                                Average RVI       =     0.0966
+                                                Largest FMI       =     0.2750
+DF adjustment:   Large sample                   DF:     min       =      62.83
+                                                        avg       =  53,215.09
+                                                        max       = 146,351.98
+Model F test:       Equal FMI                   F(   5, 1243.8)   =       2.90
+Within VCE type:          OIM                   Prob &gt; F          =     0.0130
+
+------------------------------------------------------------------------------
+      attack |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+      smokes |   1.163433    .352684     3.30   0.001       .47217    1.854695
+         age |   .0284627   .0164787     1.73   0.086    -.0040684    .0609938
+         bmi |   .0800942   .0491285     1.63   0.108    -.0180864    .1782749
+      female |  -.0970499   .4091373    -0.24   0.812    -.8989527    .7048528
+      hsgrad |     .10968   .3991282     0.27   0.783    -.6726034    .8919634
+       _cons |  -4.390356   1.598513    -2.75   0.006    -7.531833   -1.248878
+------------------------------------------------------------------------------
+
+</code></pre>
+<p>
+We see a single model, even though 5 models (one for each imputation) were run in the background. The results from these models were pooled using something called “Rubin’s rules” to produce a single model output.
+</p>
+<p>
+We see a few additional fit summaries about the multiple imputation that aren’t super relevant; but otherwise all the <a href="regression.html#fitting-the-logistic-model">existing interpretations</a> hold. Note that an F-test instead of <span class="math inline">\(\chi^2\)</span> test is run, but still tests the same hypothesis that all coefficients are identically zero. Among the coefficients, we see that smokers have significantly higher odds of having a heart attack, and there’s some weak evidence that age plays a role.
+</p>
+<div id="mi-postestimation" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> MI Postestimation</h3>
+<p>
+In general, most postestimation commands will not work after MI. The general approach is to do the MI <a href="multiple-imputation.html#manual-mi">manually</a> and run the postestimation for each imputation. One exception is that <code>mi predict</code> works how <code>predict</code> does.
+</p>
+</div>
+</div>
+<div id="manual-mi" class="section level2">
+<h2><span class="header-section-number">8.6</span> Manual MI</h2>
+<p>
+Since we set the data as <a href="multiple-imputation.html#setting-up-data"><code>flong</code></a>, each imputed data set lives in the data with a separate <a href="multiple-imputation.html#mi-variables"><code>_mi_m</code></a> value. You can conditionally run analyses on each, e.g.
+</p>
+<pre><code>logit attack smokes age bmi female hsgrad if _mi_m == 0
+</code></pre>
+<p>
+to run the model on only the original data.
+</p>
+<p>
+It is tedious to do this over all imputed data, so instead we can run <code>mi xeq:</code> as a prefix to run a command on each separate data set. This is similar to <code>mi estimate:</code> except without the pooling.
+</p>
+<pre><code>. mi xeq: summ age
+
+m=0 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        142    56.43324    11.59131   20.73613   83.78423
+
+m=1 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        154    56.20732    11.61166   20.73613   83.78423
+
+m=2 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        154    55.79566    11.88629    16.9347   83.78423
+
+m=3 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        154    56.35074    11.50551   20.73613   83.78423
+
+m=4 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        154    56.35633     11.8424   20.73613   86.11715
+
+m=5 data:
+-&gt; summ age
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         age |        154    56.40651    11.44234   20.73613   83.78423
+
+</code></pre>
+<p>
+This can also be useful if the analysis you want to execute is not supported by <code>mi estimate</code> yet.
+</p>
+<div id="rubins-rules" class="section level3">
+<h3><span class="header-section-number">8.6.1</span> Rubin’s rules</h3>
+<p>
+If you wanted to pool the results yourself, you can obtain an estimate for the pooled parameter by simple average across imputations. The formula for variance is slightly more complicated so we don’t produce it here, however it can be found in the “Methods and formulas” section of the MI manual (run <code>help mi estimate</code>, click on “[MI] mi estimate” at the top of the file to open the manual.
+</p>
+</div>
+</div>
+<div id="removing-the-mi-data" class="section level2">
+<h2><span class="header-section-number">8.7</span> Removing the MI data</h2>
+<p>
+Ideally, you should save the data (or <code>preserve</code> it) prior to imputing, so you can easily recover the unimputed data if you wish. If you wanted to return to the original data, the following should work:
+</p>
+<pre><code>mi unset
+drop if mi_m != 0
+drop mi_*
+</code></pre>
+<p>
+The first tells Stata not to treat it as imputed anymore; the second drops all imputed data sets; the third removes the MI variables that were generated.
+</p>
+<p>
+This only works for <code>mi set flong</code>; if you use another method, you can tweak the above or use <code>mi convert flong</code> to switch to “flong” first.
+</p>
+</div>
+<div id="survey-and-multiple-imputation" class="section level2">
+<h2><span class="header-section-number">8.8</span> Survey and multiple imputation</h2>
+<p>
+Just a quick note, if you want to utilize by complex survey design and multiple imputation simultaneously, proper ordering needs to be given. Note that only weights play a role in multiple imputation.
+</p>
+<pre><code>mi set ...
+mi svyset ...
+mi impute ... [pweight = weight]
+mi estimate: svy: regress ...
+</code></pre>
+<p>
+There has been some discussion that imputation should not take into account any complex survey design features (because you want the imputation to reflect the sample, not necessarily the population). See for example <a href="univariate-and-some-bivariate-analysis.html#citations">Little and Vartivarian 2003</a>. If you follow this advice, simply exclude the <code>[pweight = …]</code> part of the <code>mi impute</code> command. In either case, estimation commands still need both the <code>mi estimate: svy:</code> prefixes in that order.
+</p>
+</div>
+<div id="citations-1" class="section level2">
+<h2><span class="header-section-number">8.9</span> Citations</h2>
+<ul>
+<li>
+Little, RJ, and S Vartivarian. 2003. On weighting the rates in non-response weights. Stat Med 22, no. 9: 1589-1599.
+</li>
+<li>
+Von Hippel, Paul T. “How to impute interactions, squares, and other transformed variables.” Sociological Methodology 39.1 (2009): 265-291.
+</li>
+</ul>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="16">
+<li id="fn16"><p>There is technically Little’s MCAR test to compare MCAR vs MAR, but the majority of imputation methods require only MAR, not MCAR, so it’s of limited use. Additionally, it is not yet supported in Stata.<a href="multiple-imputation.html#fnref16">↩</a></p></li>
+<li id="fn17"><p>Technically this happens as soon as you run <code>mi set</code>, but they’re not interesting until after <code>mi impute</code>.<a href="multiple-imputation.html#fnref17">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="survey-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

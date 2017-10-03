@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Intermediate Stata (Statistical Modeling)</title>
+  <meta name="description" content="Intermediate Stata (Statistical Modeling)">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intermediate Stata (Statistical Modeling)" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2017-10-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="visualization.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Intermediate Stata (Statistical Modeling)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.3</b> Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="summarizing-data.html"><a href="summarizing-data.html"><i class="fa fa-check"></i><b>2</b> Summarizing Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="summarizing-data.html"><a href="summarizing-data.html#describe-summarize-codebook"><i class="fa fa-check"></i><b>2.1</b> <code>describe</code>, <code>summarize</code>, <code>codebook</code></a></li>
+<li class="chapter" data-level="2.2" data-path="summarizing-data.html"><a href="summarizing-data.html#mean"><i class="fa fa-check"></i><b>2.2</b> <code>mean</code></a></li>
+<li class="chapter" data-level="2.3" data-path="summarizing-data.html"><a href="summarizing-data.html#estimation-commands"><i class="fa fa-check"></i><b>2.3</b> Estimation Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="summarizing-data.html"><a href="summarizing-data.html#postestimation-commands"><i class="fa fa-check"></i><b>2.3.1</b> Postestimation commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="summarizing-data.html"><a href="summarizing-data.html#storing-and-restoring-estimation-commands"><i class="fa fa-check"></i><b>2.3.2</b> Storing and restoring estimation commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="summarizing-data.html"><a href="summarizing-data.html#tab"><i class="fa fa-check"></i><b>2.4</b> <code>tab</code></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="summarizing-data.html"><a href="summarizing-data.html#two-way-tables"><i class="fa fa-check"></i><b>2.4.1</b> Two-way tables</a></li>
+<li class="chapter" data-level="2.4.2" data-path="summarizing-data.html"><a href="summarizing-data.html#generating-dummy-variables"><i class="fa fa-check"></i><b>2.4.2</b> Generating dummy variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="summarizing-data.html"><a href="summarizing-data.html#correlate"><i class="fa fa-check"></i><b>2.5</b> <code>correlate</code></a><ul>
+<li class="chapter" data-level="2.5.1" data-path="summarizing-data.html"><a href="summarizing-data.html#varlists-in-stata"><i class="fa fa-check"></i><b>2.5.1</b> varlists in Stata</a></li>
+<li class="chapter" data-level="2.5.2" data-path="summarizing-data.html"><a href="summarizing-data.html#pairwise-completion-vs-complete-case"><i class="fa fa-check"></i><b>2.5.2</b> Pairwise completion vs complete case</a></li>
+<li class="chapter" data-level="2.5.3" data-path="summarizing-data.html"><a href="summarizing-data.html#spearman-correlation"><i class="fa fa-check"></i><b>2.5.3</b> Spearman correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="summarizing-data.html"><a href="summarizing-data.html#exercise-1"><i class="fa fa-check"></i><b>2.6</b> Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Visualization</a><ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#the-graph-command"><i class="fa fa-check"></i><b>3.1</b> The <code>graph</code> command</a></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#other-graphs"><i class="fa fa-check"></i><b>3.2</b> Other graphs</a></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#plotting-by-group"><i class="fa fa-check"></i><b>3.3</b> Plotting by group</a></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#getting-help-on-graphs"><i class="fa fa-check"></i><b>3.4</b> Getting help on Graphs</a></li>
+<li class="chapter" data-level="3.5" data-path="visualization.html"><a href="visualization.html#displaying-multiple-graphs-simultaneously"><i class="fa fa-check"></i><b>3.5</b> Displaying multiple graphs simultaneously</a></li>
+<li class="chapter" data-level="3.6" data-path="visualization.html"><a href="visualization.html#exercise-2"><i class="fa fa-check"></i><b>3.6</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html"><i class="fa fa-check"></i><b>4</b> Univariate (and some Bivariate) Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#one-sample-t-test"><i class="fa fa-check"></i><b>4.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="4.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.2</b> Two-sample t-test</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#independent"><i class="fa fa-check"></i><b>4.2.1</b> Independent</a></li>
+<li class="chapter" data-level="4.2.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#paired"><i class="fa fa-check"></i><b>4.2.2</b> Paired</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#chi-square-test"><i class="fa fa-check"></i><b>4.3</b> Chi-square test</a></li>
+<li class="chapter" data-level="4.4" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#exercise-3"><i class="fa fa-check"></i><b>4.4</b> Exercise 3</a></li>
+<li class="chapter" data-level="4.5" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#citations"><i class="fa fa-check"></i><b>4.5</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>5</b> Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="regression.html"><a href="regression.html#terminology"><i class="fa fa-check"></i><b>5.1</b> Terminology</a></li>
+<li class="chapter" data-level="5.2" data-path="regression.html"><a href="regression.html#linear-regression"><i class="fa fa-check"></i><b>5.2</b> Linear Regression</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="regression.html"><a href="regression.html#fitting-the-model"><i class="fa fa-check"></i><b>5.2.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="5.2.2" data-path="regression.html"><a href="regression.html#including-categorical-predictors"><i class="fa fa-check"></i><b>5.2.2</b> Including categorical predictors</a></li>
+<li class="chapter" data-level="5.2.3" data-path="regression.html"><a href="regression.html#interactions"><i class="fa fa-check"></i><b>5.2.3</b> Interactions</a></li>
+<li class="chapter" data-level="5.2.4" data-path="regression.html"><a href="regression.html#robust-standard-errors"><i class="fa fa-check"></i><b>5.2.4</b> Robust standard errors</a></li>
+<li class="chapter" data-level="5.2.5" data-path="regression.html"><a href="regression.html#assumptions"><i class="fa fa-check"></i><b>5.2.5</b> Assumptions</a></li>
+<li class="chapter" data-level="5.2.6" data-path="regression.html"><a href="regression.html#miscellaneous-concerns"><i class="fa fa-check"></i><b>5.2.6</b> Miscellaneous concerns</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="regression.html"><a href="regression.html#exercise-4"><i class="fa fa-check"></i><b>5.3</b> Exercise 4</a></li>
+<li class="chapter" data-level="5.4" data-path="regression.html"><a href="regression.html#logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="regression.html"><a href="regression.html#fitting-the-logistic-model"><i class="fa fa-check"></i><b>5.4.1</b> Fitting the logistic model</a></li>
+<li class="chapter" data-level="5.4.2" data-path="regression.html"><a href="regression.html#categorical-variables-and-interactions"><i class="fa fa-check"></i><b>5.4.2</b> Categorical Variables and Interactions</a></li>
+<li class="chapter" data-level="5.4.3" data-path="regression.html"><a href="regression.html#logistic-regression-assumptions"><i class="fa fa-check"></i><b>5.4.3</b> Logistic regression assumptions</a></li>
+<li class="chapter" data-level="5.4.4" data-path="regression.html"><a href="regression.html#logistic-goodness-of-fit"><i class="fa fa-check"></i><b>5.4.4</b> Logistic goodness of fit</a></li>
+<li class="chapter" data-level="5.4.5" data-path="regression.html"><a href="regression.html#separation"><i class="fa fa-check"></i><b>5.4.5</b> Separation</a></li>
+<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous."><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous.</a></li>
+<li class="chapter" data-level="5.4.7" data-path="regression.html"><a href="regression.html#logit-vs-logistic"><i class="fa fa-check"></i><b>5.4.7</b> <code>logit</code> vs <code>logistic</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#other-regression-models"><i class="fa fa-check"></i><b>5.5</b> Other regression models</a></li>
+<li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
+<li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
+<li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
+<li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
+<li class="chapter" data-level="6.5" data-path="mixed-models.html"><a href="mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>6.5</b> Miscellaneous</a></li>
+<li class="chapter" data-level="6.6" data-path="mixed-models.html"><a href="mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>6.6</b> Convergence issues</a></li>
+<li class="chapter" data-level="6.7" data-path="mixed-models.html"><a href="mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>6.7</b> Logistic Mixed Model</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="mixed-models.html"><a href="mixed-models.html#meqrlogit"><i class="fa fa-check"></i><b>6.7.1</b> <code>meqrlogit</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="mixed-models.html"><a href="mixed-models.html#exercise-6"><i class="fa fa-check"></i><b>6.8</b> Exercise 6</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="survey-data.html"><a href="survey-data.html"><i class="fa fa-check"></i><b>7</b> Survey Data</a><ul>
+<li class="chapter" data-level="7.1" data-path="survey-data.html"><a href="survey-data.html#definitions"><i class="fa fa-check"></i><b>7.1</b> Definitions</a></li>
+<li class="chapter" data-level="7.2" data-path="survey-data.html"><a href="survey-data.html#describing-the-survey"><i class="fa fa-check"></i><b>7.2</b> Describing the survey</a></li>
+<li class="chapter" data-level="7.3" data-path="survey-data.html"><a href="survey-data.html#subset-analyses-for-complex-sample-survey-data"><i class="fa fa-check"></i><b>7.3</b> Subset analyses for complex sample survey data</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="multiple-imputation.html"><a href="multiple-imputation.html"><i class="fa fa-check"></i><b>8</b> Multiple Imputation</a><ul>
+<li class="chapter" data-level="8.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#missing-at-random"><i class="fa fa-check"></i><b>8.1</b> Missing at random</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.3</b> Setting up data</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#imputing-transformations"><i class="fa fa-check"></i><b>8.3.1</b> Imputing transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.4</b> Performing the imputation</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#choosing-the-number-of-imputations"><i class="fa fa-check"></i><b>8.4.1</b> Choosing the number of imputations</a></li>
+<li class="chapter" data-level="8.4.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-variables"><i class="fa fa-check"></i><b>8.4.2</b> <code><em>mi</em></code> variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.5</b> Analyzing <code>mi</code> data</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-postestimation"><i class="fa fa-check"></i><b>8.5.1</b> MI Postestimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.6</b> Manual MI</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.6.1</b> Rubin’s rules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.7</b> Removing the MI data</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.8</b> Survey and multiple imputation</a></li>
+<li class="chapter" data-level="8.9" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.9</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> Exercise solutions</a><ul>
+<li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1-1"><i class="fa fa-check"></i><b>9.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="9.2" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2-1"><i class="fa fa-check"></i><b>9.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="9.3" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3-1"><i class="fa fa-check"></i><b>9.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="9.4" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4-1"><i class="fa fa-check"></i><b>9.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="9.5" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5-1"><i class="fa fa-check"></i><b>9.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="9.6" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6-1"><i class="fa fa-check"></i><b>9.6</b> Exercise 6</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intermediate Stata (Statistical Modeling)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="summarizing-data" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Summarizing Data</h1>
+<p>
+Before we consider modeling the data in any meaningful way, it is important to explore the data to get some sense of what the data looks like, as certain modeling decisions will depend on the structure of the data. This chapter and <a href="visualization.html">the next</a> will cover how to examine and visualize the data.
+</p>
+<p>
+We will be using the built-in data set “auto” for a lot of the examples. If you’re not familiar with the <code>sysuse</code> command, it functions similarly to <code>use</code>, except only loads one of the several built-in Stata data sets.
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+</code></pre>
+<p>
+The “auto” data set contains characteristics on a number of cars from 1978.
+</p>
+<div id="describe-summarize-codebook" class="section level2">
+<h2><span class="header-section-number">2.1</span> <code>describe</code>, <code>summarize</code>, <code>codebook</code></h2>
+<p>
+The majority of the Stata modeling commands require all variables to be numeric. String variables can be used in some places, but there are plenty of times when you might expect them to work, but they don’t. As a result, I recommend converting all categorical variables into numeric. To help with this, the <code>describe</code> command can tell us what variables are string and which aren’t.
+</p>
+<pre><code>. describe
+
+Contains data from /Applications/Stata/ado/base/a/auto.dta
+  obs:            74                          1978 Automobile Data
+ vars:            12                          13 Apr 2016 17:45
+ size:         3,182                          (_dta has notes)
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)
+rep78           int     %8.0g                 Repair Record 1978
+headroom        float   %6.1f                 Headroom (in.)
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+displacement    int     %8.0g                 Displacement (cu. in.)
+gear_ratio      float   %6.2f                 Gear Ratio
+foreign         byte    %8.0g      origin     Car type
+-------------------------------------------------------------------------------
+Sorted by: foreign
+
+</code></pre>
+<p>
+Here we can see that “make” is a string; but make is unique per row (it identifies the make and model of each car) so it’s not something we’re going to use in the model. If you wanted to use string functions (see <code>help string functions</code> for details) to extract out the manufacturer of each car (e.g. there are 7 Buicks in the data), that resultant “manufacturer” variable would be something we’d need to convert to a numeric. The main tools you’d need would be <code>destring</code> (which converts numeric values saved as strings into numbers) and <code>encode</code> (which converts strings to numerics with appropriate value labels).
+</p>
+<p>
+<code>describe</code> is also useful to get a sense of the size of your data.
+</p>
+<p>
+Once we’ve taken a look at the structure of the data, we can start exploring each variable. The <code>summarize</code> and <code>codebook</code> commands contains almost the same information, presented in slightly different ways. It can be useful to look at both. For example,
+</p>
+<pre><code>. summ price, detail
+
+                            Price
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%         3291           3291
+ 5%         3748           3299
+10%         3895           3667       Obs                  74
+25%         4195           3748       Sum of Wgt.          74
+
+50%       5006.5                      Mean           6165.257
+                        Largest       Std. Dev.      2949.496
+75%         6342          13466
+90%        11385          13594       Variance        8699526
+95%        13466          14500       Skewness       1.653434
+99%        15906          15906       Kurtosis       4.819188
+
+. codebook price
+
+-------------------------------------------------------------------------------
+price                                                                     Price
+-------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [3291,15906]                 units:  1
+         unique values:  74                       missing .:  0/74
+
+                  mean:   6165.26
+              std. dev:    2949.5
+
+           percentiles:        10%       25%       50%       75%       90%
+                              3895      4195    5006.5      6342     11385
+
+</code></pre>
+<p>
+Things to look for here include
+</p>
+<ul>
+<li>
+Values which are outside of expected values. The <code>summarize</code> commands gives the 1st and 99th percentiles (1% and 99% of values are below those thresholds, respectively) and <code>codebook</code> gives the range. If, for example, we saw a minimum value of -203 or a maximum value of 145200 (keep in mind these are 1978 dollars!), that’s an indication that there is an issue with the data, likely a mistake.
+</li>
+<li>
+The mean is as expected. If this is higher or lower than expected, it might be an indication of skew or the existence of outliers. If it is very close to the minimum or maximum value, perhaps you have a point mass (e.g. if you polled 18-21 year old’s on their number of children, there would be a lot of 0’s but a few non-zeros).
+</li>
+<li>
+If the standard deviation is very small (relative to the mean), then the variable has very consistent values. A standard deviation of 0 indicates a constant.
+</li>
+<li>
+The <code>codebook</code> reports the number of missing; if you have missing data, double check that it is not an error in the data. Perhaps <a href="multiple-imputation.html">multiple imputation</a> is needed.
+</li>
+<li>
+If the variable is categorical (e.g. race), is the number of unique entries reported in the <code>codebook</code> as expected?
+</li>
+</ul>
+</div>
+<div id="mean" class="section level2">
+<h2><span class="header-section-number">2.2</span> <code>mean</code></h2>
+<p>
+The <code>mean</code> command gives summary statistics on the mean of a variable.
+</p>
+<pre><code>. mean price
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+       price |   6165.257   342.8719      5481.914      6848.6
+--------------------------------------------------------------
+
+</code></pre>
+<p>
+These are characteristics of the estimated mean of the “price” variable. The standard deviation reported from the <code>summarize</code> command above represents the variability among individual cars; the standard error reported by <code>mean</code> the variability of <em>means</em>: if we were to repeatedly draw samples of size 74, the standard error is a measure of the variability of the means from all those samples.
+</p>
+<p>
+The confidence interval is interpreted as if we were to continue drawing those samples of size 74, we would expect 95% of those samples to have an estimated mean within those bounds. It is <em>not</em> that we’re 95% confident that the true population mean falls in that range - either it does or it doesn’t!
+</p>
+</div>
+<div id="estimation-commands" class="section level2">
+<h2><span class="header-section-number">2.3</span> Estimation Commands</h2>
+<p>
+The introduction of <code>mean</code> allows us to discuss estimation commands. An estimation command is any command that fits a statistical model - some of these are obvious such as <code>regress</code> for linear regression, but others such as <code>mean</code> which we just ran are also estimation commands because it is estimating a confidence interval. <code>summarize</code> is not because it only provides statistics about the current sample instead of making inference into the population.
+</p>
+<p>
+Almost all estimation commands have the same general syntax:
+</p>
+<pre><code>command varlist [if] [in] [weight] [,options]
+</code></pre>
+<p>
+The sections inside <code>[</code> and <code>]</code> are optional. The <code>command</code> can sometimes consist of a main command and one or more subcommands. The <code>varlist</code> can be empty, have a single entry, or have multiple entries (the order of which is sometimes of importance - generally the first is some outcome or dependent variable and the rest are predictors or independent variables).<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
+</p>
+<p>
+Estimation commands are stored after they are run, and exist regardless of how many other non-estimation commands are run in between them. These non-estimation commands include data manipulation and <a href="summarizing-data.html#postestimation-commands">postestimation commands</a>. As soon as another estimation command is run, the first is dropped and the new one is saved.
+</p>
+<p>
+This allows interesting things such as replaying a command (calling the estimation command again without any <code>varlist</code> to re-display it’s results) even if the data is gone!
+</p>
+<pre><code>. clear
+
+. list
+
+. mean
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+       price |   6165.257   342.8719      5481.914      6848.6
+--------------------------------------------------------------
+
+</code></pre>
+<p>
+A larger benefit of this is that if you are fitting a model on one data set and want to get predicted values on another, you could do something like this (this is pseudo-code, not real Stata!):
+</p>
+<pre><code>use fitting_data
+model y x1 x2
+use newdata, clear
+predict fitted
+</code></pre>
+<div id="postestimation-commands" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Postestimation commands</h3>
+<p>
+Since the last estimation command is saved, any commands which need to reference it (called postestimation commands) do so inherently, no need to specify. For example, let’s reload the data and run <code>mean</code> on a few variables.
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+. mean mpg headroom length
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+         mpg |    21.2973   .6725511       19.9569    22.63769
+    headroom |   2.993243   .0983449      2.797242    3.189244
+      length |   187.9324   2.588409      182.7737    193.0911
+--------------------------------------------------------------
+
+</code></pre>
+<p>
+Let’s say we want to obtain the correlation matrix<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>
+</p>
+<pre><code>. estat vce, corr
+
+Correlation matrix of coefficients of mean model
+
+        e(V) |      mpg  headroom    length 
+-------------+------------------------------
+         mpg |   1.0000                     
+    headroom |  -0.4138    1.0000           
+      length |  -0.7958    0.5163    1.0000 
+
+</code></pre>
+<p>
+Here we see that both <code>length</code> and <code>headroom</code> are negatively correlated with <code>mpg</code>; as the car gets larger, its mileage decreases. Headroom and length are positively correlated, so cars aren’t just growing in one direction!
+</p>
+<p>
+The <code>estat</code> command is somewhat generic, we will see other uses of it later.
+</p>
+<p>
+Similar to how you can get help with any command with help, e.g. <code>help mean</code>, you can get a list of all postestimation commands that a given estimation command supports:
+</p>
+<pre><code>help mean postestimation
+</code></pre>
+<p>
+There is also a link to the postestimation page in the help for the estimation command.
+</p>
+</div>
+<div id="storing-and-restoring-estimation-commands" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Storing and restoring estimation commands</h3>
+<p>
+The obvious downside to Stata’s approach to saving the most recent estimation command is that you lose all earlier commands. If you have only a limited number of commands and each is fast, this isn’t a big deal. However, with some more <a href="mixed-models.html">advanced</a> <a href="multiple-imputation.html">approaches</a>, modeling can become very slow, so you may not want to lose the results. Stata has a solution for this, allowing us to store and recall estimation commands without having to re-run them. This has an obvious parallel to the <code>preserve</code>/<code>restore</code> commands that affect the data.
+</p>
+<p>
+You have the choice of saving the results temporarily (in memory) or permanently (to a file). There are the obvious pro’s and con’s to each approach. For these notes I will focus primarily on storing the results in memory, but I will point out where the commands differ if saving to a file. Let’s run a fresh <code>mean</code> call to work with. The <code>estimates</code> command will be used.
+</p>
+<pre><code>. mean price mpg
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+       price |   6165.257   342.8719      5481.914      6848.6
+         mpg |    21.2973   .6725511       19.9569    22.63769
+--------------------------------------------------------------
+
+. estimates query
+(active results produced by mean; not yet stored)
+
+</code></pre>
+<p>
+The <code>query</code> subcommand tells us what estimation command was last run, and whether it has already been saved. Here it has not. Let’s save these results.
+</p>
+<pre><code>. estimates store mean1
+
+</code></pre>
+<p>
+To save to a file, use <code>estimates save</code> instead. Now let’s run a second <code>mean</code> commands.
+</p>
+<pre><code>. mean mpg headroom length
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+         mpg |    21.2973   .6725511       19.9569    22.63769
+    headroom |   2.993243   .0983449      2.797242    3.189244
+      length |   187.9324   2.588409      182.7737    193.0911
+--------------------------------------------------------------
+
+. est store mean2
+
+. est query
+(active results produced by mean; also stored as mean2)
+
+</code></pre>
+<p>
+Now <code>query</code> is telling us that the current estimation commands are (obviously) stored as “mean2”. Let’s use <code>estimates restore</code> to jump between the two. (If saving to a file, use <code>estimates use</code> instead.)
+</p>
+<pre><code>. est restore mean1
+(results mean1 are active now)
+
+. estat vce, corr
+
+Correlation matrix of coefficients of mean model
+
+        e(V) |    price       mpg 
+-------------+--------------------
+       price |   1.0000           
+         mpg |  -0.4686    1.0000 
+
+. est query
+(active results produced by mean; also stored as mean1)
+
+</code></pre>
+<p>
+To “replay” an estimation command (re-display the results without re-running the model), you can either restore it and call the blank command again:
+</p>
+<pre><code>. est restore mean2
+(results mean2 are active now)
+
+. mean
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+         mpg |    21.2973   .6725511       19.9569    22.63769
+    headroom |   2.993243   .0983449      2.797242    3.189244
+      length |   187.9324   2.588409      182.7737    193.0911
+--------------------------------------------------------------
+
+</code></pre>
+<p>
+or use <code>estimates replay</code> directly:
+</p>
+<pre><code>. est query
+(active results produced by mean; also stored as mean2)
+
+. est replay mean1
+
+-------------------------------------------------------------------------------
+Model mean1
+-------------------------------------------------------------------------------
+
+Mean estimation                   Number of obs   =         74
+
+--------------------------------------------------------------
+             |       Mean   Std. Err.     [95% Conf. Interval]
+-------------+------------------------------------------------
+       price |   6165.257   342.8719      5481.914      6848.6
+         mpg |    21.2973   .6725511       19.9569    22.63769
+--------------------------------------------------------------
+
+</code></pre>
+<p>
+One use of stored estimates that can be useful is creating a table to include all the results.
+</p>
+<pre><code>. est table mean1 mean2
+
+----------------------------------------
+    Variable |   mean1        mean2     
+-------------+--------------------------
+       price |  6165.2568               
+         mpg |  21.297297    21.297297  
+    headroom |               2.9932432  
+      length |               187.93243  
+----------------------------------------
+
+</code></pre>
+<p>
+If you are familiar with regression, you should be able to see how useful this might be!
+</p>
+<p>
+Finally, we can see all saved commands with <code>dir</code>, drop a specific estimation command with <code>drop</code>, or remove all with <code>clear</code>:
+</p>
+<pre><code>. est dir
+
+-------------------------------------------------------
+        name | command      depvar       npar  title 
+-------------+-----------------------------------------
+       mean1 | mean         Mean            2  
+       mean2 | mean         Mean            3  
+-------------------------------------------------------
+
+. est drop mean1
+
+. est dir
+
+-------------------------------------------------------
+        name | command      depvar       npar  title 
+-------------+-----------------------------------------
+       mean2 | mean         Mean            3  
+-------------------------------------------------------
+
+. est clear
+
+. est dir
+
+</code></pre>
+</div>
+</div>
+<div id="tab" class="section level2">
+<h2><span class="header-section-number">2.4</span> <code>tab</code></h2>
+<p>
+Continuing on with exploring the data, categorical variables are not summarized well by the mean. Instead, we’ll look at a tabulation.
+</p>
+<pre><code>. tabulate rep78
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.90        2.90
+          2 |          8       11.59       14.49
+          3 |         30       43.48       57.97
+          4 |         18       26.09       84.06
+          5 |         11       15.94      100.00
+------------+-----------------------------------
+      Total |         69      100.00
+
+</code></pre>
+<p>
+This gives us the count at each level, the percent at each level, as well as the cumulative percent (e.g. 57.97% of observations have a value of 3 or below). The cumulative percentage is only informative for an ordinal variable (a categorical variable that has an ordering too it), and not an unordered categorical variable such as race.
+</p>
+<p>
+Note that it is counting a total of 69 observations to total 100% of the data. However, you may have noticed earlier that we have 74 rows of data. By default, <code>tabulate</code> does <em>not</em> include any information about missing values. The <code>missing</code> option corrects that.
+</p>
+<pre><code>. tab rep78, missing
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.70        2.70
+          2 |          8       10.81       13.51
+          3 |         30       40.54       54.05
+          4 |         18       24.32       78.38
+          5 |         11       14.86       93.24
+          . |          5        6.76      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+It’s important to keep in mind the difference between the percentages of the two outputs. For example, 11.59% of <em>non-missing</em> values of <code>rep78</code> are 2, whereas only 10.81% of <em>all</em> values are 2.
+</p>
+<p>
+There are a few other options related to how the results are visualized which we will not cover.
+</p>
+<div id="two-way-tables" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Two-way tables</h3>
+<p>
+We will cover two-way tables (also known as “crosstabs”) later in <a href="univariate-and-some-bivariate-analysis.html#chi-square-test">univariate analysis</a>, but there is a peculiarity to <code>tab</code> related to it. If you pass two variables to <code>tab</code>, it creates the crosstab:
+</p>
+<pre><code>. tab rep78 foreign, missing
+
+    Repair |
+    Record |       Car type
+      1978 |  Domestic    Foreign |     Total
+-----------+----------------------+----------
+         1 |         2          0 |         2 
+         2 |         8          0 |         8 
+         3 |        27          3 |        30 
+         4 |         9          9 |        18 
+         5 |         2          9 |        11 
+         . |         4          1 |         5 
+-----------+----------------------+----------
+     Total |        52         22 |        74 
+
+
+</code></pre>
+<p>
+What if instead you wanted each individual table? You could run multiple <code>tab</code> statements, or use the <code>tab1</code> command instead.
+</p>
+<pre><code>. tab1 rep78 foreign, missing
+
+-&gt; tabulation of rep78  
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.70        2.70
+          2 |          8       10.81       13.51
+          3 |         30       40.54       54.05
+          4 |         18       24.32       78.38
+          5 |         11       14.86       93.24
+          . |          5        6.76      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+-&gt; tabulation of foreign  
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+If you give more than two arguments to <code>tab</code>, it will not run. If you wanted all pairwise tables, you can use <code>tab2</code>:
+</p>
+<pre><code>. tab2 rep78 foreign headroom, missing
+
+-&gt; tabulation of rep78 by foreign  
+
+    Repair |
+    Record |       Car type
+      1978 |  Domestic    Foreign |     Total
+-----------+----------------------+----------
+         1 |         2          0 |         2 
+         2 |         8          0 |         8 
+         3 |        27          3 |        30 
+         4 |         9          9 |        18 
+         5 |         2          9 |        11 
+         . |         4          1 |         5 
+-----------+----------------------+----------
+     Total |        52         22 |        74 
+
+
+-&gt; tabulation of rep78 by headroom  
+
+    Repair |
+    Record |                     Headroom (in.)
+      1978 |       1.5        2.0        2.5        3.0        3.5 |     Total
+-----------+-------------------------------------------------------+----------
+         1 |         1          1          0          0          0 |         2 
+         2 |         0          3          0          0          1 |         8 
+         3 |         0          5          5          4         10 |        30 
+         4 |         2          1          5          3          2 |        18 
+         5 |         0          3          4          4          0 |        11 
+         . |         1          0          0          2          2 |         5 
+-----------+-------------------------------------------------------+----------
+     Total |         4         13         14         13         15 |        74 
+
+
+    Repair |
+    Record |          Headroom (in.)
+      1978 |       4.0        4.5        5.0 |     Total
+-----------+---------------------------------+----------
+         1 |         0          0          0 |         2 
+         2 |         2          1          1 |         8 
+         3 |         3          3          0 |        30 
+         4 |         5          0          0 |        18 
+         5 |         0          0          0 |        11 
+         . |         0          0          0 |         5 
+-----------+---------------------------------+----------
+     Total |        10          4          1 |        74 
+
+
+-&gt; tabulation of foreign by headroom  
+
+           |                     Headroom (in.)
+  Car type |       1.5        2.0        2.5        3.0        3.5 |     Total
+-----------+-------------------------------------------------------+----------
+  Domestic |         3         10          4          7         13 |        52 
+   Foreign |         1          3         10          6          2 |        22 
+-----------+-------------------------------------------------------+----------
+     Total |         4         13         14         13         15 |        74 
+
+
+           |          Headroom (in.)
+  Car type |       4.0        4.5        5.0 |     Total
+-----------+---------------------------------+----------
+  Domestic |        10          4          1 |        52 
+   Foreign |         0          0          0 |        22 
+-----------+---------------------------------+----------
+     Total |        10          4          1 |        74 
+
+
+</code></pre>
+</div>
+<div id="generating-dummy-variables" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Generating dummy variables</h3>
+<p>
+Although Stata has excellent categorical variable handling capabilities, you may occasionally have the situation where you want the dummy variables instead of a category. For an example of the difference, consider a “campus” variable with three options, “central”, “north” and “medical”. Imagine our data looks like:
+</p>
+<table>
+<thead>
+<tr>
+<th align="center">
+<code>id</code>
+</th>
+<th align="left">
+<code>campus</code>
+</th>
+<th align="center">
+<code>campuscentral</code>
+</th>
+<th align="center">
+<code>campusnorth</code>
+</th>
+<th align="center">
+<code>campusmedical</code>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+1
+</td>
+<td align="left">
+north
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+1
+</td>
+<td align="center">
+0
+</td>
+</tr>
+<tr>
+<td align="center">
+2
+</td>
+<td align="left">
+central
+</td>
+<td align="center">
+1
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+0
+</td>
+</tr>
+<tr>
+<td align="center">
+3
+</td>
+<td align="left">
+north
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+1
+</td>
+<td align="center">
+0
+</td>
+</tr>
+<tr>
+<td align="center">
+4
+</td>
+<td align="left">
+north
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+1
+</td>
+<td align="center">
+0
+</td>
+</tr>
+<tr>
+<td align="center">
+5
+</td>
+<td align="left">
+medical
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+0
+</td>
+<td align="center">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+Notice that the information in <code>campus</code> and the information encoded in <code>campuscentral</code>, <code>campusnorth</code>, and <code>campusmedical</code> are identical. A 1 in the <code>campus____</code> variables represents “True” and 0 represents “False”, and only a single 1 is allowed per row.
+</p>
+<p>
+As mentioned, we will most of the time use categorical variables such as <code>campus</code> over dummy variables like <code>campus_____</code> (these are used in the actual model, but Stata creates them for you behind the scenes so you don’t need to worry about them), but if necessary, you can create the dummy variables using <code>tab</code>:
+</p>
+<pre><code>. list rep* in 1/5
+
+     +-------+
+     | rep78 |
+     |-------|
+  1. |     3 |
+  2. |     3 |
+  3. |     . |
+  4. |     3 |
+  5. |     4 |
+     +-------+
+
+. tab rep78, gen(reps)
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.90        2.90
+          2 |          8       11.59       14.49
+          3 |         30       43.48       57.97
+          4 |         18       26.09       84.06
+          5 |         11       15.94      100.00
+------------+-----------------------------------
+      Total |         69      100.00
+
+. list rep* in 1/5
+
+     +-----------------------------------------------+
+     | rep78   reps1   reps2   reps3   reps4   reps5 |
+     |-----------------------------------------------|
+  1. |     3       0       0       1       0       0 |
+  2. |     3       0       0       1       0       0 |
+  3. |     .       .       .       .       .       . |
+  4. |     3       0       0       1       0       0 |
+  5. |     4       0       0       0       1       0 |
+     +-----------------------------------------------+
+
+</code></pre>
+<p>
+If you are not familiar with the <code>list</code> command, it prints out data. Giving it a variable (or multiple) restricts it to those (here we restricted it to <code>rep*</code>, which is any variable that starts with “rep” - the * is a wildcard), and the <code>in</code> statement restricts to the first 5 observations (we just want a quick visualization, not to print everything).
+</p>
+<p>
+Take note of how the missing value is treated when creating the dummies.
+</p>
+</div>
+</div>
+<div id="correlate" class="section level2">
+<h2><span class="header-section-number">2.5</span> <code>correlate</code></h2>
+<p>
+With the use of <code>tab</code> and <code>tab2</code> for crosstabs, we’ve left univariate summaries and moved to joint summaries. For continuous variables, we can use the correlation to examine how similar two continuous variables are. The most common version of correlation is Pearson’s correlation, which ranges from -1 to 1. A value of 0 represents no correlation, a value of 1 represents perfect correlation, a value of -1 represents perfect negative correlation. We can calculate the Pearson’s correlation with <code>correlate</code>.
+</p>
+<pre><code>. correlate weight length
+(obs=74)
+
+             |   weight   length
+-------------+------------------
+      weight |   1.0000
+      length |   0.9460   1.0000
+
+
+</code></pre>
+<p>
+This produces whats known as the correlation matrix. The diagonal entries are both 1, because clearly each variable is perfectly correlated with itself! The off-diagonal entries are identical since correlation is a symmetric operation. The value of .95 is extremely close to one, as we would expect - longer cars are heavier and perhaps vice-versa. Another way to think of it is that once we know <code>weight</code>, learning <code>length</code> does not add much information. On the other hand,
+</p>
+<pre><code>. corr price turn
+(obs=74)
+
+             |    price     turn
+-------------+------------------
+       price |   1.0000
+        turn |   0.3096   1.0000
+
+
+</code></pre>
+<p>
+with a correlation of .31, learning <code>turn</code> when you already know <code>price</code> does add a lot of information.
+</p>
+<p>
+We can look at multiple correlations at once as well.
+</p>
+<pre><code>. corr mpg weight length
+(obs=74)
+
+             |      mpg   weight   length
+-------------+---------------------------
+         mpg |   1.0000
+      weight |  -0.8072   1.0000
+      length |  -0.7958   0.9460   1.0000
+
+
+</code></pre>
+<p>
+We see the .9460 we saw earlier, but notice also that <code>mpg</code> is negatively correlated with both <code>weight</code> and <code>length</code> - a larger car gets worse mileage and low mileage cars tend to be large. A few notes:
+</p>
+<ul>
+<li>
+The amount of information contained is irrespective of the sign; knowing the <code>mpg</code> of a car, adding information about its <code>weight</code> doesn’t add much information.
+</li>
+<li>
+The two correlations with <code>mpg</code> are extremely similar. We might generally expect that, given that <code>weight</code> and <code>length</code> are so strongly correlated. Note that despite that we expect that, it is not a rule - it is entirely possible (though unlikely) that the correlations with <code>mpg</code> could be very dissimilar.
+</li>
+</ul>
+<div id="varlists-in-stata" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> varlists in Stata</h3>
+<p>
+Consider if we wanted to look at all the continuous variables in the data. We could write <code>corr price mpg …</code> and make a very long command. The collection of all variables would be a “varlist”. Stata has several ways of short cutting this.
+</p>
+<p>
+The first we’ve already seen when we used the wildcard “*” <a href="#Generating-dummy-variables">above</a>. We can use * anywhere in the variable name to denote any number of additional characters. E.g. “this*var” matches “thisvar”, “thisnewvar”, “this-var”, “thisHFJHDJSHFKDHFKSHvar”, etc. A second wildcard, “?”, represents just a single variable, so “this*var” would match only “this-var” from that list, as well as “thisAvar”, “thisJvar”, etc.
+</p>
+<p>
+Secondly, we can match a subset of variables that are next to each other using “-”. All variable, starting with the one to the left of the - and ending with the one to the right of the - are included. For example,
+</p>
+<pre><code>. desc, simple
+make          headroom      turn          reps1         reps5
+price         trunk         displacement  reps2
+mpg           weight        gear_ratio    reps3
+rep78         length        foreign       reps4
+
+. desc trunk-turn
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+
+</code></pre>
+<p>
+We can combine those two, as well as specifying individual variables.
+</p>
+<pre><code>. corr price-rep78 t* displacement
+(obs=69)
+
+             |    price      mpg    rep78    trunk     turn displa~t
+-------------+------------------------------------------------------
+       price |   1.0000
+         mpg |  -0.4559   1.0000
+       rep78 |   0.0066   0.4023   1.0000
+       trunk |   0.3232  -0.5798  -0.1572   1.0000
+        turn |   0.3302  -0.7355  -0.4961   0.6008   1.0000
+displacement |   0.5479  -0.7434  -0.4119   0.6287   0.8124   1.0000
+
+
+</code></pre>
+<p>
+<code>price</code>, <code>mpg</code> and <code>rep78</code> are included as part of <code>price-rep78</code>, <code>t*</code> matches <code>trunk</code> and <code>turn</code>, and <code>displacement</code> is included by itself.
+</p>
+<p>
+Finally, there is the special variable list <code>_all</code>, which is shorthand for all variables (e.g. <code>firstvar-lastvar</code>). It is accepted in most but not all places that take in variables.
+</p>
+<pre><code>. corr _all
+(make ignored because string variable)
+(obs=69)
+
+             |    price      mpg    rep78 headroom    trunk   weight   length
+-------------+---------------------------------------------------------------
+       price |   1.0000
+         mpg |  -0.4559   1.0000
+       rep78 |   0.0066   0.4023   1.0000
+    headroom |   0.1112  -0.3996  -0.1480   1.0000
+       trunk |   0.3232  -0.5798  -0.1572   0.6608   1.0000
+      weight |   0.5478  -0.8055  -0.4003   0.4795   0.6691   1.0000
+      length |   0.4425  -0.8037  -0.3606   0.5240   0.7326   0.9478   1.0000
+        turn |   0.3302  -0.7355  -0.4961   0.4347   0.6008   0.8610   0.8631
+displacement |   0.5479  -0.7434  -0.4119   0.4763   0.6287   0.9316   0.8621
+  gear_ratio |  -0.3802   0.6565   0.4103  -0.3790  -0.5107  -0.7906  -0.7232
+     foreign |  -0.0174   0.4538   0.5922  -0.3347  -0.4053  -0.6460  -0.6110
+       reps1 |  -0.0945  -0.0086  -0.4230  -0.2550  -0.2175   0.0149   0.0054
+       reps2 |  -0.0223  -0.1346  -0.5180   0.1603   0.0586   0.1480   0.1778
+       reps3 |   0.0859  -0.2796  -0.3622   0.1726   0.2724   0.2975   0.2218
+       reps4 |  -0.0153   0.0384   0.3592  -0.0195  -0.0589  -0.1223  -0.0909
+       reps5 |  -0.0351   0.4542   0.7065  -0.2337  -0.2498  -0.3925  -0.3492
+
+             |     turn displa~t gear_r~o  foreign    reps1    reps2    reps3
+-------------+---------------------------------------------------------------
+        turn |   1.0000
+displacement |   0.8124   1.0000
+  gear_ratio |  -0.7005  -0.8381   1.0000
+     foreign |  -0.6768  -0.6383   0.7266   1.0000
+       reps1 |   0.0471  -0.0131  -0.0355  -0.1143   1.0000
+       reps2 |   0.2939   0.1733  -0.2468  -0.2395  -0.0626   1.0000
+       reps3 |   0.2526   0.3038  -0.2449  -0.3895  -0.1515  -0.3176   1.0000
+       reps4 |  -0.1748  -0.1231   0.2287   0.2526  -0.1026  -0.2151  -0.5211
+       reps5 |  -0.4110  -0.4093   0.2894   0.4863  -0.0752  -0.1577  -0.3820
+
+             |    reps4    reps5
+-------------+------------------
+       reps4 |   1.0000
+       reps5 |  -0.2587   1.0000
+
+
+</code></pre>
+<p>
+Notice that it automatically ignored the string variable <code>make</code>. Not all commands will work this well, so <code>_all</code> may occasionally fail.
+</p>
+</div>
+<div id="pairwise-completion-vs-complete-case" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Pairwise completion vs complete case</h3>
+<p>
+You may have noticed that the <code>cor</code> command reports the number of observations it used, for example, the first few correlations all used 74 observations, but the <code>_all</code> version used on 69. <code>correlate</code> uses what’s known as complete cases analysis - any observation missing <em>any</em> value used in the command is excluded. <code>rep78</code> is missing 5 observations (run the <code>misstable summarize</code> command to see this).
+</p>
+<p>
+On the other hand, pairwise completion only excluded missing values from the relevant comparisons. If a given correlation doesn’t involve <code>rep78</code>, it will use all the data. We can obtain this with <code>pwcorr</code>.
+</p>
+<pre><code>. corr rep78 price trunk
+(obs=69)
+
+             |    rep78    price    trunk
+-------------+---------------------------
+       rep78 |   1.0000
+       price |   0.0066   1.0000
+       trunk |  -0.1572   0.3232   1.0000
+
+
+. pwcorr rep78 price trunk
+
+             |    rep78    price    trunk
+-------------+---------------------------
+       rep78 |   1.0000 
+       price |   0.0066   1.0000 
+       trunk |  -0.1572   0.3143   1.0000 
+
+</code></pre>
+<p>
+Notice the two correlations involving <code>rep78</code> are identical - the same set of observations are dropped in both. However, the correlation between <code>price</code> and <code>trunk differs - in</code>correlate<code>, it is only using 69 observations, whereas in</code>pwcorr` it uses all 74.
+</p>
+<p>
+It may seem that <code>pwcorr</code> is always superior (and, in isolation it is). However, most models such as <a href="regression.html">regression</a> only support complete cases analysis, so in those cases, if you are exploring your data, it does not make sense to do pairwise comparison. Ultimately, the choice remains up to you. If the results from <code>correlate</code> and <code>pwcorr</code> do differ drastically, that is a sign of something else going on!
+</p>
+</div>
+<div id="spearman-correlation" class="section level3">
+<h3><span class="header-section-number">2.5.3</span> Spearman correlation</h3>
+<p>
+One limitation of Pearson’s correlation is that it is detecting linear relationships only. A famous example of this is Anscombe’s quartet:
+</p>
+<p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Anscombe%27s_quartet_3.svg" alt="" />
+</p>
+<p>
+In each pair, the Pearson correlation is an identical .8162! In the first, that’s what we want. In the second, the relationship is strong but non-linear. In the third, only one value is not perfectly correlated, so the Pearsons correlation is diminished. In the fourth, only the existence of the single outlier is driving the relationship.
+</p>
+<p>
+Spearman correlation is an alternative to Pearson correlation. It works by ranking each variable and then performing Pearson’s correlation. The command in Stata is <code>spearman</code>.
+</p>
+<pre><code>. corr price trunk
+(obs=74)
+
+             |    price    trunk
+-------------+------------------
+       price |   1.0000
+       trunk |   0.3143   1.0000
+
+
+. spearman price trunk, matrix
+(obs=74)
+
+             |    price    trunk
+-------------+------------------
+       price |   1.0000 
+       trunk |   0.3996   1.0000 
+
+</code></pre>
+<p>
+The <code>matrix</code> option forces output to mirror <code>correlate</code>, otherwise it produces a slightly different output when given only two variables. <code>spearman</code> uses <a href="#Pairwise-completion-vs-complete-case">complete cases</a>; to use pairwise complete instead, pass the option <code>pw</code>:
+</p>
+<pre><code>. spearman mpg-headroom, pw
+(obs=varies)
+
+             |      mpg    rep78 headroom
+-------------+---------------------------
+         mpg |   1.0000 
+       rep78 |   0.3098   1.0000 
+    headroom |  -0.4866  -0.1583   1.0000 
+
+</code></pre>
+<p>
+How does Spearman’s correlation compare to Pearson’s for Anscombe’s quartet?
+</p>
+<table>
+<thead>
+<tr>
+<th align="center">
+Comparison
+</th>
+<th align="center">
+Pearson
+</th>
+<th align="center">
+Spearman
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">
+<span class="math inline">\(y_1, x_1\)</span>
+</td>
+<td align="center">
+.8162
+</td>
+<td align="center">
+.8182
+</td>
+</tr>
+<tr>
+<td align="center">
+<span class="math inline">\(y_2, x_2\)</span>
+</td>
+<td align="center">
+.8162
+</td>
+<td align="center">
+.6909
+</td>
+</tr>
+<tr>
+<td align="center">
+<span class="math inline">\(y_3, x_3\)</span>
+</td>
+<td align="center">
+.8162
+</td>
+<td align="center">
+.9909
+</td>
+</tr>
+<tr>
+<td align="center">
+<span class="math inline">\(y_4, x_4\)</span>
+</td>
+<td align="center">
+.8162
+</td>
+<td align="center">
+.5000
+</td>
+</tr>
+</tbody>
+</table>
+<p>
+The second correlation diminishes, the third drastically increases, and the fourth decreases as well.
+</p>
+</div>
+</div>
+<div id="exercise-1" class="section level2">
+<h2><span class="header-section-number">2.6</span> Exercise 1</h2>
+<p>
+For these exercises, we’ll be using data from NHANES, the National Health And Nutrition Examination Survey. The data is on Stata’s website, and you can load it via
+</p>
+<pre><code>webuse nhanes2, clear
+</code></pre>
+<ol>
+<li>
+Use <a href="summarizing-data.html#describe-summarize-codebook"><code>describe</code></a> to get a sense of the data. How many observations? How many variables?
+</li>
+<li>
+Use <code>tab</code>, <code>summarize</code>, <code>mean</code>, and/or <code>codebook</code> to get an understanding of the some of variables that we’ll be using a lot going forward:
+<ul>
+<li>
+<code>region</code>
+</li>
+<li>
+<code>houssiz</code>
+</li>
+<li>
+<code>sex</code>
+</li>
+<li>
+<code>diabetes</code>
+</li>
+<li>
+<code>iron</code>
+</li>
+</ul>
+</li>
+<li>
+Does <code>race</code> have any missing data? Does <code>diabetes</code>? Does <code>lead</code>?
+</li>
+<li>
+What is more highly <a href="summarizing-data.html#correlate">correlated</a>? A person’s height and weight, or their diastolic and systolic blood pressure?
+</li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>We won’t cover in this class, but there are multiple-equation estimating commands which have syntax <code>command (varlist) (varlist) … (varlist) [if] [in] [weight] [,options]</code>.<a href="summarizing-data.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>We could just run <code>correlate</code>, but the postestimation commands following <code>mean</code> are fairly limited, so bare with me here. Postestimation commands following models are much more interesting!<a href="summarizing-data.html#fnref2">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This is a Stata 15.0 generated SVG file (http://www.stata.com) -->
+
+<svg version="1.1" width="5.50in" height="4.00in" viewBox="0 0 3960 2880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>Stata Graph - Graph</desc>
+	<rect x="0" y="0" width="3960" height="2880" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0.00" y="0.00" width="3959.88" height="2880.00" style="fill:#EAF2F3"/>
+	<rect x="2.88" y="2.88" width="3954.12" height="2874.24" style="fill:none;stroke:#EAF2F3;stroke-width:5.76"/>
+	<rect x="390.80" y="261.37" width="3468.22" height="2227.82" style="fill:#FFFFFF"/>
+	<rect x="393.68" y="264.25" width="3462.46" height="2222.06" style="fill:none;stroke:#FFFFFF;stroke-width:5.76"/>
+	<line x1="390.80" y1="2425.82" x2="3859.02" y2="2425.82" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="390.80" y1="2005.68" x2="3859.02" y2="2005.68" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="390.80" y1="1585.41" x2="3859.02" y2="1585.41" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="390.80" y1="1165.14" x2="3859.02" y2="1165.14" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="390.80" y1="745.00" x2="3859.02" y2="745.00" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="390.80" y1="324.73" x2="3859.02" y2="324.73" style="stroke:#EAF2F3;stroke-width:8.64"/>
+	<line x1="454.16" y1="2356.52" x2="454.16" y2="974.31" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="432.13" y1="974.31" x2="476.19" y2="974.31" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="432.13" y1="2356.52" x2="476.19" y2="2356.52" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="2046.33" y1="1664.74" x2="2046.33" y2="1085.20" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="2024.30" y1="1085.20" x2="2068.36" y2="1085.20" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="2024.30" y1="1664.74" x2="2068.36" y2="1664.74" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="3795.66" y1="1781.56" x2="3795.66" y2="330.05" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="3773.63" y1="330.05" x2="3817.69" y2="330.05" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="3773.63" y1="1781.56" x2="3817.69" y2="1781.56" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="454.04" y1="1665.48" x2="2046.21" y2="1375.03" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="2046.21" y1="1375.03" x2="3795.66" y2="1055.87" stroke-linecap="round" style="stroke:#1A476F;stroke-width:8.64"/>
+	<circle cx="454.04" cy="1665.48" r="26.35" style="fill:#1A476F"/>
+	<circle cx="454.04" cy="1665.48" r="22.03" style="fill:none;stroke:#1A476F;stroke-width:8.64"/>
+	<circle cx="2046.21" cy="1375.03" r="26.35" style="fill:#1A476F"/>
+	<circle cx="2046.21" cy="1375.03" r="22.03" style="fill:none;stroke:#1A476F;stroke-width:8.64"/>
+	<circle cx="3795.66" cy="1055.87" r="26.35" style="fill:#1A476F"/>
+	<circle cx="3795.66" cy="1055.87" r="22.03" style="fill:none;stroke:#1A476F;stroke-width:8.64"/>
+	<line x1="390.80" y1="2489.19" x2="390.80" y2="261.37" style="stroke:#000000;stroke-width:5.76"/>
+	<line x1="390.80" y1="2425.82" x2="350.83" y2="2425.82" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="2425.82" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,2425.82)" text-anchor="middle">-6</text>
+	<line x1="390.80" y1="2005.68" x2="350.83" y2="2005.68" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="2005.68" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,2005.68)" text-anchor="middle">-4</text>
+	<line x1="390.80" y1="1585.41" x2="350.83" y2="1585.41" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="1585.41" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,1585.41)" text-anchor="middle">-2</text>
+	<line x1="390.80" y1="1165.14" x2="350.83" y2="1165.14" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="1165.14" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,1165.14)" text-anchor="middle">0</text>
+	<line x1="390.80" y1="745.00" x2="350.83" y2="745.00" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="745.00" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,745.00)" text-anchor="middle">2</text>
+	<line x1="390.80" y1="324.73" x2="350.83" y2="324.73" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="300.72" y="324.73" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 300.72,324.73)" text-anchor="middle">4</text>
+	<text x="190.71" y="1375.28" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 190.71,1375.28)" text-anchor="middle">Effects on Linear Prediction</text>
+	<line x1="390.80" y1="2489.19" x2="3859.02" y2="2489.19" style="stroke:#000000;stroke-width:5.76"/>
+	<line x1="454.16" y1="2489.19" x2="454.16" y2="2529.16" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="454.16" y="2619.14" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" text-anchor="middle">2.19</text>
+	<line x1="2046.33" y1="2489.19" x2="2046.33" y2="2529.16" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="2046.33" y="2619.14" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" text-anchor="middle">3.00</text>
+	<line x1="3795.66" y1="2489.19" x2="3795.66" y2="2529.16" style="stroke:#000000;stroke-width:5.76"/>
+	<text x="3795.66" y="2619.14" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" text-anchor="middle">3.89</text>
+	<text x="2124.91" y="2729.16" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" text-anchor="middle">Gear Ratio</text>
+	<text x="1980.00" y="206.19" style="font-family:'Helvetica';font-size:125.98px;fill:#1E2D53" text-anchor="middle">Average Marginal Effects of headroom with 95% CIs</text>
+</svg>
