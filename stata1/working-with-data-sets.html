@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.16 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2018-01-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,6 +80,7 @@
 <li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
 <li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#dyndoc"><i class="fa fa-check"></i><b>2.3.2</b> dyndoc</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#updating"><i class="fa fa-check"></i><b>2.4</b> Updating</a></li>
 <li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#installing-user-written-commands"><i class="fa fa-check"></i><b>2.5</b> Installing user-written commands</a></li>
@@ -106,7 +107,9 @@
 <li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#loading-subsets-of-the-data"><i class="fa fa-check"></i><b>3.2.1</b> Loading subsets of the data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#colors-as-variable-type"><i class="fa fa-check"></i><b>3.3.1</b> Colors as variable type</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.4</b> Saving data</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-data"><i class="fa fa-check"></i><b>3.5</b> Importing data</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-excel-data"><i class="fa fa-check"></i><b>3.5.1</b> Importing Excel data</a></li>
@@ -126,7 +129,10 @@
 <li class="chapter" data-level="4.5.2" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.5.2</b> <code>label variable</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.5.3</b> <code>label values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a></li>
+<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="data-management.html"><a href="data-management.html#renaming-variables"><i class="fa fa-check"></i><b>4.6.1</b> Renaming variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data-management.html"><a href="data-management.html#changing-variable-ordering"><i class="fa fa-check"></i><b>4.6.2</b> Changing variable ordering</a></li>
+</ul></li>
 <li class="chapter" data-level="4.7" data-path="data-management.html"><a href="data-management.html#exercise-3"><i class="fa fa-check"></i><b>4.7</b> Exercise 3</a></li>
 <li class="chapter" data-level="4.8" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.8</b> Summarizing the data</a></li>
 <li class="chapter" data-level="4.9" data-path="data-management.html"><a href="data-management.html#exercise-4"><i class="fa fa-check"></i><b>4.9</b> Exercise 4</a></li>
@@ -199,7 +205,7 @@
 <div id="built-in-data" class="section level2">
 <h2><span class="header-section-number">3.1</span> Built-in data</h2>
 <p>
-Before we turn to using your own data, it is useful to know that Stata comes with a collection of sample data sets which you can use to try the Stata commands. Additionally, most (if not all) of the examples in <a href="basics.html#stata-help">Stata help</a> will use these data sets.
+Before we turn to using your own data, it is useful to know that Stata comes with a collection of sample data sets which you can use to try the Stata commands. Additionally, most (if not all) of the examples in <a target="_blank" href="basics.html#stata-help">Stata help</a> will use these data sets.
 </p>
 <p>
 To see a list of the built-in data sets, use
@@ -236,7 +242,7 @@ or passing it as an option to <code>sysuse</code>,
 <div id="stata-website-data" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> Stata Website Data</h3>
 <p>
-In addition to the data sets distributed with Stata, Stata also makes available a large collection of data sets on their website which can be accessed with the <code>webuse</code> command. These data sets are used as examples in the Manual and can be seen listed as <a href="http://www.stata-press.com/data/r15/">http://www.stata-press.com/data/r15/</a>.
+In addition to the data sets distributed with Stata, Stata also makes available a large collection of data sets on their website which can be accessed with the <code>webuse</code> command. These data sets are used as examples in the Manual and can be seen listed as <a target="_blank" href="http://www.stata-press.com/data/r15/">http://www.stata-press.com/data/r15/</a>.
 </p>
 <pre><code>. webuse hiway
 (Minnesota Highway Data, 1973)
@@ -258,7 +264,7 @@ As you may have deduced from the <code>sysuse</code> and <code>webuse</code> com
 <pre><code>use &lt;filename&gt;
 </code></pre>
 <p>
-As discussed in the <a href="basics.html#working-directory">working directory</a> section, Stata can see only files in its working directory, so only the name of the file needs to be passed. If the file exists in a different directory, you will need to give the full (or relative path). For example, if your working directory is “C:\Documents\Stata” and the file you are looking for, “mydata”, is in the “Project” subfolder, you could open it with any of the following:
+As discussed in the <a target="_blank" href="basics.html#working-directory">working directory</a> section, Stata can see only files in its working directory, so only the name of the file needs to be passed. If the file exists in a different directory, you will need to give the full (or relative path). For example, if your working directory is “C:\Documents\Stata” and the file you are looking for, “mydata”, is in the “Project” subfolder, you could open it with any of the following:
 </p>
 <pre><code>use C:\Documents\Stata\Project\mydata
 use Project\mydata
@@ -282,23 +288,43 @@ As with <code>sysuse</code> and <code>webuse</code>, the <code>clear</code> opti
 <div id="loading-subsets-of-the-data" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Loading subsets of the data</h3>
 <p>
-Though I would rarely recommend its use, you can load only a subset of the data into the program at a time. Generally I would recommend loading the full data and then <a href="data-manipulation.html#keep-drop">discarding</a> the extraneous information. However, if your data is very large, it might be handy to only load in some of it rather than the entire thing. As this is a lesser-used option we won’t go into too much detail, but as an example, if I wanted to load only the variables named “bp”, “heartrate” and “date” from the data set “patientdata”, restricted to male patients, I might use something like
+You can load only a subset of the data into the program at a time. Generally I would recommend loading the full data and then <a target="_blank" href="data-manipulation.html#keep-drop">discarding</a> the extraneous information. However, if your data is very large, it might be handy to only load in some of it rather than the entire thing. As this is a lesser-used option we won’t go into too much detail, but as an example, if I wanted to load only the variables named “bp”, “heartrate” and “date” from the data set “patientdata”, restricted to male patients, I might use something like
 </p>
 <pre><code>use bp heartrate date if gender == &quot;male&quot; using patientdata
 </code></pre>
 <p>
-Here, <code>using</code> and <code>if</code> are subcommands, which we will see used more as the day goes on. For further details, see <code>help use</code>, specifically the manual which has the full documentation.
+Here, <code>using</code> and <code>if</code> are subcommands, which we will see used more as the day goes on.
+</p>
+<p>
+Alternatively, if you have a very large data set, you can load in a small chunk of it.
+</p>
+<pre><code>use patientdata in 1/100
+</code></pre>
+<p>
+This loads just the first 100 rows (<code>a/b</code> is a “numlist” counting from “a” to “b” by integers).
+</p>
+<p>
+For further details, see <code>help use</code>, specifically the manual which has the full documentation.
 </p>
 </div>
 </div>
 <div id="editing-data-manually" class="section level2">
 <h2><span class="header-section-number">3.3</span> Editing data manually</h2>
 <p>
-We will discuss in <a href="data-manipulation.html">Data Manipulation</a> how to edit your data on a larger scale and in an automated fashion, but Stata does support modifying a spreadsheet of your data similar to Excel. At the top of the main window, you’ll see two buttons, “Data Editor” and “Data Browser”. These open the same new Data window, the only difference is that Stata is protecting you from yourself and if you open the “Data Browser” (or switch to it in the Data window), you cannot modify the data.
+We will discuss in <a target="_blank" href="data-manipulation.html">Data Manipulation</a> how to edit your data on a larger scale and in an automated fashion, but Stata does support modifying a spreadsheet of your data similar to Excel. At the top of the main window, you’ll see two buttons, “Data Editor” and “Data Browser”. These open the same new Data window, the only difference is that Stata is protecting you from yourself and if you open the “Data Browser” (or switch to it in the Data window), you cannot modify the data.
 </p>
 <p>
 Once in the Data window, you can select cells and edit them as desired.
 </p>
+<div id="colors-as-variable-type" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Colors as variable type</h3>
+<p>
+When viewing the data, the color of each column’s text provides information about the type of variable. We’ll go into more details <a target="_blank" href="data-management.html#describe">later</a> what these types mean. Below, for the <code>auto</code> data, you can see the <code>make</code> variable is red, indicating a string, the <code>foreign</code> variable is blue indicating a variable with an attached <a target="_blank" href="data-management.html#label-values">value label</a> and the remainder of the variables are black for numeric.
+</p>
+<p>
+<a target="_blank" href="../images/datacolors.png"><img src="../images/datacolors.png" alt="" /></a>
+</p>
+</div>
 </div>
 <div id="saving-data" class="section level2">
 <h2><span class="header-section-number">3.4</span> Saving data</h2>
@@ -308,10 +334,10 @@ Saving data is straightforward using the <code>save</code> command. If you do no
 <p>
 By default, <code>save</code> will not overwrite existing files. To do so, use the <code>replace</code> option.
 </p>
-<pre><code>save * Saves a new copy with the same name.
+<pre><code>save * Saves a new copy with the same name, failing it it already exists.
 save, replace * Replaces the existing copy with the same name
-save newfile * Saves a new copy with a new name (if the new name file doesn't exist)
-save newfile, replace * Replaces the copy with the new name
+save newfile * Saves a new copy with a new name, failing it &quot;newfile&quot; already exists.
+save newfile, replace * Replaces the new name copy.
 </code></pre>
 <p>
 As before, wrap the file name in quotes if it (or the path) includes any spaces.
@@ -388,14 +414,17 @@ Once the preview looks accurate, go ahead and import. As usual, this will create
 <div id="importing-a-csv-file" class="section level3">
 <h3><span class="header-section-number">3.5.2</span> Importing a CSV File</h3>
 <p>
-CSV files (comma separated values) are a very useful format for passing data between software. Files specific for software (e.g. .dta for Stata, .xlsx for Excel, .sav for SPSS) carry a lot of overhead information - very useful when working exclusively within that software, but confusing for other software. The import menu in Stata (and other software) can often address this, but a CSV file bypasses this. The faculty data in CSV format would look like
+CSV files (comma separated values) are a very useful format for passing data between software. Files specific for software (e.g. .dta for Stata, .xlsx for Excel, .sav for SPSS) carry a lot of overhead information - very useful when working exclusively within that software, but confusing for other software. The import menu in Stata (and other software) can often address this, but a CSV file bypasses this. Data in CSV format might look like
 </p>
 <pre><code>id,salary,exprior,market,admin,yearsdg,rank,male
 1,38361.75,0,.72,0,14,2,0
-2,68906,2,1,0,31,3,1
+2,68906,2,1,,31,3,1
 </code></pre>
 <p>
-The downside of CSV files is we lose any auxiliary information, such as descriptive titles, labels etc. Still, they can be very useful.
+The first row is the variable names, all separated by commas. The 2nd row starts the data, where each variable is again separated by commas. Multiple commas in a row indicate a missing value.
+</p>
+<p>
+The downside of CSV files is we lose any auxiliary information, such as descriptive titles, labels etc. Often, if you are obtaining CSV files from an online resource, they will provide a Do-file alongside the data that reads in the CSV file and applies labels, titles, etc. If not you’ll have to do this yourself!
 </p>
 <p>
 A CSV files can be imported using “File -&gt; Import -&gt; Text Data (delimited, *.csv, …)”
@@ -430,14 +459,14 @@ Second, see if the software which created the data can write it into Stata (.dta
 Finally, see if you can open the data in the other software and export it into CSV or a similar common format.
 </p>
 <p>
-If all else fails, there is software Stat Transfer, <a href="https://www.stattransfer.com">https://www.stattransfer.com</a>, which can transfer between all sorts of formats with a click, but is not free. Your department or organization may offer access to it.
+If all else fails, there is software Stat Transfer, <a target="_blank" href="https://www.stattransfer.com">https://www.stattransfer.com</a>, which can transfer between all sorts of formats with a click, but is not free. Your department or organization may offer access to it.
 </p>
 </div>
 </div>
 <div id="preserverestore" class="section level2">
 <h2><span class="header-section-number">3.6</span> <code>preserve</code>/<code>restore</code></h2>
 <p>
-Along with the <a href="basics.html#one-data">One Data</a> principal, if you wished to modify a data set temporarily, say to <a href="data-manipulation.html#keep-drop">remove</a> some subset of your observations, it must be done destructively. One workflow to use would be:
+Along with the <a target="_blank" href="basics.html#one-data">One Data</a> principal, if you wished to modify a data set temporarily, say to <a target="_blank" href="data-manipulation.html#keep-drop">remove</a> some subset of your observations, it must be done destructively. One workflow to use would be:
 </p>
 <pre><code>sysuse auto
 &lt;modify data set as desired&gt;
@@ -467,19 +496,19 @@ The <code>preserve</code> command saves an image of the data as they are now, an
 <h2><span class="header-section-number">3.7</span> Exercise 1</h2>
 <ol>
 <li>
-Load the <a href="working-with-data-sets.html#built-in-data">built-in</a> data set “lifeexp”.
+Load the <a target="_blank" href="#built-in-data">built-in</a> data set “lifeexp”.
 </li>
 <li>
-Open the Data Editor window. <a href="working-with-data-sets.html#editing-data-manually">Modify</a> at least one of the cells.
+Open the Data Editor window. <a target="_blank" href="#editing-data-manually">Modify</a> at least one of the cells.
 </li>
 <li>
 Close the Data window. Load the built-in data set “sandstone”. Don’t forget to <code>clear</code> or pass the <code>clear</code> option.
 </li>
 <li>
-<a href="working-with-data-sets.html#saving-data">Save a copy</a> of this data to your computer.
+<a target="_blank" href="#saving-data">Save a copy</a> of this data to your computer.
 <ol>
 <li>
-Check your <a href="basics.html#working-directory">working directory</a>. Make sure it is set somewhere convenient.
+Check your <a target="_blank" href="basics.html#working-directory">working directory</a>. Make sure it is set somewhere convenient.
 </li>
 <li>
 Use <code>save</code>. Make sure to give it a name!
@@ -487,7 +516,7 @@ Use <code>save</code>. Make sure to give it a name!
 </ol>
 </li>
 <li>
-If you haven’t already, play with <a href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a>. Preserve the data, modify some values, then observe what happens when you restore.
+If you haven’t already, play with <a target="_blank" href="#preserverestore"><code>preserve</code> and <code>restore</code></a>. Preserve the data, modify some values, then observe what happens when you restore.
 </li>
 </ol>
 
@@ -535,9 +564,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

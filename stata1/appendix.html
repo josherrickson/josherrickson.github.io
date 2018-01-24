@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.16 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2018-01-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,6 +80,7 @@
 <li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
 <li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#dyndoc"><i class="fa fa-check"></i><b>2.3.2</b> dyndoc</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#updating"><i class="fa fa-check"></i><b>2.4</b> Updating</a></li>
 <li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#installing-user-written-commands"><i class="fa fa-check"></i><b>2.5</b> Installing user-written commands</a></li>
@@ -106,7 +107,9 @@
 <li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#loading-subsets-of-the-data"><i class="fa fa-check"></i><b>3.2.1</b> Loading subsets of the data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#colors-as-variable-type"><i class="fa fa-check"></i><b>3.3.1</b> Colors as variable type</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.4</b> Saving data</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-data"><i class="fa fa-check"></i><b>3.5</b> Importing data</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-excel-data"><i class="fa fa-check"></i><b>3.5.1</b> Importing Excel data</a></li>
@@ -126,7 +129,10 @@
 <li class="chapter" data-level="4.5.2" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.5.2</b> <code>label variable</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.5.3</b> <code>label values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a></li>
+<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="data-management.html"><a href="data-management.html#renaming-variables"><i class="fa fa-check"></i><b>4.6.1</b> Renaming variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data-management.html"><a href="data-management.html#changing-variable-ordering"><i class="fa fa-check"></i><b>4.6.2</b> Changing variable ordering</a></li>
+</ul></li>
 <li class="chapter" data-level="4.7" data-path="data-management.html"><a href="data-management.html#exercise-3"><i class="fa fa-check"></i><b>4.7</b> Exercise 3</a></li>
 <li class="chapter" data-level="4.8" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.8</b> Summarizing the data</a></li>
 <li class="chapter" data-level="4.9" data-path="data-management.html"><a href="data-management.html#exercise-4"><i class="fa fa-check"></i><b>4.9</b> Exercise 4</a></li>
@@ -201,7 +207,7 @@
 <div id="exercise-1-1" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Exercise 1</h3>
 <p>
-<a href="working-with-data-sets.html#exercise-1">Exercise 1</a>
+<a target="_blank" href="working-with-data-sets.html#exercise-1">Exercise 1</a>
 </p>
 <p>
 1:
@@ -226,7 +232,7 @@ sysuse sandstone
 <div id="exercise-2-1" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Exercise 2</h3>
 <p>
-<a href="data-management.html#exercise-2">Exercise 2</a>
+<a target="_blank" href="data-management.html#exercise-2">Exercise 2</a>
 </p>
 <p>
 1:
@@ -249,7 +255,7 @@ sysuse sandstone
 <div id="exercise-3-1" class="section level3">
 <h3><span class="header-section-number">7.1.3</span> Exercise 3</h3>
 <p>
-<a href="data-management.html#exercise-3">Exercise 3</a>
+<a target="_blank" href="data-management.html#exercise-3">Exercise 3</a>
 </p>
 <p>
 1:
@@ -327,7 +333,7 @@ file mycensus9.dta saved
 <div id="exercise-4-1" class="section level3">
 <h3><span class="header-section-number">7.1.4</span> Exercise 4</h3>
 <p>
-<a href="data-management.html#exercise-4">Exercise 4</a>
+<a target="_blank" href="data-management.html#exercise-4">Exercise 4</a>
 </p>
 <p>
 1: Use <code>summarize</code> and <code>codebook</code> to take a look at the mean/max/min. No errors detected/
@@ -371,7 +377,7 @@ This just flags spaces (&quot; “) in the data. Not a real problem!
 <div id="exercise-5-1" class="section level3">
 <h3><span class="header-section-number">7.1.5</span> Exercise 5</h3>
 <p>
-<a href="data-manipulation.html#exercise-5">Exercise 5</a>
+<a target="_blank" href="data-manipulation.html#exercise-5">Exercise 5</a>
 </p>
 <p>
 1:
@@ -562,6 +568,8 @@ statecodes                                        Two-letter state abbreviation
 
 
 
+
+
             </section>
 
           </div>
@@ -604,9 +612,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

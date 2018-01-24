@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.16 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2018-01-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,6 +80,7 @@
 <li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
 <li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#dyndoc"><i class="fa fa-check"></i><b>2.3.2</b> dyndoc</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#updating"><i class="fa fa-check"></i><b>2.4</b> Updating</a></li>
 <li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#installing-user-written-commands"><i class="fa fa-check"></i><b>2.5</b> Installing user-written commands</a></li>
@@ -106,7 +107,9 @@
 <li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#loading-subsets-of-the-data"><i class="fa fa-check"></i><b>3.2.1</b> Loading subsets of the data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#colors-as-variable-type"><i class="fa fa-check"></i><b>3.3.1</b> Colors as variable type</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.4</b> Saving data</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-data"><i class="fa fa-check"></i><b>3.5</b> Importing data</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-excel-data"><i class="fa fa-check"></i><b>3.5.1</b> Importing Excel data</a></li>
@@ -126,7 +129,10 @@
 <li class="chapter" data-level="4.5.2" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.5.2</b> <code>label variable</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.5.3</b> <code>label values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a></li>
+<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="data-management.html"><a href="data-management.html#renaming-variables"><i class="fa fa-check"></i><b>4.6.1</b> Renaming variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data-management.html"><a href="data-management.html#changing-variable-ordering"><i class="fa fa-check"></i><b>4.6.2</b> Changing variable ordering</a></li>
+</ul></li>
 <li class="chapter" data-level="4.7" data-path="data-management.html"><a href="data-management.html#exercise-3"><i class="fa fa-check"></i><b>4.7</b> Exercise 3</a></li>
 <li class="chapter" data-level="4.8" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.8</b> Summarizing the data</a></li>
 <li class="chapter" data-level="4.9" data-path="data-management.html"><a href="data-management.html#exercise-4"><i class="fa fa-check"></i><b>4.9</b> Exercise 4</a></li>
@@ -234,7 +240,7 @@ label values `vars' mylab
 duplicates list `vars'
 </code></pre>
 <p>
-The first command, <code>local</code>, defines what is known as a “local macro”<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>. Whenever it is referred to, wrapped in a backtick (to the left of the 1 key at the top-left of the keyboard) and a single quote, Stata replaces it with the original text. So when you enter
+The first command, <code>local</code>, defines what is known as a “local macro”<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. Whenever it is referred to, wrapped in a backtick (to the left of the 1 key at the top-left of the keyboard) and a single quote, Stata replaces it with the original text. So when you enter
 </p>
 <pre><code>list `vars' in 1/5
 </code></pre>
@@ -275,7 +281,7 @@ abc
 </code></pre>
 <ul>
 <li>
-You may occasionally see code that excludes the <code>=</code> in macros. The differences between including and excluding the <code>=</code> are mostly unimportant, so I recommend sticking with the <code>=</code> unless you specifically need the other version.
+You may occasionally see code that excludes the <code>=</code> in defining a macro (e.g. <code>local vars “var1 var2”</code>). The differences between including and excluding the <code>=</code> are mostly unimportant, so I recommend sticking with the <code>=</code> unless you specifically need the other version.
 </li>
 </ul>
 <div id="class-and-return" class="section level3">
@@ -332,7 +338,6 @@ macros:
             e(varlist) : &quot;price&quot;
        e(marginsnotok) : &quot;_ALL&quot;
          e(properties) : &quot;b V&quot;
-             e(depvar) : &quot;Mean&quot;
 
 matrices:
                   e(b) :  1 x 1
@@ -348,7 +353,7 @@ functions:
 Rather than try and keep track of what gets stored where, if you look at the very bottom of any help file, it will say something like “<code>summarize</code> stores the following in <code>r()</code>:” or “<code>mean</code> stores the following in <code>e()</code>:”, corresponding to <code>return</code> and <code>ereturn</code> respectively.
 </p>
 <p>
-Along with the <a href="basics.html#one-data">One Data</a> principal, Stata also follows the One _-class principal - meaning you can only view the <code>return</code> or <code>ereturn</code> for the most recent command of that class. So if you run a <code>summarize</code> command, then do a bunch of n-class calls (<code>gsort</code> for example), the <code>return list</code> call will still give you the returns for that first <code>summarize</code>. However, as soon as you run another r-class command, you lose access to the first one. You can save any piece of it using a <a href="programming.html#macros">macro</a>. For example, to calculate the average difference in price between foreign and domestic cars<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a>:
+Along with the <a target="_blank" href="basics.html#one-data">One Data</a> principal, Stata also follows the One _-class principal - meaning you can only view the <code>return</code> or <code>ereturn</code> for the most recent command of that class. So if you run a <code>summarize</code> command, then do a bunch of n-class calls (<code>gsort</code> for example), the <code>return list</code> call will still give you the returns for that first <code>summarize</code>. However, as soon as you run another r-class command, you lose access to the first one. You can save any piece of it using a <a target="_blank" href="#macros">macro</a>. For example, to calculate the average difference in price between foreign and domestic cars<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>:
 </p>
 <pre><code>. summ price if foreign == 1
 
@@ -425,10 +430,10 @@ Let’s breakdown each piece of the command. The command syntax for <code>foreac
 <pre><code>foreach &lt;new macroname&gt; of varlist &lt;list of variables&gt;
 </code></pre>
 <p>
-The loop will create a <a href="programming.html#macros">macro</a> that you name (in the example above, it was named “race”), and repeatedly set it to each subsequent entry in the list of variables. So in the code above, first “race” is set to “total”, then the two <code>gen</code> commands are run. Next, “race” is set to “white”, then the two commands are run. Etc.
+The loop will create a <a target="_blank" href="#macros">macro</a> that you name (in the example above, it was named “race”), and repeatedly set it to each subsequent entry in the list of variables. So in the code above, first “race” is set to “total”, then the two <code>gen</code> commands are run. Next, “race” is set to “white”, then the two commands are run. Etc.
 </p>
 <p>
-Within each of the <code>gen</code> commands, we use the backtick-quote notation just like with <a href="programming.html#macros">macros</a>.
+Within each of the <code>gen</code> commands, we use the backtick-quote notation just like with <a target="_blank" href="#macros">macros</a>.
 </p>
 <p>
 Finally, we end the <code>foreach</code> line with an open curly brace, <code>{</code>, and the line after the last command within the loop has the matching close curly brace, <code>}</code>.
@@ -622,7 +627,7 @@ It’s a bit annoying, but Stata handles the “of” and “in” slight differ
 <pre><code>foreach race in total-island
 </code></pre>
 <p>
-then Stata would set “race” to “total-island” and the <code>gen</code> command would run once! By using “of varlist”, you are telling Stata that before it sets “race” to anything, expand the varlist using the <a href="basics.html#referring-to-variables">rules such as <code>*</code> and <code>-</code></a>.
+then Stata would set “race” to “total-island” and the <code>gen</code> command would run once! By using “of varlist”, you are telling Stata that before it sets “race” to anything, expand the varlist using the <a target="_blank" href="basics.html#referring-to-variables">rules such as <code>*</code> and <code>-</code></a>.
 </p>
 <p>
 There is also
@@ -630,17 +635,17 @@ There is also
 <pre><code>foreach &lt;macro name&gt; of numlist &lt;list of numbers&gt;
 </code></pre>
 <p>
-The benefit of “of numlist” is that numlists support things like 1-4 representing 1, 2, 3, 4. So
+The benefit of “of numlist” is that numlists support things like 1/4 representing 1, 2, 3, 4. So
 </p>
-<pre><code>foreach num of numlist 1 3-5
+<pre><code>foreach num of numlist 1 3/5
 </code></pre>
 <p>
 Loops over 1, 3, 4, 5, whereas
 </p>
-<pre><code>foreach num in 1 3-5
+<pre><code>foreach num in 1 3/5
 </code></pre>
 <p>
-loops over just “1” and “3-5”.
+loops over just “1” and “3/5”.
 </p>
 <p>
 The use of “in” is for when you need to loop over strings that are neither numbers nor variables (such as “male” and “fem” from above).
@@ -654,7 +659,7 @@ There are two useful command prefixes that can be handy while writing more elabo
 <div id="capture" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> <code>capture</code></h3>
 <p>
-Imagine the following scenario. You want to write a Do-file that generates a new variable. However, you may need to re-run chunks of the Do-file repeatedly, so that the <code>gen</code> statement is hit repeatedly. After the first <code>gen</code>, we can’t call it again and <a href="data-manipulation.html#replace">need to use <code>replace</code> instead</a>. However, if we used <code>replace</code>, it wouldn’t work the first time! One solution is to <code>drop</code> the variable before we gen it:
+Imagine the following scenario. You want to write a Do-file that generates a new variable. However, you may need to re-run chunks of the Do-file repeatedly, so that the <code>gen</code> statement is hit repeatedly. After the first <code>gen</code>, we can’t call it again and <a target="_blank" href="data-manipulation.html#replace">need to use <code>replace</code> instead</a>. However, if we used <code>replace</code>, it wouldn’t work the first time! One solution is to <code>drop</code> the variable before we gen it:
 </p>
 <pre><code>. sysuse auto, clear
 (1978 Automobile Data)
@@ -702,7 +707,7 @@ Therefore, the best way to generate our new variable is
 <div id="quietly" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> <code>quietly</code></h3>
 <p>
-<code>quietly</code> does the same basic thing as <code>capture</code>, except it does not hide errors. It can be useful combined with <a href="programming.html#class-and-return">the returns</a>:
+<code>quietly</code> does the same basic thing as <code>capture</code>, except it does not hide errors. It can be useful combined with <a target="_blank" href="programming.html#class-and-return">the returns</a>:
 </p>
 <pre><code>. quietly summ price
 
@@ -749,9 +754,9 @@ r(111);
 </div>
 <div class="footnotes">
 <hr />
-<ol start="14">
-<li id="fn14"><p>“Local” as opposed to “global”, a distinction which is not important until you get deep into programming. For now, <code>local</code> is the safer option.<a href="programming.html#fnref14">↩</a></p></li>
-<li id="fn15"><p>There are obviously other ways to compute this, but this gives a flavor of the use.<a href="programming.html#fnref15">↩</a></p></li>
+<ol start="16">
+<li id="fn16"><p>“Local” as opposed to “global”, a distinction which is not important until you get deep into programming. For now, <code>local</code> is the safer option.<a href="programming.html#fnref16" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>There are obviously other ways to compute this, but this gives a flavor of the use.<a href="programming.html#fnref17" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -796,9 +801,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

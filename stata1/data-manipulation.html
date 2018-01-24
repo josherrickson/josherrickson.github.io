@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.16 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2018-01-24">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,6 +80,7 @@
 <li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
 <li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#dyndoc"><i class="fa fa-check"></i><b>2.3.2</b> dyndoc</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#updating"><i class="fa fa-check"></i><b>2.4</b> Updating</a></li>
 <li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#installing-user-written-commands"><i class="fa fa-check"></i><b>2.5</b> Installing user-written commands</a></li>
@@ -106,7 +107,9 @@
 <li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#loading-subsets-of-the-data"><i class="fa fa-check"></i><b>3.2.1</b> Loading subsets of the data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#colors-as-variable-type"><i class="fa fa-check"></i><b>3.3.1</b> Colors as variable type</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.4</b> Saving data</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-data"><i class="fa fa-check"></i><b>3.5</b> Importing data</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-excel-data"><i class="fa fa-check"></i><b>3.5.1</b> Importing Excel data</a></li>
@@ -126,7 +129,10 @@
 <li class="chapter" data-level="4.5.2" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.5.2</b> <code>label variable</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.5.3</b> <code>label values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a></li>
+<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="data-management.html"><a href="data-management.html#renaming-variables"><i class="fa fa-check"></i><b>4.6.1</b> Renaming variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data-management.html"><a href="data-management.html#changing-variable-ordering"><i class="fa fa-check"></i><b>4.6.2</b> Changing variable ordering</a></li>
+</ul></li>
 <li class="chapter" data-level="4.7" data-path="data-management.html"><a href="data-management.html#exercise-3"><i class="fa fa-check"></i><b>4.7</b> Exercise 3</a></li>
 <li class="chapter" data-level="4.8" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.8</b> Summarizing the data</a></li>
 <li class="chapter" data-level="4.9" data-path="data-management.html"><a href="data-management.html#exercise-4"><i class="fa fa-check"></i><b>4.9</b> Exercise 4</a></li>
@@ -291,10 +297,10 @@ There are a lot of functions that can be used. We list some commonly used mathem
 <code>exp( )</code>: returns the exponential function of (e^x)
 </li>
 <li>
-<code>log( )</code> or <code>ln( )</code>: returns the natural logarithm of the argument
+<code>log( )</code> or <code>ln( )</code>: returns the natural logarithm of the argument<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>
 </li>
 <li>
-<code>round( )</code>: returns the rounded value
+<code>round( )</code>, <code>ceil( )</code>, <code>floor( )</code>: returns the rounded value (rounded to nearest integer, rounded up, and rounded down)
 </li>
 <li>
 <code>sqrt( )</code>: returns the square root
@@ -308,7 +314,7 @@ Stata also offers functions for string variables, such as:
 <code>length( )</code>: returns the length of the string
 </li>
 <li>
-<code>lower( )</code>: returns the string in lower-case letters
+<code>lower( )</code> and <code>upper( )</code>: returns the string in lower or upper case letters
 </li>
 <li>
 <code>ltrim( )</code>: returns the string with any leading spaces stripped
@@ -319,9 +325,6 @@ Stata also offers functions for string variables, such as:
 <li>
 <code>string( )</code>: converts a numeric value to a string value
 </li>
-<li>
-<code>upper( )</code>: returns the string in upper-case letters
-</li>
 </ul>
 <p>
 You can see a full accounting of all functions you can use in this setting in
@@ -331,10 +334,10 @@ You can see a full accounting of all functions you can use in this setting in
 <div id="creating-dummies" class="section level3">
 <h3><span class="header-section-number">5.1.1</span> Creating dummies</h3>
 <p>
-Dummy variables (also known as indicator variables or binary variables) are variables which take on two values, 0 and 1<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. These are typically used in a setting where the 0 represents an absence of something (or an answer of “no”) and 1 represents the presence (or an answer of “yes”). When naming dummy variables, you should keep this in mind to make understanding the variable easier, as well as extracting interpretations regarding the variable in a model.
+Dummy variables (also known as indicator variables or binary variables) are variables which take on two values, 0 and 1<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. These are typically used in a setting where the 0 represents an absence of something (or an answer of “no”) and 1 represents the presence (or an answer of “yes”). When naming dummy variables, you should keep this in mind to make understanding the variable easier, as well as extracting interpretations regarding the variable in a model.
 </p>
 <p>
-For example, “gender” is a poor dummy variable - what does 0 gender or 1 gender represent? Obviously we could (and should) use <a href="data-management.html#label-values">value labels</a> to associate 0 and 1 with particular genders, but it is more straightforward to use “female” as the dummy variable - a 0 represents “no” to the question of “Female?”, hence male; and a 1 represents a “yes”, hence female.
+For example, “gender” is a poor dummy variable - what does 0 gender or 1 gender represent? Obviously we could (and should) use <a target="_blank" href="data-management.html#label-values">value labels</a> to associate 0 and 1 with particular genders, but it is more straightforward to use “female” as the dummy variable - a 0 represents “no” to the question of “Female?”, hence male; and a 1 represents a “yes”, hence female.
 </p>
 <p>
 If you are collecting data, consider collecting data as dummies where appropriate - if the question has a binary response, encode it as a dummy instead of strings. If a question has categorical responses, consider encoding them as a series of dummy variables instead (e.g. “Are you from MI?”, “Are you from OH?” etc). These changes will (usually) need to be made later anyways.
@@ -479,10 +482,10 @@ or (either statement is true)
 </tbody>
 </table>
 <p>
-You can also use parentheses in combination with &amp; and <span class="math inline">\(|\)</span> to create more logical statements (e.g. TRUE &amp; (FALSE <span class="math inline">\(|\)</span> TRUE) returns true).
+You can also use parentheses in combination with &amp; and <span class="math inline">\(|\)</span> to create more logical statements (e.g. <code>True &amp; (False | True)</code> returns true).
 </p>
 <p>
-Now here’s the catch: In Stata<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, conditional statements return 1 (True) and 0 (False). So we can use them in <code>generate</code> statements to create binary variables easily.
+Now here’s the catch: In Stata<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, conditional statements return 1 (True) and 0 (False). So we can use them in <code>generate</code> statements to create binary variables easily.
 </p>
 <pre><code>. generate price_over_40k = price &gt; 4000
 
@@ -532,13 +535,13 @@ The <code>list</code> commands conditions on <code>cheap == 1</code> because aga
 <div id="hidden-variables" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> Hidden variables</h3>
 <p>
-The name “hidden variables” may be slightly more dramatic than need be. In Stata, under the <a href="basics.html#one-data">One Data</a> principal, any information in the data<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> must be in a variable. This includes the so called “hidden variables” of <code>_n</code> and <code>_N</code>. You can imagine that each row of your data has two additional columns of data, one for <code>_n</code> and one for <code>_N</code>.
+The name “hidden variables” may be slightly more dramatic than need be. In Stata, under the <a target="_blank" href="basics.html#one-data">One Data</a> principal, any information in the data<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> must be in a variable. This includes the so called “hidden variables” of <code>_n</code> and <code>_N</code>. You can imagine that each row of your data has two additional columns of data, one for <code>_n</code> and one for <code>_N</code>.
 </p>
 <p>
 <code>_n</code> represents the row number currently. Currently, meaning if the data is re-sorted, <code>_n</code> can change.
 </p>
 <p>
-<code>_N</code> represents the total number of rows in the data, hence this is the same for every row. Again, if the data changes (e.g. you <a href="data-manipulation.html#keep-drop">drop</a> some data) then <code>_N</code> may be updated.
+<code>_N</code> represents the total number of rows in the data, hence this is the same for every row. Again, if the data changes (e.g. you <a target="_blank" href="#keep-drop">drop</a> some data) then <code>_N</code> may be updated.
 </p>
 <p>
 While you cannot access these hidden variables normally, you can use them in generating variables or conditional statements. For example, we’ve seen that <code>list</code> can use <code>in</code> to restrict the rows it outputs, and we’ve seen that it can use <code>if</code> to choose conditionally. We can combine these:
@@ -563,7 +566,7 @@ While you cannot access these hidden variables normally, you can use them in gen
 
 </code></pre>
 <p>
-A more useful example is to save the initial row numbering in your data. When we discuss <a href="data-manipulation.html#sorting">sorting</a> later, it may be useful to be able to return to the original ordering. Since <code>_n</code> changes when the data is re-sorted, if we save the initial row numbers to a permanent variable, we can always re-sort by it later. <code>_N</code> is slightly less useful but can be used similarly.
+A more useful example is to save the initial row numbering in your data. When we discuss <a target="_blank" href="#sorting">sorting</a> later, it may be useful to be able to return to the original ordering. Since <code>_n</code> changes when the data is re-sorted, if we save the initial row numbers to a permanent variable, we can always re-sort by it later. <code>_N</code> is slightly less useful but can be used similarly.
 </p>
 <pre><code>. generate row = _n
 
@@ -600,7 +603,7 @@ The functions which <code>egen</code> support are fairly esoteric; you can see t
 <div id="replace" class="section level2">
 <h2><span class="header-section-number">5.2</span> <code>replace</code></h2>
 <p>
-<a href="data-manipulation.html#generate">Earlier</a> we created the <code>weight2</code> variable which changed the units on weight from pounds to tons. What if, instead of creating a new variable, we tried to just change the existing <code>weight</code> variable.
+<a target="_blank" href="#generate">Earlier</a> we created the <code>weight2</code> variable which changed the units on weight from pounds to tons. What if, instead of creating a new variable, we tried to just change the existing <code>weight</code> variable.
 </p>
 <pre><code>. generate weight = weight/2000
 variable weight already defined
@@ -628,7 +631,7 @@ variable weight was int now float
 
 </code></pre>
 <p>
-<code>replace</code> features syntax identical to <code>generate</code>.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>
+<code>replace</code> features syntax identical to <code>generate</code>.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
 </p>
 <div id="conditional-variable-generation" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Conditional variable generation</h3>
@@ -690,7 +693,7 @@ There’s one additional complication. Stata represents missing values by <code>
 </p>
 <span class="math display">\[ 400 \lt . \]</span>
 <p>
-is true! There is some discussion <a href="http://www.stata.com/support/faqs/data-management/logical-expressions-and-missing-values/">on the Stata FAQs</a> that goes into the rationale behind it, but the short version is that this slightly complicates variable generation but greatly simplifies and protects some data management tasks.
+is true! There is some discussion <a target="_blank" href="http://www.stata.com/support/faqs/data-management/logical-expressions-and-missing-values/">on the Stata FAQs</a> that goes into the rationale behind it, but the short version is that this slightly complicates variable generation but greatly simplifies and protects some data management tasks.
 </p>
 <p>
 The complication referred to can be seen in row 3 here:
@@ -757,7 +760,7 @@ Of course, we could also generate it in the reverse order (3 to 1).
 <div id="subsetting" class="section level2">
 <h2><span class="header-section-number">5.3</span> Subsetting</h2>
 <p>
-Almost any Stata command which operates on variables can operate on a subset of the data instead of the entire data, using the conditional statements we just learned. Specifically, we can append the <code>if &lt;condition&gt;</code> to a command, and the command will be executed as if the data for which the conditional does not return True does not exist. This is equivalent to throwing away some data and then performing the command. In general, you should avoid discarding data as you never know when you will possible use it. Of course, you could use <a href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a> to temporarily remove the data, but using the conditional subsetting is more straightforward.
+Almost any Stata command which operates on variables can operate on a subset of the data instead of the entire data, using the conditional statements we just learned. Specifically, we can append the <code>if &lt;condition&gt;</code> to a command, and the command will be executed as if the data for which the conditional does not return True does not exist. This is equivalent to throwing away some data and then performing the command. In general, you should avoid discarding data as you never know when you will possible use it. Of course, you could use <a target="_blank" href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a> to temporarily remove the data, but using the conditional subsetting is more straightforward.
 </p>
 <pre><code>. summ price
 
@@ -796,7 +799,7 @@ First, we check the label to make sure we’re looking at the appropriate value 
 
 </code></pre>
 <p>
-we see that American cars are cheaper on average<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a>.
+we see that American cars are cheaper on average<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
 </p>
 <div id="by-and-bysort" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> <code>by</code> and <code>bysort</code></h3>
@@ -830,10 +833,10 @@ There is a strong assumption here that <code>foreign</code> is already sorted. I
 <pre><code>bysort foreign: summ price
 </code></pre>
 <p>
-<code>bysort</code> is identical to <a href="data-manipulation.html#sorting">sorting</a> first and running the <code>by</code> statement afterwards. In general, it is recommended to always use <code>bysort</code> instead of <code>by</code>, <em>unless</em> you believe the data is already sorted and want an error if that assumption is violated.
+<code>bysort</code> is identical to <a target="_blank" href="#sorting">sorting</a> first and running the <code>by</code> statement afterwards. In general, it is recommended to always use <code>bysort</code> instead of <code>by</code>, <em>unless</em> you believe the data is already sorted and want an error if that assumption is violated.
 </p>
 <p>
-Before running these commands, consider generating a <a href="data-manipulation.html#hidden-variables">original ordering variable</a> first.
+Before running these commands, consider generating a <a target="_blank" href="#hidden-variables">original ordering variable</a> first.
 </p>
 <p>
 <code>bysort</code>’s variables cannot be conditional statements, so if you wanted to for example get summaries by low and high mileage cars, you’d need to generate a dummy variable first.
@@ -935,7 +938,7 @@ r(198);
 <div id="dealing-with-duplicates" class="section level2">
 <h2><span class="header-section-number">5.4</span> Dealing with duplicates</h2>
 <p>
-If your data is not expected to have duplicates, either across all variables or within certain variables, the <code>duplicates</code> command can make their detection and correction easier. The most basic command is <code>duplicates report</code>, which simply reports on the status of duplicate rows. Let’s reload the “bplong” data in case it got changed while we were reshaping.
+If your data is not expected to have duplicates, either across all variables or within certain variables, the <code>duplicates</code> command can make their detection and correction easier. The most basic command is <code>duplicates report</code>, which simply reports on the status of duplicate rows. Let’s use the built-in “bplong” data. This data contains 120 patients (<code>patient</code>) with measures of blood pressure (<code>bp</code>) at two different time points (<code>when</code>, a Before and After), and some descriptive variables (<code>sex</code> and <code>agegrp</code>).
 </p>
 <pre><code>. sysuse bplong, clear
 (fictional blood-pressure data)
@@ -975,7 +978,7 @@ Duplicates in terms of bp when
 Here we have some duplicates. First, there are 23 observations which are fully unique. All other observations have repeats to some extent.
 </p>
 <p>
-The second row of the output tells of us that there are 42 observations which have 2 copies. The language here can be a bit confusing; all it is saying is that there are 42 rows, each of which has a single duplicate <em>within that same 42</em>. So if we have values 1, 1, 2, 2, that would be reported as 4 observations with 2 copies.
+The second row of the output tells of us that there are 42 observations which have 2 copies. The language here can be a bit confusing; all it is saying is that there are 42 rows, each of which has a single duplicate <em>within that same 42</em>. So if we have values 1, 1, 2, 2, that would be reported as 4 observations with 2 surplus.
 </p>
 <p>
 The number of surplus is the number of non-unique rows in that category. We could compute it ourselves - we know that there are 42 rows with 2 copies, so that means that half of the rows are “unique” and the other half are “duplicates” (which is unique and which is duplicate is not clear). So 42/2 = 21, and we have 21 surplus.
@@ -1001,7 +1004,7 @@ Other useful commands include
 <div id="sorting" class="section level2">
 <h2><span class="header-section-number">5.5</span> sorting</h2>
 <p>
-We already saw sorting <a href="data-manipulation.html#by-and-bysort">in the context of <code>bysort</code></a>. We can also sort as a standalone operation. As before, consider generating a <a href="data-manipulation.html#hidden-variables">original ordering variable</a> first.
+We already saw sorting <a target="_blank" href="#by-and-bysort">in the context of <code>bysort</code></a>. We can also sort as a standalone operation. As before, consider generating a <a target="_blank" href="#hidden-variables">original ordering variable</a> first.
 </p>
 <p>
 We’ll switch back to “auto” first.
@@ -1052,10 +1055,10 @@ You can append “+” or “-” to each variable to change whether it is ascen
 
 </code></pre>
 <p>
-Recall that missing values (<code>.</code>) are <a href="data-manipulation.html#conditional-variable-generation">larger than any other values</a>. When sorting with missing values, they follow this rule as well. If you want to treat missing values as smaller than all other values, you can pass the <code>mfirst</code> option to <code>gsort</code>. Note this does <em>not</em> make missingness “less than” anywhere else, only for the purposes of the current search.
+Recall that missing values (<code>.</code>) are <a target="_blank" href="data-manipulation.html#conditional-variable-generation">larger than any other values</a>. When sorting with missing values, they follow this rule as well. If you want to treat missing values as smaller than all other values, you can pass the <code>mfirst</code> option to <code>gsort</code>. Note this does <em>not</em> make missingness “less than” anywhere else, only for the purposes of the current sort.
 </p>
 <p>
-Sorting strings does work and it does it alphabetically. All capital letters are “less than” all lower case letters, and a blank string (“”) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, “”, “EEE”, the sorted ascending order would be “”, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
+Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string (“”) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, “”, “EEE”, the sorted ascending order would be “”, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
 </p>
 <p>
 As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to conditionally sort; that is, passing something like <code>sort &lt;varname&gt; in &lt;condition&gt;</code> would sort only those rows for which the condition is true, the remaining rows remain <em>in their exact same position</em>.
@@ -1064,7 +1067,7 @@ As a side note, there is an additional command, <code>sort</code>, which can per
 <div id="working-with-strings-and-categorical-variables" class="section level2">
 <h2><span class="header-section-number">5.6</span> Working with strings and categorical variables</h2>
 <p>
-String variables are commonly used during data collection but are ultimately not very useful from a statistical point of view. Typically string variables should be represented as <a href="data-management.html#label-values">categorical variables with value labels</a> as we’ve previously discussed. Here are some useful commands for operating on strings and categorical variables.
+String variables are commonly used during data collection but are ultimately not very useful from a statistical point of view. Typically string variables should be represented as <a target="_blank" href="data-management.html#label-values">categorical variables with value labels</a> as we’ve previously discussed. Here are some useful commands for operating on strings and categorical variables.
 </p>
 <div id="destring-and-tostring" class="section level3">
 <h3><span class="header-section-number">5.6.1</span> <code>destring</code> and <code>tostring</code></h3>
@@ -1157,7 +1160,7 @@ mpg2            byte    %10.0g                Mileage (mpg)
 
 </code></pre>
 <p>
-And we’re back to the original set-up.<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>
+And we’re back to the original set-up.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>
 </p>
 <p>
 When using <code>destring</code> to convert a string variable (that it storing numeric data as strings - “13”, “14”) to a numeric variable, if there are <em>any</em> non-numeric entries, <code>destring</code> will fail:
@@ -1190,10 +1193,10 @@ make: contains nonnumeric characters; make2 generated as byte
 <div id="encode-and-decode" class="section level3">
 <h3><span class="header-section-number">5.6.2</span> <code>encode</code> and <code>decode</code></h3>
 <p>
-If we have a string variable which has non-numerical values (e.g. <code>race</code> with values “white”, “black”, “Hispanic”, etc), the ideal way to store it is as numerical with <a href="data-management.html#label-values">value labels</a> attached. While we could do this manually using a combination of <code>gen</code> and <code>replace</code> with some conditionals, a less tedious way to do so is via <code>encode</code>.
+If we have a string variable which has non-numerical values (e.g. <code>race</code> with values “white”, “black”, “Hispanic”, etc), the ideal way to store it is as numerical with <a target="_blank" href="data-management.html#label-values">value labels</a> attached. While we could do this manually using a combination of <code>gen</code> and <code>replace</code> with some conditionals, a less tedious way to do so is via <code>encode</code>.
 </p>
 <p>
-The “auto” data set does not have a good string variable to demonstrate this on, so we’ll switch to the “surface” data set, which contains sea surface temperature measurements from a number of locations over two days. (Remember this will erase any existing unsaved changes! You will not need any modifications you’ve made to “auto” going forward, but if you do want to save it, do so first!)
+We’ll switch to the “surface” data set, which contains sea surface temperature measurements from a number of locations over two days. (Remember this will erase any existing unsaved changes! You will not need any modifications you’ve made to other built-in datasets going forward [except <code>census9</code> from <a target="_blank" href="data-management.html#execise-3">exercise 3</a>, but if you do want to save it, do so first!)
 </p>
 <pre><code>. sysuse surface, clear
 (NOAA Sea Surface Temperature)
@@ -1366,17 +1369,19 @@ These are used inside <code>gen</code> and <code>replace</code>, e.g.
 </p>
 <pre><code>. gen date6 = strupper(date5)
 
-. list date5 date6 in 1/5
+. gen month = substr(date5, 3, 3)
 
-     +-----------------------+
-     |     date5       date6 |
-     |-----------------------|
-  1. | 01mar2011   01MAR2011 |
-  2. | 01mar2011   01MAR2011 |
-  3. | 01mar2011   01MAR2011 |
-  4. | 01mar2011   01MAR2011 |
-  5. | 01mar2011   01MAR2011 |
-     +-----------------------+
+. list date5 date6 month in 1/5
+
+     +-------------------------------+
+     |     date5       date6   month |
+     |-------------------------------|
+  1. | 01mar2011   01MAR2011     mar |
+  2. | 01mar2011   01MAR2011     mar |
+  3. | 01mar2011   01MAR2011     mar |
+  4. | 01mar2011   01MAR2011     mar |
+  5. | 01mar2011   01MAR2011     mar |
+     +-------------------------------+
 
 </code></pre>
 </div>
@@ -1391,7 +1396,7 @@ Open the <em>saved</em> version of “census9” with <code>use</code>, not the 
 Generate a new variable, <code>deathperc</code>, which is the percentage of deaths in each state. (Remember that <code>deathrate</code> is deaths per 10,000.)
 </li>
 <li>
-The average age of all Americans in 1980 is roughly 30.11 years of age. <a href="data-manipulation.html#conditional-variable-generation">Generate a categorical</a> with four values as described before, with appropriate <a href="data-management.html#label-values">value labels</a>.
+The average age of all Americans in 1980 is roughly 30.11 years of age. <a target="_blank" href="#conditional-variable-generation">Generate a categorical</a> with four values as described before, with appropriate <a target="_blank" href="data-management.html#label-values">value labels</a>.
 <ul>
 <li>
 “Significantly below national average”: <code>medage</code> equal to 26.20 or less
@@ -1408,13 +1413,13 @@ The average age of all Americans in 1980 is roughly 30.11 years of age. <a href=
 </ul>
 </li>
 <li>
-What is the death rate in <a href="data-manipulation.html#by-and-bysort">each of those four categories</a>? (You can use <code>summarize</code> to obtain the means.) Does there appear to be any pattern?
+What is the death rate in <a target="_blank" href="#by-and-bysort">each of those four categories</a>? (You can use <code>summarize</code> to obtain the means.) Does there appear to be any pattern?
 </li>
 <li>
-What state has the <a href="data-manipulation.html#sorting">lowest</a> death rate? The highest? The lowest average age? The highest?
+What state has the <a target="_blank" href="#sorting">lowest</a> death rate? The highest? The lowest average age? The highest?
 </li>
 <li>
-Each state has a single observation here, but if we had multiple years of data, then we could have <a href="data-manipulation.html#reshaping-files">“long data”</a> with multiple rows per state. To prepare for this sort of data, <a href="data-manipulation.html#encode-and-decode">encode</a> the two-letter state abbreviation into a numeric value with value labels.
+Each state has a single observation here, but if we had multiple years of data, then we could have <a target="_blank" href="#reshaping-files">“long data”</a> with multiple rows per state. To prepare for this sort of data, <a target="_blank" href="#encode-and-decode">encode</a> the two-letter state abbreviation into a numeric value with value labels.
 </li>
 </ol>
 </div>
@@ -1426,7 +1431,7 @@ When managing data sets, the need often arises to merge two data sets together, 
 <div id="appending-files" class="section level3">
 <h3><span class="header-section-number">5.8.1</span> Appending Files</h3>
 <p>
-Appending is straightforward. Observations in a new data set (called the “using” data) are appended to the current data set (called the “master” data), matching variable names. If a variable in the using data exists already in the master data, its values are entered there. If a variable in the using data does not exist in the master, the new variable is added to the appended data set which is missing for all members of the master data. This is easiest to visualize. There are two data sets on <a href="working-with-data-sets.html#stata-website-data">Stata’s website</a> which we can append, “odd” and “even”.
+Appending is straightforward. Observations in a new data set (called the “using” data) are appended to the current data set (called the “master” data), matching variable names. If a variable in the using data exists already in the master data, its values are entered there. If a variable in the using data does not exist in the master, the new variable is added to the appended data set which is missing for all members of the master data. This is easiest to visualize. There are two data sets on <a target="_blank" href="working-with-data-sets.html#stata-website-data">Stata’s website</a> which we can append, “odd” and “even”.
 </p>
 <pre><code>. webuse odd, clear
 (First five odd numbers)
@@ -1458,13 +1463,12 @@ Appending is straightforward. Observations in a new data set (called the “usin
 
 </code></pre>
 <p>
-It does not truly matter which data set is the master data and which is the using data (it will later in <a href="data-manipulation.html#match-merging-data">match-merging</a>), it will only affect the sorted order (the data in master is sorted first). The syntax is simply
+It does not truly matter which data set is the master data and which is the using data (it will later in <a target="_blank" href="#match-merging-data">match-merging</a>), it will only affect the sorted order (the data in master is sorted first). The syntax is simply
 </p>
 <pre><code>append using &lt;using data&gt;
 </code></pre>
-<pre><code>. webuse eveb
-file http://www.stata-press.com/data/r15/eveb.dta not found
-r(601);
+<pre><code>. webuse even
+(6th through 8th even numbers)
 
 . append using http://www.stata-press.com/data/r15/odd
 (note: variable number was byte, now float to accommodate using data's
@@ -1488,7 +1492,7 @@ r(601);
 
 </code></pre>
 <p>
-(We must specify the complete path to the data instead of the <code>webuse</code> shorthand of just the data name. Of course, with real data that you locally have on your computer, you follow the <a href="basics.html#working-directory">working directory</a> rules; if the file exists in your working directory you just give the name, otherwise give the complete path.)
+(We must specify the complete path to the data instead of the <code>webuse</code> shorthand of just the data name. Of course, with real data that you locally have on your computer, you follow the <a target="_blank" href="basics.html#working-directory">working directory</a> rules; if the file exists in your working directory you just give the name, otherwise give the complete path. I obtained that path by visiting the Stata data website and finding the link to “odd”.)
 </p>
 <p>
 Note that the “number” variable, which exists in both data sets, has complete data, while “even” and “odd” both have missing data as expected. The <code>using</code> part of the command is where the term the “using data” comes from.
@@ -1586,7 +1590,7 @@ All that needs to be specified is the variable to match cases by and the name of
 
 </code></pre>
 <p>
-(Again, we use the full path but for local files, following <a href="basics.html#working-directory">working directory</a> rules.)
+(Again, we use the full path but for local files, following <a target="_blank" href="basics.html#working-directory">working directory</a> rules.)
 </p>
 <p>
 First, take a look at the output of the merge command. We see that 69 cars were not matched, which means they exist in only one of the two data sets. In this case, they all exist in master data, but in general you could see a mix of the two. The remaining 5 observations were appropriately matched. This is a terrible merge! Hopefully with your real data, the majority of data is matched and only a few outliers are not matched.
@@ -1619,7 +1623,7 @@ IMPORTANT NOTE: Make sure that the only variables common to both files when perf
 Different data formats are needed for various statistical methods. Stata prefers data in “Long” format, but also makes it easy to convert between Long and “Wide”. Stata uses the <code>reshape</code> command to convert data formats.
 </p>
 <p>
-<a href="../images/wide-vs-long.png"><img src="../images/wide-vs-long.png" alt="" /></a>
+<a target="_blank" href="../images/wide-vs-long.png"><img src="../images/wide-vs-long.png" alt="" /></a>
 </p>
 <p>
 In this example, the wide format of the data has each row representing a single observation. The variables “X1”, “X2” and “X3” are what make this “wide”. These are typically variables measured at different time points, but don’t have to be. In the long format, each row represents an observation <em>at a specific index</em>.
@@ -1776,7 +1780,7 @@ reshape long
 Now, notice that when we reshaped the original long data into wide format, the two “bp” variables where <code>bp1</code> and <code>bp2</code>, not something like <code>bp_before</code> and <code>bp_after</code>. In most cases this is fine (as the common use case for this is repeated measures over time), but not always - what if we wanted to save the “before” and “after” labels? Do note that thankfully Stata saves these labels, so when converting back to long, it restores the “Before” and “After” tags.
 </p>
 <p>
-If you do want to save the text instead of the count, you need to use strings. We’ll use <a href="data-manipulation.html#encode-and-decode"><code>decode</code></a> to convert to a string, then use that as the jvar.
+If you do want to save the text instead of the count, you need to use strings. We’ll use <a target="_blank" href="#encode-and-decode"><code>decode</code></a> to convert to a string, then use that as the jvar.
 </p>
 <pre><code>. decode when, gen(when2)
 
@@ -1872,7 +1876,7 @@ Note that they technically don’t have to have the same indices (e.g. you coul
 </li>
 <li>
 <p>
-If you have wide data and many time-varying variables, there is no shorthand for entering all the stubs. For large data, this is <strong>extremely</strong> frustrating. I’d recommend using <code>describe, simple</code> to get a list of all variable names, then using find &amp; replace to remove the indices. If you know a better way, <a href="index.html#contact-information">let me know</a>!
+If you have wide data and many time-varying variables, there is no shorthand for entering all the stubs. For large data, this is <strong>extremely</strong> frustrating. I’d recommend using <code>describe, simple</code> to get a list of all variable names, then using find &amp; replace to remove the indices. If you know a better way, <a target="_blank" href="index.html#contact-information">let me know</a>!
 </p>
 </li>
 </ul>
@@ -1881,13 +1885,14 @@ If you have wide data and many time-varying variables, there is no shorthand for
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>Technically and mathematically they can take on any two values, but your life will be easier if you stick with the 0/1 convention.<a href="data-manipulation.html#fnref8">↩</a></p></li>
-<li id="fn9"><p>This is true of most statistical software in fact<a href="data-manipulation.html#fnref9">↩</a></p></li>
-<li id="fn10"><p>We’ll see some exceptions to this in the <a href="programming.html">programming</a> section.<a href="data-manipulation.html#fnref10">↩</a></p></li>
-<li id="fn11"><p><code>generate</code> has a few features we do not discuss which <code>replace</code> does not support. Namely, <code>generate</code> can set the <a href="data-management.html#compress">type</a> manually (instead of letting Stata choose the best type automatically), and <code>generate</code> can place the new variable as desired rather than <a href="data-management.html#managing-variables">using <code>order</code></a>. Clearly, neither of these features are needed for <code>replace</code>.<a href="data-manipulation.html#fnref11">↩</a></p></li>
-<li id="fn12"><p>Note that this is not a statistical claim, we would have to do a two-sample t-test to make any statistical claim.<a href="data-manipulation.html#fnref12">↩</a></p></li>
-<li id="fn13"><p>If you are sharp-eyed, you may have noticed that the original <code>mpg</code> was an “int” whereas the final one is a “byte”. If we had called <a href="data-management.html#compress"><code>compress</code></a> on the original data, it would have done that type conversion anyways - so we’re ok!<a href="data-manipulation.html#fnref13">↩</a></p></li>
+<ol start="9">
+<li id="fn9"><p>If you want log with a different base, you can use the transformation that dividing by <code>log(b)</code> is equivalent to using <code>b</code> as a base. In other words, if you need log base 10, use <code>gen newvar = log(oldvar)/log(10)</code>.<a href="data-manipulation.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Technically and mathematically they can take on any two values, but your life will be easier if you stick with the 0/1 convention.<a href="data-manipulation.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>This is true of most statistical software in fact.<a href="data-manipulation.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>We’ll see some exceptions to this in the <a target="_blank" href="programming.html">programming</a> section.<a href="data-manipulation.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p><code>generate</code> has a few features we do not discuss which <code>replace</code> does not support. Namely, <code>generate</code> can set the <a target="_blank" href="data-management.html#compress">type</a> manually (instead of letting Stata choose the best type automatically), and <code>generate</code> can place the new variable as desired rather than <a target="_blank" href="data-management.html#changing-variable-ordering">using <code>order</code></a>. Clearly, neither of these features are needed for <code>replace</code>.<a href="data-manipulation.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>Note that this is not a statistical claim, we would have to do a two-sample t-test to make any statistical claim.<a href="data-manipulation.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>If you are sharp-eyed, you may have noticed that the original <code>mpg</code> was an “int” whereas the final one is a “byte”. If we had called <a target="_blank" href="data-management.html#compress"><code>compress</code></a> on the original data, it would have done that type conversion anyways - so we’re ok!<a href="data-manipulation.html#fnref15" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1932,9 +1937,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
