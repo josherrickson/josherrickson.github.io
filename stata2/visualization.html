@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Intermediate Stata (Statistical Modeling)</title>
   <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.6.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-02-06">
+<meta name="date" content="2018-04-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -221,14 +221,14 @@ For example, to create a bar chart of <code>price</code> by <code>rep78</code>, 
 <pre><code>. graph bar price, over(rep78)
 
 </code></pre>
-<img src="Graph4.svg" >
+<img src="Graph5.svg" >
 <p>
 For further information, we could instead construct a boxplot.
 </p>
 <pre><code>. graph box price, over(rep78)
 
 </code></pre>
-<img src="Graph5.svg" >
+<img src="Graph6.svg" >
 <p>
 There are a few other infrequently used graphs, see <code>help graph</code> for details.
 </p>
@@ -243,7 +243,7 @@ There is a plot subcommand, <code>twoway</code>, which takes additional sub-subc
 <pre><code>. graph twoway scatter mpg weight
 
 </code></pre>
-<img src="Graph6.svg" >
+<img src="Graph7.svg" >
 <p>
 <strong>Note:</strong> For <code>graph twoway</code> commands, the <code>graph</code> is optional. E.g., these commands are equivalent:
 </p>
@@ -267,21 +267,21 @@ The options in the graphing commands are quite extensive and enable tweaking of 
 
 . 
 </code></pre>
-<img src="Graph7.svg" >
+<img src="Graph8.svg" >
 <p>
 Graphs made using <code>twoway</code> have an additional benefit - it is easy to stack them. For example, <code>twoway lfit</code> creates a best-fit line between the points:
 </p>
 <pre><code>. twoway lfit mpg weight
 
 </code></pre>
-<img src="Graph8.svg" >
+<img src="Graph9.svg" >
 <p>
 This isn’t really that useful. It would be much better to overlap those two - generate the scatter plot, then add the best fit line. We can easily do that by passing multiple plots to <code>twoway</code>:
 </p>
 <pre><code>. twoway (scatter mpg weight) (lfit mpg weight)
 
 </code></pre>
-<img src="Graph9.svg" >
+<img src="Graph10.svg" >
 <p>
 Note that the order of the plots matters - if you can tell, the best-fit line was drawn on top of the scatter plot points. If you reversed the order in the command (<code>twoway (lfit mpg weight) (scatter mpg weight)</code>), the line would be drawn first and the points on top of it.
 </p>
@@ -292,7 +292,7 @@ Finally, note that options can be passed to each individual plot:
 &gt;        (lfit mpg weight, lcolor(green))
 
 </code></pre>
-<img src="Graph10.svg" >
+<img src="Graph11.svg" >
 <p>
 Putting these options “globally”, as <code>twoway (…) (…), msymbol(to)</code> would NOT work, as <code>msymbol</code> is an option specifically for <code>twoway scatter</code> (and a few others), not for the more general <code>twoway</code>. There are options that apply to the <code>twoway</code> command, see <code>help twoway_options</code> for details.
 </p>
@@ -315,7 +315,7 @@ There are a very large number of graphs which do not exist under the <code>graph
 (bin=8, start=12, width=3.625)
 
 </code></pre>
-<img src="Graph11.svg" >
+<img src="Graph12.svg" >
 <p>
 You can see a full list of the non-graph plots by looking at
 </p>
@@ -330,7 +330,7 @@ All graph commands accept a <code>by(&lt;grouping var&gt;)</code> option which w
 <pre><code>. twoway (scatter mpg weight) (lfit mpg weight), by(foreign)
 
 </code></pre>
-<img src="Graph12.svg" >
+<img src="Graph13.svg" >
 <p>
 It often looks better to see the two plots overlaid on each other for a more direct comparison. To do this, rather than using <code>by(…)</code>, we’ll instead add each overlay conditionally:
 </p>
@@ -340,7 +340,7 @@ It often looks better to see the two plots overlaid on each other for a more dir
 &gt;          (lfit mpg weight if foreign == 1)
 
 </code></pre>
-<img src="Graph13.svg" >
+<img src="Graph14.svg" >
 <p>
 Notice that Stata automatically made each plot a separate color, but not in a logical fashion. Here’s a cleaned up version:
 </p>
@@ -353,7 +353,7 @@ Notice that Stata automatically made each plot a separate color, but not in a lo
 &gt;       ytitle(&quot;Mileage&quot;)
 
 </code></pre>
-<img src="Graph14.svg" >
+<img src="Graph15.svg" >
 <p>
 (Since its not entirely clear from the code, the <code>order(1 2)</code> argument inside <code>legend</code> serves two purposes - first, it “orders” the entries in the legend box, but secondly and more importantly, it does <em>not</em> contain 3 or 4. If you look at the previous plot, it had four entries in the legend for the two <code>scatter</code>s plus two <code>lfit</code>s. By excluding 3 and 4 from <code>order</code> [3 and 4 corresponding to the two <code>lfits</code>], their legend entries are ignored.)
 </p>

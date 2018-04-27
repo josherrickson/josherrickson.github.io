@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Intermediate Stata (Statistical Modeling)</title>
   <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.6.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-02-06">
+<meta name="date" content="2018-04-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -262,14 +262,14 @@ Let’s test whether the average mileage in the data is different from 20.
 (bin=8, start=12, width=3.625)
 
 </code></pre>
-<img src="Graph15.svg" >
+<img src="Graph16.svg" >
 <p>
 In a histogram, we are looking for violations from the bell-shape of a normal curve. We added the normal curve to the plot by the <code>normal</code> option. We can see that while the data is not perfectly normal, it also is not too far off. We can look at a qq-plot for further details.
 </p>
 <pre><code>. qnorm mpg
 
 </code></pre>
-<img src="Graph16.svg" >
+<img src="Graph17.svg" >
 <p>
 With a qq-plot, we are looking for the points to roughly fall in a straight line, alone the 45-degree line. Here we see some mild violations of those, especially at either end.
 </p>

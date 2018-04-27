@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Intermediate Stata (Statistical Modeling)</title>
   <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.6.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-02-06">
+<meta name="date" content="2018-04-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -301,7 +301,7 @@ Blood pressure is highly correlated, more-so than height and weight. Weight is a
 &gt;         legend(label(1 &quot;Men&quot;) label(2 &quot;Women&quot;) order(1 2))
 
 </code></pre>
-<img src="Graph121.svg" >
+<img src="Graph.svg" >
 <p>
 We can see the correlation between blood pressure measures, with a bit stronger of a relationship for men.
 </p>
@@ -461,11 +461,65 @@ The F-test rejects so the model is informative. The <span class="math inline">\(
 <p>
 2)
 </p>
+<pre><code>. rvfplot
+
+</code></pre>
+<img src="Graph1.svg" >
+<p>
+This doesn’t look great. We don’t see any signs of nonnormality, but we do see a lot of very large positive residuals. If you look at a histogram for <code>lead</code>,
+</p>
+<pre><code>. hist lead
+(bin=36, start=2, width=2.1666667)
+
+</code></pre>
+<img src="Graph2.svg" >
+<p>
+We see right skew. The maintainers of this data noticed the same concern, as they include a <code>loglead</code> variable in the data to attempt to address this.
+</p>
+<pre><code>. desc loglead
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+loglead         float   %9.0g                 log(lead)
+
+</code></pre>
+<p>
+Perhaps we should have run the model with <code>loglead</code> as the output instead.
+</p>
+<p>
+3)
+</p>
+<pre><code>. estat vif
+
+    Variable |       VIF       1/VIF  
+-------------+----------------------
+       2.sex |      2.05    0.488262
+        race |
+          2  |      1.05    0.950220
+          3  |      1.06    0.941064
+         age |      1.13    0.885331
+      weight |      1.33    0.749151
+      height |      2.44    0.410091
+      region |
+          2  |      1.71    0.583352
+          3  |      1.77    0.566163
+          4  |      1.73    0.576881
+-------------+----------------------
+    Mean VIF |      1.59
+
+</code></pre>
+<p>
+Nothing of concern here. The only moderately high VIF’s are on sex and it’s interaction, which does not concern us (of course a main effect and interaction are collinear.).
+</p>
+<p>
+4)
+</p>
 <p>
 The coffecient on “Female” is -5 and is statistically significant, so there is evidence that males have higher average lead levels.
 </p>
 <p>
-3)
+5)
 </p>
 <p>
 The p-value is very small, so it is statistically significant. However, if we look at lead levels:
@@ -481,7 +535,7 @@ The p-value is very small, so it is statistically significant. However, if we lo
 We see that lead levels range from 2 to 80. The coefficient on age is about .02, so age would need to increase by about 50 years to see a higher value for the lead score. Unlikely to be clinically interesting! This is a side effect of the massive sample size.
 </p>
 <p>
-4)
+6)
 </p>
 <pre><code>. margins region
 
@@ -526,7 +580,7 @@ Expression   : Linear prediction, predict()
 It looks like South is significantly lower levels of lead than the other regions, which show no difference between them.
 </p>
 <p>
-5)
+7)
 </p>
 <pre><code>. regress lead i.sex##c.age i.race c.weight c.height i.region
 
@@ -587,65 +641,9 @@ age          |
   Variables that uniquely identify margins: age sex
 
 </code></pre>
-<img src="Graph122.svg" >
+<img src="Graph3.svg" >
 <p>
 We see significance in the interaction, so we looked at the margins. It looks like men show a slight decline in lead as age increases (again, rescaling, -.015/year becomes -1.5 over 100 years - not very interesting) while women show a much more significant increase as age increases (roughly 1 unit every 20 years). The marginal plot helps us to visualize this. For men, from age 20 to 70, the average lead decreases barely half a point. For women, we see nearly a 3 point average increase.
-</p>
-<p>
-6)
-</p>
-<pre><code>. rvfplot
-
-</code></pre>
-<img src="Graph123.svg" >
-<p>
-This doesn’t look great. We don’t see any signs of nonnormality, but we do see a lot of very large positive residuals. If you look at a histogram for <code>lead</code>,
-</p>
-<pre><code>. hist lead
-(bin=36, start=2, width=2.1666667)
-
-</code></pre>
-<img src="Graph124.svg" >
-<p>
-We see right skew. The maintainers of this data noticed the same concern, as they include a <code>loglead</code> variable in the data to attempt to address this.
-</p>
-<pre><code>. desc loglead
-
-              storage   display    value
-variable name   type    format     label      variable label
--------------------------------------------------------------------------------
-loglead         float   %9.0g                 log(lead)
-
-</code></pre>
-<p>
-Perhaps we should have run the model with <code>loglead</code> as the output instead.
-</p>
-<p>
-7)
-</p>
-<pre><code>. estat vif
-
-    Variable |       VIF       1/VIF  
--------------+----------------------
-       2.sex |      9.82    0.101781
-         age |      2.19    0.456706
-   sex#c.age |
-          2  |      9.83    0.101694
-        race |
-          2  |      1.05    0.949633
-          3  |      1.06    0.941038
-      weight |      1.34    0.745052
-      height |      2.44    0.410048
-      region |
-          2  |      1.71    0.583150
-          3  |      1.77    0.565864
-          4  |      1.73    0.576865
--------------+----------------------
-    Mean VIF |      3.30
-
-</code></pre>
-<p>
-Nothing of concern here. The only moderately high VIF’s are on sex and it’s interaction, which does not concern us (of course a main effect and interaction are collinear.).
 </p>
 </div>
 <div id="exercise-5-1" class="section level2">
@@ -722,7 +720,7 @@ number of observations =    10349
 area under ROC curve   =   0.7665
 
 </code></pre>
-<img src="Graph125.svg" >
+<img src="Graph4.svg" >
 <p>
 We cannot reject the model fit (even once we switch to the proper Hosmer-Lemeshow test, which used 20 instead of 10 because we have 10 predictors). The ROC and AUC look decent but not great.
 </p>

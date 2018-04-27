@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Intermediate Stata (Statistical Modeling)</title>
   <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.6.2 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-02-06">
+<meta name="date" content="2018-04-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -603,7 +603,7 @@ To better understand the pattern we’re seeing, let’s visualize this:
   Variables that uniquely identify margins: gear_ratio
 
 </code></pre>
-<img src="Graph116.svg" >
+<img src="Graph18.svg" >
 <p>
 With low gear_ratio, there is no relationship between priceand mileage - increasing the cost of a low gear ratio car is predicted to have no effect on milage, on average. As the gear ratio increases, the relationship becomes significant and negative - among sporty cars (higher gear ratio), the more expensive the car is the worse it’s mileage!
 </p>
@@ -634,7 +634,7 @@ invalid label specifier, :  &quot;mpg&quot;:
 r(198);
 
 </code></pre>
-<img src="Graph117.svg" >
+<img src="Graph19.svg" >
 <p>
 Each color represents a selection of cars with the given gear ratios. The cars with the lowest <code>gear_ratio</code>, in red, show no relationship between price and mileage. The green and purple cars with mid-range gear ratio, show negative relationships. The strongest negative relationship is among the purple cars with the highest gear ratio.
 </p>
@@ -780,7 +780,7 @@ This very explicitly assumes that the relationship is linear (as opposed to some
 <pre><code>. rvfplot
 
 </code></pre>
-<img src="Graph118.svg" >
+<img src="Graph20.svg" >
 <p>
 What we’re seeing here is a scatterplot between the fitted values (the predicted values for each individual) and their errors (the difference between the predicted values and observed values). If you can see a pattern in the scatterplot, that is evidence that this assumption is violated. <strong>Importantly</strong>, not seeing any pattern is <strong>not</strong> evidence that the assumption is valid! You’ll still need to cover this assumption with theory and knowledge of the data.
 </p>
@@ -821,8 +821,14 @@ In other words, we can replicate the above <code>rvfplot</code> via:
 . twoway scatter resids linearpredictor
 
 </code></pre>
-<img src="Graph119.svg" >
-#### Errors are homogeneous
+<img src="Graph21.svg" >
+<p>
+Of course we can clean this plot up with the <a target="_blank" href="visualization.html#the-graph-command">typical options</a>.
+</p>
+</div>
+</div>
+<div id="errors-are-homogeneous" class="section level4">
+<h4><span class="header-section-number">5.2.5.2</span> Errors are homogeneous</h4>
 <p>
 “Homogeneity” is a fancy term for “uniform in distribution”, whereas “heterogeneity” represents “not uniform in distribution”. If we were to take a truly random sample of all individuals in Michigan, the distribution of their heights would be homogeneous - it is reasonable to assume there is only a single distribution at work there. If on the other hand, we took a random sample of basketball players and school children, this would definitely be heterogeneous. The basketball players have a markedly difference distribution of heights that school children!
 </p>
@@ -836,9 +842,8 @@ This is an assumption we can examine, again with the residuals vs fitted plot. W
 If this assumption is violated, you may consider restructuring your model as above, or transforming either your response or predictors using log transforms.
 </p>
 </div>
-</div>
 <div id="independence" class="section level4">
-<h4><span class="header-section-number">5.2.5.2</span> Independence</h4>
+<h4><span class="header-section-number">5.2.5.3</span> Independence</h4>
 <p>
 This last assumption is that each row of your data is independent. If you have repeated measures, this is violated. If you have subjects drawn from groups (i.e. students in classrooms), this is violated. There is no way to test for this, it requires knowing the data set.
 </p>
@@ -950,6 +955,12 @@ Reload the NHANES data.
 How well does the model fit?
 </li>
 <li>
+Do any <a target="_blank" href="#assumptions">assumptions</a> appear violated?
+</li>
+<li>
+Does <a target="_blank" href="#multicollinearity">multicollinearity</a> appear to be a concern?
+</li>
+<li>
 Does one gender tend to have higher levels of lead? Does this appear practically interesting?
 </li>
 <li>
@@ -960,12 +971,6 @@ Looking at all the differences between regions, what conclusion can you draw?
 </li>
 <li>
 Add an <a target="_blank" href="#interactions">interaction</a> between gender and age. What is the interpretation here?
-</li>
-<li>
-Do any <a target="_blank" href="#assumptions">assumptions</a> appear violated?
-</li>
-<li>
-Does <a target="_blank" href="#multicollinearity">multicollinearity</a> appear to be a concern?
 </li>
 </ol>
 </div>
@@ -1087,7 +1092,7 @@ Note: _cons estimates baseline odds.
 Note once again that the model fit characteristics haven’t changed; we’ve fit the same model, just with different units. Now the interpretation is more reasonable, for every .1 increase in <code>gear_ratio</code> (which corresponds to a 1 increase in <code>gear_ratio2</code>), we predict an increase in the odds of a car being foreign by 77.4%.
 </p>
 <p>
-The odds ratio on headroom is not distinguishable from 1, however, if it were, the interpretation is that increasing the headroom by 1 inch is predicted to decrease the odds of a car being foreign by about 21.7% on average (1 - «dd_display: %9.3f exp(_b[headroom])»).
+The odds ratio on headroom is not distinguishable from 1, however, if it were, the interpretation is that increasing the headroom by 1 inch is predicted to decrease the odds of a car being foreign by about 21.7% on average (1 - 0.783).
 </p>
 </div>
 <div id="categorical-variables-and-interactions" class="section level3">
@@ -1121,7 +1126,7 @@ number of observations =       74
 area under ROC curve   =   0.9384
 
 </code></pre>
-<img src="Graph120.svg" >
+<img src="Graph22.svg" >
 <p>
 The ROC curve is a bit complicated to explain, but basically over a range of thresholds, it classifies each observation as predicting a 0 or 1. E.g., with a threshold of .2, any observation whose predicted probability is below .2 is classified as a “0”, any observation whose predicted probability is above .2 is classified as a “1”. For each such threshold, the specificity (fraction of correctly classified “0”’s) versus the sensitivity(fraction of correctly classified “1”’s) are computed and plotted against each other. If the two fractions are equal, it’s a coin-flip and the model does no better than chance. On the other hand, the higher the ratio of sensitivity/(1 - specificity) is, the better classified we are.
 </p>
