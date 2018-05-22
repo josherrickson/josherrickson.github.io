@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-04-27">
+<meta name="date" content="2018-05-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -467,28 +467,25 @@ or (either statement is true)
 You can also use parentheses in combination with &amp; and <span class="math inline">\(|\)</span> to create more logical statements (e.g. <code>True &amp; (False | True)</code> returns true).
 </p>
 <p>
-Now here’s the catch: In Stata<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, conditional statements return 1 (True) and 0 (False). So we can use them in <code>generate</code> statements to create binary variables easily.
+Now here’s the trick: In Stata<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, conditional statements return 1 (True) and 0 (False). So we can use them in <code>generate</code> statements to create binary variables easily.
 </p>
-<pre><code>. generate price_over_4k = price &gt; 4000
+<pre><code>. generate price4k = price &gt; 4000
 
-. list price price_over_4k in 1/5, abbr(100)
+. list price* in 1/5
 
-     +-----------------------+
-     | price   price_over_4k |
-     |-----------------------|
-  1. | 4,099               1 |
-  2. | 4,749               1 |
-  3. | 3,799               0 |
-  4. | 4,816               1 |
-  5. | 7,827               1 |
-     +-----------------------+
+     +-----------------+
+     | price   price4k |
+     |-----------------|
+  1. | 4,099         1 |
+  2. | 4,749         1 |
+  3. | 3,799         0 |
+  4. | 4,816         1 |
+  5. | 7,827         1 |
+     +-----------------+
 
 </code></pre>
 <p>
-(Note that <code>list</code> truncates variable names to 8 characters by default. The <code>abbr(#)</code> argument abbreviates to other lengths; setting it to a large number removes abbreviating at all.)
-</p>
-<p>
-Now, <code>price_over_4k</code> takes on values 1 and 0 depending on whether the conditional statement was true.
+Now, <code>price4k</code> takes on values 1 and 0 depending on whether the conditional statement was true.
 </p>
 <p>
 For a slightly more complicated example, lets create a dummy variable representing cheap cars. There are two possible definitions of cheap cars - cars which have a low cost, or cars which have low maintenance costs (high mileage and low repairs).
@@ -626,11 +623,11 @@ The general workflow with these cases will be to optionally use <code>generate</
 <p>
 As a first example, let’s collapse the <code>rep78</code> variable into a low/mid/high cost of maintenance categorical variable (1 repair, 2-3 repairs, 4-5 repairs). First, we’ll generate the new variable.
 </p>
-<pre><code>. generate cost_maint = 1
+<pre><code>. generate maintcost = 1
 
-. tab cost_maint
+. tab maintcost
 
- cost_maint |      Freq.     Percent        Cum.
+  maintcost |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           1 |         74      100.00      100.00
 ------------+-----------------------------------
@@ -640,12 +637,12 @@ As a first example, let’s collapse the <code>rep78</code> variable into a low/
 <p>
 Without any variables or conditions, every row is set to 1. We’ll let the 1 represent the “low” category, so next we’ll replace it with 2 for cars in the “mid” category.
 </p>
-<pre><code>. replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+<pre><code>. replace maintcost = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
 (38 real changes made)
 
-. tab cost_maint
+. tab maintcost
 
- cost_maint |      Freq.     Percent        Cum.
+  maintcost |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           1 |         36       48.65       48.65
           2 |         38       51.35      100.00
@@ -656,12 +653,12 @@ Without any variables or conditions, every row is set to 1. We’ll let the 1 re
 <p>
 Finish with the “high” category.
 </p>
-<pre><code>. replace cost_maint = 3 if rep78 &gt; 3
+<pre><code>. replace maintcost = 3 if rep78 &gt; 3
 (34 real changes made)
 
-. tab cost_maint
+. tab maintcost
 
- cost_maint |      Freq.     Percent        Cum.
+  maintcost |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           1 |          2        2.70        2.70
           2 |         38       51.35       54.05
@@ -682,28 +679,28 @@ is true! There is some discussion <a target="_blank" href="http://www.stata.com/
 <p>
 The complication referred to can be seen in row 3 here:
 </p>
-<pre><code>. list make rep78 cost_maint in 1/5, abbr(100)
+<pre><code>. list make rep78 maintcost in 1/5
 
-     +------------------------------------+
-     | make            rep78   cost_maint |
-     |------------------------------------|
-  1. | AMC Concord         3            2 |
-  2. | AMC Pacer           3            2 |
-  3. | AMC Spirit          .            3 |
-  4. | Buick Century       3            2 |
-  5. | Buick Electra       4            3 |
-     +------------------------------------+
+     +----------------------------------+
+     | make            rep78   maintc~t |
+     |----------------------------------|
+  1. | AMC Concord         3          2 |
+  2. | AMC Pacer           3          2 |
+  3. | AMC Spirit          .          3 |
+  4. | Buick Century       3          2 |
+  5. | Buick Electra       4          3 |
+     +----------------------------------+
 
 </code></pre>
 <p>
 The AMC Spirit has a high repair cost even though we do not have its repair record. We can fix this easily.
 </p>
-<pre><code>. replace cost_maint = . if rep78 == .
+<pre><code>. replace maintcost = . if rep78 &gt;= .
 (5 real changes made, 5 to missing)
 
-. tab cost_maint, missing
+. tab maintcost, missing
 
- cost_maint |      Freq.     Percent        Cum.
+  maintcost |      Freq.     Percent        Cum.
 ------------+-----------------------------------
           1 |          2        2.70        2.70
           2 |         38       51.35       54.05
@@ -714,30 +711,33 @@ The AMC Spirit has a high repair cost even though we do not have its repair reco
 
 </code></pre>
 <p>
+Note that in the <code>if</code> condition, we use <code>&gt;=</code> instead of <code>==</code>. This is because Stata allows you to define “reasons” for missing, specifically <code>.a</code>, <code>.b</code>, all the way through <code>.z</code>. These are sorted such that <code>.</code> &lt; <code>.a</code> &lt; <code>.b</code> &lt; … &lt; <code>.z</code>. A lot of data do not differentiate, but for safety, using <code>&gt;= .</code> will catch both cases where these extended missing are used and when they aren’t.
+</p>
+<p>
 The <code>missing</code> option to <code>tab</code> forces it to show a row for any missing values. Without it, missing rows are suppressed.
 </p>
 <p>
 To summarize, we used the following commands:
 </p>
-<pre><code>generate cost_maint = 1
-replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
-replace cost_maint = 3 if rep78 &gt; 3
-replace cost_maint = . if rep78 == .
+<pre><code>generate maintcost = 1
+replace maintcost = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace maintcost = 3 if rep78 &gt; 3
+replace maintcost = . if rep78 == .
 </code></pre>
 <p>
 There are various other ways it could have been done, such as
 </p>
-<pre><code>generate cost_maint = 1 if rep78 == 1
-replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
-replace cost_maint = 3 if rep78 &gt; 3 &amp; rep78 != .
+<pre><code>generate maintcost = 1 if rep78 == 1
+replace maintcost = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace maintcost = 3 if rep78 &gt; 3 &amp; rep78 != .
 </code></pre>
-<pre><code>generate cost_maint = .
-replace cost_maint = 1 if rep78 == 1
-replace cost_maint = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
-replace cost_maint = 3 if rep78 &gt; 3 &amp; rep78 != .
+<pre><code>generate maintcost = .
+replace maintcost = 1 if rep78 == 1
+replace maintcost = 2 if rep78 &gt;= 2 &amp; rep78 &lt;= 3
+replace maintcost = 3 if rep78 &gt; 3 &amp; rep78 != .
 </code></pre>
 <p>
-Of course, we could also generate it in the reverse order (3 to 1).
+Of course, we could also generate it in the reverse order (3 to 1). There are also alternate ways to write the various conditionals, such as replacing <code>rep78 &gt; 3</code> with <code>rep78 &gt;=4</code> or even <code>rep78 == 4 | rep78 == 5</code> (though the last is a bit wordy). There are usually multiple correct ways to specify any conditional.
 </p>
 </div>
 </div>
@@ -756,14 +756,21 @@ Almost any Stata command which operates on variables can operate on a subset of 
 <p>
 This gives us a summary of price across all cars. What if we wanted to look at the summary only for non-foreign cars?
 </p>
-<pre><code>. tab foreign
+<pre><code>. codebook foreign
 
-   Car type |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   Domestic |         52       70.27       70.27
-    Foreign |         22       29.73      100.00
-------------+-----------------------------------
-      Total |         74      100.00
+-------------------------------------------------------------------------------
+foreign                                                                Car type
+-------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  origin
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/74
+
+            tabulation:  Freq.   Numeric  Label
+                            52         0  Domestic
+                            22         1  Foreign
 
 . summ price if foreign == 0
 
@@ -812,7 +819,7 @@ Instead, we can use <code>by</code> and <code>bysort</code> to perform the same 
 
 </code></pre>
 <p>
-There is a strong assumption here that <code>foreign</code> is already sorted. If <code>foreign</code> were not sorted (or if you simply did not want to check/assume it was), you could instead use
+There is a strong assumption here that the data is already sorted by the variables we are splitting <code>by</code> on (e.g. <code>foreign</code>). If <code>foreign</code> were not sorted (or if you simply did not want to check/assume it was), you could instead use
 </p>
 <pre><code>bysort foreign: summ price
 </code></pre>
@@ -1042,7 +1049,7 @@ You can append “+” or “-” to each variable to change whether it is ascen
 Recall that missing values (<code>.</code>) are <a target="_blank" href="data-manipulation.html#conditional-variable-generation">larger than any other values</a>. When sorting with missing values, they follow this rule as well. If you want to treat missing values as smaller than all other values, you can pass the <code>mfirst</code> option to <code>gsort</code>. Note this does <em>not</em> make missingness “less than” anywhere else, only for the purposes of the current sort.
 </p>
 <p>
-Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string (“”) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, “”, “EEE”, the sorted ascending order would be “”, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
+Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string (&quot;“) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, &quot;“, “EEE”, the sorted ascending order would be &quot;“, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
 </p>
 <p>
 As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to conditionally sort; that is, passing something like <code>sort &lt;varname&gt; in &lt;condition&gt;</code> would sort only those rows for which the condition is true, the remaining rows remain <em>in their exact same position</em>.
@@ -1062,7 +1069,7 @@ These two commands convert strings and numerics between each other.
 tostring &lt;variable&gt;, replace
 </code></pre>
 <p>
-Either can take <code>replace</code> (to replace the existing variable with the new one) or <code>gen( )</code> (to generate a new variable). I would recommend always using <code>gen</code> to double-check that the conversion worked as expected, then using <code>drop</code>, <code>rename</code> and <code>order</code> to replace the existing variable.
+Both commands can take the options <code>replace</code> (to replace the existing variable with the new one) or <code>gen( )</code> (to generate a new variable). I would recommend always using <code>gen</code> to double-check that the conversion worked as expected, then using <code>drop</code>, <code>rename</code> and <code>order</code> to replace the existing variable.
 </p>
 <pre><code>. desc mpg
 
@@ -1342,7 +1349,7 @@ If you find yourself in a situation where you simply must manipulate the strings
 <code>strupper</code> and <code>strlower</code>: Converts to lower/upper case.
 </li>
 <li>
-<code>strtrim</code>: Removes white space before and after strings (e.g. <code>strtrim(&quot; string “) =”string“</code>). To remove only left (preceding) or right (following) spaces, use <code>strltrim</code> or <code>strrtrim</code>.
+<code>strtrim</code>: Removes white space before and after strings (e.g. <code>strtrim(&quot; string “) =”string&quot;</code>). To remove only left (preceding) or right (following) spaces, use <code>strltrim</code> or <code>strrtrim</code>.
 </li>
 <li>
 <code>substr</code>: Returns the substring starting at an index for a given number of characters (e.g. `substr(“abcdefg”, 2, 3) = “bcd”).
