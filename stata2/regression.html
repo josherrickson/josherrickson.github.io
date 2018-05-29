@@ -385,7 +385,7 @@ The issue is that Stata doesn’t know we want to treat <code>rep78</code> as ca
 First, note that <code>headroom</code> no longer has a significant coefficient! This implies that <code>rep78</code> and <code>headroom</code> are correlated, and in the first model where we did not include <code>rep78</code>, all of <code>rep78</code>’s effect was coming through <code>headroom</code>. Once we control for <code>rep78</code>, headroom is no longer significant. We will discuss <a target="_blank" href="#multicollinearity">multicollinearity later</a>, as well as why this is why <a target="_blank" href="#model-selection-is-bad">model selection is bad</a>.
 </p>
 <p>
-Now we see 4 rows for <code>rep78</code>, each corresponding to a comparison between response 1 and the row. For example, the first row, 2, is saying that when <code>rep78</code> is 2 compared to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level), the average predicted mpg drops by «dd_display: %9.3f abs(_b[2.rep78])» (though it is not statistical significant). The last row, 5, is saying that when <code>rep78</code> is 5 compare to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level, the average predicted mpg increases by 4.401 (again, not statistically significant).
+Now we see 4 rows for <code>rep78</code>, each corresponding to a comparison between response 1 and the row. For example, the first row, 2, is saying that when <code>rep78</code> is 2 compared to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level), the average predicted mpg drops by 1.204 (though it is not statistical significant). The last row, 5, is saying that when <code>rep78</code> is 5 compare to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level, the average predicted mpg increases by 4.401 (again, not statistically significant).
 </p>
 <p>
 What about the other comparison? (Does 2 differ from 4?) Let’s use the <code>margins</code> command. First, we’ll get the marginal means at each level - if <em>every</em> car in the data set had a <code>rep78</code> level of <span class="math inline">\(i\)</span>, what is the average mileage?
@@ -603,7 +603,7 @@ To better understand the pattern we’re seeing, let’s visualize this:
   Variables that uniquely identify margins: gear_ratio
 
 </code></pre>
-<img src="Graph18.svg" >
+<img src="Graph23.svg" >
 <p>
 With low gear_ratio, there is no relationship between priceand mileage - increasing the cost of a low gear ratio car is predicted to have no effect on milage, on average. As the gear ratio increases, the relationship becomes significant and negative - among sporty cars (higher gear ratio), the more expensive the car is the worse it’s mileage!
 </p>
@@ -634,7 +634,7 @@ invalid label specifier, :  &quot;mpg&quot;:
 r(198);
 
 </code></pre>
-<img src="Graph19.svg" >
+<img src="Graph24.svg" >
 <p>
 Each color represents a selection of cars with the given gear ratios. The cars with the lowest <code>gear_ratio</code>, in red, show no relationship between price and mileage. The green and purple cars with mid-range gear ratio, show negative relationships. The strongest negative relationship is among the purple cars with the highest gear ratio.
 </p>
@@ -780,7 +780,7 @@ This very explicitly assumes that the relationship is linear (as opposed to some
 <pre><code>. rvfplot
 
 </code></pre>
-<img src="Graph20.svg" >
+<img src="Graph25.svg" >
 <p>
 What we’re seeing here is a scatterplot between the fitted values (the predicted values for each individual) and their errors (the difference between the predicted values and observed values). If you can see a pattern in the scatterplot, that is evidence that this assumption is violated. <strong>Importantly</strong>, not seeing any pattern is <strong>not</strong> evidence that the assumption is valid! You’ll still need to cover this assumption with theory and knowledge of the data.
 </p>
@@ -821,7 +821,7 @@ In other words, we can replicate the above <code>rvfplot</code> via:
 . twoway scatter resids linearpredictor
 
 </code></pre>
-<img src="Graph21.svg" >
+<img src="Graph26.svg" >
 <p>
 Of course we can clean this plot up with the <a target="_blank" href="visualization.html#the-graph-command">typical options</a>.
 </p>
@@ -1126,7 +1126,7 @@ number of observations =       74
 area under ROC curve   =   0.9384
 
 </code></pre>
-<img src="Graph22.svg" >
+<img src="Graph27.svg" >
 <p>
 The ROC curve is a bit complicated to explain, but basically over a range of thresholds, it classifies each observation as predicting a 0 or 1. E.g., with a threshold of .2, any observation whose predicted probability is below .2 is classified as a “0”, any observation whose predicted probability is above .2 is classified as a “1”. For each such threshold, the specificity (fraction of correctly classified “0”’s) versus the sensitivity(fraction of correctly classified “1”’s) are computed and plotted against each other. If the two fractions are equal, it’s a coin-flip and the model does no better than chance. On the other hand, the higher the ratio of sensitivity/(1 - specificity) is, the better classified we are.
 </p>
