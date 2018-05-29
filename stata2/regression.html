@@ -138,7 +138,9 @@
 <li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
-<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="mixed-models.html"><a href="mixed-models.html#econometric-terminology"><i class="fa fa-check"></i><b>6.1.1</b> Econometric terminology</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
 <li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
 <li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
@@ -414,7 +416,7 @@ Expression   : Linear prediction, predict()
 Note that the difference in the marginal means corresponds to the coefficients above. E.g. the marginal means at repair record 1 and 2 are 20.42972 and 21.63332 respectively, for a difference of 1.2036 - which is exactly (with rounding) the coefficient we saw on <code>rep78 = 2</code> above!
 </p>
 <p>
-Note that the t-tests here are simply testing whether the marginal means are different than zero - of no real interest.
+The t-tests here are simply testing whether the marginal means are different than zero - of no real interest.
 </p>
 <p>
 Now, we can look at all pairwise comparisons by adding the <code>pwcompare(pv)</code> option to margins:
@@ -603,9 +605,9 @@ To better understand the pattern we’re seeing, let’s visualize this:
   Variables that uniquely identify margins: gear_ratio
 
 </code></pre>
-<img src="Graph23.svg" >
+<img src="Graph18.svg" >
 <p>
-With low gear_ratio, there is no relationship between priceand mileage - increasing the cost of a low gear ratio car is predicted to have no effect on milage, on average. As the gear ratio increases, the relationship becomes significant and negative - among sporty cars (higher gear ratio), the more expensive the car is the worse it’s mileage!
+With low gear_ratio, there is no relationship between price and mileage - increasing the cost of a low gear ratio car is predicted to have no effect on milage, on average. As the gear ratio increases, the relationship becomes significant and negative - among sporty cars (higher gear ratio), the more expensive the car is the worse it’s mileage!
 </p>
 <p>
 We can create a rather complicated looking plot to examine this.
@@ -629,12 +631,10 @@ We can create a rather complicated looking plot to examine this.
 &gt;                 legend(label(1 &quot;&lt; 2.5&quot;) label(3 &quot;2.5 - 3.0&quot;) ///
 &gt;                    label(5 &quot;3.0 - 3.5&quot;) label(7 &quot;&gt; 3.5&quot;) ///
 &gt;                    order(1 3 5 7)) ///
-&gt;             ylab(&quot;mpg&quot;)
-invalid label specifier, :  &quot;mpg&quot;:
-r(198);
+&gt;             ytitle(&quot;mpg&quot;)
 
 </code></pre>
-<img src="Graph24.svg" >
+<img src="Graph19.svg" >
 <p>
 Each color represents a selection of cars with the given gear ratios. The cars with the lowest <code>gear_ratio</code>, in red, show no relationship between price and mileage. The green and purple cars with mid-range gear ratio, show negative relationships. The strongest negative relationship is among the purple cars with the highest gear ratio.
 </p>
@@ -657,7 +657,7 @@ Finally, for categorical by categorical interactions, we get one additional vari
 margins cat1#cat2
 </code></pre>
 <p>
-Often discovering which variety of these you want may require some trial an error!
+Often discovering which variety of these you want may require some trial and error!
 </p>
 <div id="centering" class="section level4">
 <h4><span class="header-section-number">5.2.3.1</span> Centering</h4>
@@ -752,7 +752,7 @@ c.gear_ratio |   -.001145   .0003043    -3.76   0.000    -.0017519   -.0005381
 
 </code></pre>
 <p>
-Notice that compared to the <a target="_blank" href="#interactions">previous model</a>, the Coef estimates but the standard errors (and corresponding t-statistic, p-value and confidence interval) are slightly different.
+Notice that compared to the <a target="_blank" href="#interactions">previous model</a>, the Coef estimates are the same but the standard errors (and corresponding t-statistic, p-value and confidence interval) are slightly different.
 </p>
 <p>
 Typically, the robust standard errors should be slightly larger than the non-robust standard errors, but not always. The only common situation where the robust standard errors will decrease is when the error variance is highest for observations near the average value of the predictors. This does not often happen (generally the higher residuals occur in observations that could be considered outliers).
@@ -780,7 +780,7 @@ This very explicitly assumes that the relationship is linear (as opposed to some
 <pre><code>. rvfplot
 
 </code></pre>
-<img src="Graph25.svg" >
+<img src="Graph20.svg" >
 <p>
 What we’re seeing here is a scatterplot between the fitted values (the predicted values for each individual) and their errors (the difference between the predicted values and observed values). If you can see a pattern in the scatterplot, that is evidence that this assumption is violated. <strong>Importantly</strong>, not seeing any pattern is <strong>not</strong> evidence that the assumption is valid! You’ll still need to cover this assumption with theory and knowledge of the data.
 </p>
@@ -821,7 +821,7 @@ In other words, we can replicate the above <code>rvfplot</code> via:
 . twoway scatter resids linearpredictor
 
 </code></pre>
-<img src="Graph26.svg" >
+<img src="Graph21.svg" >
 <p>
 Of course we can clean this plot up with the <a target="_blank" href="visualization.html#the-graph-command">typical options</a>.
 </p>
@@ -1126,7 +1126,7 @@ number of observations =       74
 area under ROC curve   =   0.9384
 
 </code></pre>
-<img src="Graph27.svg" >
+<img src="Graph22.svg" >
 <p>
 The ROC curve is a bit complicated to explain, but basically over a range of thresholds, it classifies each observation as predicting a 0 or 1. E.g., with a threshold of .2, any observation whose predicted probability is below .2 is classified as a “0”, any observation whose predicted probability is above .2 is classified as a “1”. For each such threshold, the specificity (fraction of correctly classified “0”’s) versus the sensitivity(fraction of correctly classified “1”’s) are computed and plotted against each other. If the two fractions are equal, it’s a coin-flip and the model does no better than chance. On the other hand, the higher the ratio of sensitivity/(1 - specificity) is, the better classified we are.
 </p>
@@ -1148,7 +1148,7 @@ Logistic model for foreign, goodness-of-fit test
 
 </code></pre>
 <p>
-We see here a p-value of 0.882, failing to reject the null, so there is no evidence that the model fits well.
+We see here a p-value of 0.882, failing to reject the null, so there is no evidence that the model does not fit well.
 </p>
 <p>
 There is some concern that when the “number of covariate patterns” is close to the number of observations , the Pearson test is invalid. In this data, we see that 58 is indeed “close” to 74. Instead, we can use the Hosmer-Lemeshow by passing the <code>group(#)</code> option:
@@ -1185,7 +1185,7 @@ Since the logistic regression model is solved <a target="_blank" href="regressio
 With a binary outcome instead of a continuous outcome, it is much easier to have a predictor (or set of predictors) that perfectly predict the outcome. Consider trying to predict gender based on height. With a smaller sample, it’s not hard to imagine a scenario where every male is taller than every female. This is called “perfect separation”; using this sample, knowing height gives perfect information about gender
 </p>
 <p>
-“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8&quot; is male, and there are two men but the rest women below 5’8“. Here, we will always predict Male for heights above 5’8”.
+“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8&quot; is male, and there are two men and all the women below 5’8“. Here, we will always predict Male for heights above 5’8”.
 </p>
 <p>
 Separation (of either type) often produces coefficients to be extreme with large standard errors. Stata will sometimes warn about this, but not always. If you notice these exceptional coefficients or if Stata does warn about separation, you’ll need to investigate and consider excluding certain predictors. It may seem counter-intuitive to exclude extremely highly predictive variables, but if a variable produces perfect separation, you don’t need a model to inform you of that.

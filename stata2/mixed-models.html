@@ -138,7 +138,9 @@
 <li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
-<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="mixed-models.html"><a href="mixed-models.html#econometric-terminology"><i class="fa fa-check"></i><b>6.1.1</b> Econometric terminology</a></li>
+</ul></li>
 <li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
 <li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
 <li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
@@ -264,6 +266,15 @@ This is taking it a bit far; it’s rare to see more than 3 levels, but in theor
 <p>
 For this workshop, we will only briefly discuss this from hierarchical point of view, preferring the mixed models view (with the reminder again that they are the same!).
 </p>
+<div id="econometric-terminology" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Econometric terminology</h3>
+<p>
+To make the terminology a bit more complicated, in econometrics, some of the terms we will use here are overloaded. When you are discussing mixed models with someone with econometric or economics training, it’s important to differentiate between the statistical terms of “fixed effects” and “random effects” which are the two components of a mixed model that we <a target="_blank" href="#linear_mixed_model">discuss below</a>, and what econometricians called “fixed effects regression” and “random effects regression”.
+</p>
+<p>
+Without going into the full details of the econometric world, what econometricians called “random effects regression” is essentially what statisticians called “mixed models”, what we’re talking about here. The Stata command <code>xtreg</code> handles those econometric models.
+</p>
+</div>
 </div>
 <div id="wide-vs-long-data-time-varying-vs-time-invariant" class="section level2">
 <h2><span class="header-section-number">6.2</span> Wide vs Long data, Time-varying vs Time-invariant</h2>
@@ -277,7 +288,7 @@ Wide format of the data would have row represent a woman, and she would have 20 
 Long format of the data would have each row represent a woman and a year, so that each woman can have up to 20 rows (if a woman wasn’t measured in a given year, that row &amp; year is missing).
 </p>
 <p>
-To fit a mixed model, we need the data in long format. We can use the <code>reshape</code> command to transform wide data to long. This is covered in the Stata I set of notes.
+To fit a mixed model, we need the data in long format. We can use the <code>reshape</code> command to transform wide data to long. This is covered in the <a target="_blank" href="https://errickson.net/stata1/data-manipulation.html#reshaping-files">Stata I</a> set of notes.
 </p>
 <p>
 Additionally, there is the concept of time-varying vs time-invariant variables. Time-varying variables are those which can be different for each entry within the same individual. Examples include weight or salary. Time-invariant are those which are the same across all entries. Examples include race or baseline characteristics.
@@ -434,7 +445,7 @@ Generally, failure to converge will be due to an issue with the data. Things to 
 </p>
 <ul>
 <li>
-Different scales of predictors. For example, salary (in dollars) and number of children. The scales are drastically different which can cause issues. Try re-scaling any variables on extreme scales (you can do this with <code>egen scaledvar = std(origvar)</code>). This will affect interpretation (the estimated coefficient will be the average predicted change with a on standard deviation increase in the predictor) but not the overall model fit.
+Different scales of predictors. For example, salary (in dollars) and number of children. The scales are drastically different which can cause issues. Try re-scaling any variables on extreme scales (you can do this with <code>egen scaledvar = std(origvar)</code>). This will affect interpretation (the estimated coefficient will be the average predicted change with a one standard deviation increase in the predictor) but not the overall model fit.
 </li>
 <li>
 High correlation can cause this. Check correlations (<code>pwcorr</code> or <code>corr</code>) between your predictors (including any categorical variables) and if you find a highly correlated pair, try removing one.
