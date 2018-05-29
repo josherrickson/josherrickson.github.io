@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-04-27">
+<meta name="date" content="2018-05-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -644,107 +644,6 @@ We will cover two-way tables (also known as “crosstabs”) later in <a target=
 
 
 </code></pre>
-<p>
-What if instead you wanted each individual table? You could run multiple <code>tab</code> statements, or use the <code>tab1</code> command instead.
-</p>
-<pre><code>. tab1 rep78 foreign, missing
-
--&gt; tabulation of rep78  
-
-     Repair |
-Record 1978 |      Freq.     Percent        Cum.
-------------+-----------------------------------
-          1 |          2        2.70        2.70
-          2 |          8       10.81       13.51
-          3 |         30       40.54       54.05
-          4 |         18       24.32       78.38
-          5 |         11       14.86       93.24
-          . |          5        6.76      100.00
-------------+-----------------------------------
-      Total |         74      100.00
-
--&gt; tabulation of foreign  
-
-   Car type |      Freq.     Percent        Cum.
-------------+-----------------------------------
-   Domestic |         52       70.27       70.27
-    Foreign |         22       29.73      100.00
-------------+-----------------------------------
-      Total |         74      100.00
-
-</code></pre>
-<p>
-If you give more than two arguments to <code>tab</code>, it will not run. If you wanted all pairwise tables, you can use <code>tab2</code>:
-</p>
-<pre><code>. tab2 rep78 foreign headroom, missing
-
--&gt; tabulation of rep78 by foreign  
-
-    Repair |
-    Record |       Car type
-      1978 |  Domestic    Foreign |     Total
------------+----------------------+----------
-         1 |         2          0 |         2 
-         2 |         8          0 |         8 
-         3 |        27          3 |        30 
-         4 |         9          9 |        18 
-         5 |         2          9 |        11 
-         . |         4          1 |         5 
------------+----------------------+----------
-     Total |        52         22 |        74 
-
-
--&gt; tabulation of rep78 by headroom  
-
-    Repair |
-    Record |                     Headroom (in.)
-      1978 |       1.5        2.0        2.5        3.0        3.5 |     Total
------------+-------------------------------------------------------+----------
-         1 |         1          1          0          0          0 |         2 
-         2 |         0          3          0          0          1 |         8 
-         3 |         0          5          5          4         10 |        30 
-         4 |         2          1          5          3          2 |        18 
-         5 |         0          3          4          4          0 |        11 
-         . |         1          0          0          2          2 |         5 
------------+-------------------------------------------------------+----------
-     Total |         4         13         14         13         15 |        74 
-
-
-    Repair |
-    Record |          Headroom (in.)
-      1978 |       4.0        4.5        5.0 |     Total
------------+---------------------------------+----------
-         1 |         0          0          0 |         2 
-         2 |         2          1          1 |         8 
-         3 |         3          3          0 |        30 
-         4 |         5          0          0 |        18 
-         5 |         0          0          0 |        11 
-         . |         0          0          0 |         5 
------------+---------------------------------+----------
-     Total |        10          4          1 |        74 
-
-
--&gt; tabulation of foreign by headroom  
-
-           |                     Headroom (in.)
-  Car type |       1.5        2.0        2.5        3.0        3.5 |     Total
------------+-------------------------------------------------------+----------
-  Domestic |         3         10          4          7         13 |        52 
-   Foreign |         1          3         10          6          2 |        22 
------------+-------------------------------------------------------+----------
-     Total |         4         13         14         13         15 |        74 
-
-
-           |          Headroom (in.)
-  Car type |       4.0        4.5        5.0 |     Total
------------+---------------------------------+----------
-  Domestic |        10          4          1 |        52 
-   Foreign |         0          0          0 |        22 
------------+---------------------------------+----------
-     Total |        10          4          1 |        74 
-
-
-</code></pre>
 </div>
 <div id="generating-dummy-variables" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> Generating dummy variables</h3>
@@ -914,7 +813,7 @@ Take note of how the missing value is propogated when creating the dummies.
 <div id="correlate" class="section level2">
 <h2><span class="header-section-number">2.5</span> <code>correlate</code></h2>
 <p>
-With the use of <code>tab</code> and <code>tab2</code> for crosstabs, we’ve left univariate summaries and moved to joint summaries. For continuous variables, we can use the correlation to examine how similar two continuous variables are. The most common version of correlation is Pearson’s correlation, which ranges from -1 to 1.
+With the use of <code>tab</code> for crosstabs, we’ve left univariate summaries and moved to joint summaries. For continuous variables, we can use the correlation to examine how similar two continuous variables are. The most common version of correlation is Pearson’s correlation, which ranges from -1 to 1.
 </p>
 <ul>
 <li>
@@ -993,7 +892,7 @@ It is possible to obtain p-values testing whether each of those correlations are
 Consider if we wanted to look at all the continuous variables in the data. We could write <code>corr price mpg …</code> and make a very long command. The collection of all variables would be a “varlist”. Stata has several ways of short cutting this.
 </p>
 <p>
-The first we’ve already seen when we used the wildcard “*” <a target="_blank" href="#Generating-dummy-variables">above</a>. We can use * anywhere in the variable name to denote any number of additional characters. E.g. “this*var” matches “thisvar”, “thisnewvar”, “this-var”, “thisHFJHDJSHFKDHFKSHvar”, etc. A second wildcard, “?”, represents just a single variable, so “this*var” would match only “this-var” from that list, as well as “thisAvar”, “thisJvar”, etc.
+The first we’ve already seen when we used the wildcard “*” <a target="_blank" href="#Generating-dummy-variables">above</a>. We can use * anywhere in the variable name to denote any number of additional characters. E.g. “this<em>var” matches “thisvar”, “thisnewvar”, “this-var”, “thisHFJHDJSHFKDHFKSHvar”, etc. A second wildcard, “?”, represents just a single variable, so “this</em>var” would match only “this-var” from that list, as well as “thisAvar”, “thisJvar”, etc.
 </p>
 <p>
 Secondly, we can match a subset of variables that are next to each other using “-”. All variable, starting with the one to the left of the - and ending with the one to the right of the - are included. For example,
@@ -1090,7 +989,7 @@ Notice that it automatically ignored the string variable <code>make</code>. Not 
 You may have noticed that the <code>cor</code> command reports the number of observations it used, for example, the first few correlations all used 74 observations, but the <code>_all</code> version used on 69. <code>correlate</code> uses what’s known as complete cases analysis - any observation missing <em>any</em> value used in the command is excluded. <code>rep78</code> is missing 5 observations (run the <code>misstable summarize</code> command to see this).
 </p>
 <p>
-On the other hand, pairwise completion only excluds missing values from the relevant comparisons. If a given correlation doesn’t involve <code>rep78</code>, it will use all the data. We can obtain this with <code>pwcorr</code>.
+On the other hand, pairwise completion only excludes missing values from the relevant comparisons. If a given correlation doesn’t involve <code>rep78</code>, it will use all the data. We can obtain this with <code>pwcorr</code>.
 </p>
 <pre><code>. corr rep78 price trunk
 (obs=69)
