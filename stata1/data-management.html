@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2017-09-26">
+<meta name="date" content="2018-08-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -80,6 +80,7 @@
 <li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
 <li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#dyndoc"><i class="fa fa-check"></i><b>2.3.2</b> dyndoc</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#updating"><i class="fa fa-check"></i><b>2.4</b> Updating</a></li>
 <li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#installing-user-written-commands"><i class="fa fa-check"></i><b>2.5</b> Installing user-written commands</a></li>
@@ -88,15 +89,12 @@
 <li class="chapter" data-level="2.6.2" data-path="basics.html"><a href="basics.html#version-control"><i class="fa fa-check"></i><b>2.6.2</b> Version control</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="basics.html"><a href="basics.html#exercise-0"><i class="fa fa-check"></i><b>2.7</b> Exercise 0</a></li>
-<li class="chapter" data-level="2.8" data-path="basics.html"><a href="basics.html#basic-command-syntax"><i class="fa fa-check"></i><b>2.8</b> Basic command syntax</a><ul>
-<li class="chapter" data-level="2.8.1" data-path="basics.html"><a href="basics.html#referring-to-variables"><i class="fa fa-check"></i><b>2.8.1</b> Referring to variables</a></li>
+<li class="chapter" data-level="2.8" data-path="basics.html"><a href="basics.html#stata-help"><i class="fa fa-check"></i><b>2.8</b> Stata Help</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="basics.html"><a href="basics.html#short-commands"><i class="fa fa-check"></i><b>2.8.1</b> Short commands</a></li>
 </ul></li>
-<li class="chapter" data-level="2.9" data-path="basics.html"><a href="basics.html#stata-help"><i class="fa fa-check"></i><b>2.9</b> Stata Help</a><ul>
-<li class="chapter" data-level="2.9.1" data-path="basics.html"><a href="basics.html#short-commands"><i class="fa fa-check"></i><b>2.9.1</b> Short commands</a></li>
-</ul></li>
-<li class="chapter" data-level="2.10" data-path="basics.html"><a href="basics.html#set-more-off"><i class="fa fa-check"></i><b>2.10</b> <code>set more off</code></a></li>
-<li class="chapter" data-level="2.11" data-path="basics.html"><a href="basics.html#working-directory"><i class="fa fa-check"></i><b>2.11</b> Working directory</a><ul>
-<li class="chapter" data-level="2.11.1" data-path="basics.html"><a href="basics.html#file-paths"><i class="fa fa-check"></i><b>2.11.1</b> File paths</a></li>
+<li class="chapter" data-level="2.9" data-path="basics.html"><a href="basics.html#set-more-off"><i class="fa fa-check"></i><b>2.9</b> <code>set more off</code></a></li>
+<li class="chapter" data-level="2.10" data-path="basics.html"><a href="basics.html#working-directory"><i class="fa fa-check"></i><b>2.10</b> Working directory</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="basics.html"><a href="basics.html#file-paths"><i class="fa fa-check"></i><b>2.10.1</b> File paths</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html"><i class="fa fa-check"></i><b>3</b> Working with Data Sets</a><ul>
@@ -106,7 +104,9 @@
 <li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#loading-subsets-of-the-data"><i class="fa fa-check"></i><b>3.2.1</b> Loading subsets of the data</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#editing-data-manually"><i class="fa fa-check"></i><b>3.3</b> Editing data manually</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#colors-as-variable-type"><i class="fa fa-check"></i><b>3.3.1</b> Colors as variable type</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.4</b> Saving data</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-data"><i class="fa fa-check"></i><b>3.5</b> Importing data</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#importing-excel-data"><i class="fa fa-check"></i><b>3.5.1</b> Importing Excel data</a></li>
@@ -117,8 +117,10 @@
 <li class="chapter" data-level="3.7" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#exercise-1"><i class="fa fa-check"></i><b>3.7</b> Exercise 1</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>4</b> Data Management</a><ul>
-<li class="chapter" data-level="4.1" data-path="data-management.html"><a href="data-management.html#describe"><i class="fa fa-check"></i><b>4.1</b> <code>describe</code></a></li>
-<li class="chapter" data-level="4.2" data-path="data-management.html"><a href="data-management.html#data-notes"><i class="fa fa-check"></i><b>4.2</b> Data Notes</a></li>
+<li class="chapter" data-level="4.1" data-path="data-management.html"><a href="data-management.html#basic-command-syntax"><i class="fa fa-check"></i><b>4.1</b> Basic command syntax</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-management.html"><a href="data-management.html#referring-to-variables"><i class="fa fa-check"></i><b>4.1.1</b> Referring to variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-management.html"><a href="data-management.html#describe"><i class="fa fa-check"></i><b>4.2</b> <code>describe</code></a></li>
 <li class="chapter" data-level="4.3" data-path="data-management.html"><a href="data-management.html#compress"><i class="fa fa-check"></i><b>4.3</b> <code>compress</code></a></li>
 <li class="chapter" data-level="4.4" data-path="data-management.html"><a href="data-management.html#exercise-2"><i class="fa fa-check"></i><b>4.4</b> Exercise 2</a></li>
 <li class="chapter" data-level="4.5" data-path="data-management.html"><a href="data-management.html#labels"><i class="fa fa-check"></i><b>4.5</b> Labels</a><ul>
@@ -126,7 +128,10 @@
 <li class="chapter" data-level="4.5.2" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.5.2</b> <code>label variable</code></a></li>
 <li class="chapter" data-level="4.5.3" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.5.3</b> <code>label values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a></li>
+<li class="chapter" data-level="4.6" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.6</b> Managing variables</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="data-management.html"><a href="data-management.html#renaming-variables"><i class="fa fa-check"></i><b>4.6.1</b> Renaming variables</a></li>
+<li class="chapter" data-level="4.6.2" data-path="data-management.html"><a href="data-management.html#changing-variable-ordering"><i class="fa fa-check"></i><b>4.6.2</b> Changing variable ordering</a></li>
+</ul></li>
 <li class="chapter" data-level="4.7" data-path="data-management.html"><a href="data-management.html#exercise-3"><i class="fa fa-check"></i><b>4.7</b> Exercise 3</a></li>
 <li class="chapter" data-level="4.8" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.8</b> Summarizing the data</a></li>
 <li class="chapter" data-level="4.9" data-path="data-management.html"><a href="data-management.html#exercise-4"><i class="fa fa-check"></i><b>4.9</b> Exercise 4</a></li>
@@ -140,29 +145,30 @@
 <li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#replace"><i class="fa fa-check"></i><b>5.2</b> <code>replace</code></a><ul>
 <li class="chapter" data-level="5.2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#conditional-variable-generation"><i class="fa fa-check"></i><b>5.2.1</b> Conditional variable generation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#subsetting"><i class="fa fa-check"></i><b>5.3</b> Subsetting</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="data-manipulation.html"><a href="data-manipulation.html#by-and-bysort"><i class="fa fa-check"></i><b>5.3.1</b> <code>by</code> and <code>bysort</code></a></li>
-<li class="chapter" data-level="5.3.2" data-path="data-manipulation.html"><a href="data-manipulation.html#keep-drop"><i class="fa fa-check"></i><b>5.3.2</b> <code>keep</code>, <code>drop</code></a></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#recode"><i class="fa fa-check"></i><b>5.3</b> <code>recode</code></a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#subsetting"><i class="fa fa-check"></i><b>5.4</b> Subsetting</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="data-manipulation.html"><a href="data-manipulation.html#by-and-bysort"><i class="fa fa-check"></i><b>5.4.1</b> <code>by</code> and <code>bysort</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-manipulation.html"><a href="data-manipulation.html#keep-drop"><i class="fa fa-check"></i><b>5.4.2</b> <code>keep</code>, <code>drop</code></a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#dealing-with-duplicates"><i class="fa fa-check"></i><b>5.4</b> Dealing with duplicates</a></li>
-<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#sorting"><i class="fa fa-check"></i><b>5.5</b> sorting</a></li>
-<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#working-with-strings-and-categorical-variables"><i class="fa fa-check"></i><b>5.6</b> Working with strings and categorical variables</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="data-manipulation.html"><a href="data-manipulation.html#destring-and-tostring"><i class="fa fa-check"></i><b>5.6.1</b> <code>destring</code> and <code>tostring</code></a></li>
-<li class="chapter" data-level="5.6.2" data-path="data-manipulation.html"><a href="data-manipulation.html#encode-and-decode"><i class="fa fa-check"></i><b>5.6.2</b> <code>encode</code> and <code>decode</code></a></li>
-<li class="chapter" data-level="5.6.3" data-path="data-manipulation.html"><a href="data-manipulation.html#string-manipulation"><i class="fa fa-check"></i><b>5.6.3</b> String manipulation</a></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#dealing-with-duplicates"><i class="fa fa-check"></i><b>5.5</b> Dealing with duplicates</a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#sorting"><i class="fa fa-check"></i><b>5.6</b> Sorting</a></li>
+<li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#working-with-strings-and-categorical-variables"><i class="fa fa-check"></i><b>5.7</b> Working with strings and categorical variables</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="data-manipulation.html"><a href="data-manipulation.html#destring-and-tostring"><i class="fa fa-check"></i><b>5.7.1</b> <code>destring</code> and <code>tostring</code></a></li>
+<li class="chapter" data-level="5.7.2" data-path="data-manipulation.html"><a href="data-manipulation.html#encode-and-decode"><i class="fa fa-check"></i><b>5.7.2</b> <code>encode</code> and <code>decode</code></a></li>
+<li class="chapter" data-level="5.7.3" data-path="data-manipulation.html"><a href="data-manipulation.html#string-manipulation"><i class="fa fa-check"></i><b>5.7.3</b> String manipulation</a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="data-manipulation.html"><a href="data-manipulation.html#exercise-5"><i class="fa fa-check"></i><b>5.7</b> Exercise 5</a></li>
-<li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#merging-files"><i class="fa fa-check"></i><b>5.8</b> Merging Files</a><ul>
-<li class="chapter" data-level="5.8.1" data-path="data-manipulation.html"><a href="data-manipulation.html#appending-files"><i class="fa fa-check"></i><b>5.8.1</b> Appending Files</a></li>
-<li class="chapter" data-level="5.8.2" data-path="data-manipulation.html"><a href="data-manipulation.html#match-merging-data"><i class="fa fa-check"></i><b>5.8.2</b> Match-merging Data</a></li>
+<li class="chapter" data-level="5.8" data-path="data-manipulation.html"><a href="data-manipulation.html#exercise-5"><i class="fa fa-check"></i><b>5.8</b> Exercise 5</a></li>
+<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#merging-files"><i class="fa fa-check"></i><b>5.9</b> Merging Files</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="data-manipulation.html"><a href="data-manipulation.html#appending-files"><i class="fa fa-check"></i><b>5.9.1</b> Appending Files</a></li>
+<li class="chapter" data-level="5.9.2" data-path="data-manipulation.html"><a href="data-manipulation.html#match-merging-data"><i class="fa fa-check"></i><b>5.9.2</b> Match-merging Data</a></li>
 </ul></li>
-<li class="chapter" data-level="5.9" data-path="data-manipulation.html"><a href="data-manipulation.html#reshaping-files"><i class="fa fa-check"></i><b>5.9</b> Reshaping Files</a></li>
+<li class="chapter" data-level="5.10" data-path="data-manipulation.html"><a href="data-manipulation.html#reshaping-files"><i class="fa fa-check"></i><b>5.10</b> Reshaping Files</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="programming.html"><a href="programming.html"><i class="fa fa-check"></i><b>6</b> Programming</a><ul>
 <li class="chapter" data-level="6.1" data-path="programming.html"><a href="programming.html#macros"><i class="fa fa-check"></i><b>6.1</b> Macros</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="programming.html"><a href="programming.html#class-and-return"><i class="fa fa-check"></i><b>6.1.1</b> Class and Return</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="programming.html"><a href="programming.html#loops"><i class="fa fa-check"></i><b>6.2</b> loops</a></li>
+<li class="chapter" data-level="6.2" data-path="programming.html"><a href="programming.html#loops"><i class="fa fa-check"></i><b>6.2</b> Loops</a></li>
 <li class="chapter" data-level="6.3" data-path="programming.html"><a href="programming.html#suppressing-output-and-errors"><i class="fa fa-check"></i><b>6.3</b> Suppressing output and errors</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="programming.html"><a href="programming.html#capture"><i class="fa fa-check"></i><b>6.3.1</b> <code>capture</code></a></li>
 <li class="chapter" data-level="6.3.2" data-path="programming.html"><a href="programming.html#quietly"><i class="fa fa-check"></i><b>6.3.2</b> <code>quietly</code></a></li>
@@ -204,7 +210,7 @@ Throughout this chapter, we’ll be using the “auto” data set which is distr
 
 </code></pre>
 <p>
-You can reload it as necessary (if you modify it and want the original) by re-running this with the <code>clear</code> option. Feel free to make frequent use of <a href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a>.
+You can reload it as necessary (if you modify it and want the original) by re-running this with the <code>clear</code> option. Feel free to make frequent use of <a target="_blank" href="working-with-data-sets.html#preserverestore"><code>preserve</code> and <code>restore</code></a>.
 </p>
 <p>
 Whenever you first begin working with a data set, you’ll want to spend some time getting familiar with it. You should be able to answer the following questions (even if some of them are approximations):
@@ -240,8 +246,103 @@ You’ll notice that there are no statistical questions here - we’re not even 
 <p>
 In this chapter we’ll go over various tools and commands you can use to answer these questions (and more) and overall to gain a familiarity with the logistics of your data.
 </p>
+<div id="basic-command-syntax" class="section level2">
+<h2><span class="header-section-number">4.1</span> Basic command syntax</h2>
+<p>
+Most commands which operate on variables (as opposed to system commands such as <code>version</code>, <code>update</code>, <code>query</code>, etc.) follow the same general format. Recognizing this format will make it easier to understand new commands that you are introduced.
+</p>
+<p>
+The basic syntax is
+</p>
+<pre><code>command &lt;variable(s)&gt;, &lt;options&gt;
+</code></pre>
+<p>
+The command can take on more than one word; e.g. to create a scatter plot, the command is <code>graph twoway scatter</code>.
+</p>
+<p>
+Depending on the command, the list of variables can contain 0 variables, 1 variable, or many variables separated by spaces. Whether the order of variables matters depends on the specific command.
+</p>
+<p>
+The options are not required, but if they are given, they too are separated by spaces. There are some options that are consistent across a number of commands, and some options are specific to commands.
+</p>
+<p>
+There’s an additional piece; if you want to run a command on a subset of the data, we add to the syntax:
+</p>
+<pre><code>command &lt;variable(s)&gt; if &lt;condition&gt;, &lt;options&gt;
+</code></pre>
+<p>
+We will cover this <a target="_blank" href="data-manipulation.html#subsetting">in more detail</a> later, including how to specify the condition.
+</p>
+<p>
+As an example, if we were to fit a linear regression model<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, the command might be
+</p>
+<pre><code>regress y x1 x2 x3 x4 if z &gt; 5, vce(robust) beta
+</code></pre>
+<p>
+Without getting too into the details of how the command works, we can see examine the command.
+</p>
+<ul>
+<li>
+The command is <code>regress</code>.
+</li>
+<li>
+In the list of variables is <code>y x1 x2 x3 x4</code>. In the <code>regress</code> command, the choice of the first listed variable matters.
+</li>
+<li>
+We are fitting the model on on the subset where <code>z &gt; 5</code>.
+</li>
+<li>
+There are two options, <code>vce(robust)</code> which changes how errors in the model are estimated and <code>beta</code> which changes how the output is displayed.
+</li>
+</ul>
+<p>
+We will see later how to <a target="_blank" href="data-management.html#referring-to-variables">make referring to variables easier</a>.
+</p>
+<div id="referring-to-variables" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Referring to variables</h3>
+<p>
+The <code>regress</code> example above referred to 5 variables, which we wrote out manually. This can get very tedious as the number of variables increases. Thankfully there are two alternatives.
+</p>
+<p>
+First, we can use the wild card <code>*</code><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> For example, we could refer to the variables “turn” and “trunk” as <code>t*</code>, as both variables start with “t” and are followed by anything. However, be careful, as this would also match variables such as <code>turnips</code>, <code>tprice</code>, <code>t</code>, etc, if any such variables existed. It can also be used in the middle or beginning, e.g.:
+</p>
+<ul>
+<li>
+<code>c*t</code> would match <code>cat</code>, <code>caught</code> and <code>ct</code>
+</li>
+<li>
+<code>*2</code> would match <code>age2</code>, <code>gender2</code> and <code>salary2012</code>.
+</li>
+</ul>
+<p>
+Alternatively, if the variables we want to include are next to each other in the data (e.g. in the Variables pane), we can refer to a list of them. Say the variables <code>x1</code> through <code>x25</code> are in ordered in the logical fashion. We could refer to the whole list of them as <code>x1-x25</code>. This includes both <code>x1</code> and <code>x25</code>, as well as any variable in between them. We will discuss the <code><a href="data-management.html#changing-variable-ordering">order</a></code> command later to re-order variables.
+</p>
+<p>
+Finally, you often don’t need to give the entire name of the variable, just enough characters for Stata to be able to uniquely identify it (similar to <a target="_blank" href="basics.html#short-commands">short names</a>). We’ll see in a minute more about the <code>describe</code> command, but for example,
+</p>
+<pre><code>. describe headr
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+headroom        float   %6.1f                 Headroom (in.)
+
+</code></pre>
+<p>
+Stata will error if you don’t use enough characters:
+</p>
+<pre><code>. describe t
+t ambiguous abbreviation
+r(111);
+
+</code></pre>
+<p>
+Be very careful with this approach. I only recommend it’s use when exploring the data using the Command window; when writing a Do-file, use the full variable name to prevent errors!
+</p>
+</div>
+</div>
 <div id="describe" class="section level2">
-<h2><span class="header-section-number">4.1</span> <code>describe</code></h2>
+<h2><span class="header-section-number">4.2</span> <code>describe</code></h2>
 <p>
 The first command you should run is <code>describe</code>.
 </p>
@@ -275,10 +376,10 @@ Sorted by: foreign
 This displays a large amount of information, so let’s break in down.
 </p>
 <p>
-First, the header displays general data set information - the number of observations (<code>obs</code>, the number of rows) and variables (<code>vars</code>), as well as the file size<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> It also gives a short label of the data (we discussing adding this <a href="data-management.html#label-data">later</a>), the date of last modification and whether there are any <a href="data-management.html#data-notes">notes</a>.
+First, the header displays general data set information - the number of observations (<code>obs</code>, the number of rows) and variables (<code>vars</code>), as well as the file size<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. It also gives a short label of the data (we discussing adding this <a target="_blank" href="#label-data">later</a>) and the date of last modification.
 </p>
 <p>
-Next, there is a table listing each variable in the data and some information about them. The “storage type” can be one of <code>byte</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>; all of which are simply numbers. We’ll touch on the differences between these when we discuss <a href="data-management.html#compress"><code>compress</code></a>, but for now they all represent numeric variables. String variables are represented as <code>str##</code> where the <code>##</code> represent the number of characters that the string can be, e.g. <code>str18</code> shows that <code>make</code> has a maximum of 18 letters. (This limit is irrelevant, again, see <a href="data-management.html#compress"><code>compress</code></a> for details.)
+Next, there is a table listing each variable in the data and some information about them. The “storage type” can be one of <code>byte</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>; all of which are simply numbers. We’ll touch on the differences between these when we discuss <a target="_blank" href="#compress"><code>compress</code></a>, but for now they all represent numeric variables. String variables are represented as <code>str##</code> where the <code>##</code> represent the number of characters that the string can be, e.g. <code>str18</code> shows that <code>make</code> has a maximum of 18 letters. (This limit is irrelevant, again, see <a target="_blank" href="#compress"><code>compress</code></a> for details.)
 </p>
 <p>
 The “display format” column contains format information about each variable which only control how the variables are displayed in data view. For the most part you can ignore these and leave them at the default, though you may need to work with this if you have date or time information. For further details see
@@ -286,7 +387,7 @@ The “display format” column contains format information about each variable 
 <pre><code>help formats
 </code></pre>
 <p>
-“value label” and “variable label” are used to display more information when running analyses using these variables. See <a href="data-management.html#labels">the label</a> section for further details.
+“value label” and “variable label” are used to display more information when running analyses using these variables. See <a target="_blank" href="#labels">the label</a> section for further details.
 </p>
 <p>
 Finally, if the data is sorted, <code>describe</code> will provide information about the sorting.
@@ -301,17 +402,13 @@ variable name   type    format     label      variable label
 -------------------------------------------------------------------------------
 mpg             int     %8.0g                 Mileage (mpg)
 
-. describe rep78-turn
+. describe trunk displacement
 
               storage   display    value
 variable name   type    format     label      variable label
 -------------------------------------------------------------------------------
-rep78           int     %8.0g                 Repair Record 1978
-headroom        float   %6.1f                 Headroom (in.)
 trunk           int     %8.0g                 Trunk space (cu. ft.)
-weight          int     %8.0gc                Weight (lbs.)
-length          int     %8.0g                 Length (in.)
-turn            int     %8.0g                 Turn Circle (ft.)
+displacement    int     %8.0g                 Displacement (cu. in.)
 
 </code></pre>
 <p>
@@ -336,88 +433,10 @@ mpg           trunk         turn          foreign
 
 </code></pre>
 </div>
-<div id="data-notes" class="section level2">
-<h2><span class="header-section-number">4.2</span> Data Notes</h2>
-<p>
-You can attach notes to a data set, which will be saved along with the data and reloaded when you open it again. This can be handy to use in place of a separate data dictionary (along with <a href="data-management.html#labels"><code>labels</code></a>).
-</p>
-<pre><code>. notes
-
-_dta:
-  1.  from Consumer Reports with permission
-
-</code></pre>
-<p>
-We see that there is a single note attached to the auto data. New notes can be easily added either to the whole data set or to a specific variable
-</p>
-<pre><code>. notes: Data is built-in from Stata.
-
-. notes displacement: This variable comes from survey XXX.
-
-. notes
-
-_dta:
-  1.  from Consumer Reports with permission
-  2.  Data is built-in from Stata.
-
-displacement:
-  1.  This variable comes from survey XXX.
-
-</code></pre>
-<p>
-There are two notes attached to the overall data (listed under <code>_dta</code>) and a single note attached to the <code>displacement</code> variable. You can list these separately if desired.
-</p>
-<pre><code>. notes
-
-_dta:
-  1.  from Consumer Reports with permission
-  2.  Data is built-in from Stata.
-
-displacement:
-  1.  This variable comes from survey XXX.
-
-. notes _dta
-
-_dta:
-  1.  from Consumer Reports with permission
-  2.  Data is built-in from Stata.
-
-. notes displacement
-
-displacement:
-  1.  This variable comes from survey XXX.
-
-. notes turn
-
-</code></pre>
-<p>
-Dropping notes can be accomplished as well. The numbering of notes is within each location (e.g. here the data (<code>_dta</code>) has notes 1 and 2, whereas <code>displacement</code> has note 1).
-</p>
-<pre><code>. notes drop _dta in 2
-  (1 note dropped)
-
-. notes
-
-_dta:
-  1.  from Consumer Reports with permission
-
-displacement:
-  1.  This variable comes from survey XXX.
-
-. notes drop displacement in 1
-  (1 note dropped)
-
-. notes
-
-_dta:
-  1.  from Consumer Reports with permission
-
-</code></pre>
-</div>
 <div id="compress" class="section level2">
 <h2><span class="header-section-number">4.3</span> <code>compress</code></h2>
 <p>
-As mentioned <a href="data-management.html#describe">above</a>, there are different ways to store a number variable, such as <code>byte</code> and <code>long</code>. The various options take more space to save - types which take less space can store only smaller numbers whereas types that take more space can store larger numbers. For example, a number stored as a byte can only take on values between -127 and 100 and only integers (e.g. not 2.5) whereas a number stored as float can store numbers up to (1.7x10^38) with up to 38 decimal places. Strings operate similarly; a string variable with 20 characters would store “abc” as 17 blank characters followed by the “abc”.
+As mentioned <a target="_blank" href="#describe">above</a>, there are different ways to store a number variable, such as <code>byte</code> and <code>long</code>. The various options take more space to save - types which take less space can store only smaller numbers whereas types that take more space can store larger numbers. For example, a number stored as a byte can only take on values between -127 and 100 and only integers (e.g. not 2.5) whereas a number stored as float can store numbers up to (1.7x10^38) with up to 38 decimal places. Strings operate similarly; a string variable with 20 characters would store “abc” as 17 blank characters followed by the “abc”.
 </p>
 <p>
 Understanding the above is not that important these days as computer power and storage has increased to the point where the majority of us will not be reaching its limits. However, Stata does offer the <code>compress</code> command which attempts to store variables in the smallest possible type. For example, if a variable which is a float takes on only values 1 through 10, it is replaced by a byte (and similarly, strings are as long as the longest value).
@@ -443,7 +462,7 @@ Sorted by: foreign
 We see here a very modest saving (370 bytes, about 12%), but sometimes you can see much more significant gains.
 </p>
 <p>
-Don’t be afraid of artificially restricting yourself going forward; if one of your values exceeds the limitations its type supports, Stata will automatically change types. So don’t hesitate to run <code>compress</code> occasionally!
+Don’t be afraid of artificially restricting yourself going forward; if one of your values exceeds the limitations its type supports, Stata will automatically change types. So don’t hesitate to run <code>compress</code> when loading new data or after some manipulations.
 </p>
 </div>
 <div id="exercise-2" class="section level2">
@@ -480,7 +499,7 @@ In an Excel file, to get around this, you might add additional content to the sh
 <div id="label-data" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> <code>label data</code></h3>
 <p>
-While <a href="data-management.html#data-notes"><code>notes</code></a> provide very similar functionality, a label can be attached to the data. These are shorter than notes, and there can be only a single label. However, these appear when running <code>describe</code>, and so can be useful for quick identification. If you want to put more detail, add notes.
+A label can be attached to the data to provide more information than the variable name allows. Labels do not have the same restrictions that variable names have, namely they can be any length, include spaces and punctuation, and start with a number. Additionally, these appear when running <code>describe</code>, and so can be useful for quick identification.
 </p>
 <p>
 We saw an existing data label on the “auto” data set when running <code>describe</code>:
@@ -579,13 +598,13 @@ turn            byte    %8.0g                 Some new label for turn
 
 </code></pre>
 <p>
-As with <a href="data-management.html#label-data">labelling the data</a>, call <code>label variable &lt;varname&gt;</code> without a new label to remove the existing one.
+As with <a target="_blank" href="#label-data">labelling the data</a>, call <code>label variable &lt;varname&gt;</code> without a new label to remove the existing one.
 </p>
 </div>
 <div id="label-values" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> <code>label values</code></h3>
 <p>
-It is tempting to store categorical variables as strings. If you ask, for example, for someone’s state of residence, you might store the answers as “MI”, “OH”, “FL”, etc. However, Stata (like most statistical software) cannot handle string variables.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> A much better way to store this data would be to assign each state a numerical value, say MI = 1, OH = 2, FL = 3, etc, then keep a data dictionary linking the values to the labels they represent.
+It is tempting to store categorical variables as strings. If you ask, for example, for someone’s state of residence, you might store the answers as “MI”, “OH”, “FL”, etc. However, Stata (like most statistical software) cannot handle string variables.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> A much better way to store this data would be to assign each state a numerical value, say MI = 1, OH = 2, FL = 3, etc, then keep a data dictionary linking the values to the labels they represent.
 </p>
 <p>
 Stata allows you to store this value labels information within the data set, such that whenever the values are output, the labels are printed instead. Let’s take a look at the <code>foreign</code> variable. This variable takes on two levels, and we can tabulate it to see how many cars are in each category.
@@ -612,7 +631,10 @@ foreign         byte    %8.0g      origin     Car type
 
 </code></pre>
 <p>
-Instead, let’s look at that table ignoring the value labels:
+Additionally, if you look at the data through Data Editor or Data Browser, you see that instead of <code>foreign</code> being red (as a string) it is blue, as we discussed <a target="_blank" href="working-with-data-sets.html#colors-as-variable-type">earlier</a>.
+</p>
+<p>
+Let’s look at that table ignoring the value labels:
 </p>
 <pre><code>. tab foreign, nolabel
 
@@ -725,8 +747,10 @@ This will <em>not</em> remove the value labels from any variables, but they will
 <div id="managing-variables" class="section level2">
 <h2><span class="header-section-number">4.6</span> Managing variables</h2>
 <p>
-In Stata, managing the names and order of variables is important to make entering commands easier due to the <a href="basics.html#referring-to-variables">shortcuts for referring to variables</a>. Recall that variables can be referred to using wildcards (e.g. <code>a*</code> to include <code>age</code>, <code>address</code> or <code>a10</code>, or using <code>var1-var10</code> to include all variables between <code>var1</code> and <code>var10</code> as they are ordered). Of course, you may also want to rename or re-order variables for other reasons such as making the data easier to look at.
+In Stata, managing the names and order of variables is important to make entering commands easier due to the <a target="_blank" href="basics.html#referring-to-variables">shortcuts for referring to variables</a>. Recall that variables can be referred to using wildcards (e.g. <code>a*</code> to include <code>age</code>, <code>address</code> or <code>a10</code>, or using <code>var1-var10</code> to include all variables between <code>var1</code> and <code>var10</code> as they are ordered). Of course, you may also want to rename or re-order variables for other reasons such as making the data easier to look at.
 </p>
+<div id="renaming-variables" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Renaming variables</h3>
 <p>
 To rename variables:
 </p>
@@ -747,23 +771,11 @@ mpg           trunk         turn          foreign
 The output truncated the name because it was so long.
 </p>
 <p>
-To rename multiple variables, you can run multiple <code>rename</code> commands, or else you can give multiple old and new names:
+Variable names are unique; if you wanted to swap to variable names, you’d have to name one to a temporary name, rename the second, then rename the first again:
 </p>
-<pre><code>. rename (mpg trunk turn) (mpg2 trunk2 turn2)
-
-. describe, simple
-make          repair_~1978  weight        displacement
-price         headroom      length        gear_ratio
-mpg2          trunk2        turn2         foreign
-
-</code></pre>
-<p>
-The first old variable is renamed to the first new variable, the second to the second, etc. The parentheses are required.
-</p>
-<p>
-Variable names are unique; if you wanted to swap to variable names, you’d have to name one to a temporary name, rename the second, then rename the first again. Alternately, you can do it simultaneously:
-</p>
-<pre><code>rename (var1 var2) (var2 var1)
+<pre><code>rename a tmp
+rename b a
+rename tmp b
 </code></pre>
 <p>
 You can use wildcards in the renaming too. For example, imagine you had a collection of variables from a longitudinal data set, “visit1_age”, “visit1_weight”, “visit1_height”, etc. To simplify variable names, we’d prefer to use “age1”, “weight1”, etc.
@@ -778,34 +790,51 @@ Finally, you can change a variable name to upper/lower/proper case easily by pas
 . describe, simple
 make          repair_~1978  weight        displacement
 price         headroom      LENGTH        gear_ratio
-mpg2          trunk2        turn2         foreign
+mpg           trunk         turn          foreign
 
 </code></pre>
 <p>
-Turning to variable ordering, the <code>order</code> command takes a list of variables and moves them to the front/end/before a certain variable/after a certain variable. The options <code>first</code>, <code>last</code>, <code>before(&lt;variable&gt;)</code> and <code>after(&lt;variable&gt;)</code> control this.
+You can also do this for the whole data set with the special variable list <code>_all</code>
+</p>
+<pre><code>. rename _all, upper
+
+. describe, simple
+MAKE          REPAIR_~1978  WEIGHT        DISPLACEMENT
+PRICE         HEADROOM      LENGTH        GEAR_RATIO
+MPG           TRUNK         TURN          FOREIGN
+
+. rename _all, lower
+
+</code></pre>
+</div>
+<div id="changing-variable-ordering" class="section level3">
+<h3><span class="header-section-number">4.6.2</span> Changing variable ordering</h3>
+<p>
+The <code>order</code> command takes a list of variables and moves them to the front/end/before a certain variable/after a certain variable. The options <code>first</code>, <code>last</code>, <code>before(&lt;variable&gt;)</code> and <code>after(&lt;variable&gt;)</code> control this.
 </p>
 <pre><code>. order foreign // The default is `first`
 
 . describe, simple
-foreign       mpg2          trunk2        turn2
+foreign       mpg           trunk         turn
 make          repair_~1978  weight        displacement
-price         headroom      LENGTH        gear_ratio
+price         headroom      length        gear_ratio
 
 . order weight, last
 
 . describe, simple
-foreign       mpg2          trunk2        displacement
-make          repair_~1978  LENGTH        gear_ratio
-price         headroom      turn2         weight
+foreign       mpg           trunk         displacement
+make          repair_~1978  length        gear_ratio
+price         headroom      turn          weight
 
-. order mpg2 trunk2, before(displacement)
+. order mpg trunk, before(displacement)
 
 . describe, simple
-foreign       repair_~1978  turn2         displacement
-make          headroom      mpg2          gear_ratio
-price         LENGTH        trunk2        weight
+foreign       repair_~1978  turn          displacement
+make          headroom      mpg           gear_ratio
+price         length        trunk         weight
 
 </code></pre>
+</div>
 </div>
 <div id="exercise-3" class="section level2">
 <h2><span class="header-section-number">4.7</span> Exercise 3</h2>
@@ -814,24 +843,24 @@ If you’ve changed to a different data set, load “census9” back up with <co
 </p>
 <ol>
 <li>
-Going forward, we’ll be using a version of “census9” with changes we’re making. <a href="working-with-data-sets.html#saving-data">Save</a> a copy of the data to somewhere convenient (such as your Desktop). <em>You must name it something besides “census9”.</em>
+Going forward, we’ll be using a version of “census9” with changes we’re making. <a target="_blank" href="working-with-data-sets.html#saving-data">Save</a> a copy of the data to somewhere convenient (such as your Desktop). Don’t forget to give it a name!
 </li>
 <li>
 The <code>drate</code> variable is a bit vague - the name of the variable provides no clue that “d” = “death”, and the values (e.g. 75) are ambiguous.
 <ol>
 <li>
-<a href="data-management.html#managing-variables">Rename</a> <code>drate</code> to <code>deathrate</code>.
+<a target="_blank" href="#renaming-variables">Rename</a> <code>drate</code> to <code>deathrate</code>.
 </li>
 <li>
-The rate is actually per 10,000 individuals. <a href="data-management.html#label-variable">Label</a> <code>dearthrate</code> to include this information.
+The rate is actually per 10,000 individuals. <a target="_blank" href="#label-variable">Label</a> <code>dearthrate</code> to include this information.
 </li>
 </ol>
 </li>
 <li>
-The variable <code>region</code> has a value label associated with it (“cenreg”). It has some odd choices, namely “NE” and “N Cntrl”. Fix this.
+The variable <code>region</code> has a value label associated with it (“cenreg”). It has some inconsistent choices, namely “NE” and “N Cntrl”. Fix this.
 <ol>
 <li>
-<a href="data-management.html#label-values">Create a new value label</a> which uses “Northeast” and “North Central” instead of “NE” and “N Cntrl”.
+<a target="_blank" href="#label-values">Create a new value label</a> which uses “Northeast” and “North Central” instead of “NE” and “N Cntrl”.
 </li>
 <li>
 Attach this new value label to <code>region</code>.
@@ -884,10 +913,10 @@ There are numerous ways to look at summary statistics, from obtaining one-number
 repair_~1978 |         69    3.405797    .9899323          1          5
     headroom |         74    2.993243    .8459948        1.5          5
 -------------+---------------------------------------------------------
-      LENGTH |         74    187.9324    22.26634        142        233
-       turn2 |         74    39.64865    4.399354         31         51
-        mpg2 |         74     21.2973    5.785503         12         41
-      trunk2 |         74    13.75676    4.277404          5         23
+      length |         74    187.9324    22.26634        142        233
+        turn |         74    39.64865    4.399354         31         51
+         mpg |         74     21.2973    5.785503         12         41
+       trunk |         74    13.75676    4.277404          5         23
 displacement |         74    197.2973    91.83722         79        425
 -------------+---------------------------------------------------------
   gear_ratio |         74    3.014865    .4562871       2.19       3.89
@@ -895,7 +924,7 @@ displacement |         74    197.2973    91.83722         79        425
 
 </code></pre>
 <p>
-The table reports the total number of non-missing values (<code>make</code> appears to be entirely missing because it is non-numeric), the mean (the average value), the standard deviation (a measure of how spread out the data is) and the minimum and maximum non-missing<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> values observed.
+The table reports the total number of non-missing values (<code>make</code> appears to be entirely missing because it is non-numeric), the mean (the average value), the standard deviation (a measure of how spread out the data is) and the minimum and maximum non-missing<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> values observed.
 </p>
 <p>
 Here’s some suggestions of how to look at these values.
@@ -908,7 +937,7 @@ Make sure the amount of missing data is expected. If the number of observations 
 The mean should be a reasonable number, somewhere in the rough middle of the range of possible values for the variable. If you have age recorded for a random selection of adults and the mean age is 18, something has gone wrong. If the mean age is -18, something has gone tragically wrong!
 </li>
 <li>
-The standard deviation is hard to interpret precisely, but in a very rough sense, 2/3rds of the values should lie within 1 standard deviation of the mean. For example, consider <code>mpg2</code>. The mean is ~21 and the standard deviation is ~6, so roughly 2/3rds of the cars have <code>mpg2</code> between 15 and 27. Does this seems reasonable? If the standard deviation is very high compared to the mean (e.g. if <code>mpg2</code>’s standard deviation was 50) or close to 0, that could indicate an issue.
+The standard deviation is hard to interpret precisely, but in a very rough sense, 2/3rds of the values should lie within 1 standard deviation of the mean. For example, consider <code>mpg</code>. The mean is ~21 and the standard deviation is ~6, so roughly 2/3rds of the cars have <code>mpg</code> between 15 and 27. Does this seems reasonable? If the standard deviation is very high compared to the mean (e.g. if <code>mpg</code>’s standard deviation was 50) or close to 0, that could indicate an issue.
 </li>
 <li>
 Are the max and min reasonable? If the minimum <code>LENGTH</code> was -9, that’s problematic. Maybe -9 is the code for missing values? If the range of <code>LENGTH</code> is 14 to 2500, maybe the units differ? They measured in feet for some cars and inches for others?
@@ -921,8 +950,8 @@ Are the max and min reasonable? If the minimum <code>LENGTH</code> was -9, that�
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-       turn2 |         74    39.64865    4.399354         31         51
-      trunk2 |         74    13.75676    4.277404          5         23
+        turn |         74    39.64865    4.399354         31         51
+       trunk |         74    13.75676    4.277404          5         23
 
 </code></pre>
 <p>
@@ -1042,7 +1071,7 @@ foreign        74      2  .2972973     0      1  Car type
 
 </code></pre>
 <p>
-This reports potential issues Stata has discovered in the data. In this data, neither are really concerns (We can run <code>compress</code>, but this isn’t a “problem” so much as a suggestion. We already saw above the concern about “embedded blanks.”) More serious problems that it can detect include:
+This reports potential issues Stata has discovered in the data. In this data, neither are really concerns. (We can run <code>compress</code>, but this isn’t a “problem” so much as a suggestion. We already saw above the concern about “embedded blanks.”) More serious problems that it can detect include:
 </p>
 <ul>
 <li>
@@ -1077,10 +1106,12 @@ Are there any problems with the data?
 </div>
 <div class="footnotes">
 <hr />
-<ol start="5">
-<li id="fn5"><p>Reported in bytes. Roughly 1000 bytes = 1 kilobyte, 1000 kilobytes = 1 megabyte, 1000 megabytes = 1 gigabyte.<a href="data-management.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>In the few situations where it can, it doesn’t handle them cleanly.<a href="data-management.html#fnref6">↩</a></p></li>
-<li id="fn7"><p>As we discuss <a href="data-manipulation.html#conditional-variable-generation">later</a>, in Stata, missing values (represented by <code>.</code> in the data) are considered to be higher than any other number (so 99999 &lt; .).<a href="data-management.html#fnref7">↩</a></p></li>
+<ol start="4">
+<li id="fn4"><p>This course does not cover fitting statistical models, see the follow-up course for further detail.<a href="data-management.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>This is the reason why <code>*</code> as a comment does not work in the middle of a line (and we use <code>//</code> instead).<a href="data-management.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Reported in bytes. Roughly 1000 bytes = 1 kilobyte, 1000 kilobytes = 1 megabyte, 1000 megabytes = 1 gigabyte.<a href="data-management.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>In the few situations where it can, it doesn’t handle them cleanly.<a href="data-management.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>As we discuss <a target="_blank" href="data-manipulation.html#conditional-variable-generation">later</a>, in Stata, missing values (represented by <code>.</code> in the data) are considered to be higher than any other number (so 99999 &lt; .).<a href="data-management.html#fnref8" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1125,9 +1156,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
