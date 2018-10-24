@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mixed Effects Modeling in Stata</title>
+  <meta name="description" content="Mixed Effects Modeling in Stata">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mixed Effects Modeling in Stata" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mixed Effects Modeling in Stata" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="fitting-linear-mixed-models.html">
+<link rel="next" href="generalized-linear-mixed-models.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Mixed Effects Modeling in Stata</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.3</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html"><i class="fa fa-check"></i><b>2</b> Mixed Model Theory</a><ul>
+<li class="chapter" data-level="2.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#terminology"><i class="fa fa-check"></i><b>2.1</b> Terminology</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#econometric-terminology"><i class="fa fa-check"></i><b>2.1.1</b> Econometric terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#wide-vs-long-data"><i class="fa fa-check"></i><b>2.2</b> Wide vs Long data</a></li>
+<li class="chapter" data-level="2.3" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#level-1-versus-level-2-variables"><i class="fa fa-check"></i><b>2.3</b> Level-1 versus Level-2 variables</a></li>
+<li class="chapter" data-level="2.4" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#theory"><i class="fa fa-check"></i><b>2.4</b> Theory</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#the-hierarchical-framework"><i class="fa fa-check"></i><b>2.4.1</b> The Hierarchical framework</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html"><i class="fa fa-check"></i><b>3</b> Fitting Linear Mixed Models</a><ul>
+<li class="chapter" data-level="3.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#fitting-the-model"><i class="fa fa-check"></i><b>3.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="3.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#assumptions"><i class="fa fa-check"></i><b>3.2</b> Assumptions</a></li>
+<li class="chapter" data-level="3.3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#predicting-the-random-effects"><i class="fa fa-check"></i><b>3.3</b> Predicting the random effects</a></li>
+<li class="chapter" data-level="3.4" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-and-crossed-random-effects"><i class="fa fa-check"></i><b>3.4</b> Nested and Crossed random effects</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-random-effects"><i class="fa fa-check"></i><b>3.4.1</b> Nested random effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#crossed-random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Crossed random effects</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#choosing-random-or-fixed-effects"><i class="fa fa-check"></i><b>3.5</b> Choosing Random or Fixed effects</a></li>
+<li class="chapter" data-level="3.6" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>3.6</b> Miscellaneous</a></li>
+<li class="chapter" data-level="3.7" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>3.7</b> Convergence issues</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="random-slopes.html"><a href="random-slopes.html"><i class="fa fa-check"></i><b>4</b> Random slopes</a><ul>
+<li class="chapter" data-level="4.1" data-path="random-slopes.html"><a href="random-slopes.html#fitting-a-random-slope"><i class="fa fa-check"></i><b>4.1</b> Fitting a random slope</a></li>
+<li class="chapter" data-level="4.2" data-path="random-slopes.html"><a href="random-slopes.html#do-you-need-to-include-the-fixed-slope-if-you-have-the-random-slopes"><i class="fa fa-check"></i><b>4.2</b> Do you need to include the fixed slope if you have the random slopes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html"><i class="fa fa-check"></i><b>5</b> Generalized Linear Mixed Models</a><ul>
+<li class="chapter" data-level="5.1" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>5.1</b> Logistic Mixed Model</a></li>
+<li class="chapter" data-level="5.2" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#poisson-mixed-model"><i class="fa fa-check"></i><b>5.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="5.3" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#ordinal-logistic-regression"><i class="fa fa-check"></i><b>5.3</b> Ordinal Logistic Regression</a></li>
+<li class="chapter" data-level="5.4" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Multinomial Logistic Regression</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mixed Effects Modeling in Stata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="random-slopes" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Random slopes</h1>
+<p>
+So far all we’ve talked about are random intercepts. This is by far the most common form of mixed effects regression models. Recall that we set up the <a target="_blank" href="#mixed-model-theory.html#theory">theory</a> by allowing each group to have its own intercept which we don’t estimate. We can also allow each group to have it’s own slope which we don’t estimate. Just as random intercepts are akin to including a fixed effect allowing each group to have it’s own fixed effect, random slopes are akin to interacting a variable with the grouping variable, allowing each group to have it’s own relationship.
+</p>
+<p>
+We would include a random slope in the model if, instead of the relationship between a predictor and the outcome when controlling for group membership, we were interested in the average relationship between the predictor and the outcome across groups. For example, if we had our basic class example,
+</p>
+<pre><code>mixed gpa familyincome || class:
+</code></pre>
+<p>
+In this model, the coefficient on <code>familyincome</code> would estimate the relationship between family income and GPA, removing any additional class-level differences. (Class-level differences here might be that a class that randomly has lower average income has a better teacher.)
+</p>
+<p>
+If we include a random slope, we add the variable after the <code>:</code> in the second equation.
+</p>
+<pre><code>mixed gpa familyincome || class: familyincome
+</code></pre>
+<p>
+Now the model would allow each classroom to have it’s own relationship between family income and GPA (which, just like random intercepts, is not actually estimated) and the coefficient on <code>familyincome</code> would represent the average of those relationships.
+</p>
+<p>
+Do you need a random slope? It depends on your theory. If your grouping variable is a nuisance and you’re simply controlling for it (as it is in most cases), you probably don’t need a random slope. If, on the other hand, you suspect there are substantial differences between groups and you’re really interested in the average of those differences, then you should.
+</p>
+<p>
+For reference, I’d say conservatively 95% of the mixed models I fit are in situations where a random slope is not needed, and 75% of the time when people ask me if they need a random slope, the answer is no. However, my general bias is towards simpler models.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+</p>
+<div id="fitting-a-random-slope" class="section level2">
+<h2><span class="header-section-number">4.1</span> Fitting a random slope</h2>
+<p>
+Let’s add a random slope for gender.
+</p>
+<pre><code></code></pre>
+<pre><code>. mixed qol age agebelow52 ageabove82 i.socialclass female || household: female
+
+Performing EM optimization: 
+
+Performing gradient-based optimization: 
+
+Iteration 0:   log likelihood = -18119.073  (not concave)
+Iteration 1:   log likelihood = -17948.133  
+Iteration 2:   log likelihood = -17943.723  
+Iteration 3:   log likelihood = -17943.715  
+Iteration 4:   log likelihood = -17943.715  
+
+Computing standard errors:
+
+Mixed-effects ML regression                     Number of obs     =      5,179
+Group variable: household                       Number of groups  =      3,995
+
+                                                Obs per group:
+                                                              min =          1
+                                                              avg =        1.3
+                                                              max =          3
+
+                                                Wald chi2(9)      =     129.85
+Log likelihood = -17943.715                     Prob &gt; chi2       =     0.0000
+
+------------------------------------------------------------------------------
+         qol |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         age |  -.0091431   .0139002    -0.66   0.511    -.0363871    .0181008
+  agebelow52 |  -.3693919   .5323223    -0.69   0.488    -1.412724    .6739406
+  ageabove82 |  -1.205025   .9809621    -1.23   0.219    -3.127675    .7176254
+             |
+ socialclass |
+Manageria..  |   .2311014   .5075454     0.46   0.649    -.7636692    1.225872
+ Non-Manual  |  -1.107476   .5090861    -2.18   0.030    -2.105267   -.1096861
+    Skilled  |  -1.807633   .5325278    -3.39   0.001    -2.851369   -.7638979
+Semi-skil~d  |  -2.980059   .5455297    -5.46   0.000    -4.049278   -1.910841
+  Unskilled  |  -3.576478   .7302271    -4.90   0.000    -5.007697    -2.14526
+             |
+      female |   .5655487   .2081086     2.72   0.007     .1576634     .973434
+       _cons |   44.72468   1.018608    43.91   0.000     42.72825    46.72112
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+  Random-effects Parameters  |   Estimate   Std. Err.     [95% Conf. Interval]
+-----------------------------+------------------------------------------------
+household: Independent       |
+                 var(female) |   4.050557   2.356374      1.295197    12.66757
+                  var(_cons) |   22.71352   1.789211      19.46403    26.50551
+-----------------------------+------------------------------------------------
+               var(Residual) |   36.96963   1.960132      33.32072    41.01813
+------------------------------------------------------------------------------
+LR test vs. linear model: chi2(2) = 149.11                Prob &gt; chi2 = 0.0000
+
+Note: LR test is conservative and provided only for reference.
+
+</code></pre>
+<p>
+Most of the output seems very familiar. The only addition is the “var(female)” in the Random-effects Parameters table which, just like in random intercepts, estimates the variance across all the random slopes. Here it is very non-zero, so improves model fit. However, none of the fixed effects really change. The only difference is in the interpretation of the coefficient on age:
+</p>
+<p>
+In the random intercepts model, the coefficient on age represented that females were on average that much higher than males, regardless of age, social class, or inter-household variance.
+</p>
+<p>
+In this model with the random slope as well, the coefficient on age represents the average across all households of the amount that females are above males, regardless of age or social class.
+</p>
+</div>
+<div id="do-you-need-to-include-the-fixed-slope-if-you-have-the-random-slopes" class="section level2">
+<h2><span class="header-section-number">4.2</span> Do you need to include the fixed slope if you have the random slopes</h2>
+<p>
+Yes.
+</p>
+<p>
+In almost every model.
+</p>
+<p>
+This is very similar to excluding the intercept (<span class="math inline">\(\beta_0\)</span>) in a model - this forces the slope to pass through (0,0). In some very rare situations that might be appropriate, but extremely rarely.
+</p>
+<p>
+Excluding the fixed slope when including random slopes forces the average of all random slopes to be 0. If the true random slope is far from zero, this will have catastrophic effects, including reversing the signs on a good number of the random slopes.
+</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>If you’re curious, may rational is I’d rather fit a simpler model that misses a nuanced complexity, then fit a more complicated model that has takes a substantial power hit and potentially is drastically further from the “truth”.<a href="random-slopes.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="fitting-linear-mixed-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="generalized-linear-mixed-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

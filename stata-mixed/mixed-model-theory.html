@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mixed Effects Modeling in Stata</title>
+  <meta name="description" content="Mixed Effects Modeling in Stata">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mixed Effects Modeling in Stata" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mixed Effects Modeling in Stata" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="fitting-linear-mixed-models.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Mixed Effects Modeling in Stata</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.3</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html"><i class="fa fa-check"></i><b>2</b> Mixed Model Theory</a><ul>
+<li class="chapter" data-level="2.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#terminology"><i class="fa fa-check"></i><b>2.1</b> Terminology</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#econometric-terminology"><i class="fa fa-check"></i><b>2.1.1</b> Econometric terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#wide-vs-long-data"><i class="fa fa-check"></i><b>2.2</b> Wide vs Long data</a></li>
+<li class="chapter" data-level="2.3" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#level-1-versus-level-2-variables"><i class="fa fa-check"></i><b>2.3</b> Level-1 versus Level-2 variables</a></li>
+<li class="chapter" data-level="2.4" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#theory"><i class="fa fa-check"></i><b>2.4</b> Theory</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#the-hierarchical-framework"><i class="fa fa-check"></i><b>2.4.1</b> The Hierarchical framework</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html"><i class="fa fa-check"></i><b>3</b> Fitting Linear Mixed Models</a><ul>
+<li class="chapter" data-level="3.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#fitting-the-model"><i class="fa fa-check"></i><b>3.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="3.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#assumptions"><i class="fa fa-check"></i><b>3.2</b> Assumptions</a></li>
+<li class="chapter" data-level="3.3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#predicting-the-random-effects"><i class="fa fa-check"></i><b>3.3</b> Predicting the random effects</a></li>
+<li class="chapter" data-level="3.4" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-and-crossed-random-effects"><i class="fa fa-check"></i><b>3.4</b> Nested and Crossed random effects</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-random-effects"><i class="fa fa-check"></i><b>3.4.1</b> Nested random effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#crossed-random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Crossed random effects</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#choosing-random-or-fixed-effects"><i class="fa fa-check"></i><b>3.5</b> Choosing Random or Fixed effects</a></li>
+<li class="chapter" data-level="3.6" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>3.6</b> Miscellaneous</a></li>
+<li class="chapter" data-level="3.7" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>3.7</b> Convergence issues</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="random-slopes.html"><a href="random-slopes.html"><i class="fa fa-check"></i><b>4</b> Random slopes</a><ul>
+<li class="chapter" data-level="4.1" data-path="random-slopes.html"><a href="random-slopes.html#fitting-a-random-slope"><i class="fa fa-check"></i><b>4.1</b> Fitting a random slope</a></li>
+<li class="chapter" data-level="4.2" data-path="random-slopes.html"><a href="random-slopes.html#do-you-need-to-include-the-fixed-slope-if-you-have-the-random-slopes"><i class="fa fa-check"></i><b>4.2</b> Do you need to include the fixed slope if you have the random slopes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html"><i class="fa fa-check"></i><b>5</b> Generalized Linear Mixed Models</a><ul>
+<li class="chapter" data-level="5.1" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>5.1</b> Logistic Mixed Model</a></li>
+<li class="chapter" data-level="5.2" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#poisson-mixed-model"><i class="fa fa-check"></i><b>5.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="5.3" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#ordinal-logistic-regression"><i class="fa fa-check"></i><b>5.3</b> Ordinal Logistic Regression</a></li>
+<li class="chapter" data-level="5.4" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Multinomial Logistic Regression</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mixed Effects Modeling in Stata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mixed-model-theory" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Mixed Model Theory</h1>
+<p>
+When fitting a <a target="_blank" href="https://errickson.net/stata-regression/index.html">regression model</a>, the most important assumption the models make (whether it’s linear regression or generalized linear regression) is that of independence - each row of your data set is independent on all other rows.
+</p>
+<p>
+Now in general, this is almost never entirely true. If this violation is mild, it can be ignored. For example, if you give an exam to a class full of students, it’s reasonable to assume some students study together and therefore their answers on some questions (right or wrong) will tend to be similar.
+</p>
+<p>
+Here we are more concerned with a structured violation of independence. The most straightforward situation in which this arises is repeated measures. Say you’re administering an experiment where you are testing stress to different stimuli and are measuring quantities like blood pressure or heart rate. If I were to take the test multiple times, my measurements are correlated with each other - if I tend to have higher blood pressure, my blood pressure will be higher in each round regardless of stimuli.
+</p>
+<p>
+Another common repeated measures situation is follow-up over time. Say you track individuals who undergo some surgery, and follow-up with them every 2 months, asking them to take a survey on their quality of life. While there are many research questions which could be asked about such data, one might be to examine the patient’s quality of life depending on the various health markers they are experiencing. The surgery is targeting symptom A, is improvement in symptom A associated with better QoL? Is it symptom B which was unaffected by the surgery that has the largest effect on QoL? Obviously a given patient’s QoL and health markers at one time-point are highly correlated with each other.
+</p>
+<p>
+Another situation where this arises which isn’t explicitly repeated measures is when your data is collected in some sort of clustered fashion. Note that if your data is collected via a complex survey design, this is an entirely different beast that needs to be addressed appropriately (with the <code>svyset</code> and <code>svy</code> set of commands). Instead I’m assuming a simpler set-up here. Say you are conducting a survey that asks participants to come into a lab with their family. If the unit of analysis is a person (instead of a family), it’s very likely that two individuals in the same household will have similar food habits. Therefore we gain less information by getting information on a new individual in an existing household, then adding a new individual from a new household.
+</p>
+<p>
+The canonical example of this is students in classrooms in schools in districts. All the situations above are 2-level (defined precisely <a target="_blank" href="#terminology">below</a>, but here we have four levels. Again, adding a new student from an existing class/school/district will likely not add as much information as a new student from a new class in a new school in a new district.
+</p>
+<p>
+To address the lack of independence, we will move from normal regression (linear or otherwise) into a mixed models framework, which models for this dependence structure. It does this (at the most basic level) by allowing each higher level unit to have it’s own intercept which we <em>do not estimate</em>.
+</p>
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">2.1</span> Terminology</h2>
+<p>
+There are several different names for mixed models which you might encounter, that all fit essentially the same model:
+</p>
+<ul>
+<li>
+Mixed model
+</li>
+<li>
+Mixed Effects regression/model
+</li>
+<li>
+Multilevel regression/model
+</li>
+<li>
+Hierarchical regression/model (specifically HLM, hierarchical linear model)
+</li>
+</ul>
+<p>
+The hierarchical/multilevel variations require thinking about the levels of the data and involves “nesting”, where one variable only occurs within another, e.g. family members nested in a household. The most canonical example of this is students in classrooms, we could have
+</p>
+<ul>
+<li>
+Level 1: The lowest level, the students.
+</li>
+<li>
+Level 2: Classroom or teacher (this could also be two separate levels of classrooms inside teacher)
+</li>
+<li>
+Level 3: District
+</li>
+<li>
+Level 4: State
+</li>
+<li>
+Level 5: Country
+</li>
+</ul>
+<p>
+This is taking it a bit far; it’s rare to see more than 3 levels, but in theory, any number can exist.
+</p>
+<p>
+For this workshop, we will only briefly discuss this from hierarchical point of view, preferring the mixed models view (with the reminder again that they are the same!).
+</p>
+<div id="econometric-terminology" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Econometric terminology</h3>
+<p>
+To make the terminology a bit more complicated, in econometrics, some of the terms we will use here are overloaded. When you are discussing mixed models with someone with econometric or economics training, it’s important to differentiate between the statistical terms of “fixed effects” and “random effects” which are the two components of a mixed model that we <a target="_blank" href="#linear_mixed_model">discuss below</a>, and what econometricians called “fixed effects regression” and “random effects regression”.
+</p>
+<p>
+Without going into the full details of the econometric world, what econometricians called “random effects regression” is essentially what statisticians called “mixed models”, what we’re talking about here. The Stata command <code>xtreg</code> handles those econometric models. I have a <a target="_blank" href="http://errickson.net/stats-notes/xtsetvsmixed.html">document</a> which demostrates the equality of these, as well as explaing the ecoonometric “fixed effects regression” in terms of the statistical view of regression.
+</p>
+</div>
+</div>
+<div id="wide-vs-long-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Wide vs Long data</h2>
+<p>
+Before you begin your analysis, you need to ensure that the data is in the proper format. The data can be either in wide-form or long-form. Long-format is sometimes called tall-form.
+</p>
+<p>
+If the data is longitudinal (follows the same person over time, collecting data at intervals), the wide form would entail each row representing a single person, with the variables representing the questions at each wave. For example, if you were asking about income every 2 years, you’d have variables <code>income14</code>, <code>income16</code>, <code>income18</code> representing the individuals income in 2014, 2016 and 2018.
+</p>
+<p>
+The tall form would have each row of data represent a person and a year. So you’d have a column for ID, a column for year, and then, continuing the example above, a single variable <code>income</code>.
+</p>
+<p>
+If the data is clustered in some sense, e.g. students in classroom, the wide form would have each row be a single classroom, and have a separate set of variables for the first student, second student, etc. In this format, unbalanced data (classrooms having different number of students) would result in a lot of missing values.
+</p>
+<p>
+The tall form would have a single row per student, and a variable representing their class.
+</p>
+<p>
+In a lot of situations, it is easier to collect and manage data in wide form. However, to fit a mixed model, we need the data in long format. We can use the <code>reshape</code> command to transform wide data to long. This is covered in my <a target="_blank" href="https://errickson.net/stata1/data-manipulation.html#reshaping-files">Introduction to Stata</a> set of notes.
+</p>
+</div>
+<div id="level-1-versus-level-2-variables" class="section level2">
+<h2><span class="header-section-number">2.3</span> Level-1 versus Level-2 variables</h2>
+<p>
+Often you will have variables that measure something about the unit of analysis, and other variables which measure something about the grouping variable. For example, you may have a variable indicating the GPA of a student, another variable indicating the size of their classroom, and yet another variable indicating the percent minority in their school.
+</p>
+<p>
+When thinking about this from the hierarchical view, it’s important to differentiate between these types of variables. If you take my advice and think of this from the mixed model point of view, the difference is irrelevant - each is just a variable associated with the student.
+</p>
+<p>
+The only thing that matters is ensuring the data is correct - if you had 10 students in a class, and the variable <code>sizeofclass</code> was 10 for half them and 8 for the other half, Stata wouldn’t know this is an issue and would fit the model without complaining - but now you’ve got a data issue that could be affecting your analysis.
+</p>
+<p>
+When the data is repeated measures over time, these are sometimes called time-variant (e.g. patient follow-ups, measured at each follow-up) or time-invariant (baseline characteristics or immutable demographics).
+</p>
+</div>
+<div id="theory" class="section level2">
+<h2><span class="header-section-number">2.4</span> Theory</h2>
+<p>
+The equation for ordinal least squares (linear regression) is
+</p>
+<p>
+<span class="math display">\[ Y_i = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \epsilon_i \]</span>
+</p>
+<p>
+where <span class="math inline">\(Y_i\)</span> represents the response of individual <span class="math inline">\(i\)</span>, the various <span class="math inline">\(X_{ki}\)</span> represent the predictor variables for the same respondent, the <span class="math inline">\(beta\)</span> are the coefficients to be estimated (which are constant across individuals). <span class="math inline">\(\epsilon_i\)</span> is the additional error for this individual.
+</p>
+<p>
+As mentioned <a target="_blank" href="#terminology">above</a>, there are two ways to think about mixed models - as a mixed model, or as a hierarchical model. Let’s talk about the mixed model first.
+</p>
+<p>
+When we fit a mixed model, instead of a single set of <span class="math inline">\(X\)</span>’s and <span class="math inline">\(\beta\)</span>’s on the right-hand side, there are now two sets, one corresponding to the fixed effects and one corresponding to the random effects (a mixture of the two, hence the name). For example, the most basic form of a mixed model, which has some number of fixed effects and a single random intercept, we have:
+</p>
+<p>
+<span class="math display">\[ Y_{ij} = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \kappa_j + \epsilon_{ij} \]</span>
+</p>
+<p>
+The subscript notation helps us keep track of things. Here, I’ve set it up such that each observation <span class="math inline">\(i\)</span> belongs to a group <span class="math inline">\(j\)</span>. The response belonging to individual <span class="math inline">\(i\)</span> in group <span class="math inline">\(j\)</span> is predicted based upon some <span class="math inline">\(X\)</span> variables, plus some additive effect which is unique to group <span class="math inline">\(j\)</span> (<span class="math inline">\(\kappa_j\)</span>), and additional error unique to that individual ($_{ij}).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+</p>
+<p>
+Both error terms, <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\kappa\)</span> are assumed to have a mean of 0. This is important here because it means that <em>on average the random intercept has no affect, but varies from individual to individual</em>.
+</p>
+<p>
+The catch is that <em>we do not estimate <span class="math inline">\(\kappa_j\)</span></em>. If we include a categorical variable for the grouping variable as a fixed effect, we could estimate all those intercepts, however, doing so would in most situations overfit the model (if each individual had two measurements, we’d be including <span class="math inline">\(n/2\)</span> predictors in a model with <span class="math inline">\(n\)</span> observations). Instead, we estimate only the variance of <span class="math inline">\(\kappa_j\)</span> which allows us to determine whether the intercepts differ between groups.
+</p>
+<p>
+Let’s use a concrete example to make this more precise. Let your data set consist of <span class="math inline">\(n\)</span> students, labeled <span class="math inline">\(s = 1, 2, \cdots, n\)</span>, each belonging to one of <span class="math inline">\(m\)</span> classrooms, labeled <span class="math inline">\(c = 1, 2, \cdots, m\)</span>. For further simplicity, let’s assume there is only a single fixed predictor <span class="math inline">\(X\)</span>.
+</p>
+<p>
+<span class="math display">\[ Y_{sc} = \beta_0 + \beta_1X_s + \kappa_c + \epsilon_{sc} \]</span>
+</p>
+<p>
+It helps to think of <span class="math inline">\(\kappa\)</span> as part of the error. You predict <span class="math inline">\(Y\)</span> based upon the <span class="math inline">\(X\)</span>’s, then there is some common error amongst all students in classroom <span class="math inline">\(c\)</span> which captured by <span class="math inline">\(\kappa_c\)</span>, then there is individual error captured by <span class="math inline">\(\epsilon_{sc}\)</span>.
+</p>
+<p>
+(You sometimes see the <span class="math inline">\(\kappa_j\)</span> term written as <span class="math inline">\(\kappa_j Z_j\)</span> where <span class="math inline">\(Z_j\)</span> would be the variable indicating group membership. I find the above notation clearer, though they are mathematically equivalent.)
+</p>
+<p>
+In the above example, I’ve assumed that the sole <span class="math inline">\(X\)</span> in the model is measured as the student level (hence <span class="math inline">\(X_s\)</span>). There is no need for that. I could instead fit the above model with one variable measured per student (say GPA) and one variable measured per classroom (say average teacher evaluation).
+</p>
+<p>
+<span class="math display">\[ Y_{sc} = \beta_0 + \beta_1X_{1s} + \beta_2X_{2c} + \kappa_c + \epsilon_{sc} \]</span>
+</p>
+<p>
+The nice part is that when fitting the model, this distinction doesn’t matter! Both <span class="math inline">\(X_{1s}\)</span> and <span class="math inline">\(X_{2c}\)</span> are treated the same way.
+</p>
+<p>
+The error terms can be expanded if desired. For students (<span class="math inline">\(s\)</span>) nested inside classrooms (<span class="math inline">\(c\)</span>) nested inside districts (<span class="math inline">\(d\)</span>):
+</p>
+<p>
+<span class="math display">\[ Y_{scd} = \beta_0 + \beta_1X_{1s} + \beta_2X_{2c} + \gamma_d + \kappa_{cd} + \epsilon_{scd} \]</span>
+</p>
+<p>
+Here <span class="math inline">\(\gamma_d\)</span> is the error common to all students in a given district, <span class="math inline">\(\kappa_{cd}\)</span> is the additional error common to all students in a given classroom, and <span class="math inline">\(\epsilon_{scd}\)</span> is any left over student error.
+</p>
+<div id="the-hierarchical-framework" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> The Hierarchical framework</h3>
+<p>
+The hierarchical way to write these models is, in my opinion, unnecessarily complicated and does not improve on the understanding. It is more complicated for two reasons: 1) it is simply more complicated to write and understand, and 2) it requires conceptualizing the levels of the model more than needed. For completeness, I will briefly re-write the school and classroom above. In mixed form, the model would be:
+</p>
+<p>
+<span class="math display">\[ Y_{sc} = \beta_0 + \beta_1X_{1s} + \kappa_c + \epsilon_{sc} \]</span>
+</p>
+<p>
+In the hierarchical form, the model is:
+</p>
+<p>
+<span class="math display">\[ Y_{sc} = \beta_{s0} + \beta_1X_{1s} + \epsilon_{sc} \]</span> <span class="math display">\[ \beta_{s0} = \gamma_{0} + \gamma_{1}Z_c + \sigma_c \]</span>
+</p>
+<p>
+If you were to plug <span class="math inline">\(\beta_{s0}\)</span> back into the first equation, you can see the equivalence of the two forms.
+</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>The choice of <span class="math inline">\(\epsilon\)</span> for the individual error in a regression is fairly standardized in the literature. My choice of <span class="math inline">\(\kappa\)</span> is not, as the literature have any standard choice for the random effect.<a href="mixed-model-theory.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fitting-linear-mixed-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

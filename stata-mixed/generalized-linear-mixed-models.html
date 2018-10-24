@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mixed Effects Modeling in Stata</title>
+  <meta name="description" content="Mixed Effects Modeling in Stata">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Mixed Effects Modeling in Stata" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Mixed Effects Modeling in Stata" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2018-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="random-slopes.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Mixed Effects Modeling in Stata</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.3</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html"><i class="fa fa-check"></i><b>2</b> Mixed Model Theory</a><ul>
+<li class="chapter" data-level="2.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#terminology"><i class="fa fa-check"></i><b>2.1</b> Terminology</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#econometric-terminology"><i class="fa fa-check"></i><b>2.1.1</b> Econometric terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#wide-vs-long-data"><i class="fa fa-check"></i><b>2.2</b> Wide vs Long data</a></li>
+<li class="chapter" data-level="2.3" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#level-1-versus-level-2-variables"><i class="fa fa-check"></i><b>2.3</b> Level-1 versus Level-2 variables</a></li>
+<li class="chapter" data-level="2.4" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#theory"><i class="fa fa-check"></i><b>2.4</b> Theory</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="mixed-model-theory.html"><a href="mixed-model-theory.html#the-hierarchical-framework"><i class="fa fa-check"></i><b>2.4.1</b> The Hierarchical framework</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html"><i class="fa fa-check"></i><b>3</b> Fitting Linear Mixed Models</a><ul>
+<li class="chapter" data-level="3.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#fitting-the-model"><i class="fa fa-check"></i><b>3.1</b> Fitting the model</a></li>
+<li class="chapter" data-level="3.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#assumptions"><i class="fa fa-check"></i><b>3.2</b> Assumptions</a></li>
+<li class="chapter" data-level="3.3" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#predicting-the-random-effects"><i class="fa fa-check"></i><b>3.3</b> Predicting the random effects</a></li>
+<li class="chapter" data-level="3.4" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-and-crossed-random-effects"><i class="fa fa-check"></i><b>3.4</b> Nested and Crossed random effects</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#nested-random-effects"><i class="fa fa-check"></i><b>3.4.1</b> Nested random effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#crossed-random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Crossed random effects</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#choosing-random-or-fixed-effects"><i class="fa fa-check"></i><b>3.5</b> Choosing Random or Fixed effects</a></li>
+<li class="chapter" data-level="3.6" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#miscellaneous"><i class="fa fa-check"></i><b>3.6</b> Miscellaneous</a></li>
+<li class="chapter" data-level="3.7" data-path="fitting-linear-mixed-models.html"><a href="fitting-linear-mixed-models.html#convergence-issues"><i class="fa fa-check"></i><b>3.7</b> Convergence issues</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="random-slopes.html"><a href="random-slopes.html"><i class="fa fa-check"></i><b>4</b> Random slopes</a><ul>
+<li class="chapter" data-level="4.1" data-path="random-slopes.html"><a href="random-slopes.html#fitting-a-random-slope"><i class="fa fa-check"></i><b>4.1</b> Fitting a random slope</a></li>
+<li class="chapter" data-level="4.2" data-path="random-slopes.html"><a href="random-slopes.html#do-you-need-to-include-the-fixed-slope-if-you-have-the-random-slopes"><i class="fa fa-check"></i><b>4.2</b> Do you need to include the fixed slope if you have the random slopes</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html"><i class="fa fa-check"></i><b>5</b> Generalized Linear Mixed Models</a><ul>
+<li class="chapter" data-level="5.1" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#logistic-mixed-model"><i class="fa fa-check"></i><b>5.1</b> Logistic Mixed Model</a></li>
+<li class="chapter" data-level="5.2" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#poisson-mixed-model"><i class="fa fa-check"></i><b>5.2</b> Poisson Mixed Model</a></li>
+<li class="chapter" data-level="5.3" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#ordinal-logistic-regression"><i class="fa fa-check"></i><b>5.3</b> Ordinal Logistic Regression</a></li>
+<li class="chapter" data-level="5.4" data-path="generalized-linear-mixed-models.html"><a href="generalized-linear-mixed-models.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>5.4</b> Multinomial Logistic Regression</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mixed Effects Modeling in Stata</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="generalized-linear-mixed-models" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Generalized Linear Mixed Models</h1>
+<p>
+Just as how <a target="_blank" href="https://errickson.net/stata-regression/generalized-linear-models.html">generalized linear models</a> are an extension of linear regression, generalized linear mixed models are an extension of linear mixed models. In general, analysis and interpretation proceeds in a logical fashion from GLM’s and mixed models.
+</p>
+<p>
+We’ll briefly list some of the mixed models, and any quirks to be discussed about them. This section may be expanded in the future.
+</p>
+<div id="logistic-mixed-model" class="section level2">
+<h2><span class="header-section-number">5.1</span> Logistic Mixed Model</h2>
+<p>
+There are actually two commands for logistic mixed models: <code>melogit</code> and <code>meqrlogit</code>. The former is faster, but the latter is more likely to converge. Both commands function generally identically. Note that <code>meqrlogit</code> is a somewhat outdated command, so it’s possible that newer features to <code>melogit</code> may no longer work with <code>meqrlogit</code>.
+</p>
+<p>
+<a target="_blank" href="https://errickson.net/stata-regression/generalized-linear-models.html#separation">Separation</a> remains a major concern amongst fixed effects, but of lesser concern amongst random intercepts (e.g. a household where everyone had a positive response would break if included as a fixed effect, but generally would run as a random intercept). The only concern is that separation in random effects can make convergence harder to achieve.
+</p>
+</div>
+<div id="poisson-mixed-model" class="section level2">
+<h2><span class="header-section-number">5.2</span> Poisson Mixed Model</h2>
+<p>
+Poisson mixed models can be run with the <code>mepoisson</code> command. A <code>meqrpoisson</code> command exists and has benefits just like <code>meqrlogit</code>, but again, is an outdated command. If over-dispersion is an issue, <code>menbreg</code> exists for negative binomial regression.
+</p>
+</div>
+<div id="ordinal-logistic-regression" class="section level2">
+<h2><span class="header-section-number">5.3</span> Ordinal Logistic Regression</h2>
+<p>
+These models can be run with <code>meologit</code>.
+</p>
+</div>
+<div id="multinomial-logistic-regression" class="section level2">
+<h2><span class="header-section-number">5.4</span> Multinomial Logistic Regression</h2>
+<p>
+To my knowledge, Stata does not implement this model. It can be fit in several packages in R if you need it.
+</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="random-slopes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
