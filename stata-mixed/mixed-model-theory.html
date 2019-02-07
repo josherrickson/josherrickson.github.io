@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata</title>
+  <meta name="description" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Mixed Effects Modeling in Stata" />
+  <meta property="og:title" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mixed Effects Modeling in Stata" />
+  <meta name="twitter:title" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-10-23">
+<meta name="date" content="2019-02-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="fitting-linear-mixed-models.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -142,7 +143,7 @@ Another common repeated measures situation is follow-up over time. Say you track
 Another situation where this arises which isn’t explicitly repeated measures is when your data is collected in some sort of clustered fashion. Note that if your data is collected via a complex survey design, this is an entirely different beast that needs to be addressed appropriately (with the <code>svyset</code> and <code>svy</code> set of commands). Instead I’m assuming a simpler set-up here. Say you are conducting a survey that asks participants to come into a lab with their family. If the unit of analysis is a person (instead of a family), it’s very likely that two individuals in the same household will have similar food habits. Therefore we gain less information by getting information on a new individual in an existing household, then adding a new individual from a new household.
 </p>
 <p>
-The canonical example of this is students in classrooms in schools in districts. All the situations above are 2-level (defined precisely <a target="_blank" href="#terminology">below</a>, but here we have four levels. Again, adding a new student from an existing class/school/district will likely not add as much information as a new student from a new class in a new school in a new district.
+The canonical example of this is students in classrooms in schools in districts. All the situations above are 2-level (defined precisely <a target="_blank" href="#terminology">below</a>), but here we have four levels. Again, adding a new student from an existing class/school/district will likely not add as much information as a new student from a new class in a new school in a new district.
 </p>
 <p>
 To address the lack of independence, we will move from normal regression (linear or otherwise) into a mixed models framework, which models for this dependence structure. It does this (at the most basic level) by allowing each higher level unit to have it’s own intercept which we <em>do not estimate</em>.
@@ -247,13 +248,13 @@ The equation for ordinal least squares (linear regression) is
 <span class="math display">\[ Y_i = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \epsilon_i \]</span>
 </p>
 <p>
-where <span class="math inline">\(Y_i\)</span> represents the response of individual <span class="math inline">\(i\)</span>, the various <span class="math inline">\(X_{ki}\)</span> represent the predictor variables for the same respondent, the <span class="math inline">\(beta\)</span> are the coefficients to be estimated (which are constant across individuals). <span class="math inline">\(\epsilon_i\)</span> is the additional error for this individual.
+where <span class="math inline">\(Y_i\)</span> represents the response of individual <span class="math inline">\(i\)</span>, the various <span class="math inline">\(X_{ki}\)</span> represent the predictor variables for the same respondent, the <span class="math inline">\(\beta_j\)</span> are the coefficients to be estimated (which are constant across individuals). <span class="math inline">\(\epsilon_i\)</span> is the additional error for this individual.
 </p>
 <p>
 As mentioned <a target="_blank" href="#terminology">above</a>, there are two ways to think about mixed models - as a mixed model, or as a hierarchical model. Let’s talk about the mixed model first.
 </p>
 <p>
-When we fit a mixed model, instead of a single set of <span class="math inline">\(X\)</span>’s and <span class="math inline">\(\beta\)</span>’s on the right-hand side, there are now two sets, one corresponding to the fixed effects and one corresponding to the random effects (a mixture of the two, hence the name). For example, the most basic form of a mixed model, which has some number of fixed effects and a single random intercept, we have:
+The most basic form of a mixed model (which is also the most commonly used form) modifies the regression model above by separating the error term <span class="math inline">\(\epsilon_i\)</span> into a contribution to the error from each level of the data:
 </p>
 <p>
 <span class="math display">\[ Y_{ij} = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \kappa_j + \epsilon_{ij} \]</span>
@@ -262,7 +263,10 @@ When we fit a mixed model, instead of a single set of <span class="math inline">
 The subscript notation helps us keep track of things. Here, I’ve set it up such that each observation <span class="math inline">\(i\)</span> belongs to a group <span class="math inline">\(j\)</span>. The response belonging to individual <span class="math inline">\(i\)</span> in group <span class="math inline">\(j\)</span> is predicted based upon some <span class="math inline">\(X\)</span> variables, plus some additive effect which is unique to group <span class="math inline">\(j\)</span> (<span class="math inline">\(\kappa_j\)</span>), and additional error unique to that individual ($_{ij}).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 </p>
 <p>
-Both error terms, <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\kappa\)</span> are assumed to have a mean of 0. This is important here because it means that <em>on average the random intercept has no affect, but varies from individual to individual</em>.
+Both error terms, <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\kappa\)</span>, are assumed to have a mean of 0. This is important here because it means that <em>on average the random intercept has no affect, but varies from individual to individual</em>.
+</p>
+<p>
+The <span class="math inline">\(\beta\)</span> terms are the fixed effects, and the <span class="math inline">\(\kappa\)</span> error terms are the random effects.
 </p>
 <p>
 The catch is that <em>we do not estimate <span class="math inline">\(\kappa_j\)</span></em>. If we include a categorical variable for the grouping variable as a fixed effect, we could estimate all those intercepts, however, doing so would in most situations overfit the model (if each individual had two measurements, we’d be including <span class="math inline">\(n/2\)</span> predictors in a model with <span class="math inline">\(n\)</span> observations). Instead, we estimate only the variance of <span class="math inline">\(\kappa_j\)</span> which allows us to determine whether the intercepts differ between groups.
@@ -274,7 +278,7 @@ Let’s use a concrete example to make this more precise. Let your data set cons
 <span class="math display">\[ Y_{sc} = \beta_0 + \beta_1X_s + \kappa_c + \epsilon_{sc} \]</span>
 </p>
 <p>
-It helps to think of <span class="math inline">\(\kappa\)</span> as part of the error. You predict <span class="math inline">\(Y\)</span> based upon the <span class="math inline">\(X\)</span>’s, then there is some common error amongst all students in classroom <span class="math inline">\(c\)</span> which captured by <span class="math inline">\(\kappa_c\)</span>, then there is individual error captured by <span class="math inline">\(\epsilon_{sc}\)</span>.
+You predict <span class="math inline">\(Y\)</span> based upon the <span class="math inline">\(X\)</span>’s, then there is some common error amongst all students in classroom <span class="math inline">\(c\)</span> which captured by <span class="math inline">\(\kappa_c\)</span>, then there is individual error captured by <span class="math inline">\(\epsilon_{sc}\)</span>.
 </p>
 <p>
 (You sometimes see the <span class="math inline">\(\kappa_j\)</span> term written as <span class="math inline">\(\kappa_j Z_j\)</span> where <span class="math inline">\(Z_j\)</span> would be the variable indicating group membership. I find the above notation clearer, though they are mathematically equivalent.)
@@ -321,7 +325,7 @@ If you were to plug <span class="math inline">\(\beta_{s0}\)</span> back into th
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>The choice of <span class="math inline">\(\epsilon\)</span> for the individual error in a regression is fairly standardized in the literature. My choice of <span class="math inline">\(\kappa\)</span> is not, as the literature have any standard choice for the random effect.<a href="mixed-model-theory.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>The choice of <span class="math inline">\(\epsilon\)</span> for the individual error in a regression is fairly standardized in the literature. My choice of <span class="math inline">\(\kappa\)</span> is not, as the literature does not have any standard choice for the random effect.<a href="mixed-model-theory.html#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -353,6 +357,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -367,7 +375,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
