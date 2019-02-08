@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Regression Modeling in Stata</title>
-  <meta name="description" content="Regression Modeling in Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 2 Ordinary Least Squares | Regression Modeling in Stata</title>
+  <meta name="description" content="Chapter 2 Ordinary Least Squares | Regression Modeling in Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Regression Modeling in Stata" />
+  <meta property="og:title" content="Chapter 2 Ordinary Least Squares | Regression Modeling in Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Regression Modeling in Stata" />
+  <meta name="twitter:title" content="Chapter 2 Ordinary Least Squares | Regression Modeling in Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-10-17">
+<meta name="date" content="2019-01-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="generalized-linear-models.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -155,7 +156,7 @@ The variable we are predicting can be called the “outcome”, the “response�
 The variables upon which we are predicting can be called “predictors”, “covariates”, or “independent variables”.
 </p>
 <p>
-The model we’re going to start discussing is called “linear regression”. You may also have this called “least squares regression” or “ordinary least squares (OLS)”. A lot of the time, if you see a reference to “regression” without specifying the type, they are referring to linear regression.
+The model we’re going to start discussing is called “linear regression”. You may also have heard this called “least squares regression” or “ordinary least squares (OLS)”. A lot of the time, if you see a reference to “regression” without specifying the type, they are referring to linear regression.
 </p>
 </div>
 <div id="theory" class="section level2">
@@ -341,7 +342,7 @@ The <span class="math inline">\(R^2\)</span> (“R-squared”) is a measure of m
 Mathematically, adding a new predictor to the model will increase the <span class="math inline">\(R^2\)</span>, regardless of how useless the variable is.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> This makes <span class="math inline">\(R^2\)</span> poor for model comparison, as it would always select the model with the most predictors. Instead, the adjusted <span class="math inline">\(R^2\)</span> (“Adj R-Squared”) accounts for this; it penalizes the <span class="math inline">\(R^2\)</span> by the number of predictors in the model. Use the <span class="math inline">\(R^2\)</span> to measure model fit, use the adjusted <span class="math inline">\(R^2\)</span> for model comparison.
 </li>
 <li>
-The root mean squared error (“Root MSE”, as known as RMSE) is a measure of the average difference between the observed outcome and the predicted outcome. It can be used an intuitive measure of model fit, as it is on the scale of the outcome variable. So for this example, the RMSE is 752.84 so on average, this model would mis-predict the electricity expenditure by about $«dd_display: %9.2f e(rmse)». Recall that we saw before that expenditure ranged to $ 8000, so an error of $ 752.84 is low, but not insignificant.
+The root mean squared error (“Root MSE”, as known as RMSE) is a measure of the average difference between the observed outcome and the predicted outcome. It can be used an intuitive measure of model fit, as it is on the scale of the outcome variable. So for this example, the RMSE is 752.84 so on average, this model would mis-predict the electricity expenditure by about $ 752.84. Recall that we saw before that expenditure ranged to $ 8000, so an error of $ 752.84 is low, but not insignificant.
 </li>
 </ul>
 <p>
@@ -396,7 +397,7 @@ Let’s say we want to add some location information to the model. There is a va
 
 </code></pre>
 <p>
-We only get a single coefficient. What is the interpretation of it? There is none. Stata is treating region as continuous. Regression models cannot use categorical predictors. Instead, the regression model requires a series a dummy variables (e.g. <code>northwest</code> - Is this respondent in the Northwest? <code>south</code> - Is this respondent in the South?) for which each respondent has a single positive (1) response and the remainder negative (0) responses.
+We only get a single coefficient. What is the interpretation of it? There is none. Stata is treating region as continuous. Regression models cannot use categorical predictors. Instead, the regression model requires a series a dummy variables (e.g. <code>northwest</code> - Is this respondent in the Northwest? <code>south</code> - Is this respondent in the South?) for which each respondent has a single positive (1) response and the remainder negative (0) responses.
 </p>
 <p>
 While we could create this ourselves<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>, something we’d likely have to do in a software like SPSS, but Stata (and most modern software) can handle this automatically. The issue is that Stata doesn’t know we want to treat <code>regionc</code> as categorical. If we prefix the variable name with <code>i.</code>, Stata will know it is categorical.
@@ -445,7 +446,7 @@ First, let’s look at the regions and add appropriate labels from the codebook.
 
 </code></pre>
 <p>
-(Note: Older versions of Stata require prefacing the command with <code>xi:</code> before it would recognize the <code>i.</code>, e.g. <code>xi: regress dollarel totsqft_en female i.regionc</code>. <code>xi:</code> was deprecated a number of years ago, but you may see this used in older code online or by users who do not stay up to date.)
+(Note: Older versions of Stata require prefacing the command with <code>xi:</code> before it would recognize the <code>i.</code>, e.g. <code>xi: regress dollarel totsqft_en female i.regionc</code>. <code>xi:</code> was deprecated a number of years ago, but you may see this used in older code online or by users who do not stay up to date.)
 </p>
 <p>
 This model is improved, considering the Adjusted <span class="math inline">\(R^2\)</span> values. The coefficient (and significance) on square footage is not really changed, but notice the magnitude of the coefficient on <code>female</code> has changed drastically. This implies that gender and region were correlated, and when we did not control for region, gender was including it’s effect. We will discuss <a target="_blank" href="#multicollinearity">multicollinearity later</a>, as well as why this is one reason why <a target="_blank" href="#model-selection-is-bad">model selection is bad</a>.
@@ -822,7 +823,7 @@ This image, from Julian Faraway’s <a target="_blank" href="http://www.maths.ba
 <img src="https://i.stack.imgur.com/rtn7e.png" alt="" />
 </p>
 <p>
-If this assumption is violated, you will need to reconsider the structure in your model, perhaps by adding a squared term (e.g. <code>reg y c.x c.x#c.x</code>) or in this case, trying a <a target="_blank" href="#variable-transformations">log transformation</a>.
+If this assumption is violated, you will need to reconsider the structure in your model, perhaps by adding a squared term (e.g. <code>reg y c.x c.x#c.x</code>) or in this case, trying a <a target="_blank" href="#variable-transformations">log transformation</a>.
 </p>
 <div id="obtaining-predicted-values-and-residuals" class="section level4">
 <h4><span class="header-section-number">2.7.1.1</span> Obtaining predicted values and residuals</h4>
@@ -1091,6 +1092,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -1105,7 +1110,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

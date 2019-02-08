@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata</title>
+  <meta name="description" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Mixed Effects Modeling in Stata" />
+  <meta property="og:title" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mixed Effects Modeling in Stata" />
+  <meta name="twitter:title" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-10-23">
+<meta name="date" content="2019-02-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="random-slopes.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -270,7 +271,7 @@ Semi-skil~d  |  -3.091173   .5596054    -5.52   0.000    -4.188236   -1.994109
 This model doesn’t do so hot, but it’s sufficient for our purposes - the F-test rejects.
 </p>
 <p>
-The interpretation of the age variables is that the coefficient on <code>age</code> represents the relationship between age and QoL for individuals between ages 52 and 81. The two coefficients on <code>agebelow52</code> and <code>ageabove82</code> are allowing those individuals which censored ages to have a unique intercept, which means they don’t affect the slope on age. If you really wanted to drill down into what this all means, you could do some fancy <code>margins</code> calls to predict the average response using <code>at()</code> to force the two dummies to the appropriate levels (not run):
+The interpretation of the age variables is that the coefficient on <code>age</code> represents the relationship between age and QoL for individuals between ages 52 and 81. The two coefficients on <code>agebelow52</code> and <code>ageabove82</code> are allowing those individuals with censored ages to have a unique intercept, which means they don’t affect the slope on age. If you really wanted to drill down into what this all means, you could do some fancy <code>margins</code> calls to predict the average response using <code>at()</code> to force the two dummies to the appropriate levels (not run):
 </p>
 <pre><code>margins, at(age = 51 agebelow52 = 1 ageabove82 = 0) at(age = (52 81) agebelow52 = 0 ageabove82 = 0) at(age=81 agebelow52 = 0 ageabove82 = 1)
 marginsplot
@@ -844,7 +845,7 @@ b
 </tbody>
 </table>
 <p>
-Now if I tell Stata these are crossed random effects, it won’t get confused! So all nested random effects are are a way to make up for the fact that you may have been foolish in identifying individuals earlier.
+Now if I tell Stata these are crossed random effects, it won’t get confused! So all nested random effects are just a way to make up for the fact that you may have been foolish in storing your data.
 </p>
 <p>
 Unfortunately fitting crossed random effects in Stata is a bit unwieldy. Here’s the model we’ve been working with with crossed random effects.
@@ -883,7 +884,7 @@ There are plenty of grey-areas in between so this advice isn’t always useful. 
 Do you have a large enough sample size to include fixed effects (recall the rule of 10-20 observations per predictor. If each person in your data has no more than 2 observations, that’s far too many fixed effects)?
 </li>
 <li>
-Do you need to actually estimate the inercept within each group, as opposed to just controlling for group differences? (We can always <a href="#predicting_the_random_%20effects">predict random effects</a> but that’s not as powerful as estimating.)
+Do you need to actually estimate the intercept within each group, as opposed to just controlling for group differences? (We can always <a href="#predicting_the_random_%20effects">predict random effects</a> but that’s not as powerful as estimating.)
 </li>
 </ol>
 <p>
@@ -976,6 +977,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -990,7 +995,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

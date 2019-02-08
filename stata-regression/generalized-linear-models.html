@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Regression Modeling in Stata</title>
-  <meta name="description" content="Regression Modeling in Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 3 Generalized Linear Models | Regression Modeling in Stata</title>
+  <meta name="description" content="Chapter 3 Generalized Linear Models | Regression Modeling in Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Regression Modeling in Stata" />
+  <meta property="og:title" content="Chapter 3 Generalized Linear Models | Regression Modeling in Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Regression Modeling in Stata" />
+  <meta name="twitter:title" content="Chapter 3 Generalized Linear Models | Regression Modeling in Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-10-17">
+<meta name="date" content="2019-01-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -327,7 +328,7 @@ Note: _cons estimates baseline odds.
 Note once again that the model fit characteristics haven’t changed; we’ve fit the same model, just with different units. Now the interpretation are more reasonable. As the expenditure increases by $1000, the odds of having a cellar decrease by 34%.
 </p>
 <p>
-For every additional 1000-square feet, the odds of having a cellar increases by 150%. In other words, for every two 2000-square foot house, you’d expect five 3000-square foot houses.
+For every additional 1000-square feet, the odds of having a cellar increases by 150%. In other words, for every two 2000-square foot house that have a cellar, you’d expect five 3000-square foot houses to have cellars.
 </p>
 </div>
 <div id="categorical-variables-and-interactions" class="section level3">
@@ -442,7 +443,7 @@ Since the logistic regression model is solved <a target="_blank" href="regressio
 With a binary outcome instead of a continuous outcome, it is much easier to have a predictor (or set of predictors) that perfectly predict the outcome. Consider trying to predict gender based on height. With a smaller sample, it’s not hard to imagine a scenario where every male is taller than every female. This is called “perfect separation”; using this sample, knowing height gives perfect information about gender
 </p>
 <p>
-“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8&quot; is male, and there are two men but the rest women below 5’8“. Here, we will always predict Male for heights above 5’8”.
+“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8" is male, and there are two men but the rest women below 5’8“. Here, we will always predict Male for heights above 5’8”.
 </p>
 <p>
 Separation (of either type) often produces coefficients to be extreme with large standard errors. Stata will sometimes warn about this, but not always. If you notice these exceptional coefficients or if Stata does warn about separation, you’ll need to investigate and consider excluding certain predictors. It may seem counter-intuitive to exclude extremely highly predictive variables, but if a variable produces perfect separation, you don’t need a model to inform you of that.
@@ -753,6 +754,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -767,7 +772,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
