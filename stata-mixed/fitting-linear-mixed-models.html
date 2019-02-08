@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2019-02-07">
+<meta name="date" content="2019-02-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -929,14 +929,14 @@ Dummy variables typically don’t need to be scaled, but can be. If scaling all 
 Another potential convergence issue is extremely high correlation between predictors (including dummy variables). You should have already addressed this when considering multicollinearity, but if not, it can make convergence challenging.
 </p>
 <p>
-If the iteration keeps running (as opposed to ending and complaining about lack of convergence), try passing the option <code>emiterate(#)</code> with a few “large” (“large” is relative to running time) numbers to tell the algorithm to stop after <code>#</code> iterations, regardless of convergence. (Recall that an iterative solution produces an answer at each iteration, it’s just not a consistent answer until you reach convergence.) You’re looking for two things:
+If the iteration keeps running (as opposed to ending and complaining about lack of convergence), try passing the option <code>iterate(#)</code> with a few “large” (“large” is relative to running time) numbers to tell the algorithm to stop after <code>#</code> iterations, regardless of convergence. (Recall that an iterative solution produces an answer at each iteration, it’s just not a consistent answer until you reach convergence.) You’re looking for two things:
 </p>
 <ul>
 <li>
 First, if there are any estimated standard errors that are extremely close to zero or exploding towards infinity, that predictor may be causing the issue. Try removing it.
 </li>
 <li>
-Second, if you try a few different max iterations (say 50, 100 and 200), and the estimated coefficients and standard errors are relatively constant, you may be running into a case where the model is converging to just beyond the tolerance which Stata uses, but for all intents and purposes is converged. Set <code>emiterate(#)</code> to a high number and use that result.
+Second, if you try a few different max iterations (say 50, 100 and 200), and the estimated coefficients and standard errors are relatively constant, you may be running into a case where the model is converging to just beyond the tolerance which Stata uses, but for all intents and purposes is converged. Set <code>iterate(#)</code> to a high number and use that result.
 </li>
 </ul>
 <p>
