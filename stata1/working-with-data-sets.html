@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Stata</title>
-  <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 3 Working with Data Sets | Introduction to Stata</title>
+  <meta name="description" content="Chapter 3 Working with Data Sets | Introduction to Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Stata" />
+  <meta property="og:title" content="Chapter 3 Working with Data Sets | Introduction to Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Stata" />
+  <meta name="twitter:title" content="Chapter 3 Working with Data Sets | Introduction to Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="data-management.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -211,13 +212,13 @@ Before we turn to using your own data, it is useful to know that Stata comes wit
 To see a list of the built-in data sets, use
 </p>
 <pre><code>. sysuse dir
-  auto.dta        citytemp.dta    nlsw88.dta      tsline2.dta
-  auto2.dta       citytemp4.dta   nlswide1.dta    uslifeexp.dta
-  autornd.dta     educ99gdp.dta   pop2000.dta     uslifeexp2.dta
-  bplong.dta      gnp96.dta       sandstone.dta   voter.dta
-  bpwide.dta      lifeexp.dta     sp500.dta       xtline1.dta
-  cancer.dta      network1.dta    surface.dta
-  census.dta      network1a.dta   tsline1.dta
+  auto.dta         citytemp.dta     network1.dta     surface.dta
+  auto2.dta        citytemp4.dta    network1a.dta    tsline1.dta
+  autornd.dta      educ99gdp.dta    nlsw88.dta       tsline2.dta
+  bplong.dta       gitget.dta       nlswide1.dta     uslifeexp.dta
+  bpwide.dta       githubfiles.dta  pop2000.dta      uslifeexp2.dta
+  cancer.dta       gnp96.dta        sandstone.dta    voter.dta
+  census.dta       lifeexp.dta      sp500.dta        xtline1.dta
 
 </code></pre>
 <p>
@@ -329,7 +330,7 @@ When viewing the data, the color of each column’s text provides information ab
 <div id="saving-data" class="section level2">
 <h2><span class="header-section-number">3.4</span> Saving data</h2>
 <p>
-Saving data is straightforward using the <code>save</code> command. If you do not pass a filename to <code>save</code>, it will save with the same name as the existing data. If you pass a name, e.g. <code>save mydata2</code>, it will save a copy in the working directory. You can pass it a full path just like with <code>use</code> to refer to a location outside of the working directory.
+Saving data is straightforward using the <code>save</code> command. If you do not pass a filename to <code>save</code>, it will save with the same name as the existing data. If you pass a name, e.g. <code>save mydata2</code>, it will save a copy in the working directory. You can pass it a full path just like with <code>use</code> to refer to a location outside of the working directory.
 </p>
 <p>
 By default, <code>save</code> will not overwrite existing files. To do so, use the <code>replace</code> option.
@@ -417,7 +418,7 @@ Once the preview looks accurate, go ahead and import. As usual, this will create
 <div id="importing-a-csv-file" class="section level3">
 <h3><span class="header-section-number">3.5.2</span> Importing a CSV File</h3>
 <p>
-CSV files (comma separated values) are a very useful format for passing data between software. Files specific for software (e.g. .dta for Stata, .xlsx for Excel, .sav for SPSS) carry a lot of overhead information - very useful when working exclusively within that software, but confusing for other software. The import menu in Stata (and other software) can often address this, but a CSV file bypasses this. Data in CSV format might look like
+CSV files (comma separated values) are a very useful format for passing data between software. Files specific for software (e.g. .dta for Stata, .xlsx for Excel, .sav for SPSS) carry a lot of overhead information - very useful when working exclusively within that software, but confusing for other software. The import menu in Stata (and other software) can often address this, but a CSV file bypasses this. Data in CSV format might look like
 </p>
 <pre><code>id,salary,exprior,market,admin,yearsdg,rank,male
 1,38361.75,0,.72,0,14,2,0
@@ -554,6 +555,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -568,7 +573,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Stata</title>
   <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="basics.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -202,8 +203,8 @@
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Introduction to Stata</h1>
-<h4 class="author"><em>Josh Errickson</em></h4>
-<h4 class="date"><em>2018-08-27</em></h4>
+<p class="author"><em>Josh Errickson</em></p>
+<p class="date"><em>2019-03-21</em></p>
 </div>
 <div id="preface" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Preface</h1>
@@ -223,9 +224,9 @@ from left to right they 1) Hide/show the table of contents, 2) Search this docum
 <ul>
 <li>Office Hours: Monday-Friday 9am to 5pm (Closed Tuesday 12-1pm)</li>
 <li>Phone: 734.764.7828</li>
-<li>Statistical Assistance: <a href="mailto:stats-consulting@umich.edu">stats-consulting@umich.edu</a></li>
-<li>Data Science Assistance: <a href="mailto:ds-consulting@umich.edu">ds-consulting@umich.edu</a></li>
-<li>High Performance Computing: <a href="mailto:hpc-consulting@umich.edu">hpc-consulting@umich.edu</a></li>
+<li>Statistical Assistance: <a href="mailto:stats-consulting@umich.edu" class="email">stats-consulting@umich.edu</a></li>
+<li>Data Science Assistance: <a href="mailto:ds-consulting@umich.edu" class="email">ds-consulting@umich.edu</a></li>
+<li>High Performance Computing: <a href="mailto:hpc-consulting@umich.edu" class="email">hpc-consulting@umich.edu</a></li>
 <li><a href="http://cscar.research.umich.edu/" class="uri">http://cscar.research.umich.edu/</a></li>
 </ul>
 </div>
@@ -236,7 +237,7 @@ from left to right they 1) Hide/show the table of contents, 2) Search this docum
 <li>3550 Rackham Building</li>
 <li>915 E. Washington Street</li>
 <li>Ann Arbor, MI 48109-1070</li>
-<li>Email: <a href="mailto:jerrick@umich.edu">jerrick@umich.edu</a></li>
+<li>Email: <a href="mailto:jerrick@umich.edu" class="email">jerrick@umich.edu</a></li>
 </ul>
 </div>
 </div>
@@ -282,6 +283,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -296,7 +301,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

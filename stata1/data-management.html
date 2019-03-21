@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Stata</title>
-  <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 4 Data Management | Introduction to Stata</title>
+  <meta name="description" content="Chapter 4 Data Management | Introduction to Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Stata" />
+  <meta property="og:title" content="Chapter 4 Data Management | Introduction to Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Stata" />
+  <meta name="twitter:title" content="Chapter 4 Data Management | Introduction to Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="data-manipulation.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -379,7 +380,7 @@ This displays a large amount of information, so let’s break in down.
 First, the header displays general data set information - the number of observations (<code>obs</code>, the number of rows) and variables (<code>vars</code>), as well as the file size<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. It also gives a short label of the data (we discussing adding this <a target="_blank" href="#label-data">later</a>) and the date of last modification.
 </p>
 <p>
-Next, there is a table listing each variable in the data and some information about them. The “storage type” can be one of <code>byte</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>; all of which are simply numbers. We’ll touch on the differences between these when we discuss <a target="_blank" href="#compress"><code>compress</code></a>, but for now they all represent numeric variables. String variables are represented as <code>str##</code> where the <code>##</code> represent the number of characters that the string can be, e.g. <code>str18</code> shows that <code>make</code> has a maximum of 18 letters. (This limit is irrelevant, again, see <a target="_blank" href="#compress"><code>compress</code></a> for details.)
+Next, there is a table listing each variable in the data and some information about them. The “storage type” can be one of <code>byte</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>; all of which are simply numbers. We’ll touch on the differences between these when we discuss <a target="_blank" href="#compress"><code>compress</code></a>, but for now they all represent numeric variables. String variables are represented as <code>str##</code> where the <code>##</code> represent the number of characters that the string can be, e.g. <code>str18</code> shows that <code>make</code> has a maximum of 18 letters. (This limit is irrelevant, again, see <a target="_blank" href="#compress"><code>compress</code></a> for details.)
 </p>
 <p>
 The “display format” column contains format information about each variable which only control how the variables are displayed in data view. For the most part you can ignore these and leave them at the default, though you may need to work with this if you have date or time information. For further details see
@@ -747,7 +748,7 @@ This will <em>not</em> remove the value labels from any variables, but they will
 <div id="managing-variables" class="section level2">
 <h2><span class="header-section-number">4.6</span> Managing variables</h2>
 <p>
-In Stata, managing the names and order of variables is important to make entering commands easier due to the <a target="_blank" href="basics.html#referring-to-variables">shortcuts for referring to variables</a>. Recall that variables can be referred to using wildcards (e.g. <code>a*</code> to include <code>age</code>, <code>address</code> or <code>a10</code>, or using <code>var1-var10</code> to include all variables between <code>var1</code> and <code>var10</code> as they are ordered). Of course, you may also want to rename or re-order variables for other reasons such as making the data easier to look at.
+In Stata, managing the names and order of variables is important to make entering commands easier due to the <a target="_blank" href="basics.html#referring-to-variables">shortcuts for referring to variables</a>. Recall that variables can be referred to using wildcards (e.g. <code>a*</code> to include <code>age</code>, <code>address</code> or <code>a10</code>, or using <code>var1-var10</code> to include all variables between <code>var1</code> and <code>var10</code> as they are ordered). Of course, you may also want to rename or re-order variables for other reasons such as making the data easier to look at.
 </p>
 <div id="renaming-variables" class="section level3">
 <h3><span class="header-section-number">4.6.1</span> Renaming variables</h3>
@@ -1032,7 +1033,7 @@ make                                                             Make and Model
 
 </code></pre>
 <p>
-We get less information here, but still useful to check that the data is as expected. There are no empty strings nor any repeated strings. The warning about “embedded blanks” is spaces; it’s telling us that there are spaces in some of the cars (e.g. “Dodge Magnum”). The reason it is a warning is that “Dodge_Magnum” and “Dodge__Magnum” read the same to us, but that extra space means Stata recognizes these as two different variables.
+We get less information here, but still useful to check that the data is as expected. There are no empty strings nor any repeated strings. The warning about “embedded blanks” is spaces; it’s telling us that there are spaces in some of the cars (e.g. “Dodge Magnum”). The reason it is a warning is that “Dodge_Magnum” and “Dodge__Magnum” read the same to us, but that extra space means Stata recognizes these as two different variables.
 </p>
 <p>
 Two options for <code>codebook</code> which come in handy:
@@ -1143,6 +1144,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -1157,7 +1162,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Stata</title>
-  <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 5 Data Manipulation | Introduction to Stata</title>
+  <meta name="description" content="Chapter 5 Data Manipulation | Introduction to Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Stata" />
+  <meta property="og:title" content="Chapter 5 Data Manipulation | Introduction to Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Stata" />
+  <meta name="twitter:title" content="Chapter 5 Data Manipulation | Introduction to Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="programming.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -320,7 +321,7 @@ Dummy variables (also known as indicator variables or binary variables) are vari
 For example, “gender” is a poor dummy variable - what does 0 gender or 1 gender represent? Obviously we could (and should) use <a target="_blank" href="data-management.html#label-values">value labels</a> to associate 0 and 1 with particular genders, but it is more straightforward to use “female” as the dummy variable - a 0 represents “no” to the question of “Female?”, hence male; and a 1 represents a “yes”, hence female.
 </p>
 <p>
-If you are collecting data, consider collecting data as dummies where appropriate - if the question has a binary response, encode it as a dummy instead of strings. If a question has categorical responses, consider encoding them as a series of dummy variables instead (e.g. “Are you from MI?”, “Are you from OH?” etc). These changes will (usually) need to be made later anyways.
+If you are collecting data, consider collecting data as dummies where appropriate - if the question has a binary response, encode it as a dummy instead of strings. If a question has categorical responses, consider encoding them as a series of dummy variables instead (e.g. “Are you from MI?”, “Are you from OH?” etc). These changes will (usually) need to be made later anyways.
 </p>
 <p>
 Before we discuss creating dummy variables, we need to understand logical operators. Consider the following statements
@@ -464,7 +465,7 @@ or (either statement is true)
 </tbody>
 </table>
 <p>
-You can also use parentheses in combination with &amp; and <span class="math inline">\(|\)</span> to create more logical statements (e.g. <code>True &amp; (False | True)</code> returns true).
+You can also use parentheses in combination with &amp; and <span class="math inline">\(|\)</span> to create more logical statements (e.g. <code>True &amp; (False | True)</code> returns true).
 </p>
 <p>
 Now here’s the trick: In Stata<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, conditional statements return 1 (True) and 0 (False). So we can use them in <code>generate</code> statements to create binary variables easily.
@@ -862,7 +863,7 @@ Instead, we can use <code>by</code> and <code>bysort</code> to perform the same 
 
 </code></pre>
 <p>
-There is a strong assumption here that the data is already sorted by the variables we are splitting <code>by</code> on (e.g. <code>foreign</code>). If <code>foreign</code> were not sorted (or if you simply did not want to check/assume it was), you could instead use
+There is a strong assumption here that the data is already sorted by the variables we are splitting <code>by</code> on (e.g. <code>foreign</code>). If <code>foreign</code> were not sorted (or if you simply did not want to check/assume it was), you could instead use
 </p>
 <pre><code>bysort foreign: summ price
 </code></pre>
@@ -1092,7 +1093,7 @@ You can append “+” or “-” to each variable to change whether it is ascen
 Recall that missing values (<code>.</code>) are <a target="_blank" href="data-manipulation.html#conditional-variable-generation">larger than any other values</a>. When sorting with missing values, they follow this rule as well. If you want to treat missing values as smaller than all other values, you can pass the <code>mfirst</code> option to <code>gsort</code>. Note this does <em>not</em> make missingness “less than” anywhere else, only for the purposes of the current sort.
 </p>
 <p>
-Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string (&quot;“) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, &quot;“, “EEE”, the sorted ascending order would be &quot;“, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
+Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string ("“) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, "“, “EEE”, the sorted ascending order would be "“, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
 </p>
 <p>
 As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to conditionally sort; that is, passing something like <code>sort &lt;varname&gt; in &lt;condition&gt;</code> would sort only those rows for which the condition is true, the remaining rows remain <em>in their exact same position</em>.
@@ -1227,7 +1228,7 @@ make: contains nonnumeric characters; make2 generated as byte
 <div id="encode-and-decode" class="section level3">
 <h3><span class="header-section-number">5.7.2</span> <code>encode</code> and <code>decode</code></h3>
 <p>
-If we have a string variable which has non-numerical values (e.g. <code>race</code> with values “white”, “black”, “Hispanic”, etc), the ideal way to store it is as numerical with <a target="_blank" href="data-management.html#label-values">value labels</a> attached. While we could do this manually using a combination of <code>gen</code> and <code>replace</code> with some conditionals, a less tedious way to do so is via <code>encode</code>.
+If we have a string variable which has non-numerical values (e.g. <code>race</code> with values “white”, “black”, “Hispanic”, etc), the ideal way to store it is as numerical with <a target="_blank" href="data-management.html#label-values">value labels</a> attached. While we could do this manually using a combination of <code>gen</code> and <code>replace</code> with some conditionals, a less tedious way to do so is via <code>encode</code>.
 </p>
 <p>
 We’ll switch to the “surface” data set, which contains sea surface temperature measurements from a number of locations over two days. (Remember this will erase any existing unsaved changes! You will not need any modifications you’ve made to other built-in datasets going forward [except <code>census9</code> from <a target="_blank" href="data-management.html#execise-3">exercise 3</a>, but if you do want to save it, do so first!)
@@ -1386,16 +1387,16 @@ If you find yourself in a situation where you simply must manipulate the strings
 <code>wordcount</code>: Returns the number of whitespace-separated words.
 </li>
 <li>
-“<code>+</code>”: Adding two strings together concatenates them (e.g. “abc” + “def” = “abcdef”).
+“<code>+</code>”: Adding two strings together concatenates them (e.g. “abc” + “def” = “abcdef”).
 </li>
 <li>
 <code>strupper</code> and <code>strlower</code>: Converts to lower/upper case.
 </li>
 <li>
-<code>strtrim</code>: Removes white space before and after strings (e.g. <code>strtrim(&quot; string “) =”string&quot;</code>). To remove only left (preceding) or right (following) spaces, use <code>strltrim</code> or <code>strrtrim</code>.
+<code>strtrim</code>: Removes white space before and after strings (e.g. <code>strtrim(" string “) =”string"</code>). To remove only left (preceding) or right (following) spaces, use <code>strltrim</code> or <code>strrtrim</code>.
 </li>
 <li>
-<code>substr</code>: Returns the substring starting at an index for a given number of characters (e.g. `substr(“abcdefg”, 2, 3) = “bcd”).
+<code>substr</code>: Returns the substring starting at an index for a given number of characters (e.g. `substr(“abcdefg”, 2, 3) = “bcd”).
 </li>
 </ul>
 <p>
@@ -1958,6 +1959,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -1972,7 +1977,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
