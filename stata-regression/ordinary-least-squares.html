@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2019-01-31">
+<meta name="date" content="2019-05-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -156,7 +156,7 @@ The variable we are predicting can be called the “outcome”, the “response�
 The variables upon which we are predicting can be called “predictors”, “covariates”, or “independent variables”.
 </p>
 <p>
-The model we’re going to start discussing is called “linear regression”. You may also have heard this called “least squares regression” or “ordinary least squares (OLS)”. A lot of the time, if you see a reference to “regression” without specifying the type, they are referring to linear regression.
+The model we’re going to start discussing is called “linear regression”. You may also have this called “least squares regression” or “ordinary least squares (OLS)”. A lot of the time, if you see a reference to “regression” without specifying the type, they are referring to linear regression.
 </p>
 </div>
 <div id="theory" class="section level2">
@@ -342,7 +342,7 @@ The <span class="math inline">\(R^2\)</span> (“R-squared”) is a measure of m
 Mathematically, adding a new predictor to the model will increase the <span class="math inline">\(R^2\)</span>, regardless of how useless the variable is.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> This makes <span class="math inline">\(R^2\)</span> poor for model comparison, as it would always select the model with the most predictors. Instead, the adjusted <span class="math inline">\(R^2\)</span> (“Adj R-Squared”) accounts for this; it penalizes the <span class="math inline">\(R^2\)</span> by the number of predictors in the model. Use the <span class="math inline">\(R^2\)</span> to measure model fit, use the adjusted <span class="math inline">\(R^2\)</span> for model comparison.
 </li>
 <li>
-The root mean squared error (“Root MSE”, as known as RMSE) is a measure of the average difference between the observed outcome and the predicted outcome. It can be used an intuitive measure of model fit, as it is on the scale of the outcome variable. So for this example, the RMSE is 752.84 so on average, this model would mis-predict the electricity expenditure by about $ 752.84. Recall that we saw before that expenditure ranged to $ 8000, so an error of $ 752.84 is low, but not insignificant.
+The root mean squared error (“Root MSE”, as known as RMSE) is a measure of the average difference between the observed outcome and the predicted outcome. It can be used an intuitive measure of model fit, as it is on the scale of the outcome variable. So for this example, the RMSE is 752.84 so on average, this model would mis-predict the electricity expenditure by about $«dd_display: %9.2f e(rmse)». Recall that we saw before that expenditure ranged to $ 8000, so an error of $ 752.84 is low, but not insignificant.
 </li>
 </ul>
 <p>
