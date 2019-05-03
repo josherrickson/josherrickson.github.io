@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Stata</title>
-  <meta name="description" content="Introduction to Stata">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 6 Programming | Introduction to Stata</title>
+  <meta name="description" content="Chapter 6 Programming | Introduction to Stata">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Stata" />
+  <meta property="og:title" content="Chapter 6 Programming | Introduction to Stata" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Stata" />
+  <meta name="twitter:title" content="Chapter 6 Programming | Introduction to Stata" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2018-08-27">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="appendix.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -281,7 +282,7 @@ abc
 </code></pre>
 <ul>
 <li>
-You may occasionally see code that excludes the <code>=</code> in defining a macro (e.g. <code>local vars “var1 var2”</code>). The differences between including and excluding the <code>=</code> are mostly unimportant, so I recommend sticking with the <code>=</code> unless you specifically need the other version.
+You may occasionally see code that excludes the <code>=</code> in defining a macro (e.g. <code>local vars “var1 var2”</code>). The differences between including and excluding the <code>=</code> are mostly unimportant, so I recommend sticking with the <code>=</code> unless you specifically need the other version.
 </li>
 </ul>
 <div id="class-and-return" class="section level3">
@@ -832,6 +833,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -846,7 +851,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
