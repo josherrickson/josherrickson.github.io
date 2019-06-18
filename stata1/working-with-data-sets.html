@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Working with Data Sets | Introduction to Stata</title>
-  <meta name="description" content="Chapter 3 Working with Data Sets | Introduction to Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 3 Working with Data Sets | Introduction to Stata" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Working with Data Sets | Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-03-21">
+<meta name="date" content="2019-06-18" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="basics.html">
@@ -335,9 +334,8 @@ Saving data is straightforward using the <code>save</code> command. If you do no
 <p>
 By default, <code>save</code> will not overwrite existing files. To do so, use the <code>replace</code> option.
 </p>
-<pre><code>save // Saves a new copy with the same name, failing it it already exists.
+<pre><code>save newfile // Saves a new copy with a new name, failing it &quot;newfile&quot; already exists.
 save, replace // Replaces the existing copy with the same name
-save newfile // Saves a new copy with a new name, failing it &quot;newfile&quot; already exists.
 save newfile, replace // Replaces the new name copy.
 </code></pre>
 <p>
