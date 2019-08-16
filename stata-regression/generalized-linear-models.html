@@ -25,7 +25,7 @@
 <meta name="author" content="Josh Errickson">
 
 
-<meta name="date" content="2019-01-31">
+<meta name="date" content="2019-05-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -452,8 +452,15 @@ Separation (of either type) often produces coefficients to be extreme with large
 <div id="logit-miscellaneous." class="section level3">
 <h3><span class="header-section-number">3.1.7</span> <code>logit</code> Miscellaneous.</h3>
 <p>
-The <code>logit</code> model supports the margins command just like <code>regress</code> does. It does not support <code>estat vif</code> because variance inflation factors are not defined for logistic models.
+The <code>logit</code> model supports the margins command just like <code>regress</code> does.
 </p>
+<p>
+It does not support <code>estat vif</code>, but you can re-run the model as with <code>regress</code> as the VIF does not depend on the outcome. E.g.,
+</p>
+<pre><code>logit y a b c
+regress y a b c
+estat vif
+</code></pre>
 <p>
 Collinearity, overfitting, and model selection remain concerns in the logistic model.
 </p>

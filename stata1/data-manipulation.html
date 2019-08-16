@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Data Manipulation | Introduction to Stata</title>
-  <meta name="description" content="Chapter 5 Data Manipulation | Introduction to Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 5 Data Manipulation | Introduction to Stata" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Data Manipulation | Introduction to Stata" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-03-21">
+<meta name="date" content="2019-06-18" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="data-management.html">
@@ -1096,7 +1095,7 @@ Recall that missing values (<code>.</code>) are <a target="_blank" href="data-ma
 Sorting strings does work and is done alphabetically. All capital letters are “less than” all lower case letters, and a blank string ("“) is the “smallest”. For example, if you have the strings “DBC”, “Daa”, "“, “EEE”, the sorted ascending order would be "“, “DBC”, “Daa”, “EEE”. The blank is first; the two strings starting with “D” are before the string “EEE”, and the upper case “B” precedes the lower case “a”.
 </p>
 <p>
-As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to conditionally sort; that is, passing something like <code>sort &lt;varname&gt; in &lt;condition&gt;</code> would sort only those rows for which the condition is true, the remaining rows remain <em>in their exact same position</em>.
+As a side note, there is an additional command, <code>sort</code>, which can perform sorting. It does not allow sorting in descending order, however it does allow you to sort only a certain number of rows; that is, passing something like <code>sort &lt;varname&gt; in 100/200</code> would sort only rows 100 through 200, leaving the remaining rows remain <em>in their exact same position</em>.
 </p>
 </div>
 <div id="working-with-strings-and-categorical-variables" class="section level2">
