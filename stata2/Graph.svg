@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- This is a Stata 15.1 generated SVG file (http://www.stata.com) -->
+<!-- This is a Stata 16.0 generated SVG file (http://www.stata.com) -->
 
 <svg version="1.1" width="5.50in" height="4.00in" viewBox="0 0 3960 2880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - Graph</desc>
@@ -20713,10 +20713,8 @@
 	<circle cx="1510.49" cy="1127.15" r="22.03" style="fill:none;stroke:#FF0080;stroke-width:8.64"/>
 	<circle cx="1097.41" cy="1046.96" r="26.35" style="fill:#FF0080"/>
 	<circle cx="1097.41" cy="1046.96" r="22.03" style="fill:none;stroke:#FF0080;stroke-width:8.64"/>
-	<line x1="629.39" y1="1381.59" x2="1895.85" y2="902.78" stroke-linecap="round" style="stroke:#0000FF;stroke-width:8.64"/>
-	<line x1="1895.85" y1="902.78" x2="3162.43" y2="424.10" stroke-linecap="round" style="stroke:#0000FF;stroke-width:8.64"/>
-	<line x1="560.59" y1="1412.53" x2="2178.12" y2="836.58" stroke-linecap="round" style="stroke:#FF0080;stroke-width:8.64"/>
-	<line x1="2178.12" y1="836.58" x2="3795.66" y2="260.63" stroke-linecap="round" style="stroke:#FF0080;stroke-width:8.64"/>
+	<path d=" M629.39 1381.59 L1895.85 902.78 L3162.43 424.10" stroke-linejoin="round" style="fill:none;stroke:#0000FF;stroke-width:8.64"/>
+	<path d=" M560.59 1412.53 L2178.12 836.58 L3795.66 260.63" stroke-linejoin="round" style="fill:none;stroke:#FF0080;stroke-width:8.64"/>
 	<line x1="290.81" y1="2233.63" x2="290.81" y2="100.86" style="stroke:#000000;stroke-width:5.76"/>
 	<line x1="290.81" y1="2170.27" x2="250.84" y2="2170.27" style="stroke:#000000;stroke-width:5.76"/>
 	<text x="200.73" y="2170.27" style="font-family:'Helvetica';font-size:99.99px;fill:#000000" transform="rotate(-90 200.73,2170.27)" text-anchor="middle">0</text>

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Intermediate Stata (Statistical Modeling)</title>
-  <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Summarizing Data | Intermediate Stata (Statistical Modeling)</title>
+  <meta name="description" content="Chapter 2 Summarizing Data | Intermediate Stata (Statistical Modeling)" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta property="og:title" content="Chapter 2 Summarizing Data | Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
   
   
@@ -17,25 +16,26 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta name="twitter:title" content="Chapter 2 Summarizing Data | Intermediate Stata (Statistical Modeling)" />
   
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2018-05-29">
+<meta name="date" content="2019-08-16" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="index.html">
 <link rel="next" href="visualization.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -106,7 +106,6 @@
 <li class="chapter" data-level="4.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.2</b> Two-sample t-test</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#independent"><i class="fa fa-check"></i><b>4.2.1</b> Independent</a></li>
 <li class="chapter" data-level="4.2.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#paired"><i class="fa fa-check"></i><b>4.2.2</b> Paired</a></li>
-<li class="chapter" data-level="4.2.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#comparing-proportions"><i class="fa fa-check"></i><b>4.2.3</b> Comparing Proportions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#chi-square-test"><i class="fa fa-check"></i><b>4.3</b> Chi-square test</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#fishers-exact-test"><i class="fa fa-check"></i><b>4.3.1</b> Fisher’s Exact Test</a></li>
@@ -131,16 +130,14 @@
 <li class="chapter" data-level="5.4.3" data-path="regression.html"><a href="regression.html#logistic-regression-assumptions"><i class="fa fa-check"></i><b>5.4.3</b> Logistic regression assumptions</a></li>
 <li class="chapter" data-level="5.4.4" data-path="regression.html"><a href="regression.html#logistic-goodness-of-fit"><i class="fa fa-check"></i><b>5.4.4</b> Logistic goodness of fit</a></li>
 <li class="chapter" data-level="5.4.5" data-path="regression.html"><a href="regression.html#separation"><i class="fa fa-check"></i><b>5.4.5</b> Separation</a></li>
-<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous"><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous</a></li>
+<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous."><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous.</a></li>
 <li class="chapter" data-level="5.4.7" data-path="regression.html"><a href="regression.html#logit-vs-logistic"><i class="fa fa-check"></i><b>5.4.7</b> <code>logit</code> vs <code>logistic</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#other-regression-models"><i class="fa fa-check"></i><b>5.5</b> Other regression models</a></li>
 <li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
-<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="mixed-models.html"><a href="mixed-models.html#econometric-terminology"><i class="fa fa-check"></i><b>6.1.1</b> Econometric terminology</a></li>
-</ul></li>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
 <li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
 <li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
 <li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
@@ -158,17 +155,23 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="multiple-imputation.html"><a href="multiple-imputation.html"><i class="fa fa-check"></i><b>8</b> Multiple Imputation</a><ul>
 <li class="chapter" data-level="8.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#missing-at-random"><i class="fa fa-check"></i><b>8.1</b> Missing at random</a></li>
-<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a><ul>
-<li class="chapter" data-level="8.2.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.2.1</b> Setting up data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.2.2</b> Performing the imputation</a></li>
-<li class="chapter" data-level="8.2.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyzing <code>mi</code> data</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.3</b> Setting up data</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#imputing-transformations"><i class="fa fa-check"></i><b>8.3.1</b> Imputing transformations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.3</b> Manual MI</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.3.1</b> Rubin’s rules</a></li>
+<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.4</b> Performing the imputation</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#choosing-the-number-of-imputations"><i class="fa fa-check"></i><b>8.4.1</b> Choosing the number of imputations</a></li>
+<li class="chapter" data-level="8.4.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-variables"><i class="fa fa-check"></i><b>8.4.2</b> <code><em>mi</em></code> variables</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.4</b> Removing the MI data</a></li>
-<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.5</b> Survey and multiple imputation</a></li>
-<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.6</b> Citations</a></li>
+<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.5</b> Analyzing <code>mi</code> data</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-postestimation"><i class="fa fa-check"></i><b>8.5.1</b> MI Postestimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.6</b> Manual MI</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.6.1</b> Rubin’s rules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.7</b> Removing the MI data</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.8</b> Survey and multiple imputation</a></li>
+<li class="chapter" data-level="8.9" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.9</b> Citations</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> Exercise solutions</a><ul>
 <li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1-1"><i class="fa fa-check"></i><b>9.1</b> Exercise 1</a></li>
@@ -219,8 +222,8 @@ The majority of the Stata modeling commands require all variables to be numeric.
 
 Contains data from /Applications/Stata/ado/base/a/auto.dta
   obs:            74                          1978 Automobile Data
- vars:            12                          13 Apr 2016 17:45
- size:         3,182                          (_dta has notes)
+ vars:            12                          13 Apr 2018 17:45
+                                              (_dta has notes)
 -------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
@@ -340,7 +343,7 @@ Almost all estimation commands have the same general syntax:
 <pre><code>command varlist [if] [in] [weight] [,options]
 </code></pre>
 <p>
-The sections inside <code>[</code> and <code>]</code> are optional. The <code>command</code> can sometimes consist of a main command and one or more subcommands. The <code>varlist</code> can be empty, have a single entry, or have multiple entries (the order of which is sometimes of importance - generally the first is some outcome or dependent variable and the rest are predictors or independent variables).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+The sections inside <code>[</code> and <code>]</code> are optional. The <code>command</code> can sometimes consist of a main command and one or more subcommands. The <code>varlist</code> can be empty, have a single entry, or have multiple entries (the order of which is sometimes of importance - generally the first is some outcome or dependent variable and the rest are predictors or independent variables).<a href="exercise-solutions.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 </p>
 <p>
 Estimation commands are stored after they are run, and persist regardless of how many other non-estimation commands are run in between them. These non-estimation commands include data manipulation and <a target="_blank" href="#postestimation-commands">postestimation commands</a>. As soon as another estimation command is run, the first is dropped and the new one is saved.
@@ -393,7 +396,7 @@ Mean estimation                   Number of obs   =         74
 
 </code></pre>
 <p>
-Let’s say we want to obtain the correlation matrix<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+Let’s say we want to obtain the correlation matrix<a href="exercise-solutions.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
 </p>
 <pre><code>. estat vce, corr
 
@@ -413,7 +416,7 @@ Here we see that both <code>length</code> and <code>headroom</code> are negative
 The <code>estat</code> command is somewhat generic, we will see other uses of it later.
 </p>
 <p>
-Similar to how you can get help with any command with help, e.g. <code>help mean</code>, you can get a list of all postestimation commands that a given estimation command supports:
+Similar to how you can get help with any command with help, e.g. <code>help mean</code>, you can get a list of all postestimation commands that a given estimation command supports:
 </p>
 <pre><code>help mean postestimation
 </code></pre>
@@ -644,6 +647,103 @@ We will cover two-way tables (also known as “crosstabs”) later in <a target=
 -----------+----------------------+----------
      Total |        52         22 |        74 
 
+</code></pre>
+<p>
+What if instead you wanted each individual table? You could run multiple <code>tab</code> statements, or use the <code>tab1</code> command instead.
+</p>
+<pre><code>. tab1 rep78 foreign, missing
+
+-&gt; tabulation of rep78  
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.70        2.70
+          2 |          8       10.81       13.51
+          3 |         30       40.54       54.05
+          4 |         18       24.32       78.38
+          5 |         11       14.86       93.24
+          . |          5        6.76      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+-&gt; tabulation of foreign  
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+If you give more than two arguments to <code>tab</code>, it will not run. If you wanted all pairwise tables, you can use <code>tab2</code>:
+</p>
+<pre><code>. tab2 rep78 foreign headroom, missing
+
+-&gt; tabulation of rep78 by foreign  
+
+    Repair |
+    Record |       Car type
+      1978 |  Domestic    Foreign |     Total
+-----------+----------------------+----------
+         1 |         2          0 |         2 
+         2 |         8          0 |         8 
+         3 |        27          3 |        30 
+         4 |         9          9 |        18 
+         5 |         2          9 |        11 
+         . |         4          1 |         5 
+-----------+----------------------+----------
+     Total |        52         22 |        74 
+
+-&gt; tabulation of rep78 by headroom  
+
+    Repair |
+    Record |                     Headroom (in.)
+      1978 |       1.5        2.0        2.5        3.0        3.5 |     Total
+-----------+-------------------------------------------------------+----------
+         1 |         1          1          0          0          0 |         2 
+         2 |         0          3          0          0          1 |         8 
+         3 |         0          5          5          4         10 |        30 
+         4 |         2          1          5          3          2 |        18 
+         5 |         0          3          4          4          0 |        11 
+         . |         1          0          0          2          2 |         5 
+-----------+-------------------------------------------------------+----------
+     Total |         4         13         14         13         15 |        74 
+
+
+    Repair |
+    Record |          Headroom (in.)
+      1978 |       4.0        4.5        5.0 |     Total
+-----------+---------------------------------+----------
+         1 |         0          0          0 |         2 
+         2 |         2          1          1 |         8 
+         3 |         3          3          0 |        30 
+         4 |         5          0          0 |        18 
+         5 |         0          0          0 |        11 
+         . |         0          0          0 |         5 
+-----------+---------------------------------+----------
+     Total |        10          4          1 |        74 
+
+-&gt; tabulation of foreign by headroom  
+
+           |                     Headroom (in.)
+  Car type |       1.5        2.0        2.5        3.0        3.5 |     Total
+-----------+-------------------------------------------------------+----------
+  Domestic |         3         10          4          7         13 |        52 
+   Foreign |         1          3         10          6          2 |        22 
+-----------+-------------------------------------------------------+----------
+     Total |         4         13         14         13         15 |        74 
+
+
+           |          Headroom (in.)
+  Car type |       4.0        4.5        5.0 |     Total
+-----------+---------------------------------+----------
+  Domestic |        10          4          1 |        52 
+   Foreign |         0          0          0 |        22 
+-----------+---------------------------------+----------
+     Total |        10          4          1 |        74 
 
 </code></pre>
 </div>
@@ -815,7 +915,7 @@ Take note of how the missing value is propogated when creating the dummies.
 <div id="correlate" class="section level2">
 <h2><span class="header-section-number">2.5</span> <code>correlate</code></h2>
 <p>
-With the use of <code>tab</code> for crosstabs, we’ve left univariate summaries and moved to joint summaries. For continuous variables, we can use the correlation to examine how similar two continuous variables are. The most common version of correlation is Pearson’s correlation, which ranges from -1 to 1.
+With the use of <code>tab</code> and <code>tab2</code> for crosstabs, we’ve left univariate summaries and moved to joint summaries. For continuous variables, we can use the correlation to examine how similar two continuous variables are. The most common version of correlation is Pearson’s correlation, which ranges from -1 to 1.
 </p>
 <ul>
 <li>
@@ -886,7 +986,7 @@ The two correlations with <code>mpg</code> are extremely similar. We might gener
 What are thresholds for a “low” or “high” correlation? This will depend greatly on your field and setting, a common metric is that .3 is a low correlation, .6 is a moderate correlation, and .8 is a strong correlation.
 </p>
 <p>
-It is possible to obtain p-values testing whether each of those correlations are significantly distinguishable from 0 by passing the <code>sig</code> option. However, p-values for correlations are extremely dependent on sample size and should not be trusted.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The magnitude of the correlation is much more important than it’s significance.
+It is possible to obtain p-values testing whether each of those correlations are significantly distinguishable from 0 by passing the <code>sig</code> option. However, p-values for correlations are extremely dependent on sample size and should not be trusted.<a href="exercise-solutions.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The magnitude of the correlation is much more important than it’s significance.
 </p>
 <div id="varlists-in-stata" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> varlists in Stata</h3>
@@ -937,7 +1037,7 @@ displacement |   0.5479  -0.7434  -0.4119   0.6287   0.8124   1.0000
 <code>price</code>, <code>mpg</code> and <code>rep78</code> are included as part of <code>price-rep78</code>, <code>t*</code> matches <code>trunk</code> and <code>turn</code>, and <code>displacement</code> is included by itself.
 </p>
 <p>
-Finally, there is the special variable list <code>_all</code>, which is shorthand for all variables (e.g. <code>firstvar-lastvar</code>). It is accepted in most but not all places that take in variables.
+Finally, there is the special variable list <code>_all</code>, which is shorthand for all variables (e.g. <code>firstvar-lastvar</code>). It is accepted in most but not all places that take in variables.
 </p>
 <pre><code>. corr _all
 (make ignored because string variable)
@@ -991,7 +1091,7 @@ Notice that it automatically ignored the string variable <code>make</code>. Not 
 You may have noticed that the <code>cor</code> command reports the number of observations it used, for example, the first few correlations all used 74 observations, but the <code>_all</code> version used on 69. <code>correlate</code> uses what’s known as complete cases analysis - any observation missing <em>any</em> value used in the command is excluded. <code>rep78</code> is missing 5 observations (run the <code>misstable summarize</code> command to see this).
 </p>
 <p>
-On the other hand, pairwise completion only excludes missing values from the relevant comparisons. If a given correlation doesn’t involve <code>rep78</code>, it will use all the data. We can obtain this with <code>pwcorr</code>.
+On the other hand, pairwise completion only excluds missing values from the relevant comparisons. If a given correlation doesn’t involve <code>rep78</code>, it will use all the data. We can obtain this with <code>pwcorr</code>.
 </p>
 <pre><code>. corr rep78 price trunk
 (obs=69)
@@ -1145,10 +1245,13 @@ For these exercises, we’ll be using data from NHANES, the National Health And 
 Use <a target="_blank" href="#describe-summarize-codebook"><code>describe</code></a> to get a sense of the data. How many observations? How many variables?
 </li>
 <li>
-Use <a target="_blank" href="#tab"><code>tab</code></a>, <a target="_blank" href="#describe-summarize-codebook"><code>summarize</code></a>, <a target="_blank" href="#describe-summarize-codebook"><code>codebook</code></a>, and/or <a target="_blank" href="#mean"><code>mean</code></a> to get an understanding of the some of variables that we’ll be using going forward:
+Use <a target="_blank" href="#tab"><code>tab</code></a>, <a target="_blank" href="#describe-summarize-codebook"><code>summarize</code></a>, <a target="_blank" href="#describe-summarize-codebook"><code>codebook</code></a>, and/or <a target="_blank" href="#mean"><code>mean</code></a> to get an understanding of the some of variables that we’ll be using a lot going forward:
 <ul>
 <li>
 <code>region</code>
+</li>
+<li>
+<code>houssiz</code>
 </li>
 <li>
 <code>sex</code>
@@ -1157,7 +1260,7 @@ Use <a target="_blank" href="#tab"><code>tab</code></a>, <a target="_blank" href
 <code>diabetes</code>
 </li>
 <li>
-<code>lead</code>
+<code>iron</code>
 </li>
 </ul>
 </li>
@@ -1170,14 +1273,6 @@ What is more highly <a target="_blank" href="#correlate">correlated</a>? A perso
 </ol>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>We won’t cover in this class, but there are multiple-equation estimating commands which have syntax <code>command (varlist) (varlist) … (varlist) [if] [in] [weight] [,options]</code>. <a href="summarizing-data.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>We could just run <code>correlate</code>, but the postestimation commands following <code>mean</code> are fairly limited, so bare with me here. Postestimation commands following models are much more interesting!<a href="summarizing-data.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>This is true of most p-values - it’s often the case that large sample sizes can provide small p-values for scientifically insignificant effects. However, correlation is especially susceptible to this issue.<a href="summarizing-data.html#fnref3" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -1208,6 +1303,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -1222,7 +1321,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

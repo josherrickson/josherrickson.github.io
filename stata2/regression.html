@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Intermediate Stata (Statistical Modeling)</title>
-  <meta name="description" content="Intermediate Stata (Statistical Modeling)">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Regression | Intermediate Stata (Statistical Modeling)</title>
+  <meta name="description" content="Chapter 5 Regression | Intermediate Stata (Statistical Modeling)" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta property="og:title" content="Chapter 5 Regression | Intermediate Stata (Statistical Modeling)" />
   <meta property="og:type" content="book" />
   
   
@@ -17,25 +16,26 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Intermediate Stata (Statistical Modeling)" />
+  <meta name="twitter:title" content="Chapter 5 Regression | Intermediate Stata (Statistical Modeling)" />
   
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2018-05-29">
+<meta name="date" content="2019-08-16" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="univariate-and-some-bivariate-analysis.html">
 <link rel="next" href="mixed-models.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -106,7 +106,6 @@
 <li class="chapter" data-level="4.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#two-sample-t-test"><i class="fa fa-check"></i><b>4.2</b> Two-sample t-test</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#independent"><i class="fa fa-check"></i><b>4.2.1</b> Independent</a></li>
 <li class="chapter" data-level="4.2.2" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#paired"><i class="fa fa-check"></i><b>4.2.2</b> Paired</a></li>
-<li class="chapter" data-level="4.2.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#comparing-proportions"><i class="fa fa-check"></i><b>4.2.3</b> Comparing Proportions</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#chi-square-test"><i class="fa fa-check"></i><b>4.3</b> Chi-square test</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="univariate-and-some-bivariate-analysis.html"><a href="univariate-and-some-bivariate-analysis.html#fishers-exact-test"><i class="fa fa-check"></i><b>4.3.1</b> Fisher’s Exact Test</a></li>
@@ -131,16 +130,14 @@
 <li class="chapter" data-level="5.4.3" data-path="regression.html"><a href="regression.html#logistic-regression-assumptions"><i class="fa fa-check"></i><b>5.4.3</b> Logistic regression assumptions</a></li>
 <li class="chapter" data-level="5.4.4" data-path="regression.html"><a href="regression.html#logistic-goodness-of-fit"><i class="fa fa-check"></i><b>5.4.4</b> Logistic goodness of fit</a></li>
 <li class="chapter" data-level="5.4.5" data-path="regression.html"><a href="regression.html#separation"><i class="fa fa-check"></i><b>5.4.5</b> Separation</a></li>
-<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous"><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous</a></li>
+<li class="chapter" data-level="5.4.6" data-path="regression.html"><a href="regression.html#logit-miscellaneous."><i class="fa fa-check"></i><b>5.4.6</b> <code>logit</code> Miscellaneous.</a></li>
 <li class="chapter" data-level="5.4.7" data-path="regression.html"><a href="regression.html#logit-vs-logistic"><i class="fa fa-check"></i><b>5.4.7</b> <code>logit</code> vs <code>logistic</code></a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="regression.html"><a href="regression.html#other-regression-models"><i class="fa fa-check"></i><b>5.5</b> Other regression models</a></li>
 <li class="chapter" data-level="5.6" data-path="regression.html"><a href="regression.html#exercise-5"><i class="fa fa-check"></i><b>5.6</b> Exercise 5</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="mixed-models.html"><a href="mixed-models.html"><i class="fa fa-check"></i><b>6</b> Mixed models</a><ul>
-<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="mixed-models.html"><a href="mixed-models.html#econometric-terminology"><i class="fa fa-check"></i><b>6.1.1</b> Econometric terminology</a></li>
-</ul></li>
+<li class="chapter" data-level="6.1" data-path="mixed-models.html"><a href="mixed-models.html#terminology-1"><i class="fa fa-check"></i><b>6.1</b> Terminology</a></li>
 <li class="chapter" data-level="6.2" data-path="mixed-models.html"><a href="mixed-models.html#wide-vs-long-data-time-varying-vs-time-invariant"><i class="fa fa-check"></i><b>6.2</b> Wide vs Long data, Time-varying vs Time-invariant</a></li>
 <li class="chapter" data-level="6.3" data-path="mixed-models.html"><a href="mixed-models.html#linear-mixed-model"><i class="fa fa-check"></i><b>6.3</b> Linear Mixed Model</a></li>
 <li class="chapter" data-level="6.4" data-path="mixed-models.html"><a href="mixed-models.html#assumptions-1"><i class="fa fa-check"></i><b>6.4</b> Assumptions</a></li>
@@ -158,17 +155,23 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="multiple-imputation.html"><a href="multiple-imputation.html"><i class="fa fa-check"></i><b>8</b> Multiple Imputation</a><ul>
 <li class="chapter" data-level="8.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#missing-at-random"><i class="fa fa-check"></i><b>8.1</b> Missing at random</a></li>
-<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a><ul>
-<li class="chapter" data-level="8.2.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.2.1</b> Setting up data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.2.2</b> Performing the imputation</a></li>
-<li class="chapter" data-level="8.2.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.2.3</b> Analyzing <code>mi</code> data</a></li>
+<li class="chapter" data-level="8.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi"><i class="fa fa-check"></i><b>8.2</b> <code>mi</code></a></li>
+<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#setting-up-data"><i class="fa fa-check"></i><b>8.3</b> Setting up data</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#imputing-transformations"><i class="fa fa-check"></i><b>8.3.1</b> Imputing transformations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.3</b> Manual MI</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.3.1</b> Rubin’s rules</a></li>
+<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#performing-the-imputation"><i class="fa fa-check"></i><b>8.4</b> Performing the imputation</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#choosing-the-number-of-imputations"><i class="fa fa-check"></i><b>8.4.1</b> Choosing the number of imputations</a></li>
+<li class="chapter" data-level="8.4.2" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-variables"><i class="fa fa-check"></i><b>8.4.2</b> <code><em>mi</em></code> variables</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.4</b> Removing the MI data</a></li>
-<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.5</b> Survey and multiple imputation</a></li>
-<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.6</b> Citations</a></li>
+<li class="chapter" data-level="8.5" data-path="multiple-imputation.html"><a href="multiple-imputation.html#analyzing-mi-data"><i class="fa fa-check"></i><b>8.5</b> Analyzing <code>mi</code> data</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#mi-postestimation"><i class="fa fa-check"></i><b>8.5.1</b> MI Postestimation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="multiple-imputation.html"><a href="multiple-imputation.html#manual-mi"><i class="fa fa-check"></i><b>8.6</b> Manual MI</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="multiple-imputation.html"><a href="multiple-imputation.html#rubins-rules"><i class="fa fa-check"></i><b>8.6.1</b> Rubin’s rules</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="multiple-imputation.html"><a href="multiple-imputation.html#removing-the-mi-data"><i class="fa fa-check"></i><b>8.7</b> Removing the MI data</a></li>
+<li class="chapter" data-level="8.8" data-path="multiple-imputation.html"><a href="multiple-imputation.html#survey-and-multiple-imputation"><i class="fa fa-check"></i><b>8.8</b> Survey and multiple imputation</a></li>
+<li class="chapter" data-level="8.9" data-path="multiple-imputation.html"><a href="multiple-imputation.html#citations-1"><i class="fa fa-check"></i><b>8.9</b> Citations</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i><b>9</b> Exercise solutions</a><ul>
 <li class="chapter" data-level="9.1" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1-1"><i class="fa fa-check"></i><b>9.1</b> Exercise 1</a></li>
@@ -209,7 +212,7 @@ Regression is a set of techniques where we attempt to fit a model to a data set 
 <div id="terminology" class="section level2">
 <h2><span class="header-section-number">5.1</span> Terminology</h2>
 <p>
-When discussing any form of regression, we think of predicting the value of one variable<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> based upon several other variables.
+When discussing any form of regression, we think of predicting the value of one variable<a href="exercise-solutions.html#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> based upon several other variables.
 </p>
 <p>
 The variable we are predicting can be called the “outcome”, the “response” or the “dependent variable”.
@@ -255,7 +258,7 @@ We will now fit a model, discussing assumptions afterwards, because almost all a
 <div id="fitting-the-model" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Fitting the model</h3>
 <p>
-Stata’s <code>regress</code> command fit the linear regression model. It is followed by a varlist where the first variable is the outcome variable and all others are predictors. For this example, let’s use the auto data and fit a relatively simple model, predicting <code>mpg</code> based on <code>gear_ratio</code> and <code>headroom</code>.
+Stata’s <code>regress</code> command fit the linear regression model. It is followed by the outcome variable followed by all predictors. For this example, let’s use the auto data and fit a relatively simple model, predicting <code>mpg</code> based on <code>gear_ratio</code> and <code>headroom</code>.
 </p>
 <pre><code>. sysuse auto, clear
 (1978 Automobile Data)
@@ -292,33 +295,36 @@ Next, the top right part has a series of measures.
 Regression performs complete case analysis - any observations missing any variable involved in this model is ignored in the model. (See <a target="_blank" href="multiple-imputation.html">multiple imputation</a> for details on getting around this.) Check “Number of obs” to ensure the number of observations is what you expect. Here, the data has 74 rows, so the regression model is using all the data (there is no missingness in <code>mpg</code>, <code>weight</code> or <code>displacement</code>).
 </li>
 <li>
-The F-test which follows (“F(2, 71)”<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> and “Prob &gt; F”) is testing the null hypothesis that all coefficients are 0. In other words, if this test fails to reject, the conclusion is the model captures no relationships. In this case, do not continue interpreting the results; either your conclusion is that there is no relationship, or you need to return to the model design phase. If this test does reject, you can continue interpreting.
+The F-test which follows (“F(2, 71)”<a href="exercise-solutions.html#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> and “Prob &gt; F”) is testing the null hypothesis that all coefficients are 0. In other words, if this test fails to reject, the conclusion is the model captures no relationships. In this case, do not continue interpreting the results; either your conclusion is that there is no relationship, or you need to return to the model design phase. If this test does reject, you can continue interpreting.
 </li>
 <li>
-The <span class="math inline">\(R^2\)</span> (“R-squared”) is a measure of model fit. It ranges from 0 to 1 and is a percentage, explaining what percent in the variation in the response is explained by the linear relationship with the predictors. What’s considered a “large” <span class="math inline">\(R^2\)</span> depends greatly on your field and the situation, in very general terms, .6 is good and above .8 is great. However, if you know that there are a lot of unmeasured variables, a much lower threshold for a “good” <span class="math inline">\(R^2\)</span> may be used.
+The <span class="math inline">\(R^2\)</span> (“R-squared”) is a measure of model fit. It ranges from 0 to 1 and is a percentage, explaining what percent in the variation in the response is explained by the linear relationship with the predictors. What’s considered a “large” <span class="math inline">\(R^2\)</span> depends greatly on your field and the situation, in very general terms, .6 is good and above .8 is great. However, if you know that there are a lot of unmeasured variables, a much smaller <span class="math inline">\(R^2\)</span> can be considered good as well.
 </li>
 <li>
-Mathematically, adding a new predictor to the model will increase the <span class="math inline">\(R^2\)</span>, regardless of how useless the variable is.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> This makes <span class="math inline">\(R^2\)</span> poor for model comparison, as it would always select the model with the most predictors. Instead, the adjusted <span class="math inline">\(R^2\)</span> (“Adj R-Squared”) accounts for this; it penalizes the <span class="math inline">\(R^2\)</span> by the number of predictors in the model. Use the <span class="math inline">\(R^2\)</span> to measure model fit, use the adjusted <span class="math inline">\(R^2\)</span> for model comparison.
+Mathematically, adding a new predictor to the model will increase the <span class="math inline">\(R^2\)</span>, regardless of how useless the variable is.<a href="exercise-solutions.html#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> This makes <span class="math inline">\(R^2\)</span> poor for model comparison, as it would always select the model with the most predictors. Instead, the adjusted <span class="math inline">\(R^2\)</span> (“Adj R-Squared”) accounts for this; it penalizes the <span class="math inline">\(R^2\)</span> by the number of predictors in the model. Use the <span class="math inline">\(R^2\)</span> to measure model fit, use the adjusted <span class="math inline">\(R^2\)</span> for model comparison.
 </li>
 <li>
 The root mean squared error (“Root MSE”, as known as RMSE) is a measure of the average difference between the observed outcome and the predicted outcome. It can be used as another measure of model fit, as it is on the scale of the outcome variable. So for this example, the RMSE is 4.4759 so the average error in the model is about 4.5 mpg.
 </li>
 </ul>
 <p>
-Finally, we get to the coefficient table. Each row represents a single predictor. The “_cons” row is the intercept; it’s Coef. of 5.1138 represents the average response <em>when all other predictors are 0</em>. This is usually not interesting; how many cars weighing 0 lbs do you know of? So we’ll ignore this and consider only the other rows. The columns are:
+Finally, we get to the coefficient table. Each row represents a single predictor. The “_cons” row is the intercept; it’s Coef. of 5.1138 represents the average response <em>when all other predictors are 0</em>. This is usually not interesting; how many cars weighing 0 lbs do you know of? So we’ll ignore this and instead go over the other rows.
 </p>
 <ul>
 <li>
-“Coef.”: These are the <span class="math inline">\(\beta\)</span> from the above model. We interpret each as “For a 1 increase in the value of the covariate with all other predictors held constant, we would predict this change in the response, on average.” For example, for every additional inch<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> of headroom in a car (while its gear ratio is constant), it is predicted to have an average of 1.4438 lower mpg.
+“Coef.”: These are the <span class="math inline">\(\beta\)</span> from the above model. We interpret each as “For a 1 increase in the value of the covariate with all other predictors held constant, we would predict this change in the response, on average.” For example, for every additional inch<a href="exercise-solutions.html#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> of headroom in a car (while its gear ratio is constant), it is predicted to have an average of 1.4438 lower mpg.
 </li>
 <li>
 “Std. Err.”: This represents the error attached to the coefficient. This is rarely interpreted; but if it gets extremely large or extremely small (and the Coef. doesn’t likewise go to extremes), its an indication there may be something wrong.
 </li>
 <li>
-“t” and “P&gt;|t”: These are testing the hypothesis that the coefficient are equal to zero. In this model, we see that both <code>gear_ratio</code> and <code>headroom</code> have significant p-values. The p-value is specifically measuring the probability of seeing a coefficient as extreme or more extreme than what we observed, if the true coefficient were 0.
+“t”: This is the standardized coefficient, calculated as Coef./Std. Err. We can’t directly compare the Coef.’s because of the different scales, but we can examine the standardized coefficients to get a sense of which predictor has a larger impact. In this model, we see that the impact of weight is much more than the impact of displacement.
 </li>
 <li>
-“[95% Conf. interval]”: A typically confidence interval for the Coefficient.
+“P&gt;|t|”: The p-value testing whether the coefficient is significantly different than 0. In this model, we see that both <code>gear_ratio</code> and <code>headroom</code> have significant p-values.
+</li>
+<li>
+“[95% Conf. interval]”: A range of possible values.
 </li>
 </ul>
 <p>
@@ -328,10 +334,7 @@ Whenever we look at any model, a distinction needs to be drawn between statistic
 <div id="including-categorical-predictors" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Including categorical predictors</h3>
 <p>
-Let’s say we want to add <code>rep78</code>, a categorical variable with 5 levels, to the model. Regression can’t actually handle categorical variables; instead it creates <a target="_blank" href="summarizing-data.html#generating-dummy-variables">dummy variables</a>. A dummy variable is needed for all <em>but one</em> of the levels of the categorical, the excluded categorical variable is the baseline that all others are compared to<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
-</p>
-<p>
-Naively, let’s simply add the categorical <code>rep78</code> to the model:
+Let’s say we want to add <code>rep78</code>, a categorical variable with 5 levels, to the model. Naively, we simply add it:
 </p>
 <pre><code>. regress mpg gear_ratio headroom rep78
 
@@ -353,10 +356,10 @@ Naively, let’s simply add the categorical <code>rep78</code> to the model:
 
 </code></pre>
 <p>
-We only get a single coefficient. Stata is treating <code>rep78</code> as continuous.
+We only get a single coefficient. Stata is treating <code>rep78</code> as continuous. When including a categorical predictor, Stata will create dummy variables (variables which take on value 1 if the observation is in that category and 0 otherwise) and include all but one, which is the reference (or baseline). Since we only see a single coefficient here, we know Stata did it incorrectly.
 </p>
 <p>
-The issue is that Stata doesn’t know we want to treat <code>rep78</code> as categorical<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. If we prefix the variable name with <code>i.</code>, Stata will know it is categorical.
+The issue is that Stata doesn’t know we want to treat <code>rep78</code> as categorical. If we prefix the variable name with <code>i.</code>, Stata will know it is categorical.
 </p>
 <pre><code>. regress mpg gear_ratio headroom i.rep78
 
@@ -387,10 +390,10 @@ The issue is that Stata doesn’t know we want to treat <code>rep78</code> as ca
 First, note that <code>headroom</code> no longer has a significant coefficient! This implies that <code>rep78</code> and <code>headroom</code> are correlated, and in the first model where we did not include <code>rep78</code>, all of <code>rep78</code>’s effect was coming through <code>headroom</code>. Once we control for <code>rep78</code>, headroom is no longer significant. We will discuss <a target="_blank" href="#multicollinearity">multicollinearity later</a>, as well as why this is why <a target="_blank" href="#model-selection-is-bad">model selection is bad</a>.
 </p>
 <p>
-Now we see 4 rows for <code>rep78</code>, each corresponding to a comparison between response 1 and the row. For example, the first row, 2, is saying that when <code>rep78</code> is 2 compared to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level), the average predicted mpg drops by 1.204 (though it is not statistical significant). The last row, 5, is saying that when <code>rep78</code> is 5 compare to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level, the average predicted mpg increases by 4.401 (again, not statistically significant).
+Now we see 4 rows for <code>rep78</code>, each corresponding to a comparison between response 1 and the row. For example, the first row, 2, is saying that when <code>rep78</code> is 2 compared to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level), the average predicted response drops by 1.204 (though it is not statistical significant). The last row, 5, is saying that when <code>rep78</code> is 5 compare to when it is 1 (with <code>gear_ratio</code> and <code>headroom</code> held at some fixed level, the average predicted response increases by 4.401 (again, not statistically significant).
 </p>
 <p>
-What about the other comparison? (Does 2 differ from 4?) Let’s use the <code>margins</code> command. First, we’ll get the marginal means at each level - if <em>every</em> car in the data set had a <code>rep78</code> level of <span class="math inline">\(i\)</span>, what is the average mileage?
+To see the other comparisons (does 2 differ from 4?), we can use the <code>margins</code> command.
 </p>
 <pre><code>. margins rep78
 
@@ -411,19 +414,9 @@ Expression   : Linear prediction, predict()
           5  |   24.83105   1.341573    18.51   0.000     22.14929    27.51282
 ------------------------------------------------------------------------------
 
-</code></pre>
-<p>
-Note that the difference in the marginal means corresponds to the coefficients above. E.g. the marginal means at repair record 1 and 2 are 20.42972 and 21.63332 respectively, for a difference of 1.2036 - which is exactly (with rounding) the coefficient we saw on <code>rep78 = 2</code> above!
-</p>
-<p>
-The t-tests here are simply testing whether the marginal means are different than zero - of no real interest.
-</p>
-<p>
-Now, we can look at all pairwise comparisons by adding the <code>pwcompare(pv)</code> option to margins:
-</p>
-<pre><code>. margins rep78, pwcompare(pv)
+. margins rep78, pwcompare(pv)
 
-Pairwise comparisons of predictive margins
+Pairwise comparisons of predictive margins      Number of obs     =         69
 Model VCE    : OLS
 
 Expression   : Linear prediction, predict()
@@ -447,7 +440,10 @@ Expression   : Linear prediction, predict()
 
 </code></pre>
 <p>
-This result is similar to a post-hoc test from ANOVA if you are familiar with it. The only statistical significance we find is 5 vs 3 and 5 vs 4, suggesting that 5 is dissimilar from 3 and 4. (Confusingly, 3 and 4 are not dissimilar from 1 or 2, but 5 is similar to 1 and 2! These sort of things can happen; its best to focus only on the comparisons that are of theoretical interest.)
+The first <code>margins</code> call, without any options, displays the marginal means for each category - if every car had <code>rep78</code> at those levels, it’s the average predicted mileage of all cars. The t-test here is useless - it’s only testing that the average mileage of the cars in each group is not 0!
+</p>
+<p>
+The second <code>margins</code> call adds the <code>pwcompare(pv)</code> option, which performs pairwise test between each pair of <code>rep78</code> levels. This is similar to a post-hoc test from ANOVA if you are familiar with it. The only statistical significance we find is 5 vs 3 and 5 vs 4, suggesting that 5 is dissimilar from 3 and 4. (Confusingly, 3 and 4 are not dissimilar from 1 or 2, but 5 is similar to 1 and 2! These sort of things can happen; its best to focus only on the comparisons that are of theoretical interest.)
 </p>
 <p>
 By default, using <code>i.</code> makes the first level (lowest numerical value) as the reference category. You can adjust this by using <code>ib#.</code> instead, such as:
@@ -478,7 +474,7 @@ By default, using <code>i.</code> makes the first level (lowest numerical value)
 
 </code></pre>
 <p>
-<strong>This does not fit a different model.</strong> Both models (with <code>i.rep78</code> and <code>ib3.rep78</code>) are identical, we’re just adjusting what is reported. If the models do change (especially the model fit numbers in the top right), something has gone wrong!
+<strong>This does not fit a different model.</strong> Both models (with <code>i.rep78</code> and <code>ib3.rep78</code>) are identical, we’re just seeing slight variations. If the models do change (especially the model fit numbers in the top right), something has gone wrong.
 </p>
 </div>
 <div id="interactions" class="section level3">
@@ -534,28 +530,31 @@ Adding these to the <code>regress</code> call is almost as easy. We’ll use <co
 <code>a b a##b</code>: Same as <code>a##b</code>, except it’ll be uglier because you’re including main effects twice and one will be ignored.
 </li>
 </ul>
-<p>
-Let’s change up the model a bit. Let’s predict mileage based upon price and gear ratio. We include mileage to address whether higher price cars have better mileage (better engineering). However, sportier cars (higher gear ratio) are generally expensive and may have worse mileage for the sake of performance. By including an interactino between price and gear ratio, we can test whether the relationship between price and mileage depends on the sportiness of the car.
-</p>
-<pre><code>. regress mpg c.price##c.gear_ratio
+<pre><code>. regress mpg c.headroom##c.gear_ratio i.rep78
 
-      Source |       SS           df       MS      Number of obs   =        74
--------------+----------------------------------   F(3, 70)        =     27.15
-       Model |  1314.01011         3   438.00337   Prob &gt; F        =    0.0000
-    Residual |  1129.44935        70  16.1349907   R-squared       =    0.5378
--------------+----------------------------------   Adj R-squared   =    0.5180
-       Total |  2443.45946        73  33.4720474   Root MSE        =    4.0168
+      Source |       SS           df       MS      Number of obs   =        69
+-------------+----------------------------------   F(7, 61)        =      9.97
+       Model |  1248.72541         7  178.389344   Prob &gt; F        =    0.0000
+    Residual |  1091.47749        61  17.8930736   R-squared       =    0.5336
+-------------+----------------------------------   Adj R-squared   =    0.4801
+       Total |   2340.2029        68  34.4147485   Root MSE        =      4.23
 
 ------------------------------------------------------------------------------
          mpg |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-       price |    .002536   .0009513     2.67   0.010     .0006387    .0044333
-  gear_ratio |   14.30867   2.545822     5.62   0.000     9.231186    19.38615
+    headroom |  -6.118452   5.501801    -1.11   0.270    -17.11998     4.88308
+  gear_ratio |   1.663074   5.653574     0.29   0.770    -9.641945    12.96809
              |
-     c.price#|
-c.gear_ratio |   -.001145    .000342    -3.35   0.001    -.0018271   -.0004629
+  c.headroom#|
+c.gear_ratio |   1.706674   1.810387     0.94   0.350    -1.913418    5.326766
              |
-       _cons |  -16.67042   7.509179    -2.22   0.030      -31.647   -1.693832
+       rep78 |
+          2  |   1.420052   3.516173     0.40   0.688    -5.610971    8.451075
+          3  |   .3597184   3.253001     0.11   0.912     -6.14506    6.864496
+          4  |   .7112303   3.397286     0.21   0.835    -6.082064    7.504524
+          5  |   4.839447   3.398527     1.42   0.160    -1.956328    11.63522
+             |
+       _cons |   18.27442   17.23312     1.06   0.293    -16.18532    52.73417
 ------------------------------------------------------------------------------
 
 </code></pre>
@@ -563,101 +562,53 @@ c.gear_ratio |   -.001145    .000342    -3.35   0.001    -.0018271   -.0004629
 Note that we used <code>c.</code>, similar to <code>i.</code>. <code>c.</code> forces Stata to treat it as continuous. Stata assumes anything in an interaction is categorical, so we need <code>c.</code> here! This can get pretty confusing, but it’s never wrong to include <code>i.</code> or <code>c.</code> when specifying a regression.
 </p>
 <p>
-Lots of significance here, but once we include an interaction, the relationship between the variables included in the interaction and the response are not constant - the relationship depends on the value of the other interacted variables. This can be hard to visualize with the basic regression output, so we’ll look at <code>margins</code> again instead. We’ll want to look at the relationship between <code>mpg</code> and <code>price</code> at a few different values of <code>gear_ratio</code> to get a sense of the pattern. <code>gear_ratio</code> ranges from 2.19 to 3.89 (this can be obtained with <code>summarize</code> or <code>codebook</code>, just don’t forget to <a target="_blank" href="summarizing-data.html#storing-and-restoring-estimation-commands">save the results</a> or re-run the <code>regress</code> command to gain access to the <a target="_blank" href="summarizing-data.html#postestimation-commands">postestimation commands</a> again), so let’s look at the relationship at those extremes and at 3:
+Once we include an interaction, the relationship between the variables included in the interaction and the response are not constant - the relationship depends on the value of the other interacted variables. This can be hard to visualize with the basic regression output, so we’ll look at <code>margins</code> again instead. We’ll want to look at the relationship between <code>mpg</code> and <code>headroom</code> at a few different values of <code>gear_ratio</code> to get a sense of the pattern. <code>gear_ratio</code> ranges from 2.19 to 3.89 (this can be obtained with <code>summarize</code> or <code>codebook</code>, just don’t forget to <a target="_blank" href="summarizing-data.html#storing-and-restoring-estimation-commands">save the results</a> or re-run the <code>regress</code> command to gain access to the <a target="_blank" href="summarizing-data.html#postestimation-commands">postestimation commands</a> again), so let’s look at the relationship at those extremes and at 3:
 </p>
-<pre><code>. margins, dydx(price) at(gear_ratio = (2.25 2.75 3.25 3.75))
+<pre><code>. margins, dydx(headroom) at(gear_ratio = (2.19 3 3.89))
 
-Average marginal effects                        Number of obs     =         74
+Average marginal effects                        Number of obs     =         69
 Model VCE    : OLS
 
 Expression   : Linear prediction, predict()
-dy/dx w.r.t. : price
+dy/dx w.r.t. : headroom
 
-1._at        : gear_ratio      =        2.25
+1._at        : gear_ratio      =        2.19
 
-2._at        : gear_ratio      =        2.75
+2._at        : gear_ratio      =           3
 
-3._at        : gear_ratio      =        3.25
-
-4._at        : gear_ratio      =        3.75
+3._at        : gear_ratio      =        3.89
 
 ------------------------------------------------------------------------------
              |            Delta-method
              |      dy/dx   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-price        |
+headroom     |
          _at |
-          1  |  -.0000403   .0002367    -0.17   0.865    -.0005124    .0004318
-          2  |  -.0006128   .0001679    -3.65   0.001    -.0009477   -.0002779
-          3  |  -.0011853   .0002426    -4.89   0.000    -.0016691   -.0007015
-          4  |  -.0017578   .0003847    -4.57   0.000     -.002525   -.0009906
+          1  |  -2.380836   1.645048    -1.45   0.153    -5.670313    .9086406
+          2  |  -.9984305   .6897375    -1.45   0.153    -2.377646    .3807848
+          3  |   .5205093   1.727385     0.30   0.764    -2.933611    3.974629
 ------------------------------------------------------------------------------
 
 </code></pre>
 <p>
-This tells an interesting story. Notice the “dy/dx” column. All the values are negative and getting more negative. As the gear ratio increases, the relationship between price and mileage gets more negative. This effect is significant at all levels except with the lowest gear ratio. In the regression model above, the coefficient on price was positve and highly signifcant. How do we explain this seeming contradiction? Remember, the interpretation of the main effects in the presence of interactions is it’s the relationship between price and mileage <em>when gear ratio is 0</em>. Gear ratio is never 0! We are extrapolating.
+While none of the p-values are significant, let’s pretend they were for the sake of discussion. Notice the pattern in the “dy/dx” column. With a low gear ratio, the relationship between headroom and mpg is negative - a larger headroom car is predicted to have lower mileage. At the other end, with a high gear ratio, the relationship is much closer to 0, and perhaps even slightly positive.
 </p>
 <p>
-To better understand the pattern we’re seeing, let’s visualize this:
+Follow this with a call to <code>marginsplot</code> for a great visualization:
 </p>
 <pre><code>. marginsplot
 
   Variables that uniquely identify margins: gear_ratio
 
 </code></pre>
-<img src="Graph18.svg" >
 <p>
-With low gear_ratio, there is no relationship between price and mileage - increasing the cost of a low gear ratio car is predicted to have no effect on milage, on average. As the gear ratio increases, the relationship becomes significant and negative - among sporty cars (higher gear ratio), the more expensive the car is the worse it’s mileage!
+<img src="Graph17.svg" >
 </p>
 <p>
-We can create a rather complicated looking plot to examine this.
-</p>
-<pre><code>. twoway (scatter mpg price if gear_ratio &lt; 2.5, ///
-&gt;          msymbol(circle) mcolor(red)) ///
-&gt;        (lfit mpg price if gear_ratio &lt; 2.5, ///
-&gt;           lcolor(red)) ///
-&gt;        (scatter mpg price if gear_ratio &gt;= 2.5 &amp; gear_ratio &lt; 3.0, ///
-&gt;           msymbol(triangle) mcolor(green)) ///
-&gt;        (lfit mpg price if gear_ratio &gt;= 2.5 &amp; gear_ratio &lt; 3.0, ///
-&gt;           lcolor(green)) ///
-&gt;        (scatter mpg price if gear_ratio &gt;= 3.0 &amp; gear_ratio &lt; 3.5, ///
-&gt;           msymbol(square) mcolor(blue)) ///
-&gt;        (lfit mpg price if gear_ratio &gt;= 3.0 &amp; gear_ratio &lt; 3.5, ///
-&gt;           lcolor(blue)) ///
-&gt;        (scatter mpg price if gear_ratio &gt;= 3.5 &amp; gear_ratio &lt; ., ///
-&gt;           msymbol(diamond) mcolor(purple))  ///
-&gt;        (lfit mpg price if gear_ratio &gt;= 3.5 &amp; gear_ratio &lt; ., ///
-&gt;           lcolor(purple)) , ///
-&gt;                 legend(label(1 &quot;&lt; 2.5&quot;) label(3 &quot;2.5 - 3.0&quot;) ///
-&gt;                    label(5 &quot;3.0 - 3.5&quot;) label(7 &quot;&gt; 3.5&quot;) ///
-&gt;                    order(1 3 5 7)) ///
-&gt;             ytitle(&quot;mpg&quot;)
-
-</code></pre>
-<img src="Graph19.svg" >
-<p>
-Each color represents a selection of cars with the given gear ratios. The cars with the lowest <code>gear_ratio</code>, in red, show no relationship between price and mileage. The green and purple cars with mid-range gear ratio, show negative relationships. The strongest negative relationship is among the purple cars with the highest gear ratio.
+With low gear_ratio, there is a negative relationship between headroom and mileage - adding headroom to a low gear ratio car is predicted to decrease mileage, on average. However, the effect decreases as gear ratio increases, and at high levels of gear ratio, there is no longer any relationship. You can detect this by looking at the means (the points) and the confidence bands; here there is no relationship at all, but there is some suggestion that the relationship we describe may be occurring.
 </p>
 <p>
-There are a few variations of the <code>margins</code> call we might want to use. First, we could reverse the roles of <code>price</code> and <code>gear_ratio</code>. We would do this if our hypothesis was that sportier cars decrease mileage, and the more expensive the car is, the stronger this effect.
-</p>
-<pre><code>margins, dydx(gear_ratio) at(price = (5000 10000 15000))
-</code></pre>
-<p>
-Next, what if we have a categorical by continuous interaction? Instead of <code>dydx</code>, we’d simply give the categorical variable in the varlist:
-</p>
-<pre><code>regress c.continuous##i.categorical
-margins categorical, at(continuous = (1.5 5 8.5))
-margins, dydx(continuous) at(categorical = (1 2 3))
-</code></pre>
-<p>
-Finally, for categorical by categorical interactions, we get one additional variation:
-</p>
-<pre><code>regress i.cat1##i.cat2
-margins cat1#cat2
-</code></pre>
-<p>
-Often discovering which variety of these you want may require some trial and error!
+Note that the choice of looking at the effect of headroom for different levels of gear ratio was arbitrary; we could have easily looked at the effect of gear ratio for different levels of headroom (just swap what’s the in the <code>dydx( )</code> and <code>at( )</code> options). The choice in a real modeling situation should depend on which is more interesting.
 </p>
 <div id="centering" class="section level4">
 <h4><span class="header-section-number">5.2.3.1</span> Centering</h4>
@@ -675,49 +626,52 @@ To center, use the following:
 
 . gen gear_ratioc = gear_ratio - `r(mean)'
 
-. summ price
+. summ headroom
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
-       price |         74    6165.257    2949.496       3291      15906
+    headroom |         74    2.993243    .8459948        1.5          5
 
-. gen pricec = price - `r(mean)'
+. gen headroomc = headroom - `r(mean)'
 
-. summ gear_ratioc pricec
+. summ gear_ratioc headroomc
 
     Variable |        Obs        Mean    Std. Dev.       Min        Max
 -------------+---------------------------------------------------------
  gear_ratioc |         74    2.92e-09    .4562871  -.8248648   .8751352
-      pricec |         74   -.0000154    2949.496  -2874.257   9740.743
+   headroomc |         74    1.56e-08    .8459948  -1.493243   2.006757
 
-. regress mpg c.pricec##c.gear_ratioc
+. regress mpg c.headroomc##c.gear_ratioc i.rep78
 
-      Source |       SS           df       MS      Number of obs   =        74
--------------+----------------------------------   F(3, 70)        =     27.15
-       Model |  1314.01011         3  438.003371   Prob &gt; F        =    0.0000
-    Residual |  1129.44935        70  16.1349907   R-squared       =    0.5378
--------------+----------------------------------   Adj R-squared   =    0.5180
-       Total |  2443.45946        73  33.4720474   Root MSE        =    4.0168
+      Source |       SS           df       MS      Number of obs   =        69
+-------------+----------------------------------   F(7, 61)        =      9.97
+       Model |  1248.72541         7  178.389344   Prob &gt; F        =    0.0000
+    Residual |  1091.47749        61  17.8930736   R-squared       =    0.5336
+-------------+----------------------------------   Adj R-squared   =    0.4801
+       Total |   2340.2029        68  34.4147485   Root MSE        =      4.23
 
 ------------------------------------------------------------------------------
          mpg |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-      pricec |  -.0009161   .0001927    -4.75   0.000    -.0013005   -.0005317
- gear_ratioc |   7.249342   1.102393     6.58   0.000     5.050688    9.447996
+   headroomc |   -.973061    .689197    -1.41   0.163    -2.351196    .4050735
+ gear_ratioc |   6.771564   1.311782     5.16   0.000     4.148494    9.394633
              |
-    c.pricec#|
+ c.headroomc#|
           c. |
- gear_ratioc |   -.001145    .000342    -3.35   0.001    -.0018271   -.0004629
+ gear_ratioc |   1.706674   1.810387     0.94   0.350    -1.913418    5.326765
              |
-       _cons |   20.82048   .4881841    42.65   0.000     19.84683    21.79413
+       rep78 |
+          2  |   1.420052   3.516173     0.40   0.688    -5.610971    8.451075
+          3  |   .3597184   3.253001     0.11   0.912     -6.14506    6.864496
+          4  |   .7112302   3.397286     0.21   0.835    -6.082064    7.504524
+          5  |   4.839447   3.398527     1.42   0.160    -1.956328    11.63522
+             |
+       _cons |   20.37576   3.132586     6.50   0.000     14.11177    26.63975
 ------------------------------------------------------------------------------
 
 </code></pre>
 <p>
-If you compare fit characteristics and the interaction coefficient (and other coefficients), you’ll notice nothing has changed save the coefficients for <code>pricec</code> and <code>gear_ratioc</code>. Now the interpretation the price main effect (which before was nonsense because gear ratio was never 0) is -.0009161, which corresponds to the relationship between price and mileage when <code>gear_ratio</code> is 3.014865.
-</p>
-<p>
-If we were to re-run the <code>margins</code> commands from before, we’d see the same results (albeit with different scaling both in the <code>at( )</code> option and in the axes of the response.)
+If you compare fit characteristics and the interaction coefficient (and other coefficients), you’ll notice nothing has changed save the coefficient for <code>headroomc</code> and <code>gear_ratioc</code>. If we were to re-run the <code>margins</code> commands from before, we’d see the same results.
 </p>
 </div>
 </div>
@@ -729,33 +683,39 @@ The standard error associated with each coefficient are determined with the assu
 <p>
 If you believe this is untrue, the estimates will be unaffected, but their standard errors will be incorrect. We can adjust for this by using “robust” standard errors, also known as Sandwich estimators or Huber-White estimators, with the <code>vce(robust)</code> option to <code>regress</code>.
 </p>
-<pre><code>. regress mpg c.price##c.gear_ratio, vce(robust)
+<pre><code>. regress mpg c.headroom##c.gear_ratio i.rep78, vce(robust)
 
-Linear regression                               Number of obs     =         74
-                                                F(3, 70)          =      25.72
+Linear regression                               Number of obs     =         69
+                                                F(7, 61)          =      13.06
                                                 Prob &gt; F          =     0.0000
-                                                R-squared         =     0.5378
-                                                Root MSE          =     4.0168
+                                                R-squared         =     0.5336
+                                                Root MSE          =       4.23
 
 ------------------------------------------------------------------------------
              |               Robust
          mpg |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-       price |    .002536   .0008763     2.89   0.005     .0007883    .0042837
-  gear_ratio |   14.30867    2.55241     5.61   0.000     9.218048    19.39929
+    headroom |  -6.118452   4.773167    -1.28   0.205    -15.66299    3.426085
+  gear_ratio |   1.663074   5.162335     0.32   0.748    -8.659652     11.9858
              |
-     c.price#|
-c.gear_ratio |   -.001145   .0003043    -3.76   0.000    -.0017519   -.0005381
+  c.headroom#|
+c.gear_ratio |   1.706674   1.570136     1.09   0.281    -1.433007    4.846355
              |
-       _cons |  -16.67042   7.455919    -2.24   0.029    -31.54078   -1.800056
+       rep78 |
+          2  |   1.420052   3.305466     0.43   0.669    -5.189636     8.02974
+          3  |   .3597184   3.328762     0.11   0.914    -6.296553     7.01599
+          4  |   .7112303   3.462482     0.21   0.838     -6.21243    7.634891
+          5  |   4.839447   4.021867     1.20   0.234    -3.202773    12.88167
+             |
+       _cons |   18.27442   15.83866     1.15   0.253    -13.39693    49.94578
 ------------------------------------------------------------------------------
 
 </code></pre>
 <p>
-Notice that compared to the <a target="_blank" href="#interactions">previous model</a>, the Coef estimates are the same but the standard errors (and corresponding t-statistic, p-value and confidence interval) are slightly different.
+Notice that compared to the <a target="_blank" href="#interactions">previous model</a>, the Coef estimates but the standard errors (and corresponding t-statistic, p-value and confidence interval) are slightly different.
 </p>
 <p>
-Typically, the robust standard errors should be slightly larger than the non-robust standard errors, but not always. The only common situation where the robust standard errors will decrease is when the error variance is highest for observations near the average value of the predictors. This does not often happen (generally the higher residuals occur in observations that could be considered outliers).
+Typically, the robust standard errors should be slightly larger than the non-robust standard errors, but not always (as in this case). Generally, the only situation where the robust standard errors will decrease is when the error variance is highest for observations near the average value of the predictors. This does not often happen (generally the higher residuals occur in observations that could be considered outliers).
 </p>
 <p>
 There has been some argument that robust standard errors should always be used, because if the model is correctly specified, the robust standard errors and regular standard errors should be almost identical, so there is no harm in using them.
@@ -780,7 +740,9 @@ This very explicitly assumes that the relationship is linear (as opposed to some
 <pre><code>. rvfplot
 
 </code></pre>
-<img src="Graph20.svg" >
+<p>
+<img src="Graph18.svg" >
+</p>
 <p>
 What we’re seeing here is a scatterplot between the fitted values (the predicted values for each individual) and their errors (the difference between the predicted values and observed values). If you can see a pattern in the scatterplot, that is evidence that this assumption is violated. <strong>Importantly</strong>, not seeing any pattern is <strong>not</strong> evidence that the assumption is valid! You’ll still need to cover this assumption with theory and knowledge of the data.
 </p>
@@ -791,7 +753,7 @@ This image, from Julian Faraway’s <a target="_blank" href="http://www.maths.ba
 <img src="https://i.stack.imgur.com/rtn7e.png" alt="" />
 </p>
 <p>
-If this assumption is violated, you will need to reconsider the structure in your model, perhaps by adding a squared term (e.g. <code>reg y c.x c.x#c.x</code>).
+If this assumption is violated, you will need to reconsider the structure in your model, perhaps by adding a squared term (e.g. <code>reg y c.x c.x#c.x</code>).
 </p>
 <div id="obtaining-predicted-values-and-residuals" class="section level5">
 <h5><span class="header-section-number">5.2.5.1.1</span> Obtaining predicted values and residuals</h5>
@@ -815,15 +777,19 @@ There are quite a few options for the “statistic”, but the two most commonly
 In other words, we can replicate the above <code>rvfplot</code> via:
 </p>
 <pre><code>. predict linearpredictor, xb
+(5 missing values generated)
 
 . predict resids, residuals
+(5 missing values generated)
 
 . twoway scatter resids linearpredictor
 
 </code></pre>
-<img src="Graph21.svg" >
 <p>
-Of course we can clean this plot up with the <a target="_blank" href="visualization.html#the-graph-command">typical options</a>.
+<img src="Graph19.svg" >
+</p>
+<p>
+(The two warnings about missing values are due to 4 cars not having a value of <code>rep78</code>. See <a target="_blank" href="multiple-imputation.html">multiple imputation</a> for a strategy for dealing with missing data.)
 </p>
 </div>
 </div>
@@ -859,33 +825,25 @@ If this assumption is violated, consider fitting a <a target="_blank" href="mixe
 <p>
 Multicollinearity is an issue when 2 or more predictors are correlated. If only two are correlated, looking at their correlation (with <code>pwcorr</code> or <code>correlate</code>) may provide some indication, but you can have many-way multicollinearity where each pairwise correlation is low. You can use the variance inflation factor to try and identify if this is an issue.
 </p>
-<p>
-Let’s fit a model with a bunch of main effects. We use <code>quietly</code> to suppress the output to save space.
-</p>
-<pre><code>. quietly regress mpg headroom trunk weight length turn displacement
-
-. estat vif
+<pre><code>. estat vif
 
     Variable |       VIF       1/VIF  
 -------------+----------------------
-      weight |     15.06    0.066412
-      length |     12.53    0.079833
-displacement |      5.17    0.193585
-        turn |      4.25    0.235511
-       trunk |      2.80    0.357428
-    headroom |      1.81    0.551207
+    headroom |     83.74    0.011942
+  gear_ratio |     26.00    0.038456
+  c.headroom#|
+c.gear_ratio |     72.97    0.013705
+       rep78 |
+          2  |      4.89    0.204632
+          3  |     10.03    0.099719
+          4  |      8.58    0.116527
+          5  |      5.97    0.167545
 -------------+----------------------
-    Mean VIF |      6.93
+    Mean VIF |     30.31
 
 </code></pre>
 <p>
-The rule of thumb is VIF &gt; 10 or 1/VIF (called the tolerance) &lt; .1 suggests that the variable is involved in multicollinearity and more exploration may be needed.
-</p>
-<p>
-Shockingly, we see that <code>weight</code> and <code>length</code> have high VIF’s - not surprisingly these are related!
-</p>
-<p>
-Note that generally, a high VIF on an interaction or a main effect in the presence of an interaction is not a concern (of course an interaction is collinear with its main effects!).
+The rule of thumb is VIF &gt; 10 or 1/VIF (called the tolerance) &lt; .1 suggests that the variable is involved in multicollinearity and more exploration may be needed. We’ve got a ton of multicollinearity here, so we’d need to explore more and perhaps exclude one of them.
 </p>
 <p>
 Multicollinearity can be an issue because the more correlated predictors are, the more likely that their combined effect will be inappropriately spread among them. For a very simple example, imagine that we have the model
@@ -894,13 +852,13 @@ Multicollinearity can be an issue because the more correlated predictors are, th
 <span class="math display">\[ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \epsilon \]</span>
 </p>
 <p>
-If <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are uncorrelated, then we can estimate <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> without a problem. Consider the extreme situations where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are perfectly correlated.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a> We can therefore rewrite the equation as
+If <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are uncorrelated, then we can estimate <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> without a problem. Consider the extreme situations where <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are perfectly correlated.<a href="exercise-solutions.html#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> We can therefore rewrite the equation as
 </p>
 <p>
 <span class="math display">\[ Y = \beta_0 + (\beta_1 + \beta_2)X_1 + \epsilon \]</span>
 </p>
 <p>
-since with perfect correlation, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are identical.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> Now, when we fit the model, we would have estimates of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> which sum to the “truth”, but the individual level of each of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> could be anything. For example, if the “true” <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are 1 and 3, they sum to 4. We could get estimated coefficients of 1 and 3, or 3 and 1, or -20 and 24!
+since with perfect correlation, <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are identical.<a href="exercise-solutions.html#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Now, when we fit the model, we would have estimates of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> which sum to the “truth”, but the individual level of each of <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> could be anything. For example, if the “true” <span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are 1 and 3, they sum to 4. We could get estimated coefficients of 1 and 3, or 3 and 1, or -20 and 24!
 </p>
 <p>
 This is an extreme example, but in practice we can be close to this situation.
@@ -909,7 +867,7 @@ This is an extreme example, but in practice we can be close to this situation.
 <div id="overfitting" class="section level4">
 <h4><span class="header-section-number">5.2.6.2</span> Overfitting</h4>
 <p>
-Overfitting occurs when a model includes so many predictors that you can no longer generalize to the population. The rule of thumb is that you should have no more than one predictor for every 10-20 observations. The smaller your sample size, the more conservative you should be. For example, a sample size of 100 should use no more than 5-10 predictors. Recall that a categorical predictor with <span class="math inline">\(k\)</span> different levels adds <span class="math inline">\(k-1\)</span> predictors!
+Overfitting occurs when a model includes so many predictors that you can no longer generalize to the population. The rule of thumb is that you should have no more than one predictor for every 10-20 observations. The smaller your sample size, the more conservative you should be. For example, a sample size of 100 should use no more than 10-20 predictors. Recall that a categorical predictor with <span class="math inline">\(k\)</span> different levels adds <span class="math inline">\(k-1\)</span> predictors!
 </p>
 </div>
 <div id="model-selection-is-bad" class="section level4">
@@ -955,16 +913,10 @@ Reload the NHANES data.
 How well does the model fit?
 </li>
 <li>
-Do any <a target="_blank" href="#assumptions">assumptions</a> appear violated?
+Does one gender tend to have higher levels of lead?
 </li>
 <li>
-Does <a target="_blank" href="#multicollinearity">multicollinearity</a> appear to be a concern?
-</li>
-<li>
-Does one gender tend to have higher levels of lead? Does this appear practically interesting?
-</li>
-<li>
-Is the coefficient on age statistically significant? Do you think it is practically interesting?
+Is the coefficient on age statistically significant? Do you think it is clinically interesting?
 </li>
 <li>
 Looking at all the differences between regions, what conclusion can you draw?
@@ -972,12 +924,18 @@ Looking at all the differences between regions, what conclusion can you draw?
 <li>
 Add an <a target="_blank" href="#interactions">interaction</a> between gender and age. What is the interpretation here?
 </li>
+<li>
+Do any <a target="_blank" href="#assumptions">assumptions</a> appear violated?
+</li>
+<li>
+Does <a target="_blank" href="#multicollinearity">multicollinearity</a> appear to be a concern?
+</li>
 </ol>
 </div>
 <div id="logistic-regression" class="section level2">
 <h2><span class="header-section-number">5.4</span> Logistic Regression</h2>
 <p>
-Let’s violate one of the <a target="_blank" href="#relationship-is-linear-and-additive">assumptions</a>. Instead of the relationship being linear, we can generalize to allow the relationship to be any functional form. These types of models are called “Generalized Linear Models” or “GLMs”, mainly because we can transform the model to be linear in some sense. Logistic regression is one specific form of a GLM, others include Poisson and Negative Binomial regression.
+Let’s violate one of the <a target="_blank" href="#relationship-is-linear-and-additive">assumptions</a>. Instead of the relationship being linear, we can generalize to allow the relationship to be any functional form. These types of models are called “Generalized Linear Models” or “GLMs”, mainly because we can transform the model to be linear in some sense. Logistic regression is one specific form of a GLM, others in Poisson and Negative Binomial regression.
 </p>
 <p>
 Logistic regression is used when the outcome is dichotomous - either a positive outcome (1) or a negative outcome (0). For example, presence or absence of some disease. The equation for this model is
@@ -986,7 +944,7 @@ Logistic regression is used when the outcome is dichotomous - either a positive 
 <span class="math display">\[ P(Y = 1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \cdots + \beta_pX_p)}} + \epsilon. \]</span>
 </p>
 <p>
-The right hand side is what’s known as the “logit” function, that is, logit(<span class="math inline">\(z\)</span>) = <span class="math inline">\(\frac{1}{1 + e^{-z}}\)</span>. Understanding this form isn’t crucial to understanding the model, but there are two quirks that need to be noted.
+The right hand side is what’s known as the “logit” function, that is, logit(<span class="math inline">\(z\)</span>) = <span class="math inline">\(\frac{1}{1 + e^{-z}}\)</span>. Understanding this form isn’t crucial to understanding the model, but there are two quirks that need to be examined.
 </p>
 <ol>
 <li>
@@ -1025,10 +983,10 @@ Log likelihood = -21.905069                     Pseudo R2         =     0.5136
 
 </code></pre>
 <p>
-When you try this yourself, you may notice that its not quite as fast as <code>regress</code>. That is because for linear regression we have a “closed form solution” - we just do some quick math and reach an answer. However, almost every other type of regression lacks a closed form solution, so instead we solve it iteratively - Stata guesses at the best coefficients that minimize error<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>, and keeps guessing (using the knowledge of the previous guesses) until it stops getting significantly different results.
+When you try this yourself, you may notice that its not quite as fast as <code>regress</code>. That is because for linear regression we have a “closed form solution” - we just do some quick math and reach an answer. However, almost every other type of regression lacks a closed form solution, so instead we solve it iteratively - Stata guesses at the best coefficients that minimize error<a href="exercise-solutions.html#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>, and keeps guessing (using the knowledge of the previous guesses) until it stops getting significantly different results.
 </p>
 <p>
-From this output, we get the “Number of obs” again. Instead of an ANOVA table with a F-statistic to test model significance, there is instead a <span class="math inline">\(\chi^2\)</span> testing whether all coefficients are identically 0.
+From this output, we get the “Number of obs” again. Instead of an ANOVA table with a F-statistic to test model significance, there is instead a “chi2” (<span class="math inline">\(\chi^2\)</span>, pronounced “ky-squared” as in “Kyle”). In this model, we reject the null that all coefficients are identically 0.
 </p>
 <p>
 When we move away from linear regression, we no longer get an <span class="math inline">\(R^2\)</span> measure. There have been various pseudo-<span class="math inline">\(R^2\)</span>’s suggested, and Stata reports one here, but be careful assigning too much meaning to it. It is not uncommon to get pseudo-<span class="math inline">\(R^2\)</span> values that are negative or above 1. We’ll discuss measuring <a target="_blank" href="#logistic-goodness-of-fit">goodness of fit</a> below.
@@ -1057,10 +1015,10 @@ Note: _cons estimates baseline odds.
 
 </code></pre>
 <p>
-Notice that the “LR chi2(2)”, “Pseudo R2”, “z” and “P&gt;|z|” do not change - we’re fitting the same model! We’re just changing how the coefficients are represented, similar to <a target="_blank" href="#including-categorical-predictors">changing the baseline of a categorical variable</a>.
+Notice that the “chi2”, “PseudoR2”, “z” and “P&gt;|z|” do not change - we’re fitting the same model! We’re just changing how the coefficients are represented.
 </p>
 <p>
-Odds ratios null hypothesis is at 1, not at 0. Odds ratios are always positive. So a significant odds ratio will be away from 1, rather than away from 0 as in linear regression or the log odds. We can interpret odds ratios as percentage changes in the odds. The odds ratio for <code>gear_ratio</code> is 308.3386, suggesting that a 1 increase in the odds ratio leads to a 30,833% increase in the odds that the car is foreign! This is massive! But keep in mind, <code>gear_ratio</code> had a very narrow range - an increase of 1 is very large. Let’s rescale gear_ratio and try again.
+Odds ratios null hypothesis is at 1, not at 0. Odds ratios are always positive. So a significant odds ratio will be away from 1, rather than away from 0 as in linear regression or the log odds. We can interpret odds ratios as percentages. The odds ratio for <code>gear_ratio</code> is 308.3386, suggesting that a 1 increase in the odds ratio leads to a 30,833% increase in the odds that the car is foreign! This is massive! But keep in mind, <code>gear_ratio</code> had a very narrow range - an increase of 1 is very large. Let’s rescale gear_ratio and try again.
 </p>
 <pre><code>. gen gear_ratio2 = gear_ratio*10
 
@@ -1089,10 +1047,10 @@ Note: _cons estimates baseline odds.
 
 </code></pre>
 <p>
-Note once again that the model fit characteristics haven’t changed; we’ve fit the same model, just with different units. Now the interpretation is more reasonable, for every .1 increase in <code>gear_ratio</code> (which corresponds to a 1 increase in <code>gear_ratio2</code>), we predict an increase in the odds of a car being foreign by 77.4%.
+Note once again that the model fit characteristics haven’t changed; we’ve fit the same model, just with different units. Now the interpretation is more reasonable, for every .1 increase in <code>gear_ratio</code> (which corresponds to a 1 increase in <code>gear_ratio2</code>), we predict an average mileage increase of 77%.
 </p>
 <p>
-The odds ratio on headroom is not distinguishable from 1, however, if it were, the interpretation is that increasing the headroom by 1 inch is predicted to decrease the odds of a car being foreign by about 21.7% on average (1 - 0.783).
+The odds ratio on headroom is not distinguishable from 1, however, if it were, the interpretation is that increasing the headroom by 1 inch is predicted to decrease the mileage by about 21.7% on average (1 - 0.783).
 </p>
 </div>
 <div id="categorical-variables-and-interactions" class="section level3">
@@ -1107,7 +1065,7 @@ The <code>predict</code> command adds a new <a target="_blank" href="#obtaining-
 <div id="logistic-regression-assumptions" class="section level3">
 <h3><span class="header-section-number">5.4.3</span> Logistic regression assumptions</h3>
 <p>
-The assumptions for logistic regression are simpler than linear. The outcome measure must be binary with a 0 for a negative response and 1 for a positive. (Technically they don’t have to be positive/negative. We could think of predicting male/female and code male = 0 and female = 1. However, the convention would be to consider the outcome as “The person is female” so a 1 represents a “success” and a 0 a “failure” of that statement.) The errors in a logistic regression model are fairly contained (you can’t be wrong than more than 1!) so there are no real assumptions about them. The <a target="_blank" href="#independence">independence</a> assumption is still here and still important, again, a mixed model (specifically a <a target="_blank" href="mixed-models.html#logistic-mixed-model">logistic mixed model</a>) may be appropriate if the data is not independent.
+The assumptions for logistic regression are simpler than linear. The outcome measure must be binary with a 0 for a negative response and 1 for a positive. (Technically they don’t have to be positive/negative. We could think of predicting male/female and code male = 0 and female = 1. However, the convention would be to consider the outcome as “The person is female” so a 1 represents a “success” and a 0 a “failure” of that statement.) The errors in a logistic regression model are fairly contained (you can’t be wrong than more than 1!) so there are no real assumptions about them. The <a target="_blank" href="#independence">independence</a> assumption is still here and still important, again, a mixed logistic model may be appropriate if the data is not independent.
 </p>
 </div>
 <div id="logistic-goodness-of-fit" class="section level3">
@@ -1116,22 +1074,56 @@ The assumptions for logistic regression are simpler than linear. The outcome mea
 As we mentioned earlier, there are various issues with the Pseudo <span class="math inline">\(R^2\)</span> reported by <code>logit</code>, so use it carefully. There are two alternate approaches.
 </p>
 <p>
-The first is to look at the ROC curve:
+The first is to look at a classification table:
 </p>
-<pre><code>. lroc
+<pre><code>. estat classification
 
 Logistic model for foreign
 
-number of observations =       74
-area under ROC curve   =   0.9384
+              -------- True --------
+Classified |         D            ~D  |      Total
+-----------+--------------------------+-----------
+     +     |        16             4  |         20
+     -     |         6            48  |         54
+-----------+--------------------------+-----------
+   Total   |        22            52  |         74
+
+Classified + if predicted Pr(D) &gt;= .5
+True D defined as foreign != 0
+--------------------------------------------------
+Sensitivity                     Pr( +| D)   72.73%
+Specificity                     Pr( -|~D)   92.31%
+Positive predictive value       Pr( D| +)   80.00%
+Negative predictive value       Pr(~D| -)   88.89%
+--------------------------------------------------
+False + rate for true ~D        Pr( +|~D)    7.69%
+False - rate for true D         Pr( -| D)   27.27%
+False + rate for classified +   Pr(~D| +)   20.00%
+False - rate for classified -   Pr( D| -)   11.11%
+--------------------------------------------------
+Correctly classified                        86.49%
+--------------------------------------------------
 
 </code></pre>
-<img src="Graph22.svg" >
 <p>
-The ROC curve is a bit complicated to explain, but basically over a range of thresholds, it classifies each observation as predicting a 0 or 1. E.g., with a threshold of .2, any observation whose predicted probability is below .2 is classified as a “0”, any observation whose predicted probability is above .2 is classified as a “1”. For each such threshold, the specificity (fraction of correctly classified “0”’s) versus the sensitivity(fraction of correctly classified “1”’s) are computed and plotted against each other. If the two fractions are equal, it’s a coin-flip and the model does no better than chance. On the other hand, the higher the ratio of sensitivity/(1 - specificity) is, the better classified we are.
+Classification is based upon the predicted probability, a predicted probability above .5 is classified as “1”, below as “0”. The output here is rather long, but the general idea is to capture how well we’re predicting without having too many false results. (If your outcome variable was 80% 1’s and 20% 0’s, if I predicted all 1’s, I’d be right 80% of the time! So it’s important to also see that I’m wrong in 100% of the true 0’s).
+</p>
+<ul>
+<li>
+Sensitivity is how likely you are to correctly predicted a positive outcome.
+</li>
+<li>
+Specificity is how likely you are to correctly predicted a negative outcome.
+</li>
+<li>
+The positive/negative predictive values are how likely a positive/negative prediction is to be correct.
+</li>
+</ul>
+<p>
+We want those results to be high.
 </p>
 <p>
-The bottom left corner of the ROC curve is a threshold of 0 and the top right of 1, both of which would classify every observation the same, so they’re no good. We want to the ROC curve to be as close to “filling” the top area as possible. The Area under the ROC curve (called AUC) is a measure of fit; the fit here is .9384, which is very good. (The AUC ranges from .5 to 1. .5 indicates, as we’ve said, chance, and 1 indicates a perfect fit. An AUC of 1 is actually troublesome as we might be <a target="_blank" href="regression.html#logit-miscellaneous">overfit</a>.)
+The various false rates are for misclassification, and we want those low. In this model, we’ve done pretty good!
 </p>
 <p>
 The second is a more formal test. There are two variants, a Pearson <span class="math inline">\(\chi^2\)</span> test and the Hosmer-Lemeshow test. Both are fit with the <code>estat gof</code> command. Both are testing the hypothesis that the observed positive responses match predicted positive responses in subgroups of the population. Therefore we do <em>not</em> want to reject these tests, and a large p-value is desired.
@@ -1148,7 +1140,7 @@ Logistic model for foreign, goodness-of-fit test
 
 </code></pre>
 <p>
-We see here a p-value of 0.882, failing to reject the null, so there is no evidence that the model does not fit well.
+We see here a p-value of 0.882, failing to reject the null, so there is no evidence that the model fits well.
 </p>
 <p>
 There is some concern that when the “number of covariate patterns” is close to the number of observations , the Pearson test is invalid. In this data, we see that 58 is indeed “close” to 74. Instead, we can use the Hosmer-Lemeshow by passing the <code>group(#)</code> option:
@@ -1185,7 +1177,7 @@ Since the logistic regression model is solved <a target="_blank" href="regressio
 With a binary outcome instead of a continuous outcome, it is much easier to have a predictor (or set of predictors) that perfectly predict the outcome. Consider trying to predict gender based on height. With a smaller sample, it’s not hard to imagine a scenario where every male is taller than every female. This is called “perfect separation”; using this sample, knowing height gives perfect information about gender
 </p>
 <p>
-“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8&quot; is male, and there are two men and all the women below 5’8“. Here, we will always predict Male for heights above 5’8”.
+“Partial separation” can also occur; this is when prediction is perfect only for one limit. Take the height scenario again; say everyone above 5’8" is male, and there are two men but the rest women below 5’8“. Here, we will always predict Male for heights above 5’8”.
 </p>
 <p>
 Separation (of either type) often produces coefficients to be extreme with large standard errors. Stata will sometimes warn about this, but not always. If you notice these exceptional coefficients or if Stata does warn about separation, you’ll need to investigate and consider excluding certain predictors. It may seem counter-intuitive to exclude extremely highly predictive variables, but if a variable produces perfect separation, you don’t need a model to inform you of that.
@@ -1250,14 +1242,13 @@ Notice the note at the top of the model, and notice that nothing is estimated fo
 -----------+----------------------+----------
      Total |        10         59 |        69 
 
-
 </code></pre>
 <p>
 Since we have a zero in one of the cells, that’s partial separation. Complete separation would be zero in both off-diagonal cells.
 </p>
 </div>
-<div id="logit-miscellaneous" class="section level3">
-<h3><span class="header-section-number">5.4.6</span> <code>logit</code> Miscellaneous</h3>
+<div id="logit-miscellaneous." class="section level3">
+<h3><span class="header-section-number">5.4.6</span> <code>logit</code> Miscellaneous.</h3>
 <p>
 The <code>logit</code> model supports the margins command just like <code>regress</code> does. It does not support <code>estat vif</code> because variance inflation factors are not defined for logistic models.
 </p>
@@ -1307,25 +1298,11 @@ This time we’ll fit a <a target="_blank" href="#logistic-regression">logistic 
 Does the model <a target="_blank" href="#logistic-goodness-of-fit">fit well</a>? Does the model classify well?
 </li>
 <li>
-What predicts higher odds of having diabetes?
+Ignoring any issues with model fit, <a target="_blank" href="#fitting-the-logistic-model">what predicts</a> higher odds of having diabetes?
 </li>
 </ol>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="9">
-<li id="fn9"><p>There are variations of regression with multiple outcomes, but they are for very specialized circumstances and can generally be fit as several basic regression models instead.<a href="regression.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>The 2 and 71 are degrees of freedom. They don’t typically add any interpretation.<a href="regression.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>The only exception is if the predictor being added is either constant or identical to another variable.<a href="regression.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>This is why it’s important to familiarize yourself with the units in your data!<a href="regression.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>Once we know the value of all but one of the dummies, the last is automatically determined so adds no new information.<a href="regression.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>It’s a bit confusing because if you look at the <a target="_blank" href="summarizing-data.html#describe-summarize-codebook"><code>codebook</code></a> for <code>rep78</code>, Stata correctly surmises that it is categorical. However, when it comes to modeling, Stata is not willing to make that assumption.<a href="regression.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>Note that if you provide data with perfect correlation, Stata will drop one of them for you. This in only a thought exercise. If it helps, imagine their correlation is 99% instead of perfect, and add “almost” as a qualifier to most claims.<a href="regression.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>Technically there could be a scaling factors such that <span class="math inline">\(X_1 = aX_2 + b\)</span>, but let’s assume without loss of generality that <span class="math inline">\(a=1\)</span> and <span class="math inline">\(b=0\)</span>.<a href="regression.html#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p>Technically that maximizes likelihood, but that distinction is not important for understanding.<a href="regression.html#fnref17" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -1356,6 +1333,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection"
@@ -1370,7 +1351,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
