@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Working with Variables | Introduction to SPSS</title>
+  <meta name="description" content="Chapter 3 Working with Variables | Introduction to SPSS" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Working with Variables | Introduction to SPSS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Working with Variables | Introduction to SPSS" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson" />
+
+
+<meta name="date" content="2019-09-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-basics-of-spss.html">
+<link rel="next" href="understanding-data-management-tasks.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Introduction to SPSS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview of the Workshop</a></li>
+<li class="chapter" data-level="2" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html"><i class="fa fa-check"></i><b>2</b> The Basics of SPSS</a><ul>
+<li class="chapter" data-level="2.1" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#what-does-spss-stand-for"><i class="fa fa-check"></i><b>2.1</b> What does SPSS Stand For?</a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#spss-compared-to-other-statistical-software-packages"><i class="fa fa-check"></i><b>2.2</b> SPSS Compared to Other Statistical Software Packages</a></li>
+<li class="chapter" data-level="2.3" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#the-three-parts-of-spss"><i class="fa fa-check"></i><b>2.3</b> The Three Parts of SPSS</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#data-editor"><i class="fa fa-check"></i><b>2.3.1</b> Data Editor</a></li>
+<li class="chapter" data-level="2.3.2" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#output-viewer"><i class="fa fa-check"></i><b>2.3.2</b> Output Viewer</a></li>
+<li class="chapter" data-level="2.3.3" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#syntax-window"><i class="fa fa-check"></i><b>2.3.3</b> Syntax Window</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#good-to-know"><i class="fa fa-check"></i><b>2.4</b> Good to Know</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#dialogue-boxes"><i class="fa fa-check"></i><b>2.4.1</b> Dialogue Boxes</a></li>
+<li class="chapter" data-level="2.4.2" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#adding-comments"><i class="fa fa-check"></i><b>2.4.2</b> Adding Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#tips-for-preparing-an-excel-file-for-use-with-spss"><i class="fa fa-check"></i><b>2.5</b> Tips for Preparing an Excel File for Use with SPSS</a></li>
+<li class="chapter" data-level="2.6" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#exercise-1-properly-formatted-data"><i class="fa fa-check"></i><b>2.6</b> Exercise 1 – Properly Formatted Data</a></li>
+<li class="chapter" data-level="2.7" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#importing-data-into-spss"><i class="fa fa-check"></i><b>2.7</b> Importing Data into SPSS</a></li>
+<li class="chapter" data-level="2.8" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#exporting-data-from-spss"><i class="fa fa-check"></i><b>2.8</b> Exporting Data from SPSS</a></li>
+<li class="chapter" data-level="2.9" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#exercise-2-importingexporting-excel"><i class="fa fa-check"></i><b>2.9</b> Exercise 2 – Importing/Exporting Excel</a></li>
+<li class="chapter" data-level="2.10" data-path="the-basics-of-spss.html"><a href="the-basics-of-spss.html#getting-help-from-spss"><i class="fa fa-check"></i><b>2.10</b> Getting Help from SPSS</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-variables.html"><a href="working-with-variables.html"><i class="fa fa-check"></i><b>3</b> Working with Variables</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-variables.html"><a href="working-with-variables.html#variable-view-in-data-editor"><i class="fa fa-check"></i><b>3.1</b> Variable View in Data Editor</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="working-with-variables.html"><a href="working-with-variables.html#variable-name"><i class="fa fa-check"></i><b>3.1.1</b> Variable Name</a></li>
+<li class="chapter" data-level="3.1.2" data-path="working-with-variables.html"><a href="working-with-variables.html#variable-type"><i class="fa fa-check"></i><b>3.1.2</b> Variable Type</a></li>
+<li class="chapter" data-level="3.1.3" data-path="working-with-variables.html"><a href="working-with-variables.html#variable-labels"><i class="fa fa-check"></i><b>3.1.3</b> Variable Labels</a></li>
+<li class="chapter" data-level="3.1.4" data-path="working-with-variables.html"><a href="working-with-variables.html#value-labels"><i class="fa fa-check"></i><b>3.1.4</b> Value Labels</a></li>
+<li class="chapter" data-level="3.1.5" data-path="working-with-variables.html"><a href="working-with-variables.html#missing-value-labels"><i class="fa fa-check"></i><b>3.1.5</b> Missing Value Labels</a></li>
+<li class="chapter" data-level="3.1.6" data-path="working-with-variables.html"><a href="working-with-variables.html#columns-alignment"><i class="fa fa-check"></i><b>3.1.6</b> Columns &amp; Alignment</a></li>
+<li class="chapter" data-level="3.1.7" data-path="working-with-variables.html"><a href="working-with-variables.html#measure"><i class="fa fa-check"></i><b>3.1.7</b> Measure</a></li>
+<li class="chapter" data-level="3.1.8" data-path="working-with-variables.html"><a href="working-with-variables.html#copy-and-paste-variable-attributes"><i class="fa fa-check"></i><b>3.1.8</b> Copy and Paste Variable Attributes</a></li>
+<li class="chapter" data-level="3.1.9" data-path="working-with-variables.html"><a href="working-with-variables.html#exercise-3-variable-attributes"><i class="fa fa-check"></i><b>3.1.9</b> Exercise 3 – Variable Attributes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="working-with-variables.html"><a href="working-with-variables.html#creating-new-variables-and-defining-the-correct-attributes"><i class="fa fa-check"></i><b>3.2</b> Creating New Variables and Defining the Correct Attributes</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-variables.html"><a href="working-with-variables.html#computing-variables"><i class="fa fa-check"></i><b>3.3</b> Computing Variables</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="working-with-variables.html"><a href="working-with-variables.html#dealing-with-missing-data"><i class="fa fa-check"></i><b>3.3.1</b> Dealing with Missing Data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="working-with-variables.html"><a href="working-with-variables.html#list-of-functions-available-in-the-compute-command"><i class="fa fa-check"></i><b>3.3.2</b> List of Functions Available in the Compute Command</a></li>
+<li class="chapter" data-level="3.3.3" data-path="working-with-variables.html"><a href="working-with-variables.html#count-values"><i class="fa fa-check"></i><b>3.3.3</b> Count Values</a></li>
+<li class="chapter" data-level="3.3.4" data-path="working-with-variables.html"><a href="working-with-variables.html#manual-recoding"><i class="fa fa-check"></i><b>3.3.4</b> Manual Recoding</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="working-with-variables.html"><a href="working-with-variables.html#automatic-recoding"><i class="fa fa-check"></i><b>3.4</b> Automatic Recoding</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-variables.html"><a href="working-with-variables.html#conditional-transformations-with-ifthen-logic"><i class="fa fa-check"></i><b>3.5</b> Conditional Transformations with If/Then Logic</a></li>
+<li class="chapter" data-level="3.6" data-path="working-with-variables.html"><a href="working-with-variables.html#rank-cases"><i class="fa fa-check"></i><b>3.6</b> Rank Cases</a></li>
+<li class="chapter" data-level="3.7" data-path="working-with-variables.html"><a href="working-with-variables.html#exercise-4-computing-and-transforming-variables"><i class="fa fa-check"></i><b>3.7</b> Exercise 4 – Computing and Transforming Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html"><i class="fa fa-check"></i><b>4</b> Understanding Data Management Tasks</a><ul>
+<li class="chapter" data-level="4.1" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#sorting-cases"><i class="fa fa-check"></i><b>4.1</b> Sorting Cases</a></li>
+<li class="chapter" data-level="4.2" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#analyzing-subsets-of-data"><i class="fa fa-check"></i><b>4.2</b> Analyzing Subsets of Data</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#if-condition-is-satisfied"><i class="fa fa-check"></i><b>4.2.1</b> If Condition is Satisfied</a></li>
+<li class="chapter" data-level="4.2.2" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#randomly-selecting-subsets"><i class="fa fa-check"></i><b>4.2.2</b> Randomly Selecting Subsets</a></li>
+<li class="chapter" data-level="4.2.3" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#output-options"><i class="fa fa-check"></i><b>4.2.3</b> Output Options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#analyzing-groups-of-data-separately"><i class="fa fa-check"></i><b>4.3</b> Analyzing Groups of Data Separately</a></li>
+<li class="chapter" data-level="4.4" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#exercise-5-subsetting-data"><i class="fa fa-check"></i><b>4.4</b> Exercise 5 – Subsetting Data</a></li>
+<li class="chapter" data-level="4.5" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#converting-data-formats"><i class="fa fa-check"></i><b>4.5</b> Converting Data Formats</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#wide-to-long-aka-variables-into-cases"><i class="fa fa-check"></i><b>4.5.1</b> Wide to Long (AKA “Variables into Cases”)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#long-to-wide-aka-cases-into-variables"><i class="fa fa-check"></i><b>4.5.2</b> Long to Wide (AKA “Cases into Variables”)</a></li>
+<li class="chapter" data-level="4.5.3" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#exercise-6-restructuring-i-wide-to-long"><i class="fa fa-check"></i><b>4.5.3</b> Exercise 6 – Restructuring I (Wide to Long)</a></li>
+<li class="chapter" data-level="4.5.4" data-path="understanding-data-management-tasks.html"><a href="understanding-data-management-tasks.html#exercise-7-restructuring-ii-long-to-wide"><i class="fa fa-check"></i><b>4.5.4</b> Exercise 7 – Restructuring II (Long to Wide)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html"><i class="fa fa-check"></i><b>5</b> Understanding Graphical &amp; Statistical Procedures</a><ul>
+<li class="chapter" data-level="5.1" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#thinking-about-statistics"><i class="fa fa-check"></i><b>5.1</b> Thinking About Statistics</a></li>
+<li class="chapter" data-level="5.2" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#correlation-vs.-causation"><i class="fa fa-check"></i><b>5.2</b> Correlation vs. Causation</a></li>
+<li class="chapter" data-level="5.3" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#everything-on-one-page-handout"><i class="fa fa-check"></i><b>5.3</b> Everything On One Page Handout</a></li>
+<li class="chapter" data-level="5.4" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#parametric-vs.-non-parametric-tests"><i class="fa fa-check"></i><b>5.4</b> Parametric vs. Non-parametric Tests</a></li>
+<li class="chapter" data-level="5.5" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#basic-summary-statistics-investigate-one-variable-at-a-time"><i class="fa fa-check"></i><b>5.5</b> Basic Summary Statistics (Investigate One Variable at a Time)</a></li>
+<li class="chapter" data-level="5.6" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#visualizations"><i class="fa fa-check"></i><b>5.6</b> Visualizations</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#chart-builder"><i class="fa fa-check"></i><b>5.6.1</b> Chart Builder</a></li>
+<li class="chapter" data-level="5.6.2" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#legacy-dialogs"><i class="fa fa-check"></i><b>5.6.2</b> Legacy Dialogs</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#normality"><i class="fa fa-check"></i><b>5.7</b> Normality</a></li>
+<li class="chapter" data-level="5.8" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#exercise-8-data-exploration-and-visualization"><i class="fa fa-check"></i><b>5.8</b> Exercise 8 – Data Exploration and Visualization</a></li>
+<li class="chapter" data-level="5.9" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#investigating-two-variables-at-a-time"><i class="fa fa-check"></i><b>5.9</b> Investigating Two Variables at a Time</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#pearson-correlation-coefficient-scatterplots"><i class="fa fa-check"></i><b>5.9.1</b> Pearson Correlation Coefficient &amp; Scatterplots</a></li>
+<li class="chapter" data-level="5.9.2" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#pearson-chi-square-crosstabs-and-test-of-independence"><i class="fa fa-check"></i><b>5.9.2</b> Pearson Chi-Square Crosstabs and Test of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#investigating-many-variables-at-a-time"><i class="fa fa-check"></i><b>5.10</b> Investigating Many Variables at a Time</a></li>
+<li class="chapter" data-level="5.11" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#repeated-measures-longitudinal-clustered-multilevel-mixed-procedures"><i class="fa fa-check"></i><b>5.11</b> Repeated Measures, Longitudinal, Clustered, Multilevel, Mixed Procedures</a></li>
+<li class="chapter" data-level="5.12" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#other-procedures-in-spss"><i class="fa fa-check"></i><b>5.12</b> Other Procedures in SPSS</a></li>
+<li class="chapter" data-level="5.13" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#miscellaneous"><i class="fa fa-check"></i><b>5.13</b> Miscellaneous</a><ul>
+<li class="chapter" data-level="5.13.1" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#descriptive-statistics"><i class="fa fa-check"></i><b>5.13.1</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="5.13.2" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#frequencies"><i class="fa fa-check"></i><b>5.13.2</b> Frequencies</a></li>
+<li class="chapter" data-level="5.13.3" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#rank-cases-1"><i class="fa fa-check"></i><b>5.13.3</b> Rank Cases</a></li>
+<li class="chapter" data-level="5.13.4" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#t-tests-one-way-anova"><i class="fa fa-check"></i><b>5.13.4</b> T-Tests &amp; One-Way ANOVA</a></li>
+<li class="chapter" data-level="5.13.5" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#chi-square-test"><i class="fa fa-check"></i><b>5.13.5</b> Chi-Square Test</a></li>
+<li class="chapter" data-level="5.13.6" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#create-a-code-book"><i class="fa fa-check"></i><b>5.13.6</b> Create a Code Book</a></li>
+<li class="chapter" data-level="5.13.7" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#adjust-options"><i class="fa fa-check"></i><b>5.13.7</b> Adjust Options</a></li>
+<li class="chapter" data-level="5.13.8" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#recall-recently-used-dialogs-button"><i class="fa fa-check"></i><b>5.13.8</b> Recall Recently Used Dialogs Button</a></li>
+<li class="chapter" data-level="5.13.9" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#jump-to-a-case"><i class="fa fa-check"></i><b>5.13.9</b> Jump to a Case</a></li>
+<li class="chapter" data-level="5.13.10" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#jump-to-a-variable"><i class="fa fa-check"></i><b>5.13.10</b> Jump to a Variable</a></li>
+<li class="chapter" data-level="5.13.11" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#spell-check"><i class="fa fa-check"></i><b>5.13.11</b> Spell Check</a></li>
+<li class="chapter" data-level="5.13.12" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#sort-variable"><i class="fa fa-check"></i><b>5.13.12</b> Sort Variable</a></li>
+<li class="chapter" data-level="5.13.13" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#view-value-labels-in-data-view"><i class="fa fa-check"></i><b>5.13.13</b> View Value Labels in Data View</a></li>
+<li class="chapter" data-level="5.13.14" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#weights-in-crosstabs"><i class="fa fa-check"></i><b>5.13.14</b> Weights in Crosstabs</a></li>
+<li class="chapter" data-level="5.13.15" data-path="understanding-graphical-statistical-procedures.html"><a href="understanding-graphical-statistical-procedures.html#useful-websites"><i class="fa fa-check"></i><b>5.13.15</b> Useful websites</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html"><i class="fa fa-check"></i><b>6</b> Interpreting Interactions in a Regression Model Overview</a><ul>
+<li class="chapter" data-level="6.1" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#two-way-interactions"><i class="fa fa-check"></i><b>6.1</b> Two-Way Interactions</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#general"><i class="fa fa-check"></i><b>6.1.1</b> General</a></li>
+<li class="chapter" data-level="6.1.2" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#two-categorical-variables"><i class="fa fa-check"></i><b>6.1.2</b> Two Categorical Variables</a></li>
+<li class="chapter" data-level="6.1.3" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#one-categorical-and-one-continuous-variable"><i class="fa fa-check"></i><b>6.1.3</b> One Categorical and One Continuous Variable</a></li>
+<li class="chapter" data-level="6.1.4" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#two-continuous-variables"><i class="fa fa-check"></i><b>6.1.4</b> Two Continuous Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="interpreting-interactions-in-a-regression-model-overview.html"><a href="interpreting-interactions-in-a-regression-model-overview.html#three-way-interactions"><i class="fa fa-check"></i><b>6.2</b> Three-Way Interactions</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to SPSS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="working-with-variables" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Working with Variables</h1>
+<div id="variable-view-in-data-editor" class="section level2">
+<h2><span class="header-section-number">3.1</span> Variable View in Data Editor</h2>
+<p>Variables in SPSS vary in length and may consist of letters, numbers,
+dates, or dollar values. Some values, such as “don’t know” replies on a
+survey, may be codes for missing values. SPSS allows you to label
+variables and values with more meaningful phrases that can appear in the
+output for greater clarity.</p>
+<p>To view or edit the current format for a variable, double-click on the
+variable’s name in the Data Editor. Doing this will open the Variable
+View tab in the Data Editor window. Alternatively, select the “Variable
+View” tab at the bottom left corner of the data editor window.</p>
+<p><strong>Try it: Open Section2_Data.sav. Select “Variable View”.</strong></p>
+<p><img src="media/spss-image15.png" style="width:6.5in;height:2.70833in" /></p>
+<p>There are eleven columns in the Variable View, containing values that
+are attributes for the variables that you can change:</p>
+<ul>
+<li><p>Name The name of each variable in the data set</p></li>
+<li><p>Type The type (numeric, character, date, etc) and length</p></li>
+<li><p>Width The amount of information in bytes stored in memory</p></li>
+<li><p>Decimals The number of decimals displayed for numeric vars</p></li>
+<li><p>Label A specific label for a variable</p></li>
+<li><p>Values Variable value labels</p></li>
+<li><p>Missing Missing value codes</p></li>
+<li><p>Columns Column width for variable display</p></li>
+<li><p>Align The alignment of values within a cell</p></li>
+<li><p>Measure The measurement scale for a variable</p></li>
+<li><p>Input The role of the variable when analyzing the data</p></li>
+</ul>
+<div id="variable-name" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Variable Name</h3>
+<p>Be sure the names follow these rules:</p>
+<ul>
+<li><p>Variable names should be no more than 64 characters long, and
+preferably no more than 8 characters long.</p></li>
+<li><p>Variable names must start with a letter.</p></li>
+<li><p>Variable names may only have letters, numbers, or underscores in
+them.</p></li>
+<li><p>Variable names may not have the following characters:
+%,$,#,@,!,+,*,~,",-,..</p></li>
+<li><p>Variable names may not have blank spaces.</p></li>
+<li><p>Each variable name must be unique; the same variable name can’t
+appear twice.</p></li>
+<li><p>Variable names must be on one row only.</p></li>
+</ul>
+</div>
+<div id="variable-type" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Variable Type</h3>
+<p>The most fundamental characteristic of a variable is its type. These are
+the four most important types:</p>
+<ul>
+<li><p>Numeric includes comma, dot, and scientific notation types</p></li>
+<li><p>String also called character, alpha, or alpha-numeric</p></li>
+<li><p>Dollar includes custom currency type but is still numeric</p></li>
+<li><p>Date is still numeric but displayed using hours, minutes, and
+seconds</p></li>
+</ul>
+<p><img src="media/spss-image16.png" style="width:8in;height:4.57292in" /></p>
+<p>Most statistical analyses use only numeric variables. SPSS can handle a
+short string variable, such as gender coded as “m” and “f”, when that
+variable defines groups for a t-test or an analysis of variance (ANOVA).</p>
+<p>The Dollar type changes the way the values appear in the data editor and
+the output, but all analyses treat the Dollar type as numeric.</p>
+<p>The appearance of a date variable does not affect the way that the .sav
+file stores the date. SPSS understands date/time variables as the number
+of seconds since midnight, October 14, 1582 which is a significant date
+marking a change in the Gregorian calendar. If you subtract one date
+from the other to create a new variable, the result will be in seconds.
+To change back to days, hours, or years, it is necessary to use a
+function to turn the information into a more usable, practical form. See
+the section Computing New Variables for more information.</p>
+<p><strong>Try it: Use Section2_Data.sav. Change the Variable Type for the ID
+variable from Dollar to Numeric.</strong></p>
+<p><img src="media/spss-image17.png" style="width:6.5in;height:3.69097in" />
+<img src="media/spss-image18.png" style="width:6.5in;height:3.11389in" /></p>
+</div>
+<div id="variable-labels" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Variable Labels</h3>
+<p>Variable labels attach a description to a variable, and this description
+can show up in the output. To enter a variable label, click in the Label
+cell for a given variable in Variable View, and enter a description for
+the variable. Variable labels can be up to 255 characters as of Version
+15.0.</p>
+<p><strong>Try it: Use Section2_Data.sav. Provide a label for DepScale
+(Depression Scale 1998).</strong></p>
+<p><img src="media/spss-image19.png" style="width:6.5in;height:3.69097in" /></p>
+</div>
+<div id="value-labels" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Value Labels</h3>
+<p>Value labels are similar, except that they refer to specific values
+within that variable. You don’t have to enter labels for all values. A
+value label can be up to 120 bytes long. Suppose the following question
+was in a survey:</p>
+<p>Which of the following describes your political beliefs best?</p>
+<p>1) Democrat 2) Republican 3) Libertarian 4) Other</p>
+<p>You will enter the responses as 1, 2, 3, or 4. These numbers are
+arbitrarily, however, and some users may not know or may forget their
+meaning. Value labels allow the user to attach meaning to the numbers.
+Value labels are absolutely critical in large data files. Like variable
+labels, value labels will appear in many of the results provided by
+SPSS.</p>
+<p>To assign value labels, click on the Values cell for a given variable,
+and click on the small grey box. Enter a number in the Value box, then
+the corresponding label in the Value Label box. Then press “Add”. If you
+do not press “Add”, the information you have typed for that value will
+be ignored.</p>
+<p><strong>Try it: Use Section2_Data.sav. Enter in value labels for variable
+Education:</strong></p>
+<p><strong>1=High School or Less</strong></p>
+<p><strong>2=Some College</strong></p>
+<p><strong>3=College Graduate</strong></p>
+<p><img src="media/spss-image20.png" style="width:4.875in;height:3.10417in" /></p>
+</div>
+<div id="missing-value-labels" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Missing Value Labels</h3>
+<p>There are two kinds of missing values: system-missing, in which the cell
+is empty, and user-missing, which flags a value as an invalid response.
+There often could be several reasons that a value is not available, and
+user-missing values allow us to discriminate between them. Examples of
+user-defined missing values are:</p>
+<ul>
+<li><p>99 “Don’t Know” reply on a survey</p></li>
+<li><p>777 Inapplicable, such as with number of births for a male
+respondent</p></li>
+<li><p>-999 Respondent refused to answer, which often occurs with income</p></li>
+</ul>
+<p>Enter user-missing values just like any other response during data
+entry. You need to tag the value as missing, however, so that SPSS does
+not include it in any computations. Consider the repercussions if we
+forgot to specify the 777 in the above example as Inapplicable, and then
+attempted to calculate the average number of births!</p>
+<p>You can specify user-missing values by clicking on the cell in the
+Missing column for a given variable, and then clicking on the small grey
+box that appears as “(…)”. You may specify single values or a range of
+values.</p>
+<p><strong>Try it: Use Section2_Data.sav.Enter missing value codes for Education
+(99).</strong></p>
+<p><img src="media/spss-image21.png" style="width:3.375in;height:2.48958in" /></p>
+</div>
+<div id="columns-alignment" class="section level3">
+<h3><span class="header-section-number">3.1.6</span> Columns &amp; Alignment</h3>
+<p>You can change the alignment of the data by changing the Columns or
+Align attributes. You can use the Align attribute to center values or
+align them to the right or left of the cell in the Data Editor.
+Additionally, you can decrease or increase the width of the columns
+using the Columns attribute. A shortcut is to place the mouse at the
+right edge of a variable name, click on the border, and drag the column
+to be wider or narrower.</p>
+<p>Asterisks (*) in the cells within a particular column mean that the
+column is not wide enough to display the data values. Simply increase
+the column width and the values should appear properly in the Data
+Editor. Another possible problem might be that the width is too small to
+display all of the information for a variable.</p>
+<p>The Columns and Align attributes have no effect on the data; they only
+affect the way you see the data in the editor.</p>
+</div>
+<div id="measure" class="section level3">
+<h3><span class="header-section-number">3.1.7</span> Measure</h3>
+<p>Each variable in SPSS may be designated as</p>
+<ul>
+<li><p>Scale a continuous variable</p></li>
+<li><p>Ordinal a categorical variable with natural ordering</p></li>
+<li><p>Nominal categorical without any natural ordering</p></li>
+</ul>
+<p>Graphs from the Interactive graphics method use this information. This
+field has no bearing for most procedures.</p>
+<p><strong>Try it: Use Section2_Data.sav. Change the Measure for the Education
+variable from Scale to Ordinal.</strong></p>
+<p><img src="media/spss-image22.png" style="width:6.5in;height:2.29653in" /></p>
+</div>
+<div id="copy-and-paste-variable-attributes" class="section level3">
+<h3><span class="header-section-number">3.1.8</span> Copy and Paste Variable Attributes</h3>
+<p>You can set up any of the attributes discussed above, such as type,
+labels, missing values, and column format, and apply them to numerous
+variables all at once. Suppose a researcher has a series of 50 variables
+that all have values 1 through 5 as follows:</p>
+<p>1 Strongly disagree</p>
+<p>2 Disagree</p>
+<p>3 Neutral</p>
+<p>4 Agree</p>
+<p>5 Strongly agree</p>
+<p>Value labels would be useful for these variables, but it would be
+extremely tedious to set up value labels for all 50 variables. Set up
+the value labels for one of the 50 variables, and then click on the cell
+containing the value labels for that variable. Select “Copy” from the
+“Edit” menu or hit CTRL + C, and then highlight the value labels cells
+for the remaining 49 variables by clicking on the first empty cell and
+dragging downward. Select “Paste” from the “Edit” menu or hit CTRL + V,
+and the value labels will be applied to the remaining 49 variables
+instantly. You can also right-click and use the copy and paste
+functions. You can use this same copy and paste feature for other
+variable attributes and save a great deal of time!</p>
+<p><strong>Try it: Use Section2_Data.sav. Copy and paste the missing value code
+from Education to DepScale.</strong></p>
+<p><img src="media/spss-image23.png" style="width:6.5in;height:2.78403in" />
+<img src="media/spss-image24.png" style="width:6.5in;height:2.78403in" /></p>
+</div>
+<div id="exercise-3-variable-attributes" class="section level3">
+<h3><span class="header-section-number">3.1.9</span> Exercise 3 – Variable Attributes</h3>
+<p>Open Exercise3_Data and go to Variable View. Practice defining the
+correct attributes to each variable by following the code book below.</p>
+</div>
+</div>
+<div id="creating-new-variables-and-defining-the-correct-attributes" class="section level2">
+<h2><span class="header-section-number">3.2</span> Creating New Variables and Defining the Correct Attributes</h2>
+<p>To create a new variable in SPSS for entering data, simply double-click
+on an empty column’s heading, or start entering data directly into the
+column in Data View. To enter values, first click in an empty cell; then
+type each value and press either return or the down arrow.</p>
+<p>During data entry, be aware that the order of cases in an SPSS data file
+can change because certain procedures require that cases be sorted.
+Therefore, be careful to match values with an ID variable. The case that
+occupied the first row in the file a week ago may not be in the first
+row any longer!</p>
+<p>New variables, including those created by computation or recoding,
+appear at the far right of the data file. Use the scroll bar at the
+bottom to verify that a new variable was properly created.</p>
+<p>Cut, copy, or paste a variable or insert a new empty column by right
+clicking on a variable name.</p>
+<p>A pasted variable <strong>is not</strong> inserted in between existing variables. It
+replaces the highlighted column entirely, and could over-write an
+existing variable. Be sure to create a new, blank column and paste on
+top of that.</p>
+<p><strong>Try it: Use Section2_Data.sav. Create a new variable called NewVar.</strong></p>
+<p><img src="media/spss-image26.png" style="width:6.5in;height:2.78403in" /></p>
+</div>
+<div id="computing-variables" class="section level2">
+<h2><span class="header-section-number">3.3</span> Computing Variables</h2>
+<p>You can use the COMPUTE command to create new numeric or string
+variables by:</p>
+<ul>
+<li><p>Assigning a particular value to all cases, or a subset of cases</p></li>
+<li><p>Transforming a variable by taking a log, or another mathematical
+function</p></li>
+<li><p>Creating a sum, average, or other summary of several existing
+variables</p></li>
+</ul>
+<p><strong>Helpful Hint:</strong> You can use the COMPUTE procedure to edit or overwrite
+an existing variable, but we highly recommend that you create new
+variables. If you do over-write an existing variable, be aware that some
+old values may not be overwritten. If some of the necessary information
+is missing for a certain case in the file, and the software cannot
+compute the new value, then the value from the old variable will remain.</p>
+<p>Select Transform - Compute Variable and enter a name for the new
+variable in the upper left box, labeled “Target Variable.” SPSS will
+automatically create the new variable when it executes the compute
+command.</p>
+<p><img src="media/spss-image27.png" style="width:6.5in;height:5.0125in" /></p>
+<p>By default, SPSS assumes that the user wants to compute a numeric
+variable. If you want to create a string variable, click “Type &amp; Label”
+underneath the new variable name, and select “String.”</p>
+<p>In the box titled “Numeric Expression”, provide the actual formula or
+value for the new variable. You may write the numeric expressions by
+hand or insert variables and functions using the mouse.</p>
+<p><strong>Helpful Hint:</strong> Click on the function name to get a function
+description in the dialogue box.</p>
+<p>If you want to create new dollar or date variables, then proceed as if
+creating a numeric variable. The type can be changed after the compute
+command is used. Note that seconds are the units of measurement for date
+variables. To create date variables, we must use functions specifically
+designed for the date variable type. See the List of Functions below for
+more information.</p>
+<div id="dealing-with-missing-data" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Dealing with Missing Data</h3>
+<p>Applying a function to a variable containing missing values will result
+in a variable with corresponding system-missing values.</p>
+<p>When taking the mean or sum of a set of variables, be sure to use the
+mean() and sum() functions. SPSS only evaluates formulas such as “(var1
++ var2 + var3 + var4)/4” if all four variables have valid, non-missing
+values.</p>
+<p>By contrast, the software evaluates the formula “mean(var1, var2, var3,
+var4)” as long as an individual has at least one valid response. You can
+also stipulate that SPSS perform the calculation only when there are a
+minimum number of valid responses. The formula “mean.3(var1, var2, var3,
+var4, var5)”, for example, would mean that an individual must have
+answered at least 3 of the 5 questions. The new variable will have a
+missing value otherwise.</p>
+<p><strong>Try it: Use Section2_Data.sav. Calculate the average depression score
+using DepScale_01, DepScale_02, DepScale_3. First use the function
+“mean”. Next write the expression by hand. Investigate the
+differences.</strong></p>
+<p><img src="media/spss-image28.png" style="width:6.4973in;height:4.17708in" />
+<img src="media/spss-image29.png" style="width:6.4973in;height:4.45833in" /> <img src="media/spss-image30.png" style="width:6.5in;height:4.73194in" /></p>
+</div>
+<div id="list-of-functions-available-in-the-compute-command" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> List of Functions Available in the Compute Command</h3>
+<p><strong>Arithmetic Operators:</strong></p>
+<p>+ Addition</p>
+<p>- Subtraction</p>
+<p>* Multiplication</p>
+<p>/ Division</p>
+<p>** Exponentiation</p>
+<p><strong>Arithmetic Functions:</strong></p>
+<p>ABS Absolute value</p>
+<p>RND Round</p>
+<p>TRUNC Truncate</p>
+<p>MOD Modulus (remainder)</p>
+<p>SQRT Square root</p>
+<p>EXP Exponential</p>
+<p>LG10 Base 10 log</p>
+<p>LN Natural log</p>
+<p>ARSIN Arcsin</p>
+<p>ARTAN Arctangent</p>
+<p>SIN Sine</p>
+<p>COS Cosine</p>
+<p><strong>Statistical Functions:</strong></p>
+<p>SUM(.n) Sum of arguments</p>
+<p>MEAN(.n) Mean of arguments</p>
+<p>SD(.n) Standard deviation of arguments</p>
+<p>VARIANCE(.n) Variance of arguments</p>
+<p>CFVAR(.n) Coefficient of variation of arguments</p>
+<p>MIN(.n) Minimum of arguments</p>
+<p>MAX(.n) Maximum of arguments</p>
+<p><strong>Missing Values Functions:</strong></p>
+<p>MISSING True if the value is missing</p>
+<p>NMISS Number of missing values across variables but within cases</p>
+<p>NVALID Number of non-missing values across variables but within cases</p>
+<p><strong>Across-case Function:</strong></p>
+<p>LAG Value from previous case, or from n cases earlier if there is a
+second argument n</p>
+<p><strong>Date and Time Functions:</strong></p>
+<p>CTIME.xxx SPSS time values to common units</p>
+<p>DATE.xxx Common units to SPSS date values</p>
+<p>TIME.xxx Common units to SPSS time values</p>
+<p>XDATE.xxx SPSS date values to common units</p>
+<p><strong>Other Functions:</strong></p>
+<p>RV.UNIFORM Uniform pseudorandom no.</p>
+<p>RV.NORMAL Normal pseudorandom no.</p>
+<p>CDF.NORMAL Standard normal cumulative dis.</p>
+<p><strong>Logical Functions:</strong></p>
+<p>RANGE True if value is within range</p>
+<p>ANY True if any value matches</p>
+<p><strong>String Functions:</strong></p>
+<p>ANY Same as for numeric values</p>
+<p>CONCAT Concatenate</p>
+<p>INDEX Index from left</p>
+<p>LAG Same as for numeric values</p>
+<p>LENGTH Defined length</p>
+<p>LOWER Convert to lower case</p>
+<p>LPAD Pad left</p>
+<p>LTRIM Trim left</p>
+<p>MAX Greatest value</p>
+<p>MIN Least value</p>
+<p>NUMBER Convert to a number</p>
+<p>RANGE Same as for numeric values</p>
+<p>RINDEX Index from right</p>
+<p>RPAD Pad right</p>
+<p>RTRIM Trim right</p>
+<p>STRING Convert to a string</p>
+<p>SUBSTR Substring</p>
+<p>UPCASE Convert to upper case</p>
+</div>
+<div id="count-values" class="section level3">
+<h3><span class="header-section-number">3.3.3</span> Count Values</h3>
+<p>One useful way to compute new variables is through the “Count Values
+within Cases” procedure. This procedure counts how many times particular
+values occur, within each case, across certain variables. Suppose we
+have a data set of students where we recorded their scores on ten
+separate quizzes over the course of a semester. We could use “Count
+Values within Cases” to tally up the number of A’s each student earned.</p>
+<p>To use the Count Values within Cases procedure:</p>
+<ul>
+<li><p>Go to Transform - Count Values within Cases.</p></li>
+<li><p>Specify a new variable name under “Target Variable”.</p></li>
+<li><p>Place the variables to be examined in the “Variables” box.</p></li>
+<li><p>Click “Define Values”, and type the values to be counted.</p></li>
+<li><p>Click “Continue”, then “OK”.</p></li>
+</ul>
+<p><img src="media/spss-image31.png" style="width:4.875in;height:2.82292in" /></p>
+<p><strong><em>Recoding Variables</em></strong></p>
+<p>Recoding a variable means changing or “mapping” its values to new ones.
+Often, you will need to convert string variables into numeric variables
+in order to use them in a certain statistical procedure. Recoding is
+also a way to collapse a continuous variable into categories.</p>
+<p>Below are representations of some possible recodes:</p>
+<p><strong>“Male” – 1</strong></p>
+<p><strong>“Female” – 0</strong></p>
+<p><strong>1 – 0</strong></p>
+<p><strong>2 – 1</strong></p>
+<p><strong>3 – 2 </strong></p>
+<p><strong>4:15 – 9 </strong></p>
+</div>
+<div id="manual-recoding" class="section level3">
+<h3><span class="header-section-number">3.3.4</span> Manual Recoding</h3>
+<p>There are two ways to recode in SPSS:</p>
+<ul>
+<li><p>Recode Into Same Variables <strong>Not Recommended</strong></p></li>
+<li><p>Recode Into Different Variables <strong>Recommended</strong></p></li>
+</ul>
+<p>By using “Recode Into Different Variables”, your original variable will
+not change, which is not the case with “Recode Into Same Variables”.
+“Recode Into Same Variables” is risky since you will not be able to undo
+the changes if you make a mistake.</p>
+<p>Select Transform - Recode into Different Variables"</p>
+<p><img src="media/spss-image32.png" style="width:6.5in;height:3.63056in" /></p>
+<p>In the “Recode Into Different Variables” dialogue box:</p>
+<ul>
+<li><p>Select the old (original) variable.</p></li>
+<li><p>Specify a new variable name, and click “Change”.</p></li>
+<li><p>Click “Old and New Values”.</p>
+<ul>
+<li><p>Specify each old value, or range of values, on the left side of
+the box and each new number you want assigned on the right side
+of the box. Click “Add” each time.</p></li>
+<li><p>Make sure you include every original value. Unmentioned original
+values become missing values in the new variable.</p></li>
+<li><p>Click “Continue”.</p></li>
+</ul></li>
+<li><p>Click “OK”.</p></li>
+</ul>
+<p><img src="media/spss-image33.png" style="width:6.5in;height:3.74306in" /></p>
+<p>Note that when using “Recode Into Different Variables”, it is also
+possible to recode a numeric variable into a character (string)
+variable, or vice-versa:</p>
+<ul>
+<li><p>Check the box marked “Output variables are strings” to change from
+numeric to string in the “Old and New Values” window</p></li>
+<li><p>Check the box marked “Convert numeric strings to numbers” to change
+from string to numeric in the “Old and New Values” window.</p></li>
+</ul>
+<p><strong>Try it: Use Section2_Data.sav. Recode Gender with F=1 and M=2.
+Inspect the output.</strong></p>
+<p><img src="media/spss-image34.png" style="width:6.5in;height:3.63056in" /></p>
+<p><img src="media/spss-image35.png" style="width:6.5in;height:3.74306in" /></p>
+</div>
+</div>
+<div id="automatic-recoding" class="section level2">
+<h2><span class="header-section-number">3.4</span> Automatic Recoding</h2>
+<p>The Automatic Recode procedure recodes any variable’s values into
+consecutive integers 1, 2, 3, etc…. The software codes the lowest
+numeric value, or the first value in alphabetical order in the case of
+string variables, to a 1 by default. The next lowest number or next item
+in alphabetical order becomes a 2, and so forth. Optionally, the
+recoding can begin with the highest number of the last string value in
+alphabetical order.</p>
+<p>Automatic Recode always creates a new variable.</p>
+<p><strong>Helpful Hint:</strong> Automatic Recode is a quick way to make string
+variables (e.g., gender) ready for statistical procedures that require
+numeric variables.</p>
+<p>To use Automatic Recode:</p>
+<ul>
+<li><p>Go to Transform - Automatic Recode.</p></li>
+<li><p>Choose the original variable to be recoded.</p></li>
+<li><p>Specify a new variable name and click “Add New Name”.</p></li>
+<li><p>Select the order – start numbering from smallest or largest values.</p></li>
+</ul>
+<p><img src="media/spss-image36.png" style="width:4.67708in;height:4.85417in" /></p>
+<p><strong>Helpful Hint:</strong> If you had assigned value labels for the old variable,
+those labels will carry over to the corresponding new values. If there
+were no value labels, then the old values themselves become the new
+labels.</p>
+<p><strong>Try it: Use Section2_Data.sav. Use Automatic Recode to recode Gender.
+Call this new variable AutoGender.</strong></p>
+<p><img src="media/spss-image37.png" style="width:4.67708in;height:4.85417in" /></p>
+</div>
+<div id="conditional-transformations-with-ifthen-logic" class="section level2">
+<h2><span class="header-section-number">3.5</span> Conditional Transformations with If/Then Logic</h2>
+<p>The “If” button, which appears in the Compute, Recode, and Count
+dialogue boxes, represents an important feature in variable
+transformations. Using the “If” option, users can tell SPSS to perform
+calculations or recodes only if cases meet certain conditions.</p>
+<p>For example, suppose we surveyed women regarding the number of times
+they had given birth, but women who had never been pregnant skipped that
+section of the questionnaire. We might now want to assign a “0” for the
+number of births for those women who had never been pregnant, to replace
+the missing entry they currently have.</p>
+<p>Assuming that we have a string variable called “everpreg” coded “Y” and
+“N” for yes and no, and that our number of births variable is called
+“numbirth”, we would proceed as follows:</p>
+<p>Go to Transform - Compute Variable</p>
+<ul>
+<li><p>Put numbirth in the “Target Variable” box.</p></li>
+<li><p>Place a 0 in the “Numeric Expression” box.</p></li>
+<li><p>Click “If”.</p></li>
+<li><p>Click “Include if case satisfies condition”.</p></li>
+<li><p>Type everpreg = “N” in the condition box.</p></li>
+<li><p>Click “Continue” and “OK”.</p></li>
+</ul>
+<p><img src="media/spss-image38.png" style="width:5.95352in;height:4.86458in" /></p>
+<p><img src="media/spss-image39.png" style="width:5.6875in;height:4.35118in" /></p>
+<p>This “If” button, which allows transformations to take place for
+selected cases only, works exactly the same in the Compute, Recode, and
+Count procedures.</p>
+<p>You can use the words and, or, and not within the If box to help write
+your criteria. Some examples of If expressions are as follows:</p>
+<ul>
+<li><p>sex = “f” and age &gt; 50 *women over 50</p></li>
+<li><p>not missing(income) *participants whose income is known</p></li>
+<li><p>educat = 5 or educat = 6 *respondents with a BA or MA</p></li>
+</ul>
+</div>
+<div id="rank-cases" class="section level2">
+<h2><span class="header-section-number">3.6</span> Rank Cases</h2>
+<p>You can perform variable transformations based on the ranked value for a
+particular variable. It may be more convenient to analyze the quartiles,
+for example, than the variables themselves.</p>
+<p>Select “Transform” and then “Rank Cases” to recode a continuous variable
+into a new variable based on rank. Select the variable of interest and
+then click “Rank Types”. You can select quartiles in this dialogue box
+by checking the box for Ntiles and placing the number 4 in the blank
+space. SPSS will create a new categorical variable and add it to the end
+of the original dataset.</p>
+<p><img src="media/spss-image40.png" style="width:5.08333in;height:3.14583in" />
+<img src="media/spss-image41.png" style="width:3.57292in;height:2.20833in" /></p>
+</div>
+<div id="exercise-4-computing-and-transforming-variables" class="section level2">
+<h2><span class="header-section-number">3.7</span> Exercise 4 – Computing and Transforming Variables</h2>
+<p>Open Exercise4_Data.</p>
+<p>Compute a new variable that is the change from beginning salary to
+current salary for each employee.</p>
+<p>Recode the education variable into a new variable according to the
+following</p>
+<p>1=High School or Less (educ&lt;=12)</p>
+<p>2=Some College (12&lt;educ&lt;=16)</p>
+<p>3=Bachelor’s Degree or Higher (educ&gt;=17)</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-basics-of-spss.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="understanding-data-management-tasks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
