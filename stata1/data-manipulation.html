@@ -24,7 +24,7 @@
 <meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-09-24" />
+<meta name="date" content="2019-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1476,17 +1476,23 @@ If you find yourself in a situation where you simply must manipulate the strings
 <p>
 These are used inside <code>gen</code> and <code>replace</code>, e.g.
 </p>
-<pre><code>. gen date6 = strupper(date5)
-date5 not found
-r(111);
+<pre><code>. gen sexupper = strupper(sex)
+(2 missing values generated)
 
-. gen month = substr(date5, 3, 3)
-date5 not found
-r(111);
+. gen sexinitial = substr(sexupper, 1, 1)
+(2 missing values generated)
 
-. list date5 date6 month in 1/5
-variable date5 not found
-r(111);
+. list sex sexupper sexinitial in 1/5
+
+     +------------------------------+
+     |    sex   sexupper   sexini~l |
+     |------------------------------|
+  1. | female     FEMALE          F |
+  2. |                              |
+  3. |   male       MALE          M |
+  4. |   male       MALE          M |
+  5. | female     FEMALE          F |
+     +------------------------------+
 
 </code></pre>
 </div>
