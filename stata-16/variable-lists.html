@@ -24,7 +24,7 @@
 <meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-09-26" />
+<meta name="date" content="2019-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -509,10 +509,10 @@ User              |
 <div id="modifying-user-variable-lists" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Modifying User Variable Lists</h3>
 <p>
-First, note that with User Variable Lists, the <code>vl copy</code> command <strong>does not work</strong>.
+First, note that with User Variable Lists, the <code>vl move</code> command <strong>does not work</strong>. It only works with system variable lists.
 </p>
 <p>
-We can create new lists which build off old lists with <code>vl create</code>. To add a new variable:
+We can create new user variable lists which build off old lists with <code>vl create</code>. To add a new variable:
 </p>
 <pre><code>. vl create mylist3 = mylist2 + (gear_ratio)
 note: $mylist3 initialized with 4 variables

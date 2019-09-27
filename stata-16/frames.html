@@ -24,7 +24,7 @@
 <meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-09-26" />
+<meta name="date" content="2019-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -212,6 +212,21 @@ The <code>0 x 0</code> is telling us that in neither frame has any data loaded. 
 <p>
 Now we can see what size the data is in each frame. The description next to each frame is set via <a target="_blank" href="https://www.stata.com/manuals/dlabel.pdf"><code>label data</code></a>, a previously not very useful trait that takes on new important in keeping track of which data is loaded in which frame.
 </p>
+<pre><code>. label data &quot;blood-pressure data&quot;
+
+. frame dir
+* maindata    240 x 5; blood-pressure data
+  seconddata  74 x 12; 1978 Automobile Data
+
+Note: frames marked with * contain unsaved data
+
+</code></pre>
+<p>
+We see that the output of <code>frame dir</code> is changed. Note that most data sets which are not provided by Stata will likely not have a data label, so you can add one as desired.
+</p>
+<p>
+Note also that <code>frame dir</code> will track which frames have data that needs to be saved.
+</p>
 </div>
 <div id="aliases" class="section level2">
 <h2><span class="header-section-number">2.3</span> Aliases</h2>
@@ -239,18 +254,30 @@ When you have data loaded into a frame, it is (like all data in Stata) loaded in
 Frames can be dropped via <code>frame drop</code> as you might guess.
 </p>
 <pre><code>. frame dir
-  maindata    240 x 5; fictional blood-pressure data
+* maindata    240 x 5; blood-pressure data
   seconddata  74 x 12; 1978 Automobile Data
+
+Note: frames marked with * contain unsaved data
 
 . frame drop seconddata
 
 . frame dir
-  maindata  240 x 5; fictional blood-pressure data
+* maindata  240 x 5; blood-pressure data
+
+Note: frames marked with * contain unsaved data
 
 </code></pre>
 <p>
 While not a new command to Stata 16, the <a target="_blank" href="https://www.stata.com/manuals/dcompress.pdf"><code>compress</code></a> command can be very handy as it will attempt to shrink the size of the data as much as possible. This process is non-destructive, so there is no harm in running it.
 </p>
+<p>
+You cannot drop the frame you are currently in.
+</p>
+<pre><code>. frame drop mainframe
+frame mainframe not found
+r(111);
+
+</code></pre>
 <p>
 To drop all frames and their data, and reset Stata to a single “default” frame,
 </p>
@@ -429,7 +456,7 @@ Links are tracked by the variables, we can see the current status of a link via 
 
   History:
   -----------------------------------------------------------------------------
-    Link variable diet created on 26 Sep 2019 by
+    Link variable diet created on 27 Sep 2019 by
 
     . frlink 1:1 seqn, frame(diet)
 
@@ -437,6 +464,20 @@ Links are tracked by the variables, we can see the current status of a link via 
   -----------------------------------------------------------------------------
   Verifying linkage...
   Linkage is up to date.
+
+</code></pre>
+<p>
+We can see all links from the current frame via <code>frlink dir</code>:
+</p>
+<pre><code>. frlink dir
+  (2 frlink variables found)
+  -----------------------------------------------------------------------------
+  bp created by frlink 1:1 seqn, frame(bp)
+  -----------------------------------------------------------------------------
+  diet created by frlink 1:1 seqn, frame(diet)
+  -----------------------------------------------------------------------------
+  Note: Type &quot;frlink describe varname&quot; to find out more, including whether
+  the variable is still valid.
 
 </code></pre>
 <p>
@@ -451,18 +492,15 @@ Finally, the names of the created variables can be modified via the <code>genera
 <pre><code>. frlink 1:1 seqn, frame(diet) generate(linkdiet)
   (427 observations in frame demographics unmatched)
 
-. frlink describe linkdiet
-
-  History:
+. frlink dir
+  (2 frlink variables found)
   -----------------------------------------------------------------------------
-    Link variable linkdiet created on 26 Sep 2019 by
-
-    . frlink 1:1 seqn, frame(diet) generate(linkdiet)
-
-    Frame diet contained an unnamed dataset
+  bp created by frlink 1:1 seqn, frame(bp)
   -----------------------------------------------------------------------------
-  Verifying linkage...
-  Linkage is up to date.
+  linkdiet created by frlink 1:1 seqn, frame(diet) generate(linkdiet)
+  -----------------------------------------------------------------------------
+  Note: Type &quot;frlink describe varname&quot; to find out more, including whether
+  the variable is still valid.
 
 </code></pre>
 <div id="working-with-linked-frames" class="section level3">
