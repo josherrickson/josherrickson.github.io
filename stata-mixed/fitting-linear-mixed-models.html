@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Fitting Linear Mixed Models | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-10-08" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="mixed-model-theory.html">
-<link rel="next" href="random-slopes.html">
+<link rel="prev" href="mixed-model-theory.html"/>
+<link rel="next" href="random-slopes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -128,7 +127,7 @@
 <div id="fitting-linear-mixed-models" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Fitting Linear Mixed Models</h1>
 <p>
-The data we’ll be using is The Irish Longitudinal Study on Ageing, specifically the 2012-2013 data. It is available via ICPSR, <a href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/37105/datadocumentation" class="uri">https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/37105/datadocumentation</a> (you may need to sign in to access the data). The data represents surveys of the elderly (50+) in Ireland.
+The data we’ll be using is The Irish Longitudinal Study on Ageing, specifically the 2012-2013 data. It is available via ICPSR, <a target="_blank" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/37105/datadocumentation">https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/37105/datadocumentation</a> (you may need to sign in to access the data). The data represents surveys of the elderly (50+) in Ireland.
 </p>
 <p>
 (The reason we’re using such an esoteric data set is that a lot of good publicly available longitudinal data comes in separate files per wave. This is very common, and if you need to use these, you’ll want to get familiar with the <code>append</code> and <code>merge</code> commands. This dataset requires no merging and is easier for demonstration purposes.)
@@ -153,7 +152,9 @@ Each row of this data is from a single individual, but multiple individuals from
 (bin=37, start=4, width=1.4324324)
 
 </code></pre>
-<img src="Graph.svg" >
+<p>
+<img src="Graph5.svg" >
+</p>
 <p>
 Looks fine.
 </p>
@@ -161,7 +162,9 @@ Looks fine.
 (bin=38, start=51, width=.81578947)
 
 </code></pre>
-<img src="Graph1.svg" >
+<p>
+<img src="Graph6.svg" >
+</p>
 <p>
 There’s actually a bit of censoring in the data, anyone below 52 or above 82. One way around this is to add dummy variables flagging those individuals, so let’s do that.
 </p>
@@ -304,7 +307,7 @@ Semi-skil~d  |   41.52482   .2788682   148.90   0.000     40.97812    42.07152
 
 . margins socialclass, pwcompare(pv)
 
-Pairwise comparisons of predictive margins
+Pairwise comparisons of predictive margins      Number of obs     =      5,179
 Model VCE    : OLS
 
 Expression   : Linear prediction, predict()
@@ -506,7 +509,7 @@ Semi-skil~d  |   41.43558   .2762047   150.02   0.000     40.89422    41.97693
 
 . margins socialclass, pwcompare(pv)
 
-Pairwise comparisons of predictive margins
+Pairwise comparisons of predictive margins      Number of obs     =      5,179
 
 Expression   : Linear prediction, fixed portion, predict()
 
@@ -555,7 +558,9 @@ The <a target="_blank" href="https://errickson.net/stata-regression/ordinary-lea
 . twoway scatter residuals fitted
 
 </code></pre>
-<img src="Graph2.svg" >
+<p>
+<img src="Graph7.svg" >
+</p>
 <p>
 The odd grouping pattern shown is due to the two categorical variables (gender and social class in the model). Each “blob” represents one permutation. You can see this by overlaying many plots:
 </p>
@@ -574,7 +579,9 @@ The odd grouping pattern shown is due to the two categorical variables (gender a
 &gt;        legend(off)
 
 </code></pre>
-<img src="Graph3.svg" >
+<p>
+<img src="Graph8.svg" >
+</p>
 <p>
 Overall though we see no pattern in the residuals.
 </p>
@@ -636,7 +643,9 @@ Now we can plot.
 &gt;          legend(off) yline(0)
 
 </code></pre>
-<img src="Graph4.svg" >
+<p>
+<img src="Graph9.svg" >
+</p>
 <p>
 The range in the middle is all households which we predict to have intercepts not distinguishable from zero. We can see that most of the random intercept’s confidence intervals cross with the exception of very few large values and a larger chunk of small values.
 </p>
@@ -996,8 +1005,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

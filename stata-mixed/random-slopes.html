@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Random slopes | Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Chapter 4 Random slopes | Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 4 Random slopes | Mixed Effects Modeling in Stata" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Random slopes | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-10-08" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="fitting-linear-mixed-models.html">
-<link rel="next" href="generalized-linear-mixed-models.html">
+<link rel="prev" href="fitting-linear-mixed-models.html"/>
+<link rel="next" href="generalized-linear-mixed-models.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -150,7 +149,7 @@ Now the model would allow each classroom to have it’s own relationship between
 Do you need a random slope? It depends on your theory. If your grouping variable is a nuisance and you’re simply controlling for it (as it is in most cases), you probably don’t need a random slope. If, on the other hand, you suspect there are substantial differences between groups and you’re really interested in the average of those differences, then you should.
 </p>
 <p>
-For reference, I’d say conservatively 95% of the mixed models I fit are in situations where a random slope is not needed, and 75% of the time when people ask me if they need a random slope, the answer is no. However, my general bias is towards simpler models.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
+For reference, I’d say conservatively 95% of the mixed models I fit are in situations where a random slope is not needed, and 75% of the time when people ask me if they need a random slope, the answer is no. However, my general bias is towards simpler models.<a href="generalized-linear-mixed-models.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>
 </p>
 <div id="fitting-a-random-slope" class="section level2">
 <h2><span class="header-section-number">4.1</span> Fitting a random slope</h2>
@@ -242,12 +241,6 @@ Excluding the fixed slope when including random slopes forces the average of all
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p>If you’re curious, my rational is I’d rather fit a simpler model that misses a nuanced complexity, then fit a more complicated model that has takes a substantial power hit and potentially is drastically further from the “truth”.<a href="random-slopes.html#fnref2" class="footnote-back">↩</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -296,8 +289,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

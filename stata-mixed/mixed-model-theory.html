@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Mixed Model Theory | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,18 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-10-08" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="fitting-linear-mixed-models.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="fitting-linear-mixed-models.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -260,7 +259,7 @@ The most basic form of a mixed model (which is also the most commonly used form)
 <span class="math display">\[ Y_{ij} = \beta_0 + \beta_1X_{1i} + \beta_2X_{2i} + \cdots + \beta_pX_{pi} + \kappa_j + \epsilon_{ij} \]</span>
 </p>
 <p>
-The subscript notation helps us keep track of things. Here, I’ve set it up such that each observation <span class="math inline">\(i\)</span> belongs to a group <span class="math inline">\(j\)</span>. The response belonging to individual <span class="math inline">\(i\)</span> in group <span class="math inline">\(j\)</span> is predicted based upon some <span class="math inline">\(X\)</span> variables, plus some additive effect which is unique to group <span class="math inline">\(j\)</span> (<span class="math inline">\(\kappa_j\)</span>), and additional error unique to that individual ($_{ij}).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+The subscript notation helps us keep track of things. Here, I’ve set it up such that each observation <span class="math inline">\(i\)</span> belongs to a group <span class="math inline">\(j\)</span>. The response belonging to individual <span class="math inline">\(i\)</span> in group <span class="math inline">\(j\)</span> is predicted based upon some <span class="math inline">\(X\)</span> variables, plus some additive effect which is unique to group <span class="math inline">\(j\)</span> (<span class="math inline">\(\kappa_j\)</span>), and additional error unique to that individual ($_{ij}).<a href="generalized-linear-mixed-models.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
 </p>
 <p>
 Both error terms, <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\kappa\)</span>, are assumed to have a mean of 0. This is important here because it means that <em>on average the random intercept has no affect, but varies from individual to individual</em>.
@@ -322,12 +321,6 @@ If you were to plug <span class="math inline">\(\beta_{s0}\)</span> back into th
 </div>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>The choice of <span class="math inline">\(\epsilon\)</span> for the individual error in a regression is fairly standardized in the literature. My choice of <span class="math inline">\(\kappa\)</span> is not, as the literature does not have any standard choice for the random effect.<a href="mixed-model-theory.html#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -376,8 +369,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

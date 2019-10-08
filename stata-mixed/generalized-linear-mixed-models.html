@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Generalized Linear Mixed Models | Mixed Effects Modeling in Stata</title>
-  <meta name="description" content="Chapter 5 Generalized Linear Mixed Models | Mixed Effects Modeling in Stata">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 5 Generalized Linear Mixed Models | Mixed Effects Modeling in Stata" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Generalized Linear Mixed Models | Mixed Effects Modeling in Stata" />
   <meta property="og:type" content="book" />
@@ -22,17 +21,17 @@
   
   
 
-<meta name="author" content="Josh Errickson">
+<meta name="author" content="Josh Errickson" />
 
 
-<meta name="date" content="2019-02-08">
+<meta name="date" content="2019-10-08" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="random-slopes.html">
+<link rel="prev" href="random-slopes.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -162,13 +161,13 @@ To my knowledge, Stata does not implement this model. It can be fit in several p
 
 </div>
 </div>
-
-
-
-
-
-
-
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The choice of <span class="math inline">\(\epsilon\)</span> for the individual error in a regression is fairly standardized in the literature. My choice of <span class="math inline">\(\kappa\)</span> is not, as the literature does not have any standard choice for the random effect.<a href="mixed-model-theory.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>If you’re curious, my rational is I’d rather fit a simpler model that misses a nuanced complexity, then fit a more complicated model that has takes a substantial power hit and potentially is drastically further from the “truth”.<a href="random-slopes.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
@@ -217,8 +216,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
