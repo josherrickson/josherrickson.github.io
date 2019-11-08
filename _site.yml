@@ -1,7 +1,7 @@
 name: "website"
 title: "Josh Errickson"
 description: "Josh Errickson"
-output_dir: "docs"
+output_dir: "."
 navbar:
   left:
     - icon: fab fa-github-alt fa-1x
