@@ -3,7 +3,7 @@ title: Josh Errickson
 site: distill::distill_website
 ---
 
-Office: 3555 Rackham (inside CSCAR suite)  
+Office: 3555 Rackham (inside CSCAR suite)
 Email: jerrick (at) umich.edu
 
 I am a statistical consultant at [CSCAR](http://cscar.research.umich.edu/) and adjust faculty in the Department of Statistics at the University of Michigan.
@@ -20,4 +20,4 @@ Below you will find various resources I've created which may be useful.
 
 **[Statistical Notes](stats-notes/index.html)**: Short-form documents discussing various statistical topics.
 
-**[Code & Software](code.html)**: Bits and bobs that are probably useful to almost no-one, about topics like Linux or Emacs.
+**[Misc. Code & Software](code.html)**: Bits and bobs that are probably useful to almost no-one, about topics like Linux or Emacs.
