@@ -1,0 +1,15 @@
+---
+title: "Statistics Notes"
+---
+
+[Notes on interpretation of log transforms in linear regression](stats-notes/logtransform.html)\
+[Two ways of specifying random intercepts in SPSS's Mixed Model](stats-notes/mixedModelsSPSS.html)\
+[Moderation and Mediation via Regression](stats-notes/moderationMediation.html)\
+[Notes on IRR and ICC](stats-notes/iccirr.html)\
+[Visualizing the issue of collinear predictors](stats-notes/visualizeCollinearity.html)\
+[Sparse notes on interpreting regression coefficients of different models](stats-notes/regressioncoefs.html)\
+[Stata, "xtset" versus mixed model](stats-notes/xtsetvsmixed.html)\
+[Visualizing random effects, and the equivalency of nested and cross random effects](stats-notes/vizrandomeffects.html)\
+[The equivalency of Linear Spline and Interaction models for interrupted time series](stats-notes/splinesvsinteraction.html)\
+[Replicating Stata's "margins" command in R (Work in progress]([marginsnotes/index.html)\
+[Selecting a random subset of the data, potentially within subgroups](stats-notes/randomselection.html)\
