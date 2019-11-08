@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Stata (SOC 510)</title>
+  <meta name="description" content="Introduction to Stata (SOC 510)">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Stata (SOC 510)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Stata (SOC 510)" />
+  
+  
+  
+
+<meta name="author" content="Josh Errickson">
+
+
+<meta name="date" content="2017-09-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="working-with-data-sets.html">
+<link rel="next" href="data-manipulation.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/standard_html.css" type="text/css" />
+<link rel="stylesheet" href="css/book.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Introduction to Stata</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#how-to-use-this-document"><i class="fa fa-check"></i><b>1.1</b> How to use this document</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#stata-14-vs-stata-15"><i class="fa fa-check"></i><b>1.1.1</b> Stata 14 vs Stata 15</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i><b>1.2</b> Contact information</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#cscar"><i class="fa fa-check"></i><b>1.2.1</b> CSCAR</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i><b>1.2.2</b> Author</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i><b>1.3</b> Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#the-stata-environment"><i class="fa fa-check"></i><b>2.1</b> The Stata Environment</a></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#one-data"><i class="fa fa-check"></i><b>2.2</b> One Data</a></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#give-stata-a-command"><i class="fa fa-check"></i><b>2.3</b> Give Stata a command</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#saving-results"><i class="fa fa-check"></i><b>2.3.1</b> Saving Results</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#do-files"><i class="fa fa-check"></i><b>2.4</b> Do-files</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="basics.html"><a href="basics.html#comments"><i class="fa fa-check"></i><b>2.4.1</b> Comments</a></li>
+<li class="chapter" data-level="2.4.2" data-path="basics.html"><a href="basics.html#version-control"><i class="fa fa-check"></i><b>2.4.2</b> Version control</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#basic-command-syntax"><i class="fa fa-check"></i><b>2.5</b> Basic command syntax</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="basics.html"><a href="basics.html#referring-to-variables"><i class="fa fa-check"></i><b>2.5.1</b> Referring to variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#stata-help"><i class="fa fa-check"></i><b>2.6</b> Stata Help</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="basics.html"><a href="basics.html#short-commands"><i class="fa fa-check"></i><b>2.6.1</b> Short commands</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="basics.html"><a href="basics.html#set-more-off"><i class="fa fa-check"></i><b>2.7</b> <code>set more off</code></a></li>
+<li class="chapter" data-level="2.8" data-path="basics.html"><a href="basics.html#working-directory"><i class="fa fa-check"></i><b>2.8</b> Working directory</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="basics.html"><a href="basics.html#file-paths"><i class="fa fa-check"></i><b>2.8.1</b> File paths</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html"><i class="fa fa-check"></i><b>3</b> Working with Data Sets</a><ul>
+<li class="chapter" data-level="3.1" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#built-in-data"><i class="fa fa-check"></i><b>3.1</b> Built-in data</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#opening-data"><i class="fa fa-check"></i><b>3.2</b> Opening data</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#saving-data"><i class="fa fa-check"></i><b>3.3</b> Saving data</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#preserverestore"><i class="fa fa-check"></i><b>3.4</b> <code>preserve</code>/<code>restore</code></a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-data-sets.html"><a href="working-with-data-sets.html#exercise-1"><i class="fa fa-check"></i><b>3.5</b> Exercise 1</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>4</b> Data Management</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-management.html"><a href="data-management.html#describe"><i class="fa fa-check"></i><b>4.1</b> <code>describe</code></a></li>
+<li class="chapter" data-level="4.2" data-path="data-management.html"><a href="data-management.html#labels"><i class="fa fa-check"></i><b>4.2</b> Labels</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-management.html"><a href="data-management.html#label-variable"><i class="fa fa-check"></i><b>4.2.1</b> <code>label variable</code></a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-management.html"><a href="data-management.html#label-values"><i class="fa fa-check"></i><b>4.2.2</b> <code>label values</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-management.html"><a href="data-management.html#managing-variables"><i class="fa fa-check"></i><b>4.3</b> Managing variables</a></li>
+<li class="chapter" data-level="4.4" data-path="data-management.html"><a href="data-management.html#summarizing-the-data"><i class="fa fa-check"></i><b>4.4</b> Summarizing the data</a></li>
+<li class="chapter" data-level="4.5" data-path="data-management.html"><a href="data-management.html#exercise-2"><i class="fa fa-check"></i><b>4.5</b> Exercise 2</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation.html"><a href="data-manipulation.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation</a><ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation.html"><a href="data-manipulation.html#generate"><i class="fa fa-check"></i><b>5.1</b> <code>generate</code></a><ul>
+<li class="chapter" data-level="5.1.1" data-path="data-manipulation.html"><a href="data-manipulation.html#extension-to-generate"><i class="fa fa-check"></i><b>5.1.1</b> Extension to <code>generate</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation.html"><a href="data-manipulation.html#replace"><i class="fa fa-check"></i><b>5.2</b> <code>replace</code></a><ul>
+<li class="chapter" data-level="5.2.1" data-path="data-manipulation.html"><a href="data-manipulation.html#conditional-variable-generation"><i class="fa fa-check"></i><b>5.2.1</b> Conditional variable generation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-manipulation.html"><a href="data-manipulation.html#missing-values"><i class="fa fa-check"></i><b>5.3</b> Missing values</a></li>
+<li class="chapter" data-level="5.4" data-path="data-manipulation.html"><a href="data-manipulation.html#subsetting"><i class="fa fa-check"></i><b>5.4</b> Subsetting</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="data-manipulation.html"><a href="data-manipulation.html#by-and-bysort"><i class="fa fa-check"></i><b>5.4.1</b> <code>by</code> and <code>bysort</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-manipulation.html"><a href="data-manipulation.html#keep-drop"><i class="fa fa-check"></i><b>5.4.2</b> <code>keep</code>, <code>drop</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="data-manipulation.html"><a href="data-manipulation.html#sorting"><i class="fa fa-check"></i><b>5.5</b> Sorting</a></li>
+<li class="chapter" data-level="5.6" data-path="data-manipulation.html"><a href="data-manipulation.html#exercise-3"><i class="fa fa-check"></i><b>5.6</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="programming.html"><a href="programming.html"><i class="fa fa-check"></i><b>6</b> Programming</a><ul>
+<li class="chapter" data-level="6.1" data-path="programming.html"><a href="programming.html#macros"><i class="fa fa-check"></i><b>6.1</b> Macros</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="programming.html"><a href="programming.html#class-and-return"><i class="fa fa-check"></i><b>6.1.1</b> Class and Return</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="programming.html"><a href="programming.html#loops"><i class="fa fa-check"></i><b>6.2</b> loops</a></li>
+<li class="chapter" data-level="6.3" data-path="programming.html"><a href="programming.html#suppressing-output-and-errors"><i class="fa fa-check"></i><b>6.3</b> Suppressing output and errors</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="programming.html"><a href="programming.html#capture"><i class="fa fa-check"></i><b>6.3.1</b> <code>capture</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="programming.html"><a href="programming.html#quietly"><i class="fa fa-check"></i><b>6.3.2</b> <code>quietly</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Stata (SOC 510)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Data Management</h1>
+<p>
+Throughout this chapter, we’ll be using the “auto” data set which is distributed with Stata. It can be loaded via
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+</code></pre>
+<p>
+You can reload it as necessary (if you modify it and want the original) by re-running this whenever you want.
+</p>
+<p>
+Whenever you first begin working with a data set, you’ll want to spend some time getting familiar with it. You should be able to answer the following questions (even if some of them are approximations):
+</p>
+<ul>
+<li>
+How many observations does your data have?
+</li>
+<li>
+How many variables are in your data set?
+</li>
+<li>
+What is the unit of analysis? (What does each row represent - a person? a couple? a classroom?)
+<ul>
+<li>
+Is there a variable which uniquely identifies each unit of analysis?
+</li>
+<li>
+If the data is repeated measures in some form (multiple rows per person, or data is students across several classrooms), what variable(s) identify the levels and groups?
+</li>
+</ul>
+</li>
+<li>
+Are there any variables which are strings (non-numeric) that you plan on using in some statistical analysis (and will need to be converted to numeric)?
+</li>
+<li>
+Which variables are continuous (can take on any value in some reasonable range, such as weight) vs which are categorical (take on a set number of values where each represents something).
+</li>
+</ul>
+<p>
+You’ll notice that there are no statistical questions here - we’re not even worried about those yet! These are merely logistical.
+</p>
+<p>
+In this chapter we’ll go over various tools and commands you can use to answer these questions (and more) and overall to gain a familiarity with the logistics of your data.
+</p>
+<div id="describe" class="section level2">
+<h2><span class="header-section-number">4.1</span> <code>describe</code></h2>
+<p>
+The first command you should run is <code>describe</code>.
+</p>
+<pre><code>. describe
+
+Contains data from /Applications/Stata/ado/base/a/auto.dta
+  obs:            74                          1978 Automobile Data
+ vars:            12                          13 Apr 2016 17:45
+ size:         3,182                          (_dta has notes)
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)
+rep78           int     %8.0g                 Repair Record 1978
+headroom        float   %6.1f                 Headroom (in.)
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+displacement    int     %8.0g                 Displacement (cu. in.)
+gear_ratio      float   %6.2f                 Gear Ratio
+foreign         byte    %8.0g      origin     Car type
+-------------------------------------------------------------------------------
+Sorted by: foreign
+
+</code></pre>
+<p>
+This displays a large amount of information, so let’s break in down.
+</p>
+<p>
+First, the header displays general data set information - the number of observations (<code>obs</code>, the number of rows) and variables (<code>vars</code>), as well as the file size<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> It also gives a short label of the data, the date of last modification and whether there are any notes.
+</p>
+<p>
+Next, there is a table listing each variable in the data and some information about them. The “storage type” can be one of <code>byte</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>; all of which are simply numbers. There are some distinctions between them, but for our purposes they are irrelevant<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>. String variables are represented as <code>str##</code> where the <code>##</code> represent the number of characters that the string can be, e.g. <code>str18</code> shows that <code>make</code> has a maximum of 18 letters. This limit is actually irrelevant; if you add a new string that is longer (or modify an existing one), Stata will simply increase <code>str##</code> as needed.
+</p>
+<p>
+The “display format” column contains format information about each variable which only control how the variables are displayed in data view. For the most part you can ignore these and leave them at the default, though you may need to work with this if you have date or time information. For further details see
+</p>
+<pre><code>help formats
+</code></pre>
+<p>
+“value label” and “variable label” are used to display more information when running analyses using these variables. See <a href="data-management.html#labels">the label</a> section for further details.
+</p>
+<p>
+Finally, if the data is sorted, <code>describe</code> will provide information about the sorting.
+</p>
+<p>
+<code>describe</code> can also be used on a per variable basis:
+</p>
+<pre><code>. describe mpg
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+mpg             int     %8.0g                 Mileage (mpg)
+
+. describe rep78-turn
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+rep78           int     %8.0g                 Repair Record 1978
+headroom        float   %6.1f                 Headroom (in.)
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+
+</code></pre>
+<p>
+If you have a very large number of variables you may wish to suppress the table of variables entirely:
+</p>
+<pre><code>. describe, short
+
+Contains data from /Applications/Stata/ado/base/a/auto.dta
+  obs:            74                          1978 Automobile Data
+ vars:            12                          13 Apr 2016 17:45
+ size:         3,182                          
+Sorted by: foreign
+
+</code></pre>
+<p>
+Alternatively, the <code>simple</code> option returns only the names of the variables, in column-dominant order (meaning you read down the columns not across the rows).
+</p>
+<pre><code>. describe, simple
+make          rep78         weight        displacement
+price         headroom      length        gear_ratio
+mpg           trunk         turn          foreign
+
+</code></pre>
+</div>
+<div id="labels" class="section level2">
+<h2><span class="header-section-number">4.2</span> Labels</h2>
+<p>
+A raw data set is very sparse on context. In addition to the data itself, it will have at most a variable name, which in Stata cannot include spaces and is limited to 32 characters. All other context associated with the data must either be documented in a data dictionary or exist in the recollection of the analyst.
+</p>
+<p>
+In an Excel file, to get around this, you might add additional content to the sheet outside of the raw data - a note here, a subtitle there, etc. However, Stata does not allow such arbitrary storage. In contrast, Stata allows you to directly <strong>label</strong> parts of the data with context information which will be displayed in the appropriate Results, to make Stata output much easier to read as well as removing the need for an external data dictionary. All three different versions use the <code>label</code> command.
+</p>
+<div id="label-variable" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> <code>label variable</code></h3>
+<p>
+Variables names, as mentioned, are limited to 32 characters and do not allow spaces (or several other special characters). This is to encourage you to choose short, simple, and memorable variable names, since you’ll likely be typing them a lot!
+</p>
+<p>
+We can easily add more information with a variable label. If you look at the <code>describe</code> output, you’ll notice that the auto data set already has variable labels applied to it.
+</p>
+<pre><code>. describe
+
+Contains data from /Applications/Stata/ado/base/a/auto.dta
+  obs:            74                          1978 Automobile Data
+ vars:            12                          13 Apr 2016 17:45
+ size:         3,182                          (_dta has notes)
+-------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+make            str18   %-18s                 Make and Model
+price           int     %8.0gc                Price
+mpg             int     %8.0g                 Mileage (mpg)
+rep78           int     %8.0g                 Repair Record 1978
+headroom        float   %6.1f                 Headroom (in.)
+trunk           int     %8.0g                 Trunk space (cu. ft.)
+weight          int     %8.0gc                Weight (lbs.)
+length          int     %8.0g                 Length (in.)
+turn            int     %8.0g                 Turn Circle (ft.)
+displacement    int     %8.0g                 Displacement (cu. in.)
+gear_ratio      float   %6.2f                 Gear Ratio
+foreign         byte    %8.0g      origin     Car type
+-------------------------------------------------------------------------------
+Sorted by: foreign
+
+</code></pre>
+<p>
+We can see variable <code>rep78</code> (an utterly incomprehensible name at first glance, as opposed to <code>mpg</code>) has the label “Repair Record 1978”. You can apply your own variable labels (or overwrite existing by using the command:
+</p>
+<pre><code>label variable &lt;variable name&gt; &quot;Variable label&quot;
+</code></pre>
+<p>
+For example:
+</p>
+<pre><code>. label variable turn &quot;Some new label for turn&quot;
+
+. describe turn
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+turn            int     %8.0g                 Some new label for turn
+
+</code></pre>
+</div>
+<div id="label-values" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> <code>label values</code></h3>
+<p>
+It is tempting to store categorical variables as strings. If you ask, for example, for someone’s state of residence, you might store the answers as “MI”, “OH”, “FL”, etc. However, Stata (like most statistical software) cannot handle string variables.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> A much better way to store this data would be to assign each state a numerical value, say MI = 1, OH = 2, FL = 3, etc, then keep a data dictionary linking the values to the labels they represent.
+</p>
+<p>
+Stata allows you to store this value labels information within the data set, such that whenever the values are output, the labels are printed instead. Let’s take a look at the <code>foreign</code> variable. This variable takes on two levels, and we can tabulate it to see how many cars are in each category.
+</p>
+<pre><code>. tab foreign
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+Here it appears that <code>foreign</code> is stored as two strings, but we know from <code>describe</code> that it is not:
+</p>
+<pre><code>. describe foreign
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+foreign         byte    %8.0g      origin     Car type
+
+</code></pre>
+<p>
+Instead, let’s look at that table ignoring the value labels:
+</p>
+<pre><code>. tab foreign, nolabel
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |         52       70.27       70.27
+          1 |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+</code></pre>
+<p>
+Now we see the values which are actually stored.
+</p>
+<p>
+Look at the <code>describe</code> output:
+</p>
+<pre><code>. describe foreign
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+foreign         byte    %8.0g      origin     Car type
+
+</code></pre>
+<p>
+You’ll notice that in the “value label” column has <code>origin</code> attached to <code>foreign</code>. In Stata, the value labels information are <em>stored separately</em> from the variables. They are two separate components - there is a variable and there is a value label. You connect the value label to a variable to use it.
+</p>
+<p>
+The benefit of this separated structure is that if you have several variables which have the same coding scheme (e.g. a series of Likert scale questions, where 1-5 represents “Strongly Disagree”-“Strongly Agree”), you can create a single value label and rapidly apply it to all variables necessary.
+</p>
+<p>
+Correspondingly, this process requires two commands. First we define the value labels:
+</p>
+<pre><code>label define &lt;label name&gt; &lt;value&gt; &quot;&lt;label&gt;&quot; &lt;value&gt; &quot;&lt;label&gt;&quot; .....
+</code></pre>
+<p>
+For example, if we wanted to recreate the value label associated with <code>foreign</code>:
+</p>
+<pre><code>. label define foreign_label 0 &quot;Domestic&quot; 1 &quot;Foreign&quot;
+
+</code></pre>
+<p>
+Value labels exist in the data set, regardless of whether they are attached to any variables, we can see all value labels:
+</p>
+<pre><code>. label list
+foreign_label:
+           0 Domestic
+           1 Foreign
+origin:
+           0 Domestic
+           1 Foreign
+
+</code></pre>
+<p>
+Here we see the original <code>origin</code> as well as our new <code>foreign_label</code>. To attach it to the variable <code>foreign</code>:
+</p>
+<pre><code>. label values foreign foreign_label
+
+</code></pre>
+<p>
+If we wanted to attach a single value label to multiple variables, we could simply provide a list of variables:
+</p>
+<pre><code>label values &lt;var1&gt; &lt;var2&gt; &lt;var3&gt; &lt;label&gt;
+</code></pre>
+<p>
+To remove the value labels from a variable, use the <code>label values</code> command with no label name following the variable name:
+</p>
+<pre><code>. label values foreign
+
+. describe foreign
+
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------
+foreign         byte    %8.0g                 Car type
+
+</code></pre>
+<p>
+Note that value labels exist within a data set regardless of whether they are attached to a variable. If there is a label value that you no longer want to keep in the data-set, you can drop it:
+</p>
+<pre><code>. label drop foreign_label
+
+. label list
+origin:
+           0 Domestic
+           1 Foreign
+
+</code></pre>
+<p>
+This will <em>not</em> remove the value labels from any variables, but they will no longer be active (i.e. if you run <code>describe</code> it will still show that the value labels are attached, but running <code>tab</code> will not use them). So in order to completely remove a value label, you’ll need to both remove it from the variable as well as the data.
+</p>
+<p>
+<strong>Do not forget</strong> that modifying value labels counts as modifying the data. Make sure you <code>save, replace</code> after making these modifications (if you want to keep them) or they’ll be lost!
+</p>
+</div>
+</div>
+<div id="managing-variables" class="section level2">
+<h2><span class="header-section-number">4.3</span> Managing variables</h2>
+<p>
+In Stata, managing the names and order of variables is important to make entering commands easier due to the <a href="basics.html#referring-to-variables">shortcuts for referring to variables</a>. Recall that variables can be referred to using wildcards (e.g. <code>a*</code> to include <code>age</code>, <code>address</code> or <code>a10</code>, or using <code>var1-var10</code> to include all variables between <code>var1</code> and <code>var10</code> as they are ordered). Of course, you may also want to rename or re-order variables for other reasons such as making the data easier to look at.
+</p>
+<p>
+To rename variables:
+</p>
+<pre><code>rename &lt;oldname&gt; &lt;newname&gt;
+</code></pre>
+<p>
+For example:
+</p>
+<pre><code>. rename rep78 repair_record_1978
+
+. describe, simple
+make          repair_~1978  weight        displacement
+price         headroom      length        gear_ratio
+mpg           trunk         turn          foreign
+
+</code></pre>
+<p>
+The output truncated the name because it was so long, but the full name exists in the data.
+</p>
+<p>
+To rename multiple variables, you can run multiple <code>rename</code> commands, or else you can give multiple old and new names:
+</p>
+<pre><code>. rename (mpg trunk turn) (mpg2 trunk2 turn2)
+
+. describe, simple
+make          repair_~1978  weight        displacement
+price         headroom      length        gear_ratio
+mpg2          trunk2        turn2         foreign
+
+</code></pre>
+<p>
+The first old variable is renamed to the first new variable, the second to the second, etc. The parentheses are required.
+</p>
+<p>
+Variable names are unique; if you wanted to swap to variable names, you’d have to name one to a temporary name, rename the second, then rename the first again. Alternately, you can do it simultaneously:
+</p>
+<pre><code>rename (var1 var2) (var2 var1)
+</code></pre>
+<p>
+You can use wildcards in the renaming too. For example, imagine you had a collection of variables from a longitudinal data set, “visit1_age”, “visit1_weight”, “visit1_height”, etc. To simplify variable names, we’d prefer to use “age1”, “weight1”, etc.
+</p>
+<pre><code>rename visit1_* *1
+</code></pre>
+<p>
+Finally, you can change a variable name to upper/lower/proper case easily by passing <code>upper</code>/<code>lower</code>/<code>proper</code> as an argument and giving no new variable name.
+</p>
+<pre><code>. rename length, upper
+
+. describe, simple
+make          repair_~1978  weight        displacement
+price         headroom      LENGTH        gear_ratio
+mpg2          trunk2        turn2         foreign
+
+</code></pre>
+<p>
+Turning to variable ordering, the <code>order</code> command takes a list of variables and moves them to the front/end/before a certain variable/after a certain variable. The options <code>first</code>, <code>last</code>, <code>before(&lt;variable&gt;)</code> and <code>after(&lt;variable&gt;)</code> control this.
+</p>
+<pre><code>. order foreign // The default is `first`
+
+. describe, simple
+foreign       mpg2          trunk2        turn2
+make          repair_~1978  weight        displacement
+price         headroom      LENGTH        gear_ratio
+
+. order weight, last
+
+. describe, simple
+foreign       mpg2          trunk2        displacement
+make          repair_~1978  LENGTH        gear_ratio
+price         headroom      turn2         weight
+
+. order mpg2 trunk2, before(displacement)
+
+. describe, simple
+foreign       repair_~1978  turn2         displacement
+make          headroom      mpg2          gear_ratio
+price         LENGTH        trunk2        weight
+
+</code></pre>
+</div>
+<div id="summarizing-the-data" class="section level2">
+<h2><span class="header-section-number">4.4</span> Summarizing the data</h2>
+<p>
+While these notes will not cover anything statistical, it can be handy from a data management perspective to look at some summary statistics, mostly to identify problematic variables. Among other things, we can try and detect
+</p>
+<ul>
+<li>
+Unexpectedly missing data
+</li>
+<li>
+Incorrectly coded data
+</li>
+<li>
+Errors/typos in input data
+</li>
+<li>
+Incorrect assumptions about variable values
+</li>
+</ul>
+<p>
+There are numerous ways to look at summary statistics, from obtaining one-number summaries to visualizations, but we will focus on two Stata commands, <code>summarize</code> and <code>codebook</code>.
+</p>
+<p>
+<code>summarize</code> produces basic summary statistics <em>for numeric variables</em>.
+</p>
+<pre><code>. summarize
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     foreign |         74    .2972973    .4601885          0          1
+        make |          0
+       price |         74    6165.257    2949.496       3291      15906
+repair_~1978 |         69    3.405797    .9899323          1          5
+    headroom |         74    2.993243    .8459948        1.5          5
+-------------+---------------------------------------------------------
+      LENGTH |         74    187.9324    22.26634        142        233
+       turn2 |         74    39.64865    4.399354         31         51
+        mpg2 |         74     21.2973    5.785503         12         41
+      trunk2 |         74    13.75676    4.277404          5         23
+displacement |         74    197.2973    91.83722         79        425
+-------------+---------------------------------------------------------
+  gear_ratio |         74    3.014865    .4562871       2.19       3.89
+      weight |         74    3019.459    777.1936       1760       4840
+
+</code></pre>
+<p>
+The table reports the total number of non-missing values (<code>make</code> appears to be entirely missing because it is non-numeric), the mean (the average value), the standard deviation (a measure of how spread out the data is) and the minimum and maximum non-missing<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> values observed.
+</p>
+<p>
+Here’s some suggestions of how to look at these values.
+</p>
+<ul>
+<li>
+Make sure the amount of missing data is expected. If the number of observations is lower than anticipated, is it an issue with the data collection? Or did the import into Stata cause issues? 5 cars have no <code>repair_record_1978</code>.
+</li>
+<li>
+The mean should be a reasonable number, somewhere in the rough middle of the range of possible values for the variable. If you have age recorded for a random selection of adults and the mean age is 18, something has gone wrong. If the mean age is -18, something has gone tragically wrong!
+</li>
+<li>
+The standard deviation is hard to interpret precisely, but in a very rough sense, 2/3rds of the values should lie within 1 standard deviation of the mean. For example, consider <code>mpg2</code>. The mean is ~21 and the standard deviation is ~6, so roughly 2/3rds of the cars have <code>mpg2</code> between 15 and 27. Does this seems reasonable? If the standard deviation is very high compared to the mean (e.g. if <code>mpg2</code>’s standard deviation was 50) or close to 0, that could indicate an issue.
+</li>
+<li>
+Are the max and min reasonable? If the minimum <code>LENGTH</code> was -9, that’s problematic. Maybe -9 is the code for missing values? If the range of <code>LENGTH</code> is 14 to 2500, maybe the units differ? They measured in feet for some cars and inches for others?
+</li>
+</ul>
+<p>
+<code>summarize</code> can also take a list of variables, e.g.
+</p>
+<pre><code>. summarize t*
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       turn2 |         74    39.64865    4.399354         31         51
+      trunk2 |         74    13.75676    4.277404          5         23
+
+</code></pre>
+<p>
+For more detailed information, we can look at the codebook. <code>codebook</code> works similarly to <code>describe</code> and <code>summarize</code> in the sense that without any additional arguments, it displays information on every variable; you can pass it a list of variables to only operate on those. Because <code>codebook</code>’s output is quite long, we only demonstrate the restricted version. Before we do that, we reload the “auto” data because we messed with it quite a bit earlier!
+</p>
+<p>
+First, categorical data:
+</p>
+<pre><code>. sysuse auto, clear
+(1978 Automobile Data)
+
+. codebook rep78
+
+-------------------------------------------------------------------------------
+rep78                                                        Repair Record 1978
+-------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  5/74
+
+            tabulation:  Freq.  Value
+                             2  1
+                             8  2
+                            30  3
+                            18  4
+                            11  5
+                             5  .
+
+</code></pre>
+<p>
+We see that <code>rep78</code> takes on six unique values (Up to 5 repairs, plus the missing data represented by <code>.</code>). If the unique values is more than expected, it’s something to investigate.
+</p>
+<p>
+Next, continuous variables:
+</p>
+<pre><code>. codebook price
+
+-------------------------------------------------------------------------------
+price                                                                     Price
+-------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [3291,15906]                 units:  1
+         unique values:  74                       missing .:  0/74
+
+                  mean:   6165.26
+              std. dev:    2949.5
+
+           percentiles:        10%       25%       50%       75%       90%
+                              3895      4195    5006.5      6342     11385
+
+</code></pre>
+<p>
+We still see the number of unique values reported, but here every observation has a unique value (74 unique values, 74 rows in the data). There is no missing data. The percentiles should be checked to see if they’re reasonable, if 90% of the cars had a price under $100, something’s not right.
+</p>
+<p>
+Finally, string variables:
+</p>
+<pre><code>. codebook make
+
+-------------------------------------------------------------------------------
+make                                                             Make and Model
+-------------------------------------------------------------------------------
+
+                  type:  string (str18), but longest is str17
+
+         unique values:  74                       missing &quot;&quot;:  0/74
+
+              examples:  &quot;Cad. Deville&quot;
+                         &quot;Dodge Magnum&quot;
+                         &quot;Merc. XR-7&quot;
+                         &quot;Pont. Catalina&quot;
+
+               warning:  variable has embedded blanks
+
+</code></pre>
+<p>
+We get less information here, but still useful to check that the data is as expected. There are no empty strings nor any repeated strings. The warning about “embedded blanks” is spaces; it’s telling us that there are spaces in some of the cars (e.g. “Dodge Magnum”). The reason it is a warning is that “Dodge Magnum” and “Dodge  Magnum” looks the same to us, but Stata notices that the second actually has two spaces, so considers these completely unique strings.
+</p>
+<p>
+Two options for <code>codebook</code> which come in handy:
+</p>
+<pre><code>. codebook, compact
+
+Variable      Obs Unique      Mean   Min    Max  Label
+-------------------------------------------------------------------------------
+make           74     74         .     .      .  Make and Model
+price          74     74  6165.257  3291  15906  Price
+mpg            74     21   21.2973    12     41  Mileage (mpg)
+rep78          69      5  3.405797     1      5  Repair Record 1978
+headroom       74      8  2.993243   1.5      5  Headroom (in.)
+trunk          74     18  13.75676     5     23  Trunk space (cu. ft.)
+weight         74     64  3019.459  1760   4840  Weight (lbs.)
+length         74     47  187.9324   142    233  Length (in.)
+turn           74     18  39.64865    31     51  Turn Circle (ft.)
+displacement   74     31  197.2973    79    425  Displacement (cu. in.)
+gear_ratio     74     36  3.014865  2.19   3.89  Gear Ratio
+foreign        74      2  .2972973     0      1  Car type
+-------------------------------------------------------------------------------
+
+</code></pre>
+<p>
+<code>compact</code> shows a reduced size version, most useful for the “Unique” column. (Useful if that’s the only thing you’re running the codebook for.)
+</p>
+<pre><code>. codebook, problems
+
+   Potential problems in dataset   /Applications/Stata/ado/base/a/auto.dta
+
+               potential problem   variables
+--------------------------------------------------
+  str# vars that may be compressed   make
+  string vars with embedded blanks   make
+--------------------------------------------------
+
+</code></pre>
+<p>
+This reports potential issues Stata has discovered in the data. In this data, neither are really concerns (We can run <code>compress</code>, but this isn’t a “problem” so much as a suggestion. We already saw above the concern about “embedded blanks.”) More serious problems that it can detect include:
+</p>
+<ul>
+<li>
+Constant columns (all entries being the same value, including all missing).
+</li>
+<li>
+Issues with value labels (if you’ve attached a value label to a variable and subsequently deleted the value label without detaching it; or if your variable takes on values unaccounted for in the value label).
+</li>
+<li>
+Issues with date variables.
+</li>
+</ul>
+</div>
+<div id="exercise-2" class="section level2">
+<h2><span class="header-section-number">4.5</span> Exercise 2</h2>
+<p>
+If you haven’t already, open the “RDSL.subset” data.
+</p>
+<p>
+Begin by exploring the data generally with <code>describe</code>, <code>summarize</code> and <code>codebook</code>. After you’ve explored a bit, look into answering the following questions:
+</p>
+<ol>
+<li>
+What variables are continuous? Binary? Categorical?
+</li>
+<li>
+Most of the gpa data (<code>hsgpa</code>) are values like 2.9 or 3.8. There are several rows with the values 2.5364995. Does anything in the data tell you why?
+</li>
+<li>
+Run <code>label list FCPREVPG</code> to look at the labels being applied to <code>bcprevpg</code>. There is only one label! Why might that be?
+</li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>Reported in bytes. Roughly 1000 bytes = 1 kilobyte, 1000 kilobytes = 1 megabyte, 1000 megabytes = 1 gigabyte.<a href="data-management.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>They are irrelevant mostly because Stata will adjust them according to our need; so we don’t concern ourselves with it<a href="data-management.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>In the few situations where it can, it doesn’t handle them cleanly.<a href="data-management.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>As we discuss <a href="data-manipulation.html#missing-values">later</a>, in Stata, missing values (represented by <code>.</code> in the data) are considered to be higher than any other number (so 99999 &lt; .).<a href="data-management.html#fnref8">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-with-data-sets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

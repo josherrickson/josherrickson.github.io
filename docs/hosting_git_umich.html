@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hosting a git repo on UM Servers</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+
+  <body>
+    <h1>Josh Errickson</h1>
+    <h2>Hosting a git repo on UM Servers</h2>
+    <p>
+      This will host the bare repo on the UM's SCS servers. It can be cloned on the server or locally.
+    </p>
+    Current limitations:
+    <ul>
+      <li>Pulling and pushing requires a password (UM Servers don't allow logging in with SSH keys).</li>
+      <li>Other users cannot clone this repository.</li>
+      <ul>
+        <li>If you really need to share, you can push the up-to-date working directory to Github or others.</li>
+      </ul>
+    </ul>
+    <ol>
+      <li> <code>git</code> on the SCS servers is quite old. You'll need to run
+        <pre>
+          scl enable rh-git29 httpd24 -- git
+        </pre>
+        instead of just <code>git</code>. If you put the following line in your .zshrc (or the bash equivalent), you can alias <code>git</code> to this.
+        <pre>
+          alias git='scl enable rh-git29 httpd24 -- git'
+        </pre>
+        <p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
+        <p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login first.)</p></li>
+      <li>Next, you'll do a bare-repo clone on the server:
+        <pre>
+          git clone --bare [repo address]
+        </pre>
+        <p>If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo, instead you can init the repo and
+        then add it as the remote.</p>
+        <p>On the server, create a directory called "[repo name].git". Within it, run:</p>
+        <pre>
+          git init --bare
+        </pre>
+        <p>Finally, locally, run:</p>
+        <pre>
+          git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
+        </pre>
+      <li>You can now push and pull from the server.</li>
+    </ol>
+  </body>
+</html>

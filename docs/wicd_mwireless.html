@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Getting WICD to connect to MWireless</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+
+  <body>
+    <h1>Josh Errickson</h1>
+    <h2>Getting WICD to connect to MWireless</h2>
+    <b>Note:</b> There's apparently a bug which results in "Bad Password" errors. Using PEAP with GTC may work.
+    <ol>
+      <li> Save the file <a href="files/peap-mschapv2">peap-mschapv2</a> in
+        <code>/etc/wicd/encrytion/templates</code>.</li>
+      <li> In the same directory, append the line "peap-mschapv2" to the end
+        of file <code>active</code>.</li>
+      <li> Restart WICD, and when connecting to MWireless, choose the new
+        PEAP-MSCHAPV2 encryption option. Identity and Password are your Kerberos
+        account, and Path to CA cert is the path to the security certificate
+        available
+        <a href="http://www.itcom.itd.umich.edu/wireless/connect/linux.php">here</a>.</li>
+    </ol>
+    <p>
+      Reference: <a href="http://kb.iu.edu/data/bbtc.html">http://kb.iu.edu/data/bbtc.html</a>
+    </p>
+  </body>
+</html>

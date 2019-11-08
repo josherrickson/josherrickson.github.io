@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>XMonad Setup</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+
+  <body>
+    <h1>Josh Errickson</h1>
+    <h2>XMonad Setup</h2>
+    <p>
+      Install <code>XMonad</code>, <code>XMobar</code>, <code>dmenu</code>
+      and <code>trayer</code> on your system. There are alternatives to some
+      of these, but I've found each of them to be lightweight & stable.
+    </p>
+    <p>
+      Get the following files from my <a href="https://www.github.com/josherrickson/dotfiles">dotfiles repository</a> and put them
+      inside <code>~/.xmonad</code>.
+    </p>
+    <ul class="blank">
+      <li><b>xmonad.hs</b>, this contains settings
+        specific to XMonad tiling, and launches XMobar.</li>
+      <li><b>xmobar.rc</b>, this contains the layout for
+        XMobar (Note: the syntax for this file doesn't allow comments, so
+        check <a href="http://projects.haskell.org/xmobar">the official
+          FAQ</a> for configuration details).</li>
+      <li><b>xmonad-init</b>, this will be executed on
+        startup of XMonad, and can contain any auxilary programs you want to
+        run, especially trayer.  It must contain the line <code>exec
+          xmonad</code>. It also needs to be executable (<code>chmod +x
+          xmonad-init</code>).
+    </ul>
+    <p>
+      Finally, find the
+      file <code>/usr/share/xsessions/xmonad.desktop</code>. The line
+      beginning with <code>Exec</code> must be
+    </p>
+    <pre>
+      Exec=/path/to/xmonad-init</pre>
+    <p>
+      Now, when logging in, choose the xmonad option.
+    </p>
+  </body>
+</html>

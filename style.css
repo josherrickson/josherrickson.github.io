@@ -1,0 +1,39 @@
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #052;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: #DFA;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+.distill-site-header {
+}
+
+.distill-site-footer {
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+
+body a {
+  color: #052;
+  text-decoration: none;
+}
+
+body a:hover {
+  color: #DFA;
+  background-color: #052;
+  text-decoration: none;
+}

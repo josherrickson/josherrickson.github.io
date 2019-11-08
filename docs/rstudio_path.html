@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Making RStudio respect the $PATH on OS X</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+  </head>
+
+  <body>
+    <h1>Josh Errickson</h1>
+    <h2>Making RStudio respect the $PATH on OS X</h2>
+    <p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
+    <pre>
+      echo PATH=$PATH > ~/.Renviron</pre>
+    <p>then RStudio will source this file when opening.</p>
+    <p>You will have to re-run the command if you update your $PATH.</p>
+    <p>You can check if this is working by running</p>
+    <pre>
+      system("echo $PATH")</pre>
+    <p>
+      Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a>
+    </p>
+  </body>
+</html>

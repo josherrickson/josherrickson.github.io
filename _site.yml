@@ -1,0 +1,15 @@
+name: "website"
+title: "Josh Errickson"
+description: "Josh Errickson"
+output_dir: "docs"
+navbar:
+  left:
+    - icon: fab fa-github-alt fa-1x
+      href: https://github.com/josherrickson
+  right:
+    - text: "Home"
+      href: index.html
+output:
+  distill::distill_article:
+    css: style.css
+favicon: favicon.ico
