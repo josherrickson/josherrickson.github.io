@@ -7,7 +7,6 @@ description: Notes for workshops I have given
 
 [Introduction to Stata](https://errickson.net/stata1/index.html): An introductory set of notes focused on data management targeted at individuals who have never used Stata before.
 
-[New Data Management Features in Stata 16](https://errickson.net/stata-16/index.html): Introducing `frames`, storing multiple data sets in memory; and `vl`, defining variable lists.
 
 [Regression Modeling with Stata](https://errickson.net/stata-regression/index.html): Fitting regression models (linear, logistic, Poisson, etc) in Stata.
 
@@ -16,3 +15,5 @@ description: Notes for workshops I have given
 ### Outdated
 
 [Intermediate Stata (Statistical Modeling)](https://errickson.net/stata2/index.html): Statistical modeling including basic tests, graphing and modeling, in Stata. The modeling sections have been mostly replaced by the individual workshops in regression and mixed effects above.
+
+[New Data Management Features in Stata 16](https://errickson.net/stata-16/index.html): Introducing `frames`, storing multiple data sets in memory; and `vl`, defining variable lists. These notes have been integrated into the Introduction to Stata notes.
