@@ -12,7 +12,7 @@
     <h1>Josh Errickson</h1>
     <h2>Hosting a git repo on UM Servers</h2>
     <p>
-      This will host the bare repo on the UM's SCS servers. It can be cloned on the server or locally.
+      This will host the bare repo on the UM's AFS space. It can be cloned on the server or locally.
     </p>
     Current limitations:
     <ul>
@@ -23,7 +23,14 @@
       </ul>
     </ul>
     <ol>
-      <li> <code>git</code> on the SCS servers is quite old. You'll need to run
+      <li> Choose what server you want to access the AFS from:
+        <ul>
+          <li> SCS servers - easy, but being retired soon.</li>
+          <li> login servers - Equally easy, probably the best current option. Wouldn't be surprised if they're retired soon too.</li>
+          <li> greatlakes servers - Most modern, most up-to-date software, but requires 2-factor on each login.</li>
+        </ul>
+      </li>
+      <li> If using SCS or login, <code>git</code> is quite old. You'll need to run
         <pre>
           scl enable rh-git29 httpd24 -- git
         </pre>
@@ -43,9 +50,11 @@
         <pre>
           git init --bare
         </pre>
-        <p>Finally, locally, run:</p>
+        <p>Finally, locally, run one of (depending on choice of server):</p>
         <pre>
           git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
+          git remote add origin [uniqname]@login.itd.umich.edu:[path-to-bare-repo].git
+          git remote add origin [uniqname]@greatlakes.arc.ts.umich.edu:/afs/umich.edu/user/u/n/uniqname/[path-to-bare-repo].git
         </pre>
       <li>You can now push and pull from the server.</li>
     </ol>
