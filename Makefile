@@ -10,6 +10,8 @@ all: $(PAGES)
 	@pandoc -o tmp.html tmp.md
 	@cat header_tmp.html tmp.html > $@
 	@/bin/rm tmp.html header_tmp.html tmp.md
+# If it's not the index, add a "Home" button
+	@if ! [ "$@" = "index.html" ]; then echo "<a href='index.html'>Home</a>" >> $@; fi
 	@echo "</body>" >> $@
 	@echo "</html>" >> $@
 
