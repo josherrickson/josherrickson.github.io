@@ -1,26 +1,88 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Making RStudio respect the $PATH on OS X</title>
+    <title>Making RStudio respect the PATH on OS X</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+          /* Based on solarized-dark - http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          color: var(--green);
+      }
+
+      h2 {
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Josh Errickson</h1>
-    <h2>Making RStudio respect the $PATH on OS X</h2>
-    <p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
-    <pre>
-      echo PATH=$PATH > ~/.Renviron</pre>
-    <p>then RStudio will source this file when opening.</p>
-    <p>You will have to re-run the command if you update your $PATH.</p>
-    <p>You can check if this is working by running</p>
-    <pre>
-      system("echo $PATH")</pre>
-    <p>
-      Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a>
-    </p>
-  </body>
+<h1 id="making-rstudio-respect-the-path-on-os-x">Making RStudio respect the $PATH on OS X</h1>
+<p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
+<pre><code>echo PATH=$PATH &gt; ~/.Renviron</code></pre>
+<p>then RStudio will source this file when opening.</p>
+<p>You will have to re-run the command if you update your $PATH.</p>
+<p>You can check if this is working by running</p>
+<pre><code>system(&quot;echo $PATH&quot;)</code></pre>
+<p>Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable" class="uri">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a></p>
+<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+</body>
 </html>
