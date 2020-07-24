@@ -1,7 +1,8 @@
-PAGES=index.html code.html stats-notes.html workshops.html
+MD=$(shell find . -name "*.md")
+HTML=$(MD:.md=.html)
 
 .PHONY:all
-all: $(PAGES)
+all: $(HTML)
 
 %.html: %.md style.css
 	@echo "$< -> $@"
@@ -21,4 +22,4 @@ open:
 
 .PHONY:clean
 clean:
-	@/bin/rm -f $(PAGES)
+	@/bin/rm -f $(HTML)
