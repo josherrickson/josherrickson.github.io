@@ -1,6 +1,5 @@
----
-title: "Statistics Notes"
----
+Statistics Notes
+# Statistics Notes
 
 [Marginal Effects](marginsnotes/index.html): A long-form document on using marginal effects (marginal means and marginal slopes) to improve interpretation of regression coefficients, especially in the presence of an interaction. Presents as a rosetta stone for Stata's `margins` command and R. *Software*: Stata and R.
 
