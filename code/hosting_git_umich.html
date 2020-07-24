@@ -4,59 +4,105 @@
     <title>Hosting a git repo on UM Servers</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta name="keywords" content="Josh Errickson, Josh, Errickson, University of Michigan, Michigan, CSCAR, Causal, Causal Inference, Statistics, R" lang="en-us">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+          /* Based on solarized-dark - http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          color: var(--green);
+      }
+
+      h2 {
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Josh Errickson</h1>
-    <h2>Hosting a git repo on UM Servers</h2>
-    <p>
-      This will host the bare repo on the UM's AFS space. It can be cloned on the server or locally.
-    </p>
-    Current limitations:
-    <ul>
-      <li>Pulling and pushing requires a password (UM Servers don't allow logging in with SSH keys).</li>
-      <li>Other users cannot clone this repository.</li>
-      <ul>
-        <li>If you really need to share, you can push the up-to-date working directory to Github or others.</li>
-      </ul>
-    </ul>
-    <ol>
-      <li> Choose what server you want to access the AFS from:
-        <ul>
-          <li> SCS servers - easy, but being retired soon.</li>
-          <li> login servers - Equally easy, probably the best current option. Wouldn't be surprised if they're retired soon too.</li>
-          <li> greatlakes servers - Most modern, most up-to-date software, but requires 2-factor on each login.</li>
-        </ul>
-      </li>
-      <li> If using SCS or login, <code>git</code> is quite old. You'll need to run
-        <pre>
-          scl enable rh-git29 httpd24 -- git
-        </pre>
-        instead of just <code>git</code>. If you put the following line in your .zshrc (or the bash equivalent), you can alias <code>git</code> to this.
-        <pre>
-          alias git='scl enable rh-git29 httpd24 -- git'
-        </pre>
-        <p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
-        <p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login first.)</p></li>
-      <li>Next, you'll do a bare-repo clone on the server:
-        <pre>
-          git clone --bare [repo address]
-        </pre>
-        <p>If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo, instead you can init the repo and
-        then add it as the remote.</p>
-        <p>On the server, create a directory called "[repo name].git". Within it, run:</p>
-        <pre>
-          git init --bare
-        </pre>
-        <p>Finally, locally, run one of (depending on choice of server):</p>
-        <pre>
-          git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
-          git remote add origin [uniqname]@login.itd.umich.edu:[path-to-bare-repo].git
-          git remote add origin [uniqname]@greatlakes.arc.ts.umich.edu:/afs/umich.edu/user/u/n/uniqname/[path-to-bare-repo].git
-        </pre>
-      <li>You can now push and pull from the server.</li>
-    </ol>
-  </body>
+<h1 id="hosting-a-git-repo-on-um-servers">Hosting a git repo on UM Servers</h1>
+<p>This will host the bare repo on the UM’s AFS space. It can be cloned on the server or locally.</p>
+<p>Current limitations:</p>
+<p>Pulling and pushing requires a password (UM Servers don’t allow logging in with SSH keys).</p>
+<p>Other users cannot clone this repository.</p>
+<ul>
+<li>If you really need to share, you can push the up-to-date working directory to Github or others.</li>
+</ul>
+<ol type="1">
+<li><p>Choose what server you want to access the AFS from:</p>
+<ul>
+<li>SCS servers - easy, but being retired soon.</li>
+<li>login servers - Equally easy, probably the best current option. Wouldn't be surprised if they're retired soon too.</li>
+<li>greatlakes servers - Most modern, most up-to-date software, but requires 2-factor on each login.</li>
+</ul></li>
+<li><p>If using SCS or login, <code>git</code> is quite old. You'll need to run</p>
+<pre><code>scl enable rh-git29 httpd24 -- git</code></pre>
+<p>instead of just <code>git</code>. If you put the following line in your .zshrc (or the bash equivalent), you can alias <code>git</code> to this.</p>
+<pre><code>alias git=&#39;scl enable rh-git29 httpd24 -- git&#39;</code></pre>
+<p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
+<p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login first.)</p></li>
+<li><p>Next, you'll do a bare-repo clone on the server:</p>
+<pre><code>git clone --bare [repo address]</code></pre>
+<p>If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo, instead you can init the repo and then add it as the remote.</p>
+<p>On the server, create a directory called "[repo name].git". Within it, run:</p>
+<pre><code>git init --bare</code></pre>
+<p>Finally, locally, run one of (depending on choice of server):</p>
+<pre><code>git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
+git remote add origin [uniqname]@login.itd.umich.edu:[path-to-bare-repo].git
+git remote add origin [uniqname]@greatlakes.arc.ts.umich.edu:/afs/umich.edu/user/u/n/uniqname/[path-to-bare-repo].git</code></pre></li>
+<li><p>You can now push and pull from the server.</p></li>
+</ol>
+<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+</body>
 </html>
