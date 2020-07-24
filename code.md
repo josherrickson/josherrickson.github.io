@@ -1,5 +1,5 @@
 Misc Code and Software
-# Misc Code and Software
+# Misc Code \& Software
 [Getting WICD to connect to MWireless](code/wicd_mwireless.html)\
 [Useful Commands for Running Ubuntu on a Macbook](code/macbook_ubuntu.html)\
 [XMonad setup](code/xmonad.html)\
