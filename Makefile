@@ -4,7 +4,7 @@ HTML=$(MD:.md=.html)
 .PHONY:all
 all: $(HTML)
 
-%.html: %.md style.css
+%.html: %.md style.css header.html
 	@echo "$< -> $@"
 	@awk -v newTitle="$(shell head -1 $<)" '{gsub("--title--",newTitle); print}' header.html > header_tmp.html
 	@sed '1d' $< > tmp.md
