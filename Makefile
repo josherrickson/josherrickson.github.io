@@ -1,5 +1,5 @@
 .PHONY:default
-default: index.html code.html stats-notes.html
+default: index.html code.html stats-notes.html workshops.html
 
 %.html: %.md
 	@echo "$< -> $@"

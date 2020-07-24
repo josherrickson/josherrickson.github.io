@@ -1,7 +1,8 @@
----
-title: "Workshops"
-description: Notes for workshops I have given
----
+Workshops
+
+# Workshops
+
+## Notes for workshops I have given
 
 [Matching with R](https://errickson.net/matching-slides/index.html): Using the [`optmatch`](https://cran.r-project.org/web/packages/optmatch/index.html) package in R to perform matching, with or without propensity scores.
 
