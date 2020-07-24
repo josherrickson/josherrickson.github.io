@@ -1,6 +1,15 @@
 .PHONY:default
-default:
-	@R -q -e "rmarkdown::render_site()"
+default: index.html code.html
+
+%.html: %.md
+	@echo "$< -> $@"
+	@awk -v newTitle="$(shell head -1 $<)" '{gsub("--title--",newTitle); print}' header.html > header_tmp.html
+	@sed '1d' $< > tmp.md
+	@pandoc -o tmp.html tmp.md
+	@cat header_tmp.html tmp.html > $@
+	@/bin/rm tmp.html header_tmp.html tmp.md
+	@echo "</body>" >> $@
+	@echo "</html>" >> $@
 
 .PHONY:open
 open:

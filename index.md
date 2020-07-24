@@ -1,7 +1,5 @@
----
-title: Josh Errickson
-site: distill::distill_website
----
+Josh Errickson
+# Josh Errickson
 
 Office: 3555 Rackham (inside CSCAR suite)\
 Email: jerrick (at) umich.edu
