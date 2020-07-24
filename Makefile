@@ -1,5 +1,7 @@
-.PHONY:default
-default: index.html code.html stats-notes.html workshops.html
+PAGES=index.html code.html stats-notes.html workshops.html
+
+.PHONY:all
+all: $(PAGES)
 
 %.html: %.md style.css
 	@echo "$< -> $@"
@@ -14,3 +16,7 @@ default: index.html code.html stats-notes.html workshops.html
 .PHONY:open
 open:
 	@open index.html
+
+.PHONY:clean
+clean:
+	@/bin/rm -f $(PAGES)
