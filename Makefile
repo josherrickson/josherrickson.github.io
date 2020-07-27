@@ -36,3 +36,5 @@ open:
 .PHONY:clean
 clean:
 	@/bin/rm -f $(PRIMARY_HTML) $(CODE_HTML)
+
+fresh: clean all
