@@ -82,7 +82,7 @@
 
   <body>
 <h1 id="making-rstudio-respect-the-path-on-os-x">Making RStudio respect the $PATH on OS X</h1>
-<p>Update 7/30/20: Doing the following causes an issue on Catalina with R 4.0.2 (<code>exec: rm: not found</code> or <code>exec: sh: not found</code> or similar). Rename the .Renviron file to restore functionality. I’m leaving this page up for historical reasons but it may not be necessary in most scenarios anymore.</p>
+<p>Update 7/30/20: Doing the following causes an issue on Catalina with R 4.0.2 (“<code>exec: rm: not found</code>” or “<code>exec: sh: not found</code>” or similar). Delete or rename the <code>.Renviron</code> file to restore functionality. I’m leaving this page up for historical reasons but it may not be necessary in most scenarios anymore.</p>
 <p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
 <pre><code>echo PATH=$PATH &gt; ~/.Renviron</code></pre>
 <p>then RStudio will source this file when opening.</p>
