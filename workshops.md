@@ -5,8 +5,7 @@ Workshops
 
 [Matching with R](https://errickson.net/matching-slides/index.html): Using the [`optmatch`](https://cran.r-project.org/web/packages/optmatch/index.html) package in R to perform matching, with or without propensity scores.
 
-[Introduction to Stata](https://errickson.net/stata1/index.html): An introductory set of notes focused on data management targeted at individuals who have never used Stata before.
-
+[Introduction to Stata](https://cscar.github.io/workshop-stata-intro/): An introductory set of notes focused on data management targeted at individuals who have never used Stata before.
 
 [Regression Modeling with Stata](https://errickson.net/stata-regression/index.html): Fitting regression models (linear, logistic, Poisson, etc) in Stata.
 
