@@ -24,3 +24,5 @@ Statistics Notes
 [Selecting a random subset of the data, potentially within subgroups](stats-notes/randomselection.html): An easy way to generate a random sample of your data of arbitrary size, including a stratified approach. *Software*: Stata, though concepts could transfer to other software.
 
 [Mediation with Survey data](stats-notes/svy_gsem_teffects.html): To fit a mediation model in Stata using complex survey data requires using `gsem`. Unfortunately, the `gsem` command does not support directly estimating direct, indirect and total effects. This documents how to compute them. *Software*: Stata.
+
+[The "Divide by 4" rule](stats-notes/divideby4.html): An additional tool in interpretiing logistic regression coefficients is the "Divide by 4" rule. *Software*: Stata, though concepts could transfer to other software.
