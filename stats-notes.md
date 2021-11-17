@@ -1,7 +1,7 @@
 Statistics Notes
 # Statistics Notes
 
-[Marginal Effects](marginsnotes/index.html): A long-form document on using marginal effects (marginal means and marginal slopes) to improve interpretation of regression coefficients, especially in the presence of an interaction. Presents as a rosetta stone for Stata's `margins` command and R. *Software*: Stata and R.
+[Marginal Effects](marginsnotes/index.html): A long-form document on using marginal effects (marginal means and marginal slopes) to improve interpretation of regression coefficients, especially in the presence of an interaction. Presents as a Rosetta stone for Stata's `margins` command and R. *Software*: Stata and R.
 
 [Interpreting log transformations in regression](stats-notes/logtransform.html): Interpreting coefficients from a linear regression model (or linear mixed model) when the predictor and/or the outcome have been log transformed. *Software*: R, though concepts could transfer to other software.
 
@@ -25,6 +25,6 @@ Statistics Notes
 
 [Mediation with Survey data](stats-notes/svy_gsem_teffects.html): To fit a mediation model in Stata using complex survey data requires using `gsem`. Unfortunately, the `gsem` command does not support directly estimating direct, indirect and total effects. This documents how to compute them. *Software*: Stata.
 
-[The "Divide by 4" rule](stats-notes/divideby4.html): An additional tool in interpretiing logistic regression coefficients is the "Divide by 4" rule. *Software*: Stata, though concepts could transfer to other software.
+[The "Divide by 4" rule](stats-notes/divideby4.html): An additional tool in interpreting logistic regression coefficients is the "Divide by 4" rule. *Software*: Stata, though concepts could transfer to other software.
 
-[Response Surface Modeling](stats-notes/responsesurface.html): An example of visualization after running a "response surface model", aka just regression with an interaction. *Software*: R.
+[Response Surface Model Plotting](stats-notes/responsesurfaceplot.html): An example of visualization after running a "response surface model", aka just regression with an interaction. *Software*: R.
