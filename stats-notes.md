@@ -28,3 +28,5 @@ Statistics Notes
 [The "Divide by 4" rule](stats-notes/divideby4.html): An additional tool in interpreting logistic regression coefficients is the "Divide by 4" rule. *Software*: Stata, though concepts could transfer to other software.
 
 [Response Surface Model Plotting](stats-notes/responsesurfaceplot.html): An example of visualization after running a "response surface model", aka just regression with an interaction. *Software*: R.
+
+[Modifying built-in-Stata commands](stats-notes/modifying_stata_builtin.html): A fun story about hacking one of Stata's shipped-with commands to make some code work. A story rather than a guide or instructions. *Software*: Stata.
