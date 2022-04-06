@@ -17,11 +17,12 @@ I develop several R packages:
   [CRAN](https://cran.r-project.org/package=rlemon)] providing an R interface to
   the [LEMON graph library](https://lemon.cs.elte.hu/trac/lemon).
 - [<img src="https://errickson.net/rrelaxiv/logo.png"
-  style="height:20px;"/>**rrelaxiv**](https://errickson.net/rrelaxiv)
+  style="height:25px;"/>**rrelaxiv**](https://errickson.net/rrelaxiv)
   [[Github](https://github.com/josherrickson/rrelaxiv)] providing an R interface
   to the [RELAX-IV algorithm](https://www.mit.edu/~dimitrib/RELAX4_doc.pdf) for
   solving the min cost flow problem.
-- [**howManyImputations**](https://errickson.net/howManyImputations)
+- [<img src="https://errickson.net/howManyImputations/logo.png"
+  style="height:25px;"/>**howManyImputations**](https://errickson.net/howManyImputations)
   [[Github](https://github.com/josherrickson/howManyImputations),
   [CRAN](https://cran.r-project.org/package=howManyImputations)] an
   implementation of [von Hippel (2018)](https://missingdata.org)'s method to
