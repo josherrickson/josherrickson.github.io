@@ -12,7 +12,8 @@ I develop several R packages:
   [[Github](https://github.com/markmfredrickson/optmatch),
   [CRAN](http://cran.r-project.org/web/packages/optmatch/index.html)]
   implementing optimal full matching.
-- [**rlemon**](https://errickson.net/rlemon)
+- [<img src="https://errickson.net/rlemon/logo.png"
+  style="height:25px;"/>**rlemon**](https://errickson.net/rlemon)
   [[Github](https://github.com/josherrickson/rlemon),
   [CRAN](https://cran.r-project.org/package=rlemon)] providing an R interface to
   the [LEMON graph library](https://lemon.cs.elte.hu/trac/lemon).
