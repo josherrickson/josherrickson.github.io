@@ -1,0 +1,34 @@
+```{r, include = FALSE}
+library(badger)
+```
+# Package Status
+
+## Optmatch
+
+`r badge_cran_download("optmatch", "grand-total", "blue")` `r badge_cran_download("optmatch", "last-month", "green")` `r badge_cran_download("optmatch", "last-week", "yellow")`
+
+`r badge_code_size("markmfredrickson/optmatch")` `r badge_dependencies("optmatch")`
+
+`r badge_cran_checks("optmatch")` `r badge_github_actions("markmfredrickson/optmatch")`
+
+## rlemon
+
+`r badge_cran_download("rlemon", "grand-total", "blue")` `r badge_cran_download("rlemon", "last-month", "green")` `r badge_cran_download("rlemon", "last-week", "yellow")`
+
+`r badge_code_size("josherrickson/rlemon")` `r badge_dependencies("rlemon")`
+
+`r badge_cran_checks("rlemon")` `r badge_github_actions("josherrickson/rlemon")`
+
+## rrelaxiv
+
+`r badge_code_size("josherrickson/rrelaxiv")`
+
+`r badge_github_actions("josherrickson/rrelaxiv")`
+
+## howManyImputations
+
+`r badge_cran_download("howManyImputations", "grand-total", "blue")` `r badge_cran_download("howManyImputations", "last-month", "green")` `r badge_cran_download("howManyImputations", "last-week", "yellow")`
+
+`r badge_code_size("josherrickson/howManyImputations")` `r badge_dependencies("howManyImputations")`
+
+`r badge_cran_checks("howManyImputations")` `r badge_github_actions("josherrickson/howManyImputations", action = "R-build-check")`

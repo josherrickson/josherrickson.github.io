@@ -5,7 +5,7 @@ CODE_MD=$(shell find code -name "*.md")
 CODE_HTML=$(CODE_MD:.md=.html)
 
 .PHONY:all
-all: $(PRIMARY_HTML) $(CODE_HTML)
+all: $(PRIMARY_HTML) $(CODE_HTML) pkgs.md
 
 # Defines type of navigation links on bottom of page.
 # none: No links (only for index)
@@ -15,6 +15,8 @@ $(CODE_HTML): LINK:=code
 $(PRIMARY_HTML): LINK:=home
 index.html: LINK:=none
 
+pkgs.md: pkgs.Rmd
+	@R -q -e 'rmarkdown::render("pkgs.Rmd", rmarkdown::md_document())'
 
 %.html: %.md header.html
 	@echo "$< -> $@"

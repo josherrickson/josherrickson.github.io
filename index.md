@@ -39,4 +39,4 @@ Below you will find various resources I've created which may be useful.
 
 **[Statistical Notes](stats-notes.html)**: Short-form documents discussing various statistical topics.
 
-**[Misc. Code & Software](code.html)**: Bits and bobs that are probably useful to almost nobody, about topics like Linux or Emacs.
+**[Misc. Code & Software](code.html)**: Bits and bobs that are probably useful to almost nobody, about topics like Linux or Emacs[.](pkgs.html)
