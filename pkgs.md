@@ -61,4 +61,4 @@ status](https://github.com/josherrickson/howManyImputations/workflows/R-build-ch
 [![CRAN
 checks](https://cranchecks.info/badges/summary/RItools)](https://cran.r-project.org/web/checks/check_results_RItools.html)
 [![R build
-status](https://github.com/markmfredrickson/RItools/workflows/R-CMD-check/badge.svg)](https://github.com/markmfredrickson/RItools/actions)
+status](https://github.com/markmfredrickson/RItools/workflows/R-build-check/badge.svg)](https://github.com/markmfredrickson/RItools/actions)

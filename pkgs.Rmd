@@ -39,4 +39,4 @@ library(badger)
 
 `r badge_code_size("markmfredrickson/RItools")` `r badge_dependencies("RItools")`
 
-`r badge_cran_checks("RItools")` `r badge_github_actions("markmfredrickson/RItools")`
+`r badge_cran_checks("RItools")` `r badge_github_actions("markmfredrickson/RItools", action = "R-build-check")`
