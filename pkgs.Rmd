@@ -32,3 +32,11 @@ library(badger)
 `r badge_code_size("josherrickson/howManyImputations")` `r badge_dependencies("howManyImputations")`
 
 `r badge_cran_checks("howManyImputations")` `r badge_github_actions("josherrickson/howManyImputations", action = "R-build-check")`
+
+## RItools
+
+`r badge_cran_download("RItools", "grand-total", "blue")` `r badge_cran_download("RItools", "last-month", "green")` `r badge_cran_download("RItools", "last-week", "yellow")`
+
+`r badge_code_size("markmfredrickson/RItools")` `r badge_dependencies("RItools")`
+
+`r badge_cran_checks("RItools")` `r badge_github_actions("markmfredrickson/RItools")`
