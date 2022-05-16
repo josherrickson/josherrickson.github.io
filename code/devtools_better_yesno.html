@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Misc Code and Software</title>
+    <title>A more sane yesno for devtools</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css" type="text/css"/>
@@ -81,15 +81,10 @@
   </head>
 
   <body>
-<h1 id="misc-code-software">Misc Code &amp; Software</h1>
-<p><a href="code/devtools_better_yesno.html">A more sane <code>yesno</code> for <strong>devtools</strong></a><br />
-<a href="code/wicd_mwireless.html">Getting WICD to connect to MWireless</a><br />
-<a href="code/macbook_ubuntu.html">Useful Commands for Running Ubuntu on a Macbook</a><br />
-<a href="code/xmonad.html">XMonad setup</a><br />
-<a href="code/org_agenda_calendar.html">Org-Agenda as a Calendar</a><br />
-<a href="code/R_knitr_latex.html">Creating Variants of a File with R + Knitr + Brew + LaTeX</a><br />
-<a href="code/rstudio_path.html">Making RStudio respect the $PATH on OS X</a><br />
-<a href="code/hosting_git_umich.html">Hosting a git repo on the UM servers</a></p>
-<a href='index.html'>Home</a>
+<h1 id="a-more-sane-yesno-for-devtools">A More Sane <code>yesno</code> for <strong>devtools</strong></h1>
+<p>When working with <a href="https://devtools.r-lib.org/"><strong>devtools</strong></a>, you’ll often be asked a yes/no question and get the annoying prompt of three randomly ordered and randomly worded variations of “Yes” and “No”, so that you have to think hard to pick the right one. I get what they’re trying to do (force you to actually think about the question rather than hitting “Y” repeatedly) but I find it very annoying. Here’s a fix.</p>
+<p>Add this code to your .Rprofile, and you’ll now get a static 1: Yes, 2: No prompt.</p>
+<script src="https://gist.github.com/josherrickson/17c9edbd5d4f820d65455ba4ff46e6d0.js"></script>
+<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
 </body>
 </html>
