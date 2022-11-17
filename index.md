@@ -4,7 +4,7 @@ Josh Errickson
 Office: 3555 Rackham (inside CSCAR suite)\
 Email: jerrick (at) umich.edu
 
-I am a statistical consultant at [CSCAR](http://cscar.research.umich.edu/) and adjunct faculty in the Department of Statistics at the University of Michigan.
+I am a statistical consultant at [CSCAR](http://cscar.research.umich.edu/) at the University of Michigan.
 
 I develop several R packages:
 
