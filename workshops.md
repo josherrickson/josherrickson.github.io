@@ -3,7 +3,7 @@ Workshops
 
 ## Notes for workshops I have given
 
-[Matching with R](https://errickson.net/matching-slides/index.html): Using the [**optmatch**](https://cran.r-project.org/web/packages/optmatch/index.html) package in R to perform matching, with or without propensity scores.
+[Matching with R](https://errickson.net/workshop-matching-slides/index.html): Using the [**optmatch**](https://cran.r-project.org/web/packages/optmatch/index.html) package in R to perform matching, with or without propensity scores.
 
 [Introduction to Stata](https://cscar.github.io/workshop-stata-intro/): An introductory set of notes focused on data management targeted at individuals who have never used Stata before.
 
