@@ -2,6 +2,7 @@
 
 ## Optmatch
 
+[![](https://img.shields.io/cran/v/optmatch?color=black)](https://cran.r-project.org/package=optmatch)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/optmatch?color=blue)](https://cran.r-project.org/package=optmatch)
 [![](https://cranlogs.r-pkg.org/badges/last-month/optmatch?color=green)](https://cran.r-project.org/package=optmatch)
 [![](https://cranlogs.r-pkg.org/badges/last-week/optmatch?color=yellow)](https://cran.r-project.org/package=optmatch)
@@ -16,6 +17,7 @@ status](https://github.com/markmfredrickson/optmatch/workflows/R-CMD-check/badge
 
 ## rlemon
 
+[![](https://img.shields.io/cran/v/rlemon?color=black)](https://cran.r-project.org/package=rlemon)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/rlemon?color=blue)](https://cran.r-project.org/package=rlemon)
 [![](https://cranlogs.r-pkg.org/badges/last-month/rlemon?color=green)](https://cran.r-project.org/package=rlemon)
 [![](https://cranlogs.r-pkg.org/badges/last-week/rlemon?color=yellow)](https://cran.r-project.org/package=rlemon)
@@ -37,6 +39,7 @@ status](https://github.com/josherrickson/rrelaxiv/workflows/R-CMD-check/badge.sv
 
 ## howManyImputations
 
+[![](https://img.shields.io/cran/v/howManyImputations?color=black)](https://cran.r-project.org/package=howManyImputations)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/howManyImputations?color=blue)](https://cran.r-project.org/package=howManyImputations)
 [![](https://cranlogs.r-pkg.org/badges/last-month/howManyImputations?color=green)](https://cran.r-project.org/package=howManyImputations)
 [![](https://cranlogs.r-pkg.org/badges/last-week/howManyImputations?color=yellow)](https://cran.r-project.org/package=howManyImputations)
@@ -51,6 +54,7 @@ status](https://github.com/josherrickson/howManyImputations/workflows/R-build-ch
 
 ## RItools
 
+[![](https://img.shields.io/cran/v/RItools?color=black)](https://cran.r-project.org/package=RItools)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/RItools?color=blue)](https://cran.r-project.org/package=RItools)
 [![](https://cranlogs.r-pkg.org/badges/last-month/RItools?color=green)](https://cran.r-project.org/package=RItools)
 [![](https://cranlogs.r-pkg.org/badges/last-week/RItools?color=yellow)](https://cran.r-project.org/package=RItools)
