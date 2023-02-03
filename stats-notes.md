@@ -3,6 +3,8 @@ Statistics Notes
 
 [Marginal Effects](marginsnotes/index.html): A long-form document on using marginal effects (marginal means and marginal slopes) to improve interpretation of regression coefficients, especially in the presence of an interaction. Presents as a Rosetta stone for Stata's `margins` command and R. *Software*: Stata and R.
 
+[Benjamini–Hochberg Procedure](https://josherrickson.shinyapps.io/benj_hoch/): An interactive calculator to apply the Benjamini–Hochberg multiple comparison correction for a series of p-values.
+
 [Interpreting log transformations in regression](stats-notes/logtransform.html): Interpreting coefficients from a linear regression model (or linear mixed model) when the predictor and/or the outcome have been log transformed. *Software*: R, though concepts could transfer to other software.
 
 [Random intercepts in SPSS's Mixed Model](stats-notes/mixedModelsSPSS.html): There are two ways of specifying random intercepts in SPSS's Mixed Model; this discusses their equivalence. *Software*: SPSS.
