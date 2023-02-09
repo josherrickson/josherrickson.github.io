@@ -5,6 +5,8 @@ library(badger)
 
 ## Optmatch
 
+`r badge_cran_release("optmatch", "orange")` `r badge_devel("markmfredrickson/optmatch", "blue")`
+
 `r badge_cran_download("optmatch", "grand-total", "blue")` `r badge_cran_download("optmatch", "last-month", "green")` `r badge_cran_download("optmatch", "last-week", "yellow")`
 
 `r badge_code_size("markmfredrickson/optmatch")` `r badge_dependencies("optmatch")`
@@ -12,6 +14,8 @@ library(badger)
 `r badge_cran_checks("optmatch")` `r badge_github_actions("markmfredrickson/optmatch")`
 
 ## rlemon
+
+`r badge_cran_release("rlemon", "orange")` `r badge_devel("josherrickson/rlemon", "blue")`
 
 `r badge_cran_download("rlemon", "grand-total", "blue")` `r badge_cran_download("rlemon", "last-month", "green")` `r badge_cran_download("rlemon", "last-week", "yellow")`
 
@@ -21,11 +25,15 @@ library(badger)
 
 ## rrelaxiv
 
+`r badge_devel("josherrickson/rrelaxiv", "orange")`
+
 `r badge_code_size("josherrickson/rrelaxiv")`
 
 `r badge_github_actions("josherrickson/rrelaxiv")`
 
 ## howManyImputations
+
+`r badge_cran_release("howManyImputations", "orange")` `r badge_devel("josherrickson/howManyImputations", "blue")`
 
 `r badge_cran_download("howManyImputations", "grand-total", "blue")` `r badge_cran_download("howManyImputations", "last-month", "green")` `r badge_cran_download("howManyImputations", "last-week", "yellow")`
 
@@ -34,6 +42,8 @@ library(badger)
 `r badge_cran_checks("howManyImputations")` `r badge_github_actions("josherrickson/howManyImputations", action = "R-build-check")`
 
 ## RItools
+
+`r badge_cran_release("RItools", "orange")` `r badge_devel("markmfredrickson/RItools", "blue")`
 
 `r badge_cran_download("RItools", "grand-total", "blue")` `r badge_cran_download("RItools", "last-month", "green")` `r badge_cran_download("RItools", "last-week", "yellow")`
 

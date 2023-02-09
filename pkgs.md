@@ -2,10 +2,12 @@
 
 ## Optmatch
 
-[![](https://img.shields.io/cran/v/optmatch?color=black)](https://cran.r-project.org/package=optmatch)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/optmatch?color=blue)](https://cran.r-project.org/package=optmatch)
-[![](https://cranlogs.r-pkg.org/badges/last-month/optmatch?color=green)](https://cran.r-project.org/package=optmatch)
-[![](https://cranlogs.r-pkg.org/badges/last-week/optmatch?color=yellow)](https://cran.r-project.org/package=optmatch)
+[![](https://www.r-pkg.org/badges/version/optmatch?color=orange)](https://cran.r-project.org/package=optmatch)
+[![](https://img.shields.io/badge/devel%20version-0.10.6.9001-blue.svg)](https://github.com/markmfredrickson/optmatch)
+
+[![](http://cranlogs.r-pkg.org/badges/grand-total/optmatch?color=blue)](https://cran.r-project.org/package=optmatch)
+[![](http://cranlogs.r-pkg.org/badges/last-month/optmatch?color=green)](https://cran.r-project.org/package=optmatch)
+[![](http://cranlogs.r-pkg.org/badges/last-week/optmatch?color=yellow)](https://cran.r-project.org/package=optmatch)
 
 [![](https://img.shields.io/github/languages/code-size/markmfredrickson/optmatch.svg)](https://github.com/markmfredrickson/optmatch)
 [![Dependencies](https://tinyverse.netlify.com/badge/optmatch)](https://cran.r-project.org/package=optmatch)
@@ -17,10 +19,12 @@ status](https://github.com/markmfredrickson/optmatch/workflows/R-CMD-check/badge
 
 ## rlemon
 
-[![](https://img.shields.io/cran/v/rlemon?color=black)](https://cran.r-project.org/package=rlemon)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/rlemon?color=blue)](https://cran.r-project.org/package=rlemon)
-[![](https://cranlogs.r-pkg.org/badges/last-month/rlemon?color=green)](https://cran.r-project.org/package=rlemon)
-[![](https://cranlogs.r-pkg.org/badges/last-week/rlemon?color=yellow)](https://cran.r-project.org/package=rlemon)
+[![](https://www.r-pkg.org/badges/version/rlemon?color=orange)](https://cran.r-project.org/package=rlemon)
+[![](https://img.shields.io/badge/devel%20version-0.2.1-blue.svg)](https://github.com/josherrickson/rlemon)
+
+[![](http://cranlogs.r-pkg.org/badges/grand-total/rlemon?color=blue)](https://cran.r-project.org/package=rlemon)
+[![](http://cranlogs.r-pkg.org/badges/last-month/rlemon?color=green)](https://cran.r-project.org/package=rlemon)
+[![](http://cranlogs.r-pkg.org/badges/last-week/rlemon?color=yellow)](https://cran.r-project.org/package=rlemon)
 
 [![](https://img.shields.io/github/languages/code-size/josherrickson/rlemon.svg)](https://github.com/josherrickson/rlemon)
 [![Dependencies](https://tinyverse.netlify.com/badge/rlemon)](https://cran.r-project.org/package=rlemon)
@@ -32,6 +36,8 @@ status](https://github.com/josherrickson/rlemon/workflows/R-CMD-check/badge.svg)
 
 ## rrelaxiv
 
+[![](https://img.shields.io/badge/devel%20version-0.2.1.9001-orange.svg)](https://github.com/josherrickson/rrelaxiv)
+
 [![](https://img.shields.io/github/languages/code-size/josherrickson/rrelaxiv.svg)](https://github.com/josherrickson/rrelaxiv)
 
 [![R build
@@ -39,10 +45,12 @@ status](https://github.com/josherrickson/rrelaxiv/workflows/R-CMD-check/badge.sv
 
 ## howManyImputations
 
-[![](https://img.shields.io/cran/v/howManyImputations?color=black)](https://cran.r-project.org/package=howManyImputations)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/howManyImputations?color=blue)](https://cran.r-project.org/package=howManyImputations)
-[![](https://cranlogs.r-pkg.org/badges/last-month/howManyImputations?color=green)](https://cran.r-project.org/package=howManyImputations)
-[![](https://cranlogs.r-pkg.org/badges/last-week/howManyImputations?color=yellow)](https://cran.r-project.org/package=howManyImputations)
+[![](https://www.r-pkg.org/badges/version/howManyImputations?color=orange)](https://cran.r-project.org/package=howManyImputations)
+[![](https://img.shields.io/badge/devel%20version-0.2.4-blue.svg)](https://github.com/josherrickson/howManyImputations)
+
+[![](http://cranlogs.r-pkg.org/badges/grand-total/howManyImputations?color=blue)](https://cran.r-project.org/package=howManyImputations)
+[![](http://cranlogs.r-pkg.org/badges/last-month/howManyImputations?color=green)](https://cran.r-project.org/package=howManyImputations)
+[![](http://cranlogs.r-pkg.org/badges/last-week/howManyImputations?color=yellow)](https://cran.r-project.org/package=howManyImputations)
 
 [![](https://img.shields.io/github/languages/code-size/josherrickson/howManyImputations.svg)](https://github.com/josherrickson/howManyImputations)
 [![Dependencies](https://tinyverse.netlify.com/badge/howManyImputations)](https://cran.r-project.org/package=howManyImputations)
@@ -54,10 +62,12 @@ status](https://github.com/josherrickson/howManyImputations/workflows/R-build-ch
 
 ## RItools
 
-[![](https://img.shields.io/cran/v/RItools?color=black)](https://cran.r-project.org/package=RItools)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/RItools?color=blue)](https://cran.r-project.org/package=RItools)
-[![](https://cranlogs.r-pkg.org/badges/last-month/RItools?color=green)](https://cran.r-project.org/package=RItools)
-[![](https://cranlogs.r-pkg.org/badges/last-week/RItools?color=yellow)](https://cran.r-project.org/package=RItools)
+[![](https://www.r-pkg.org/badges/version/RItools?color=orange)](https://cran.r-project.org/package=RItools)
+[![](https://img.shields.io/badge/devel%20version-0.3--2-blue.svg)](https://github.com/markmfredrickson/RItools)
+
+[![](http://cranlogs.r-pkg.org/badges/grand-total/RItools?color=blue)](https://cran.r-project.org/package=RItools)
+[![](http://cranlogs.r-pkg.org/badges/last-month/RItools?color=green)](https://cran.r-project.org/package=RItools)
+[![](http://cranlogs.r-pkg.org/badges/last-week/RItools?color=yellow)](https://cran.r-project.org/package=RItools)
 
 [![](https://img.shields.io/github/languages/code-size/markmfredrickson/RItools.svg)](https://github.com/markmfredrickson/RItools)
 [![Dependencies](https://tinyverse.netlify.com/badge/RItools)](https://cran.r-project.org/package=RItools)
