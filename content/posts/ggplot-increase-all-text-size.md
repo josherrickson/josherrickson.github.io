@@ -1,10 +1,10 @@
 ---
 title: "Increase ALL Text Size in ggplot"
 date: 2023-03-22T12:04:41-04:00
-draft: false
 tags:
   - R
   - ggplot
+  - visualization
 ---
 
 You can add

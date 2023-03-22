@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Color by Significance in R&#39;s `forestplot`
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <a href="/posts/">Back to Posts</a>
+  <h1>Color by Significance in R&#39;s `forestplot`</h1>
+  
+  
+  
+  <a href="http://errickson.net/tags/forestplot/">#forestplot</a>
+  
+  
+  
+  <a href="http://errickson.net/tags/r/">#r</a>
+  
+  
+  
+  <a href="http://errickson.net/tags/visualization/">#visualization</a>
+  
+  
+  
+  <p>The
+<a href="https://cran.r-project.org/web/packages/forestplot/vignettes/forestplot.html">forestplot</a>
+package doesn&rsquo;t easily support advanced coloring of each point, specifically to
+flag significance levels.</p>
+<p>It does however supported custom coloring via a moderately complicated custom
+function, so here&rsquo;s an example of how to color by significance.</p>
+<p>First, create the following function:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>fn <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">local</span>({
+</span></span><span style="display:flex;"><span>  i <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  clrs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ifelse</span>(dat<span style="color:#f92672">$</span>pv <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">.05</span>, <span style="color:#e6db74">&#34;darkgreen&#34;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f92672">-</span><span style="color:#a6e22e">ifelse</span>(dat<span style="color:#f92672">$</span>pv <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">.1</span>, <span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;darkgrey&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>, clr.line, clr.marker) {
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">&lt;&lt;-</span> i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fpDrawNormalCI</span>(<span style="color:#66d9ef">...</span>,
+</span></span><span style="display:flex;"><span>                   clr.line <span style="color:#f92672">=</span> clrs[i],
+</span></span><span style="display:flex;"><span>                   clr.marker <span style="color:#f92672">=</span> clrs[i])
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Inside <code>local()</code> so that <code>i</code> isn&rsquo;t manipulated elsewhere.</p>
+<p>The <code>clrs</code> object defined in lines 3-4 returns a specific color based upon the
+p-value, here stored in <code>dat$pv</code>. For context, &ldquo;darkgreen&rdquo; is used for p-values
+below .05, &ldquo;blue&rdquo; for p-values below .10 (but above .05), and &ldquo;darkgrey&rdquo; for
+p-values above .10.</p>
+<p>If you want different colors for the points and the lines, define two different
+vectors similar to <code>clrs</code>, and change lines 9-10 to point to the differing
+vectors.</p>
+<p>Following the creation of <code>fn</code>, you can add it to your <code>forestplot()</code> via:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  <span style="color:#a6e22e">forestplot</span>(<span style="color:#66d9ef">...</span>,
+</span></span><span style="display:flex;"><span>             fn.ci_norm <span style="color:#f92672">=</span> fn,
+</span></span><span style="display:flex;"><span>             <span style="color:#66d9ef">...</span>)
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  <a href="/posts/">Back to Posts</a>
+</article>
+
+  </body>
+</html>

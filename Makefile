@@ -22,10 +22,10 @@ static/%.html: markdown/%.md
 
 .PHONY:open
 open:
-	@open index.html
+	@open docs/index.html
 
 .PHONY:clean
 clean:
-	@/bin/rm -f $(PRIMARY_HTML) $(CODE_HTML)
+	@/bin/rm -f $(PRIMARY_HTML)
 
 fresh: clean all

@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2023 12:04:41 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 12:44:42 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ggplot</title>
-      <link>http://errickson.net/tags/ggplot/</link>
-      <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
+      <title>forestplot</title>
+      <link>http://errickson.net/tags/forestplot/</link>
+      <pubDate>Wed, 22 Mar 2023 12:44:42 -0400</pubDate>
       
-      <guid>http://errickson.net/tags/ggplot/</guid>
+      <guid>http://errickson.net/tags/forestplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
       <link>http://errickson.net/tags/r/</link>
-      <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
+      <pubDate>Wed, 22 Mar 2023 12:44:42 -0400</pubDate>
       
       <guid>http://errickson.net/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualization</title>
+      <link>http://errickson.net/tags/visualization/</link>
+      <pubDate>Wed, 22 Mar 2023 12:44:42 -0400</pubDate>
+      
+      <guid>http://errickson.net/tags/visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot</title>
+      <link>http://errickson.net/tags/ggplot/</link>
+      <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
+      
+      <guid>http://errickson.net/tags/ggplot/</guid>
       <description></description>
     </item>
     

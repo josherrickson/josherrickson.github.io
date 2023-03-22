@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://errickson.net/posts/forestplot-color-by-significance/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/forestplot/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/r/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/visualization/</loc>
+    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
+  </url><url>
     <loc>http://errickson.net/tags/ggplot/</loc>
     <lastmod>2023-03-22T12:04:41-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/ggplot-increase-all-text-size/</loc>
-    <lastmod>2023-03-22T12:04:41-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/</loc>
-    <lastmod>2023-03-22T12:04:41-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/posts/</loc>
-    <lastmod>2023-03-22T12:04:41-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/r/</loc>
-    <lastmod>2023-03-22T12:04:41-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/</loc>
     <lastmod>2023-03-22T12:04:41-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/tags/git/</loc>

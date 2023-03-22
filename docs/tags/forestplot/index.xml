@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Josh Errickson</title>
-    <link>http://errickson.net/tags/r/</link>
-    <description>Recent content in R on Josh Errickson</description>
+    <title>forestplot on Josh Errickson</title>
+    <link>http://errickson.net/tags/forestplot/</link>
+    <description>Recent content in forestplot on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2023 12:44:42 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 12:44:42 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/forestplot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Color by Significance in R&#39;s `forestplot`</title>
       <link>http://errickson.net/posts/forestplot-color-by-significance/</link>
@@ -17,17 +17,6 @@
 It does however supported custom coloring via a moderately complicated custom function, so here&amp;rsquo;s an example of how to color by significance.
 First, create the following function:
 1 2 3 4 5 6 7 8 9 10 11 12 fn &amp;lt;- local({ i &amp;lt;- 0 clrs &amp;lt;- ifelse(dat$pv &amp;lt; .05, &amp;#34;darkgreen&amp;#34;, -ifelse(dat$pv &amp;lt; .1, &amp;#34;blue&amp;#34;, &amp;#34;darkgrey&amp;#34;)) function(.</description>
-    </item>
-    
-    <item>
-      <title>Increase ALL Text Size in ggplot</title>
-      <link>http://errickson.net/posts/ggplot-increase-all-text-size/</link>
-      <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
-      
-      <guid>http://errickson.net/posts/ggplot-increase-all-text-size/</guid>
-      <description>You can add
-1 + theme( text = element_text(size=20))) to a ggplot object to modify the size of ALL text elements.
-(This is with ggplot 3.4.1 in case they change the API again.)</description>
     </item>
     
   </channel>
