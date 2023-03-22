@@ -6,7 +6,50 @@
     <description>Recent content on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2023 12:59:53 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 13:30:35 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disable Slidy Click Advance</title>
+      <link>http://errickson.net/posts/disable-slidy-click-advance/</link>
+      <pubDate>Wed, 22 Mar 2023 13:30:35 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/disable-slidy-click-advance/</guid>
+      <description>Slidy presentations in R, by default, advance on mouse-click, which can be frustrating.
+Once you have a Slidy presentation loaded, the &amp;ldquo;k&amp;rdquo; key will disable this.
+We can disable it more generally by modifying the rmarkdown package you have installed.
+Find your rmarkdown installation: 1 system.file(package = &amp;#34;rmarkdown&amp;#34;) Navigate to that directory, then edit the file: rmd/slidy/Slidy2/scripts/slidy.js Find the line that defines mouse_click_enabled (in rmarkdown version 2.20, this is line 55).</description>
+    </item>
+    
+    <item>
+      <title>Subsets and subpopulations in complex survey designs</title>
+      <link>http://errickson.net/posts/subpop-complex-survey/</link>
+      <pubDate>Wed, 22 Mar 2023 13:20:56 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/subpop-complex-survey/</guid>
+      <description>Generally you should not just subset complex survey data to do subpopulation analysis, instead using the built in tools, e.g. Stata&amp;rsquo;s svy, subpop(z): ... or R&amp;rsquo;s subset.survey.design
+However, in the following two scenarios, subsetting versus formal subpopulations will give identical results:
+The subpopulation are strata. For example, say you stratify by race where race can take on categories &amp;ldquo;white&amp;rdquo;, &amp;ldquo;black&amp;rdquo; and &amp;ldquo;other.. If you want to look at one race (&amp;ldquo;black&amp;rdquo;) (or several races [&amp;ldquo;black&amp;rdquo; and &amp;ldquo;other&amp;rdquo;]), these subpopulations capture one (or several) entire strata.</description>
+    </item>
+    
+    <item>
+      <title>How to Scroll in Tmux</title>
+      <link>http://errickson.net/posts/scrolling-in-tmux/</link>
+      <pubDate>Wed, 22 Mar 2023 13:09:18 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/scrolling-in-tmux/</guid>
+      <description>Ctrl-b then [, then you can use your normal navigation keys to scroll around (eg. Up Arrow or PgDn). Press q or Ctrl-c to quit scroll mode.</description>
+    </item>
+    
+    <item>
+      <title>The Rule of Three</title>
+      <link>http://errickson.net/posts/the-rule-of-three/</link>
+      <pubDate>Wed, 22 Mar 2023 13:05:25 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/the-rule-of-three/</guid>
+      <description>https://en.wikipedia.org/wiki/Rule_of_three_(statistics)
+The rule of three states that if a certain event did not occur in a sample with n subjects, the interval from 0 to 3/n is a 95% confidence interval for the rate of occurrences in the population. When n is greater than 30, this is a good approximation of results from more sensitive tests.
+Eypasch, Ernst, et al. &amp;ldquo;Probability of adverse events that have not yet occurred: a statistical reminder.</description>
+    </item>
+    
     <item>
       <title>Exclude files from git grep</title>
       <link>http://errickson.net/posts/git-grep-exclude-files/</link>

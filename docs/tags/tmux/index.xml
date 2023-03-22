@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tmux on Josh Errickson</title>
+    <link>http://errickson.net/tags/tmux/</link>
+    <description>Recent content in tmux on Josh Errickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 13:09:18 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/tmux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Scroll in Tmux</title>
+      <link>http://errickson.net/posts/scrolling-in-tmux/</link>
+      <pubDate>Wed, 22 Mar 2023 13:09:18 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/scrolling-in-tmux/</guid>
+      <description>Ctrl-b then [, then you can use your normal navigation keys to scroll around (eg. Up Arrow or PgDn). Press q or Ctrl-c to quit scroll mode.</description>
+    </item>
+    
+  </channel>
+</rss>

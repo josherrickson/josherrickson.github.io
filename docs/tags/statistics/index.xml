@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics on Josh Errickson</title>
+    <link>http://errickson.net/tags/statistics/</link>
+    <description>Recent content in statistics on Josh Errickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 13:20:56 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subsets and subpopulations in complex survey designs</title>
+      <link>http://errickson.net/posts/subpop-complex-survey/</link>
+      <pubDate>Wed, 22 Mar 2023 13:20:56 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/subpop-complex-survey/</guid>
+      <description>Generally you should not just subset complex survey data to do subpopulation analysis, instead using the built in tools, e.g. Stata&amp;rsquo;s svy, subpop(z): ... or R&amp;rsquo;s subset.survey.design
+However, in the following two scenarios, subsetting versus formal subpopulations will give identical results:
+The subpopulation are strata. For example, say you stratify by race where race can take on categories &amp;ldquo;white&amp;rdquo;, &amp;ldquo;black&amp;rdquo; and &amp;ldquo;other.. If you want to look at one race (&amp;ldquo;black&amp;rdquo;) (or several races [&amp;ldquo;black&amp;rdquo; and &amp;ldquo;other&amp;rdquo;]), these subpopulations capture one (or several) entire strata.</description>
+    </item>
+    
+    <item>
+      <title>The Rule of Three</title>
+      <link>http://errickson.net/posts/the-rule-of-three/</link>
+      <pubDate>Wed, 22 Mar 2023 13:05:25 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/the-rule-of-three/</guid>
+      <description>https://en.wikipedia.org/wiki/Rule_of_three_(statistics)
+The rule of three states that if a certain event did not occur in a sample with n subjects, the interval from 0 to 3/n is a 95% confidence interval for the rate of occurrences in the population. When n is greater than 30, this is a good approximation of results from more sensitive tests.
+Eypasch, Ernst, et al. &amp;ldquo;Probability of adverse events that have not yet occurred: a statistical reminder.</description>
+    </item>
+    
+  </channel>
+</rss>

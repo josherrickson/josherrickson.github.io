@@ -2,28 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://errickson.net/posts/disable-slidy-click-advance/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/r/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/rmarkdown/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/</loc>
+    <lastmod>2023-03-22T13:30:35-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/statistics/</loc>
+    <lastmod>2023-03-22T13:20:56-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/subpop-complex-survey/</loc>
+    <lastmod>2023-03-22T13:20:56-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/scrolling-in-tmux/</loc>
+    <lastmod>2023-03-22T13:09:18-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/terminal/</loc>
+    <lastmod>2023-03-22T13:09:18-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/tmux/</loc>
+    <lastmod>2023-03-22T13:09:18-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/the-rule-of-three/</loc>
+    <lastmod>2023-03-22T13:05:25-04:00</lastmod>
+  </url><url>
     <loc>http://errickson.net/posts/git-grep-exclude-files/</loc>
     <lastmod>2023-03-22T12:59:53-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/tags/git/</loc>
     <lastmod>2023-03-22T12:59:53-04:00</lastmod>
   </url><url>
-    <loc>http://errickson.net/</loc>
-    <lastmod>2023-03-22T12:59:53-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/posts/</loc>
-    <lastmod>2023-03-22T12:59:53-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/</loc>
-    <lastmod>2023-03-22T12:59:53-04:00</lastmod>
-  </url><url>
     <loc>http://errickson.net/posts/forestplot-color-by-significance/</loc>
     <lastmod>2023-03-22T12:44:42-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/tags/forestplot/</loc>
-    <lastmod>2023-03-22T12:44:42-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/r/</loc>
     <lastmod>2023-03-22T12:44:42-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/tags/visualization/</loc>

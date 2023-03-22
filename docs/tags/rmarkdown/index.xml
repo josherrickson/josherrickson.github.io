@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rmarkdown on Josh Errickson</title>
+    <link>http://errickson.net/tags/rmarkdown/</link>
+    <description>Recent content in Rmarkdown on Josh Errickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 13:30:35 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/rmarkdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disable Slidy Click Advance</title>
+      <link>http://errickson.net/posts/disable-slidy-click-advance/</link>
+      <pubDate>Wed, 22 Mar 2023 13:30:35 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/disable-slidy-click-advance/</guid>
+      <description>Slidy presentations in R, by default, advance on mouse-click, which can be frustrating.
+Once you have a Slidy presentation loaded, the &amp;ldquo;k&amp;rdquo; key will disable this.
+We can disable it more generally by modifying the rmarkdown package you have installed.
+Find your rmarkdown installation: 1 system.file(package = &amp;#34;rmarkdown&amp;#34;) Navigate to that directory, then edit the file: rmd/slidy/Slidy2/scripts/slidy.js Find the line that defines mouse_click_enabled (in rmarkdown version 2.20, this is line 55).</description>
+    </item>
+    
+  </channel>
+</rss>
