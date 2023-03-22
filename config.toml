@@ -2,6 +2,7 @@ baseURL = 'http://errickson.net/'
 languageCode = 'en-us'
 title = 'Josh Errickson'
 publishDir = 'docs'
+pygmentsOptions = "linenos=table"
 
 [taxonomies]
   tag = 'tags'
