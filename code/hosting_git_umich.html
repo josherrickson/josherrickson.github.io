@@ -4,7 +4,6 @@
     <title>Hosting a git repo on UM Servers</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -81,31 +80,45 @@
   </head>
 
   <body>
-<h1 id="hosting-a-git-repo-on-um-servers">Hosting a git repo on UM Servers</h1>
-<p>This will host the bare repo on the UM’s AFS space. It can be cloned on the server or locally.</p>
+<h1 id="hosting-a-git-repo-on-um-servers">Hosting a git repo on UM
+Servers</h1>
+<p>This will host the bare repo on the UM’s AFS space. It can be cloned
+on the server or locally.</p>
 <p>Current limitations:</p>
-<p>Pulling and pushing requires a password (UM Servers don’t allow logging in with SSH keys).</p>
+<p>Pulling and pushing requires a password (UM Servers don’t allow
+logging in with SSH keys).</p>
 <p>Other users cannot clone this repository.</p>
 <ul>
-<li>If you really need to share, you can push the up-to-date working directory to Github or others.</li>
+<li>If you really need to share, you can push the up-to-date working
+directory to Github or others.</li>
 </ul>
 <ol type="1">
 <li><p>Choose what server you want to access the AFS from:</p>
 <ul>
 <li>SCS servers - easy, but being retired soon.</li>
-<li>login servers - Equally easy, probably the best current option. Wouldn't be surprised if they're retired soon too.</li>
-<li>greatlakes servers - Most modern, most up-to-date software, but requires 2-factor on each login.</li>
+<li>login servers - Equally easy, probably the best current option.
+Wouldn't be surprised if they're retired soon too.</li>
+<li>greatlakes servers - Most modern, most up-to-date software, but
+requires 2-factor on each login.</li>
 </ul></li>
-<li><p>If using SCS or login, <code>git</code> is quite old. You'll need to run</p>
+<li><p>If using SCS or login, <code>git</code> is quite old. You'll need
+to run</p>
 <pre><code>scl enable rh-git29 httpd24 -- git</code></pre>
-<p>instead of just <code>git</code>. If you put the following line in your .zshrc (or the bash equivalent), you can alias <code>git</code> to this.</p>
+<p>instead of just <code>git</code>. If you put the following line in
+your .zshrc (or the bash equivalent), you can alias <code>git</code> to
+this.</p>
 <pre><code>alias git=&#39;scl enable rh-git29 httpd24 -- git&#39;</code></pre>
-<p>Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old version.</p>
-<p>Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login first.)</p></li>
+<p>Now using <code>git</code> will run the above, whereas
+<code>\git</code> will ignore the alias and run the old version.</p>
+<p>Confirm this worked with <code>git --version</code> and
+<code>\git --version</code>. (You may need to re-login first.)</p></li>
 <li><p>Next, you'll do a bare-repo clone on the server:</p>
 <pre><code>git clone --bare [repo address]</code></pre>
-<p>If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo, instead you can init the repo and then add it as the remote.</p>
-<p>On the server, create a directory called "[repo name].git". Within it, run:</p>
+<p>If you've never pushed your git repo up to a server you can clone
+from, or you are starting a new repo, instead you can init the repo and
+then add it as the remote.</p>
+<p>On the server, create a directory called "[repo name].git". Within
+it, run:</p>
 <pre><code>git init --bare</code></pre>
 <p>Finally, locally, run one of (depending on choice of server):</p>
 <pre><code>git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git

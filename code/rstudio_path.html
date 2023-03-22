@@ -4,7 +4,6 @@
     <title>Making RStudio respect the PATH on OS X</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -81,15 +80,25 @@
   </head>
 
   <body>
-<h1 id="making-rstudio-respect-the-path-on-os-x">Making RStudio respect the $PATH on OS X</h1>
-<p>Update 7/30/20: Doing the following causes an issue on Catalina with R 4.0.2 (“<code>exec: rm: not found</code>” or “<code>exec: sh: not found</code>” or similar). Delete or rename the <code>.Renviron</code> file to restore functionality. I’m leaving this page up for historical reasons but it may not be necessary in most scenarios anymore.</p>
-<p>RStudio does not respect the $PATH environment variable on OS X. However, it will respect a .Renviron file in your home directory. If you run the following:</p>
+<h1 id="making-rstudio-respect-the-path-on-os-x">Making RStudio respect
+the $PATH on OS X</h1>
+<p>Update 7/30/20: Doing the following causes an issue on Catalina with
+R 4.0.2 (“<code>exec: rm: not found</code>” or
+“<code>exec: sh: not found</code>” or similar). Delete or rename the
+<code>.Renviron</code> file to restore functionality. I’m leaving this
+page up for historical reasons but it may not be necessary in most
+scenarios anymore.</p>
+<p>RStudio does not respect the $PATH environment variable on OS X.
+However, it will respect a .Renviron file in your home directory. If you
+run the following:</p>
 <pre><code>echo PATH=$PATH &gt; ~/.Renviron</code></pre>
 <p>then RStudio will source this file when opening.</p>
 <p>You will have to re-run the command if you update your $PATH.</p>
 <p>You can check if this is working by running</p>
 <pre><code>system(&quot;echo $PATH&quot;)</code></pre>
-<p>Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable" class="uri">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a></p>
+<p>Reference: <a
+href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable"
+class="uri">http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable</a></p>
 <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
 </body>
 </html>
