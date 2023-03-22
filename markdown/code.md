@@ -1,6 +1,5 @@
 Misc Code and Software
 # Misc Code \& Software
-[A more sane `yesno` for **devtools**](code/devtools_better_yesno.html)\
 [Getting WICD to connect to MWireless](code/wicd_mwireless.html)\
 [Useful Commands for Running Ubuntu on a Macbook](code/macbook_ubuntu.html)\
 [XMonad setup](code/xmonad.html)\
