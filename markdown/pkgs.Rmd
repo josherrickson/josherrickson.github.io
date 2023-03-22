@@ -11,7 +11,7 @@ library(badger)
 
 `r badge_code_size("markmfredrickson/optmatch")` `r badge_dependencies("optmatch")`
 
-`r badge_cran_checks("optmatch")` `r badge_github_actions("markmfredrickson/optmatch")`
+`r badge_cran_checks("optmatch", worst = TRUE)` `r badge_github_actions("markmfredrickson/optmatch")`
 
 ## rlemon
 
@@ -21,7 +21,7 @@ library(badger)
 
 `r badge_code_size("josherrickson/rlemon")` `r badge_dependencies("rlemon")`
 
-`r badge_cran_checks("rlemon")` `r badge_github_actions("josherrickson/rlemon")`
+`r badge_cran_checks("rlemon", worst = TRUE)` `r badge_github_actions("josherrickson/rlemon")`
 
 ## rrelaxiv
 
@@ -39,7 +39,7 @@ library(badger)
 
 `r badge_code_size("josherrickson/howManyImputations")` `r badge_dependencies("howManyImputations")`
 
-`r badge_cran_checks("howManyImputations")` `r badge_github_actions("josherrickson/howManyImputations", action = "R-build-check")`
+`r badge_cran_checks("howManyImputations", worst = TRUE)` `r badge_github_actions("josherrickson/howManyImputations", action = "R-build-check")`
 
 ## RItools
 
@@ -49,4 +49,4 @@ library(badger)
 
 `r badge_code_size("markmfredrickson/RItools")` `r badge_dependencies("RItools")`
 
-`r badge_cran_checks("RItools")` `r badge_github_actions("markmfredrickson/RItools", action = "R-build-check")`
+`r badge_cran_checks("RItools", worst = TRUE)` `r badge_github_actions("markmfredrickson/RItools", action = "R-build-check")`

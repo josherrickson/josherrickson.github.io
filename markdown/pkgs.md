@@ -13,7 +13,7 @@
 [![Dependencies](https://tinyverse.netlify.com/badge/optmatch)](https://cran.r-project.org/package=optmatch)
 
 [![CRAN
-checks](https://badges.cranchecks.info/summary/optmatch.svg)](https://cran.r-project.org/web/checks/check_results_optmatch.html)
+checks](https://badges.cranchecks.info/worst/optmatch.svg)](https://cran.r-project.org/web/checks/check_results_optmatch.html)
 [![R build
 status](https://github.com/markmfredrickson/optmatch/workflows/R-CMD-check/badge.svg)](https://github.com/markmfredrickson/optmatch/actions)
 
@@ -30,7 +30,7 @@ status](https://github.com/markmfredrickson/optmatch/workflows/R-CMD-check/badge
 [![Dependencies](https://tinyverse.netlify.com/badge/rlemon)](https://cran.r-project.org/package=rlemon)
 
 [![CRAN
-checks](https://badges.cranchecks.info/summary/rlemon.svg)](https://cran.r-project.org/web/checks/check_results_rlemon.html)
+checks](https://badges.cranchecks.info/worst/rlemon.svg)](https://cran.r-project.org/web/checks/check_results_rlemon.html)
 [![R build
 status](https://github.com/josherrickson/rlemon/workflows/R-CMD-check/badge.svg)](https://github.com/josherrickson/rlemon/actions)
 
@@ -56,7 +56,7 @@ status](https://github.com/josherrickson/rrelaxiv/workflows/R-CMD-check/badge.sv
 [![Dependencies](https://tinyverse.netlify.com/badge/howManyImputations)](https://cran.r-project.org/package=howManyImputations)
 
 [![CRAN
-checks](https://badges.cranchecks.info/summary/howManyImputations.svg)](https://cran.r-project.org/web/checks/check_results_howManyImputations.html)
+checks](https://badges.cranchecks.info/worst/howManyImputations.svg)](https://cran.r-project.org/web/checks/check_results_howManyImputations.html)
 [![R build
 status](https://github.com/josherrickson/howManyImputations/workflows/R-build-check/badge.svg)](https://github.com/josherrickson/howManyImputations/actions)
 
@@ -73,6 +73,6 @@ status](https://github.com/josherrickson/howManyImputations/workflows/R-build-ch
 [![Dependencies](https://tinyverse.netlify.com/badge/RItools)](https://cran.r-project.org/package=RItools)
 
 [![CRAN
-checks](https://badges.cranchecks.info/summary/RItools.svg)](https://cran.r-project.org/web/checks/check_results_RItools.html)
+checks](https://badges.cranchecks.info/worst/RItools.svg)](https://cran.r-project.org/web/checks/check_results_RItools.html)
 [![R build
 status](https://github.com/markmfredrickson/RItools/workflows/R-build-check/badge.svg)](https://github.com/markmfredrickson/RItools/actions)
