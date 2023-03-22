@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Ignore whitespace on Git diffs
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <a href="/posts/">Back to Posts</a>
+  <h1>Ignore whitespace on Git diffs</h1>
+  
+  
+  
+  <a href="http://errickson.net/tags/git/">#git</a>
+  
+  
+  
+  <a href="http://errickson.net/tags/github/">#github</a>
+  
+  
+  
+  <p>By default, git&rsquo;s diff (<code>git diff</code> or on Github) show whitespace changes as well
+as meaningful changes.</p>
+<p>To suppress them in <code>git diff</code>, add the <code>-b</code> flag:</p>
+<pre tabindex="0"><code>git diff -b
+</code></pre><p>To suppress on github.com, append <code>?w=1</code> to any diff&rsquo;s URL.</p>
+
+  <a href="/posts/">Back to Posts</a>
+</article>
+
+  </body>
+</html>

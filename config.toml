@@ -1,6 +1,7 @@
 baseURL = 'http://errickson.net/'
 languageCode = 'en-us'
 title = 'Josh Errickson'
+publishDir = 'docs'
 
 [taxonomies]
   tag = 'tags'

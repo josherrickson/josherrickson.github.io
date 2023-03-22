@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josh Errickson</title>
+    <link>http://errickson.net/</link>
+    <description>Recent content on Josh Errickson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Mar 2023 12:04:41 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Increase ALL Text Size in ggplot</title>
+      <link>http://errickson.net/posts/ggplot-increase-all-text-size/</link>
+      <pubDate>Wed, 22 Mar 2023 12:04:41 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/ggplot-increase-all-text-size/</guid>
+      <description>You can add
++ theme( text = element_text(size=20))) to a ggplot object to modify the size of ALL text elements.
+(This is with ggplot 3.4.1 in case they change the API again.)</description>
+    </item>
+    
+    <item>
+      <title>Ignore whitespace on Git diffs</title>
+      <link>http://errickson.net/posts/git_ignore_whitespace/</link>
+      <pubDate>Wed, 22 Mar 2023 10:38:51 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/git_ignore_whitespace/</guid>
+      <description>By default, git&amp;rsquo;s diff (git diff or on Github) show whitespace changes as well as meaningful changes.
+To suppress them in git diff, add the -b flag:
+git diff -b To suppress on github.com, append ?w=1 to any diff&amp;rsquo;s URL.</description>
+    </item>
+    
+  </channel>
+</rss>
