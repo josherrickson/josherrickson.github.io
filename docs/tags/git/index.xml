@@ -6,7 +6,17 @@
     <description>Recent content in git on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2023 10:38:51 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 12:59:53 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exclude files from git grep</title>
+      <link>http://errickson.net/posts/git-grep-exclude-files/</link>
+      <pubDate>Wed, 22 Mar 2023 12:59:53 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/git-grep-exclude-files/</guid>
+      <description>To exclude files from git grep:
+1 2 git grep foobar -- &amp;#39;:!*.java&amp;#39; git grep foobar -- &amp;#39;:!*.html&amp;#39; &amp;#39;:!abc.csv&amp;#39; </description>
+    </item>
+    
     <item>
       <title>Ignore whitespace on Git diffs</title>
       <link>http://errickson.net/posts/git_ignore_whitespace/</link>
