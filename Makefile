@@ -1,33 +1,22 @@
-PRIMARY_MD=$(shell find . -d 1 -name "*.md")
-PRIMARY_HTML=$(PRIMARY_MD:.md=.html)
-
-CODE_MD=$(shell find code -name "*.md")
-CODE_HTML=$(CODE_MD:.md=.html)
+PRIMARY_MD:=$(shell find markdown -name "*.md")
+PRIMARY_HTML:=$(patsubst markdown/%.md,static/%.html,$(PRIMARY_MD))
 
 .PHONY:all
-all: $(PRIMARY_HTML) $(CODE_HTML) pkgs.md
+all: static/pkgs.html $(PRIMARY_HTML)
 
-# Defines type of navigation links on bottom of page.
-# none: No links (only for index)
-# home: Link to index; only for files in top directory that aren't index
-# code: link to index, or main code page, for files in code directory
-$(CODE_HTML): LINK:=code
-$(PRIMARY_HTML): LINK:=home
-index.html: LINK:=none
+markdown/pkgs.md: markdown/pkgs.Rmd
+	@R -q -e 'rmarkdown::render(input = "$<", output_format = rmarkdown::md_document())'
 
-pkgs.md: pkgs.Rmd
-	@R -q -e 'rmarkdown::render("pkgs.Rmd", rmarkdown::md_document())'
-
-%.html: %.md header.html
+static/%.html: markdown/%.md
 	@echo "$< -> $@"
-	@awk -v newTitle="$(shell head -1 $<)" '{gsub("--title--",newTitle); print}' header.html > header_tmp.html
-	@sed '1d' $< > tmp.md
-	@pandoc -o tmp.html tmp.md
-	@cat header_tmp.html tmp.html > $@
-	@/bin/rm tmp.html header_tmp.html tmp.md
-# Add appropriate navigation links based on $(LINK)
-	@if [ $(LINK) == home ]; then echo "<a href='index.html'>Home</a>" >> $@; fi;
-	@if [ $(LINK) == code ]; then echo "<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>" >> $@; fi;
+	@awk -v newTitle="$(shell head -1 $<)" '{gsub("--title--",newTitle); print}' markdown/header.html > markdown/header_tmp.html
+	@sed '1d' $< > markdown/tmp.md
+	@pandoc -o markdown/tmp.html markdown/tmp.md
+	@cat markdown/header_tmp.html markdown/tmp.html > $@
+	@/bin/rm markdown/tmp.html markdown/header_tmp.html markdown/tmp.md
+# Add appropriate navigation links (Home for main pages, home/back to code for code pages)
+	@if [ $(@D) == "static" ]; then echo "<a href='index.html'>Home</a>" >> $@; fi;
+	@if [ $(@D) == "static/code" ]; then echo "<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>" >> $@; fi;
 	@echo "</body>" >> $@
 	@echo "</html>" >> $@
 

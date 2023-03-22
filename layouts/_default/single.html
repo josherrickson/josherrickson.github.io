@@ -1,0 +1,20 @@
+{{ define "title" }}
+  JE &ndash; {{ .Title }}
+{{ end }}
+
+
+{{ define "page" }}
+<article class="container">
+  <a href="{{ .CurrentSection.RelPermalink }}">Back to {{ .CurrentSection.Title }}</a>
+  <h1>{{ .Title }}</h1>
+  {{ with .Param "tags" }}
+  {{ range $index, $tag := (. | sort) }}
+  {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+  <a href="{{ .Permalink }}">#{{ $tag | urlize }}</a>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+  {{ .Content }}
+  <a href="{{ .CurrentSection.RelPermalink }}">Back to {{ .CurrentSection.Title }}</a>
+</article>
+{{ end }}

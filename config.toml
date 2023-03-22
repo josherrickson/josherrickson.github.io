@@ -1,0 +1,6 @@
+baseURL = 'http://errickson.net/'
+languageCode = 'en-us'
+title = 'Josh Errickson'
+
+[taxonomies]
+  tag = 'tags'
