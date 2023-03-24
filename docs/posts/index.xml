@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Josh Errickson</title>
+    <title>Blog on Josh Errickson</title>
     <link>http://errickson.net/posts/</link>
-    <description>Recent content in Posts on Josh Errickson</description>
+    <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Mar 2023 13:45:59 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />

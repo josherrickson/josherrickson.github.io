@@ -5,6 +5,8 @@
 
 {{ define "page" }}
 <article class="container">
+  <a href="{{ .Site.Home.RelPermalink }}">errickson.net</a>
+  <br>
   <a href="{{ .CurrentSection.RelPermalink }}">Back to {{ .CurrentSection.Title }}</a>
   <h1>{{ .Title }}</h1>
   {{ with .Param "tags" }}
