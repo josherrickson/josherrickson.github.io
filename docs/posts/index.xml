@@ -6,7 +6,18 @@
     <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2023 13:45:59 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Mar 2023 10:14:52 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eval vs Get</title>
+      <link>http://errickson.net/posts/eval-vs-get/</link>
+      <pubDate>Mon, 27 Mar 2023 10:14:52 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/eval-vs-get/</guid>
+      <description>I&amp;rsquo;ve been fighting damn scoping issues lately and finally sat down to figure out what works and when. Documenting some of them here
+The lessons I&amp;rsquo;ve learned from this:
+eval(a, envir = ... ) DOES NOT WORK! Instead, do eval(str2lang(&amp;quot;a&amp;quot;), envir = ...) eval.parent(a) DOES NOT WORK! eval.parent(str2lang(&amp;quot;a&amp;quot;)) works and SKIPS GENERIC! get(&amp;quot;a&amp;quot;, envir = ...) seems to always work as expected So to summarize, I think get is always a safer option than eval.</description>
+    </item>
+    
     <item>
       <title>A More Sane `yesno()` for devtools</title>
       <link>http://errickson.net/posts/devtools-better-yesno/</link>
