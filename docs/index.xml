@@ -6,7 +6,17 @@
     <description>Recent content on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 10:14:52 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Mar 2023 09:27:03 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Expect_silent and Debugging</title>
+      <link>http://errickson.net/posts/expect_silent-and-debugging/</link>
+      <pubDate>Tue, 28 Mar 2023 09:27:03 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/expect_silent-and-debugging/</guid>
+      <description>When using the testthat package, there is a function, expect_silent(), to ensure no notes, warnings, or errors get produced.
+If you are trying to debug this call (either via explicit debug() or inserting a call to browser()), the expect_silent() will suppress all output. Remove the expect_silent() call to properly debug!</description>
+    </item>
+    
     <item>
       <title>Eval vs Get</title>
       <link>http://errickson.net/posts/eval-vs-get/</link>
