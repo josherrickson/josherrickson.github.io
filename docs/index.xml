@@ -6,7 +6,18 @@
     <description>Recent content on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Mar 2023 09:27:03 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 06:05:44 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Character-wise String Comparison in R</title>
+      <link>http://errickson.net/posts/characterwise-string-comparison/</link>
+      <pubDate>Wed, 29 Mar 2023 06:05:44 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/characterwise-string-comparison/</guid>
+      <description>If you have two strings in R and want to check character-by-character equality:
+1 2 3 a &amp;lt;- &amp;#34;abcdef&amp;#34; b &amp;lt;- &amp;#34;abcdff&amp;#34; Reduce(`==`, strsplit(c(a, b), &amp;#34;&amp;#34;)) This results in:
+1 2 &amp;gt; Reduce(`==`, strsplit(c(a, b), &amp;#34;&amp;#34;)) [1] TRUE TRUE TRUE TRUE FALSE TRUE </description>
+    </item>
+    
     <item>
       <title>Expect_silent and Debugging</title>
       <link>http://errickson.net/posts/expect_silent-and-debugging/</link>
