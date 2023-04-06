@@ -6,7 +6,17 @@
     <description>Recent content in R on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Mar 2023 06:05:44 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Apr 2023 10:29:25 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R&#39;s `all.equal`, relative vs absolute</title>
+      <link>http://errickson.net/posts/all.equal-scale-difference/</link>
+      <pubDate>Thu, 06 Apr 2023 10:29:25 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/all.equal-scale-difference/</guid>
+      <description>The all.equal() function is useful to comparing whether two numeric objects are equivalent, but it has a weird quirk.
+1 2 &amp;gt; all.equal(4, 5) [1] &amp;#34;Mean relative difference: 0.25&amp;#34; You might expect that the difference should be 1. But note the &amp;ldquo;relative difference.&amp;rdquo; The default for all.equal is to report the difference for a call of all.equal(x, y) as |x - y|/x. This also means that all.equal(x, y) is not going to report the same difference as all.</description>
+    </item>
+    
     <item>
       <title>Character-wise String Comparison in R</title>
       <link>http://errickson.net/posts/characterwise-string-comparison/</link>
