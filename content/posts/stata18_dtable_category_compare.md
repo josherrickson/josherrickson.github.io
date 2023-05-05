@@ -1,7 +1,8 @@
 ---
 title: "Category-wise comparisons in Stata 18's `dtable`"
 date: 2023-05-04T20:29:55-04:00
-draft: true
+tags:
+  - Stata
 ---
 
 Stata 18's new [`dtable`](https://www.stata.com/manuals/rdtable.pdf) is terrific

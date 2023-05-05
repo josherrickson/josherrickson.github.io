@@ -6,7 +6,17 @@
     <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Apr 2023 10:17:10 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 May 2023 20:29:55 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Category-wise comparisons in Stata 18&#39;s `dtable`</title>
+      <link>http://errickson.net/posts/stata18_dtable_category_compare/</link>
+      <pubDate>Thu, 04 May 2023 20:29:55 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/stata18_dtable_category_compare/</guid>
+      <description>Stata 18&amp;rsquo;s new dtable is terrific for creating a &amp;ldquo;Table 1&amp;rdquo;, but by default if provided a categorical variable and asked to test for differences by group, it will provide a single Chi-sq test by default.
+. sysuse auto, clear (1978 automobile data) . dtable i.rep78, by(foreign, tests) note: using test pearson across levels of foreign for rep78. ----------------------------------------------------------- Car origin Domestic Foreign Total Test ----------------------------------------------------------- N 52 (70.3%) 22 (29.</description>
+    </item>
+    
     <item>
       <title>R&#39;s sys.call vs match.call</title>
       <link>http://errickson.net/posts/syscall_vs_matchcall/</link>

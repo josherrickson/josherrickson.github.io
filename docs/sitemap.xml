@@ -3,18 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://errickson.net/posts/</loc>
-    <lastmod>2023-04-29T10:17:10-04:00</lastmod>
+    <lastmod>2023-05-04T20:29:55-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/stata18_dtable_category_compare/</loc>
+    <lastmod>2023-05-04T20:29:55-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/</loc>
-    <lastmod>2023-04-29T10:17:10-04:00</lastmod>
+    <lastmod>2023-05-04T20:29:55-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/stata/</loc>
+    <lastmod>2023-05-04T20:29:55-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/</loc>
+    <lastmod>2023-05-04T20:29:55-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/tags/r/</loc>
     <lastmod>2023-04-29T10:17:10-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/syscall_vs_matchcall/</loc>
-    <lastmod>2023-04-29T10:17:10-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/</loc>
     <lastmod>2023-04-29T10:17:10-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/all.equal-scale-difference/</loc>
