@@ -1,0 +1,176 @@
+<html>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Category-wise comparisons in Stata 18&#39;s `dtable`
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <a href="/">errickson.net</a>
+  <br>
+  <a href="/posts/">Back to Blog</a>
+  <h1>Category-wise comparisons in Stata 18&#39;s `dtable`</h1>
+  
+  <p>Stata 18&rsquo;s new <a href="https://www.stata.com/manuals/rdtable.pdf"><code>dtable</code></a> is terrific
+for creating a &ldquo;Table 1&rdquo;, but by default if provided a categorical variable and
+asked to test for differences by group, it will provide a single Chi-sq test by
+default.</p>
+<pre tabindex="0"><code class="language-stata" data-lang="stata">. sysuse auto, clear
+(1978 automobile data)
+
+. dtable i.rep78, by(foreign, tests)
+note: using test pearson across levels of foreign for rep78.
+
+-----------------------------------------------------------
+                                  Car origin
+                    Domestic    Foreign     Total     Test
+-----------------------------------------------------------
+N                  52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair record 1978
+  1                  2 (4.2%)   0 (0.0%)    2 (2.9%) &lt;0.001
+  2                 8 (16.7%)   0 (0.0%)   8 (11.6%)
+  3                27 (56.2%)  3 (14.3%)  30 (43.5%)
+  4                 9 (18.8%)  9 (42.9%)  18 (26.1%)
+  5                  2 (4.2%)  9 (42.9%)  11 (15.9%)
+-----------------------------------------------------------
+</code></pre><p>Instead you may want a category-by-category comparison of proportions. We&rsquo;ll
+need to create a series of binary variables first.</p>
+<pre tabindex="0"><code class="language-stata" data-lang="stata">. quietly tab rep78, gen(repcat)
+
+. label var repcat1 &#34;Repair Record Category 1&#34;
+
+. label var repcat2 &#34;Repair Record Category 2&#34;
+
+. label var repcat3 &#34;Repair Record Category 3&#34;
+
+. label var repcat4 &#34;Repair Record Category 4&#34;
+
+. label var repcat5 &#34;Repair Record Category 5&#34;
+</code></pre><p>Next, we can add each of the <code>repcat*</code> to <code>dtable</code>, but preface with <code>1.</code> to
+only include the &ldquo;yes&rdquo; for each binary.</p>
+<pre tabindex="0"><code class="language-stata" data-lang="stata">
+. dtable 1.repcat*, by(foreign, tests)
+note: using test pearson across levels of foreign for repcat1, repcat2, repcat3, repcat4, and repcat5.
+
+-----------------------------------------------------------------
+                                        Car origin
+                          Domestic    Foreign     Total     Test
+-----------------------------------------------------------------
+N                        52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair Record Category 1
+  1                        2 (4.2%)   0 (0.0%)    2 (2.9%)  0.342
+Repair Record Category 2
+  1                       8 (16.7%)   0 (0.0%)   8 (11.6%)  0.047
+Repair Record Category 3
+  1                      27 (56.2%)  3 (14.3%)  30 (43.5%)  0.001
+Repair Record Category 4
+  1                       9 (18.8%)  9 (42.9%)  18 (26.1%)  0.036
+Repair Record Category 5
+  1                        2 (4.2%)  9 (42.9%)  11 (15.9%) &lt;0.001
+-----------------------------------------------------------------
+</code></pre><p>So we have the tests we want (at least, if you&rsquo;re OK with a Chi-sq test for each
+binary against the group variable), but the extra &ldquo;1&rdquo; entries is redundant. We
+can use <a href="https://www.stata.com/manuals/tablescollectstyleheader.pdf"><code>collect</code></a>
+to modify this.</p>
+<pre tabindex="0"><code class="language-stata" data-lang="stata">. collect style header repcat1 repcat2 repcat3 repcat4 repcat5, level(hide)
+
+. collect preview
+
+-----------------------------------------------------------------
+                                        Car origin
+                          Domestic    Foreign     Total     Test
+-----------------------------------------------------------------
+N                        52 (70.3%) 22 (29.7%) 74 (100.0%)
+Repair Record Category 1   2 (4.2%)   0 (0.0%)    2 (2.9%)  0.342
+Repair Record Category 2  8 (16.7%)   0 (0.0%)   8 (11.6%)  0.047
+Repair Record Category 3 27 (56.2%)  3 (14.3%)  30 (43.5%)  0.001
+Repair Record Category 4  9 (18.8%)  9 (42.9%)  18 (26.1%)  0.036
+Repair Record Category 5   2 (4.2%)  9 (42.9%)  11 (15.9%) &lt;0.001
+-----------------------------------------------------------------
+</code></pre>
+  <br>
+  <a href="/posts/">Back to Blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fposts%2fstata18_dtable_category_compare%2f">
+</article>
+
+  </body>
+</html>
