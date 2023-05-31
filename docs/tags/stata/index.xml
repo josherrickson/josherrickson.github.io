@@ -6,7 +6,18 @@
     <description>Recent content in Stata on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 May 2023 20:29:55 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/stata/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 09:46:01 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/stata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Move N= in Stata 18&#39;s `dtable`</title>
+      <link>http://errickson.net/posts/stata18_dtable_move_samplesize/</link>
+      <pubDate>Wed, 31 May 2023 09:46:01 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/stata18_dtable_move_samplesize/</guid>
+      <description>By default, the dtable command places the sample size in its own row:
+. sysuse auto, clear (1978 automobile data) . dtable mpg, by(foreign) ---------------------------------------------------------- Car origin Domestic Foreign Total ---------------------------------------------------------- N 52 (70.3%) 22 (29.7%) 74 (100.0%) Mileage (mpg) 19.827 (4.743) 24.773 (6.611) 21.297 (5.786) ---------------------------------------------------------- We can use the following two additional options to relocate it:
+. dtable mpg, by(foreign) /// &amp;gt; sample(, statistics(freq) place(seplabels)) /// &amp;gt; sformat(&amp;#34;(N=%s)&amp;#34; frequency) ---------------------------------------------------------- Car origin Domestic Foreign Total (N=52) (N=22) (N=74) ---------------------------------------------------------- Mileage (mpg) 19.</description>
+    </item>
+    
     <item>
       <title>Category-wise comparisons in Stata 18&#39;s `dtable`</title>
       <link>http://errickson.net/posts/stata18_dtable_category_compare/</link>
