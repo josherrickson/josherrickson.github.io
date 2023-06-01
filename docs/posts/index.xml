@@ -6,7 +6,18 @@
     <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2023 09:46:01 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2023 14:19:07 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making TextEdit start with a Blank Document</title>
+      <link>http://errickson.net/posts/textedit_new_document/</link>
+      <pubDate>Thu, 01 Jun 2023 14:19:07 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/textedit_new_document/</guid>
+      <description>It used to be that launching OSX&amp;rsquo;s TextEdit would open a blank document for immediate typing/pasting. At some point over the last several years, it changed to show a file picked by default.
+To switch to the older functionality, run the following terminal command:
+defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false Source: https://apple.stackexchange.com/a/111755</description>
+    </item>
+    
     <item>
       <title>Move N= in Stata 18&#39;s `dtable`</title>
       <link>http://errickson.net/posts/stata18_dtable_move_samplesize/</link>
