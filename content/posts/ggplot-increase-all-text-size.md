@@ -10,7 +10,7 @@ tags:
 You can add
 
 ```r
-+ theme( text = element_text(size=20)))
++ theme(text = element_text(size=20))
 ```
 
 to a `ggplot` object to modify the size of ALL text elements.
