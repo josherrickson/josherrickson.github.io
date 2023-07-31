@@ -6,7 +6,19 @@
     <description>Recent content on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jun 2023 14:19:07 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 11:54:18 -0400</lastBuildDate><atom:link href="http://errickson.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Making a bibliography fit on one page in Beamer through Quarto</title>
+      <link>http://errickson.net/posts/quarto-beamer-bibliography-size/</link>
+      <pubDate>Mon, 31 Jul 2023 11:54:18 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/quarto-beamer-bibliography-size/</guid>
+      <description>When using Quarto, you can add a bibliography with something like
+### References ::: {#refs} ::: https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation
+However, if producing slides via Beamer, the number of references can cause the text to run off the slide. You can use the shrink option to automatically reduce the font size to fit everything, or the allowframebreaks option to split the bibliography onto multiple pages.
+### References {shrink=5} ::: {#refs} ::: The numeric argument of shrink is the minimum shrink size - making it too high can yield strange results, so start with it small and increase if necessary.</description>
+    </item>
+    
     <item>
       <title>Making TextEdit start with a Blank Document</title>
       <link>http://errickson.net/posts/textedit_new_document/</link>

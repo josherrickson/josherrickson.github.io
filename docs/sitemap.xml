@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://errickson.net/posts/</loc>
-    <lastmod>2023-06-01T14:19:07-04:00</lastmod>
+    <lastmod>2023-07-31T11:54:18-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/</loc>
-    <lastmod>2023-06-01T14:19:07-04:00</lastmod>
+    <lastmod>2023-07-31T11:54:18-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/quarto-beamer-bibliography-size/</loc>
+    <lastmod>2023-07-31T11:54:18-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/textedit_new_document/</loc>
     <lastmod>2023-06-01T14:19:07-04:00</lastmod>

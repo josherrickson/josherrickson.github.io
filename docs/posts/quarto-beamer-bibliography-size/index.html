@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+  JE &ndash; Making a bibliography fit on one page in Beamer through Quarto
+</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
+    <meta name="Author" content="Josh Errickson">
+    <style>
+      :root {
+           
+          --base03: #002b36;
+          --base02: #073642;
+          --base01: #586e75;
+          --base00: #657b83;
+          --base0: #839496;
+          --base1: #93a1a1;
+          --base2: #eee8d5;
+          --base3: #fdf6e3;
+          --yellow: #b58900;
+          --orange: #cb4b16;
+          --red: #dc322f;
+          --magenta: #d33682;
+          --violet: #6c71c4;
+          --blue: #268bd2;
+          --cyan: #2aa198;
+          --green: #859900;
+
+      }
+
+      body {
+          font-family: sans-serif;
+          font-size: 16px;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 15px 0 80px 0;
+          background: var(--base02);
+          color: var(--base2);
+      }
+
+      body a {
+          color: var(--blue);
+          text-decoration: none;
+      }
+
+      body a:hover {
+          color: var(--base2);
+          background-color: var(--blue);
+          text-decoration: none;
+      }
+
+      h1 {
+          font-size: 200%;
+          color: var(--green);
+      }
+
+      h2 {
+          font-size: 150%;
+          color: var(--cyan);
+          font-style: italic;
+      }
+
+      h3 {
+          font-size: 125%;
+          color: var(--cyan);
+          text-decoration: underline;
+      }
+
+      h4 {
+          font-size: 110%;
+          text-decoration: underline;
+      }
+
+      pre {
+          margin-left: 5%;
+          color: var(--base1);
+      }
+    </style>
+  </head>
+  <body>
+    
+<article class="container">
+  <a href="/">errickson.net</a>
+  <br>
+  <a href="/posts/">Back to Blog</a>
+  <h1>Making a bibliography fit on one page in Beamer through Quarto</h1>
+  
+  <p>When using <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto</a>, you
+can add a bibliography with something like</p>
+<pre tabindex="0"><code>### References
+
+::: {#refs}
+:::
+</code></pre><p><a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation">https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation</a></p>
+<p>However, if producing slides via
+<a href="https://quarto.org/docs/presentations/beamer.html">Beamer</a>, the number of
+references can cause the text to run off the slide. You can use the <code>shrink</code>
+option to automatically reduce the font size to fit everything, or the
+<code>allowframebreaks</code> option to split the bibliography onto multiple pages.</p>
+<pre tabindex="0"><code>### References {shrink=5}
+
+::: {#refs}
+:::
+</code></pre><p>The numeric argument of <code>shrink</code> is the minimum shrink size - making it too high
+can yield strange results, so start with it small and increase if necessary.</p>
+<pre tabindex="0"><code>### References {allowframebreaks=.9}
+
+::: {#refs}
+:::
+</code></pre><p>The numeric argument of <code>allowframebreaks</code> controls how much of a given frame is
+allow to be filled. E.g. a value of &ldquo;1&rdquo; would use every inch of the slide - very
+cluttered.</p>
+
+  <br>
+  <a href="/posts/">Back to Blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fposts%2fquarto-beamer-bibliography-size%2f">
+</article>
+
+  </body>
+</html>
