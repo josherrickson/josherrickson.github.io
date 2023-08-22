@@ -2,8 +2,8 @@
   <head>
     <meta charset="UTF-8">
     <title>
-      Josh Errickson
-    </title>
+  JE &ndash; Stopping `fill-paragraph` from breaking Stata inline dynamics tags
+</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./favicon.ico" type="image/x-icon">
@@ -87,47 +87,44 @@
 <article class="container">
   <a href="/">errickson.net</a>
   <br>
-  <a href="https://errickson.net/posts">Back to Blog</a>
-  <h1>ggplot</h1>
+  <a href="/posts/">Back to Blog</a>
+  <h1>Stopping `fill-paragraph` from breaking Stata inline dynamics tags</h1>
   
-  <ul>
-    
-      <li>
-        <a href="/posts/ggplot-increase-all-text-size/">Increase ALL Text Size in ggplot</a>
-        <time>Wed, Mar 22, 2023</time>
-      </li>
-    
-  </ul>
-  <h1>Tags</h1>
-  <ul id="all-tags">
-    
-    <li><a href="/tags/devtools">#devtools</a></li>
-    
-    <li><a href="/tags/emacs">#emacs</a></li>
-    
-    <li><a href="/tags/forestplot">#forestplot</a></li>
-    
-    <li><a href="/tags/ggplot">#ggplot</a></li>
-    
-    <li><a href="/tags/git">#git</a></li>
-    
-    <li><a href="/tags/github">#github</a></li>
-    
-    <li><a href="/tags/r">#r</a></li>
-    
-    <li><a href="/tags/rmarkdown">#rmarkdown</a></li>
-    
-    <li><a href="/tags/stata">#stata</a></li>
-    
-    <li><a href="/tags/statistics">#statistics</a></li>
-    
-    <li><a href="/tags/terminal">#terminal</a></li>
-    
-    <li><a href="/tags/tmux">#tmux</a></li>
-    
-    <li><a href="/tags/visualization">#visualization</a></li>
-    
-  </ul>
+  
+  
+  <a href="http://errickson.net/tags/emacs/">#emacs</a>
+  
+  
+  
+  <a href="http://errickson.net/tags/stata/">#stata</a>
+  
+  
+  
+  <p>Stata inline dynamic tags contain spaces. E.g.
+<code>&lt;&lt;dd_display: %9.3f abs(_b[2.rep78])&gt;&gt;</code>. This means that when using
+<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html"><code>fill-paragraph</code></a>,
+the inline tag can be broken, which Stata&rsquo;s
+<a href="https://www.stata.com/manuals/rptdyndoc.pdf"><code>dyndoc</code></a> and
+<a href="https://www.stata.com/manuals/rptdyntext.pdf"><code>dyntext</code></a> commands will break
+on.</p>
+<p>This snippet to include in your Emacs
+<a href="https://github.com/josherrickson/dotfiles/blob/main/init.el">init</a> file fixes
+this issue.</p>
+<pre tabindex="0"><code>(defun my-in-dd-display ()
+  &#34;Don&#39;t break lines in Inline Stata Dynamic Tags.&#34;
+  (save-excursion
+    (save-match-data
+      (and (re-search-backward &#34;&gt;&gt;\\|\\(&lt;&lt;dd_display:\\)&#34;
+                               (line-beginning-position) t)
+       (match-beginning 1)))))
+(add-hook &#39;fill-nobreak-predicate #&#39;my-in-dd-display)
+</code></pre><p>After defining the function with <code>defun</code>, the <code>add-hook</code> function is what
+enables it&rsquo;s use with <code>fill-paragraph</code>. This comes from
+<a href="https://emacs.stackexchange.com/a/78562">https://emacs.stackexchange.com/a/78562</a></p>
+
+  <br>
+  <a href="/posts/">Back to Blog</a>
+  <img src="https://errickson.goatcounter.com/count?p=/%2fposts%2femacs-fill-paragraph-stata-dynamic-tags%2f">
 </article>
 
   </body>

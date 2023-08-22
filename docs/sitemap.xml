@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://errickson.net/posts/</loc>
-    <lastmod>2023-07-31T11:54:18-04:00</lastmod>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/emacs/</loc>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/</loc>
-    <lastmod>2023-07-31T11:54:18-04:00</lastmod>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/stata/</loc>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/posts/emacs-fill-paragraph-stata-dynamic-tags/</loc>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
+  </url><url>
+    <loc>http://errickson.net/tags/</loc>
+    <lastmod>2023-08-22T05:56:45-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/quarto-beamer-bibliography-size/</loc>
     <lastmod>2023-07-31T11:54:18-04:00</lastmod>
@@ -15,12 +27,6 @@
     <lastmod>2023-06-01T14:19:07-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/stata18_dtable_move_samplesize/</loc>
-    <lastmod>2023-05-31T09:46:01-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/stata/</loc>
-    <lastmod>2023-05-31T09:46:01-04:00</lastmod>
-  </url><url>
-    <loc>http://errickson.net/tags/</loc>
     <lastmod>2023-05-31T09:46:01-04:00</lastmod>
   </url><url>
     <loc>http://errickson.net/posts/stata18_dtable_category_compare/</loc>

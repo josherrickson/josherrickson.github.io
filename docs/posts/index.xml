@@ -6,7 +6,18 @@
     <description>Recent content in Blog on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jul 2023 11:54:18 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 05:56:45 -0400</lastBuildDate><atom:link href="http://errickson.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stopping `fill-paragraph` from breaking Stata inline dynamics tags</title>
+      <link>http://errickson.net/posts/emacs-fill-paragraph-stata-dynamic-tags/</link>
+      <pubDate>Tue, 22 Aug 2023 05:56:45 -0400</pubDate>
+      
+      <guid>http://errickson.net/posts/emacs-fill-paragraph-stata-dynamic-tags/</guid>
+      <description>Stata inline dynamic tags contain spaces. E.g. &amp;lt;&amp;lt;dd_display: %9.3f abs(_b[2.rep78])&amp;gt;&amp;gt;. This means that when using fill-paragraph, the inline tag can be broken, which Stata&amp;rsquo;s dyndoc and dyntext commands will break on.
+This snippet to include in your Emacs init file fixes this issue.
+(defun my-in-dd-display () &amp;#34;Don&amp;#39;t break lines in Inline Stata Dynamic Tags.&amp;#34; (save-excursion (save-match-data (and (re-search-backward &amp;#34;&amp;gt;&amp;gt;\\|\\(&amp;lt;&amp;lt;dd_display:\\)&amp;#34; (line-beginning-position) t) (match-beginning 1))))) (add-hook &amp;#39;fill-nobreak-predicate #&amp;#39;my-in-dd-display) After defining the function with defun, the add-hook function is what enables it&amp;rsquo;s use with fill-paragraph.</description>
+    </item>
+    
     <item>
       <title>Making a bibliography fit on one page in Beamer through Quarto</title>
       <link>http://errickson.net/posts/quarto-beamer-bibliography-size/</link>

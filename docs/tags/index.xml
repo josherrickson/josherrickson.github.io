@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Josh Errickson</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2023 09:46:01 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 05:56:45 -0400</lastBuildDate><atom:link href="http://errickson.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Stata</title>
+      <title>emacs</title>
+      <link>http://errickson.net/tags/emacs/</link>
+      <pubDate>Tue, 22 Aug 2023 05:56:45 -0400</pubDate>
+      
+      <guid>http://errickson.net/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stata</title>
       <link>http://errickson.net/tags/stata/</link>
-      <pubDate>Wed, 31 May 2023 09:46:01 -0400</pubDate>
+      <pubDate>Tue, 22 Aug 2023 05:56:45 -0400</pubDate>
       
       <guid>http://errickson.net/tags/stata/</guid>
       <description></description>
