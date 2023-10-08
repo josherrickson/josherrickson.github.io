@@ -4,106 +4,67 @@
     <title>Useful Commands for Running Ubuntu on a Macbook</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
-    <style>
-      :root {
-          /* Based on solarized-dark - http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
-          --base03: #002b36;
-          --base02: #073642;
-          --base01: #586e75;
-          --base00: #657b83;
-          --base0: #839496;
-          --base1: #93a1a1;
-          --base2: #eee8d5;
-          --base3: #fdf6e3;
-          --yellow: #b58900;
-          --orange: #cb4b16;
-          --red: #dc322f;
-          --magenta: #d33682;
-          --violet: #6c71c4;
-          --blue: #268bd2;
-          --cyan: #2aa198;
-          --green: #859900;
-
-      }
-
-      body {
-          font-family: sans-serif;
-          font-size: 16px;
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 15px 0 80px 0;
-          background: var(--base02);
-          color: var(--base2);
-      }
-
-      body a {
-          color: var(--blue);
-          text-decoration: none;
-      }
-
-      body a:hover {
-          color: var(--base2);
-          background-color: var(--blue);
-          text-decoration: none;
-      }
-
-      h1 {
-          font-size: 200%;
-          color: var(--green);
-      }
-
-      h2 {
-          font-size: 150%;
-          color: var(--cyan);
-          font-style: italic;
-      }
-
-      h3 {
-          font-size: 125%;
-          color: var(--cyan);
-          text-decoration: underline;
-      }
-
-      h4 {
-          font-size: 110%;
-          text-decoration: underline;
-      }
-
-      pre {
-          margin-left: 5%;
-          color: var(--base1);
-      }
-    </style>
   </head>
 
   <body>
-<h1 id="useful-commands-for-running-ubuntu-on-a-macbook">Useful Commands
-for Running Ubuntu on a Macbook</h1>
-<p>Note: These are based on Ubuntu 12.04 on a Macbook 7,1.</p>
-<ul>
-<li><p>To control the keyboard backlight, use</p>
-<pre><code> echo 0 | sudo tee -a /sys/class/leds/smc::kbd_backlight/brightness</code></pre>
-<p>0 turns it off, 255 is fullest brightness.</p></li>
-<li><p>By default, the headphone jack has a bright red LED shining in
-it. This turns it off.</p>
-<pre><code> amixer set IEC958 off</code></pre></li>
-<li><p>Some commands to make the trackpad perform like it does in OS X.
-The first disables tap-to-click completely, the second allows horizontal
-scrolling, and the last supposedly tries to stop accidental palm presses
-(though its not foolproof).</p>
-<pre><code>synclient MaxTapTime=0
+    <h1>Useful Commands for Running Ubuntu on a Macbook</h1>
+
+    <p>
+      Note: These are based on Ubuntu 12.04 on a Macbook 7,1.
+    </p>
+
+    <ul>
+      <li>
+        <p>
+          To control the keyboard backlight, use
+        </p>
+        <pre><code>echo 0 | sudo tee -a /sys/class/leds/smc::kbd_backlight/brightness</code></pre>
+
+        <p>
+          0 turns it off, 255 is fullest brightness.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          By default, the headphone jack has a bright red LED shining in it.
+          This turns it off.
+        </p>
+        <pre><code>amixer set IEC958 off</code></pre>
+      </li>
+
+      <li>
+        <p>
+          Some commands to make the trackpad perform like it does in OS X. The
+          first disables tap-to-click completely, the second allows horizontal
+          scrolling, and the last supposedly tries to stop accidental palm
+          presses (though its not foolproof).
+        </p>
+        <pre><code>synclient MaxTapTime=0
 synclient HorizTwoFingerScroll=1
-synclient PalmDetect=1</code></pre></li>
-<li><p>If the Macbook won't goto sleep automatically when the lid is
-closed, you can run the following before closing it.</p>
-<pre><code> sudo /etc/acpi/sleep.sh</code></pre>
-<p>Alternatively, install package <code>uswsusp</code>, and run the
-following.</p>
-<pre><code> sudo s2ram --force</code></pre></li>
-</ul>
-<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
-</body>
+synclient PalmDetect=1</code></pre>
+      </li>
+
+      <li>
+        <p>
+          If the Macbook won't goto sleep automatically when the lid is closed,
+          you can run the following before closing it.
+        </p>
+        <pre><code>sudo /etc/acpi/sleep.sh</code></pre>
+
+        <p>
+          Alternatively, install package <code>uswsusp</code>, and run the
+          following.
+        </p>
+        <pre><code>sudo s2ram --force</code></pre>
+      </li>
+    </ul>
+
+    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+
+  </body>
 </html>

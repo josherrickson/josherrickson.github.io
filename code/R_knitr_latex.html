@@ -4,150 +4,117 @@
     <title>Creating Variants of a File with R + Knitr + Brew + LaTeX</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
-    <style>
-      :root {
-          /* Based on solarized-dark - http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
-          --base03: #002b36;
-          --base02: #073642;
-          --base01: #586e75;
-          --base00: #657b83;
-          --base0: #839496;
-          --base1: #93a1a1;
-          --base2: #eee8d5;
-          --base3: #fdf6e3;
-          --yellow: #b58900;
-          --orange: #cb4b16;
-          --red: #dc322f;
-          --magenta: #d33682;
-          --violet: #6c71c4;
-          --blue: #268bd2;
-          --cyan: #2aa198;
-          --green: #859900;
-
-      }
-
-      body {
-          font-family: sans-serif;
-          font-size: 16px;
-          max-width: 600px;
-          margin: 0 auto;
-          padding: 15px 0 80px 0;
-          background: var(--base02);
-          color: var(--base2);
-      }
-
-      body a {
-          color: var(--blue);
-          text-decoration: none;
-      }
-
-      body a:hover {
-          color: var(--base2);
-          background-color: var(--blue);
-          text-decoration: none;
-      }
-
-      h1 {
-          font-size: 200%;
-          color: var(--green);
-      }
-
-      h2 {
-          font-size: 150%;
-          color: var(--cyan);
-          font-style: italic;
-      }
-
-      h3 {
-          font-size: 125%;
-          color: var(--cyan);
-          text-decoration: underline;
-      }
-
-      h4 {
-          font-size: 110%;
-          text-decoration: underline;
-      }
-
-      pre {
-          margin-left: 5%;
-          color: var(--base1);
-      }
-    </style>
   </head>
 
   <body>
-<h1 id="creating-variants-of-a-file-with-r-knitr-brew-latex">Creating
-Variants of a File with R + Knitr + Brew + LaTeX</h1>
-<p>The concept for this is based upon <a
-href="http://botthoughts.wordpress.com/2012/05/17/generating-reports-for-different-data-sets-using-brew-and-knitr/">http://botthoughts.wordpress.com/2012/05/17/generating-reports-for-different-data-sets-using-brew-and-knitr/</a>.</p>
-<p>I had the need to create personalized exams for students - There were
-three sets of size seven, three and one respectively, of which each
-student essentially received one randomly. This setup could be useful in
-other settings involving the need for multiple files based on a
-template, and some variable.</p>
-<p>First, you need in R some way to differentiate the variants. A data
-frame where each row is a variant works perfectly. Considering the
-following example</p>
-<pre><code>&gt; data
+    <h1>Creating Variants of a File with R + Knitr + Brew + LaTeX</h1>
+    <p>
+      The concept for this is based
+      upon <a href="http://botthoughts.wordpress.com/2012/05/17/generating-reports-for-different-data-sets-using-brew-and-knitr/">http://botthoughts.wordpress.com/2012/05/17/generating-reports-for-different-data-sets-using-brew-and-knitr/</a>.
+    </p>
+
+    <p>
+      I had the need to create personalized exams for students - There were three sets of size seven, three and one
+      respectively, of which each student essentially received one randomly. This setup could be useful in other
+      settings involving the need for multiple files based on a template, and some variable.
+    </p>
+
+    <p>
+      First, you need in R some way to differentiate the variants. A data frame where each row is a variant works
+      perfectly. Considering the following example
+    </p>
+
+    <pre><code>&gt; data
       X1   X2
 1  Alice ver1
 2    Bob ver2</code></pre>
-<p>Here, <code>X1</code> is a name I want to include in the output, and
-<code>X2</code> refers to some larger change I want to make. In my
-personalized exam setup, that was two different questions.</p>
-<p>The R code to handle this is as follows.</p>
-<pre><code>library(brew)
+
+    <p>
+      Here, <code>X1</code> is a name I want to include in the output, and <code>X2</code> refers to some larger change
+      I want to make. In my personalized exam setup, that was two different questions.
+    </p>
+
+    <p>
+      The R code to handle this is as follows.
+    </p>
+
+    <pre><code>library(brew)
 library(tools)
 library(knitr)
 
 genReports &lt;- function(x, prepend) {
-  rnw.file &lt;- paste0(prepend, x[1], &quot;.Rnw&quot;)
-  brew(&quot;template.Rnw&quot;, rnw.file)
-  knit(rnw.file)
-  latex.file &lt;- paste0(prepend, x[1], &quot;.tex&quot;)
-  texi2pdf(latex.file, clean = TRUE, quiet = TRUE)
-  out.file &lt;- paste0(prepend, x[1], &quot;.pdf&quot;)
-  return(out.file)
+rnw.file &lt;- paste0(prepend, x[1], &quot;.Rnw&quot;)
+brew(&quot;template.Rnw&quot;, rnw.file)
+knit(rnw.file)
+latex.file &lt;- paste0(prepend, x[1], &quot;.tex&quot;)
+texi2pdf(latex.file, clean = TRUE, quiet = TRUE)
+out.file &lt;- paste0(prepend, x[1], &quot;.pdf&quot;)
+return(out.file)
 }
 
 apply(data, 1, genReports, prepend=&quot;report_&quot;)</code></pre>
-<p><code>brew</code> and <code>knit</code> handle replacing any R code,
-and then <code>texi2pdf</code> generates the actual PDF.</p>
-<p>That code references a template.Rnw file. That can be just a regular
-LaTeX file, with a small change. A minimal example is below.</p>
-<pre><code>\documentclass{article}
+
+    <p>
+      <code>brew</code> and <code>knit</code> handle replacing any R code, and then <code>texi2pdf</code> generates the
+      actual PDF.
+    </p>
+
+    <p>
+      That code references a template.Rnw file. That can be just a regular LaTeX file, with a small change. A minimal
+      example is below.
+    </p>
+
+    <pre><code>\documentclass{article}
 \begin{document}
 Name: &lt;%= x[1] %&gt;
 
 \input{&lt;%= x[2] %&gt;
 \end{document}</code></pre>
-<p>(Note that you can also put Knitr code, which is similar to Sweave,
-directly in the file to run R code. For example, you could add</p>
-<pre><code>&lt;&lt;printingchunk&gt;&gt;=
+
+    <p>
+      (Note that you can also put Knitr code, which is similar to Sweave, directly in the file to run R code. For
+      example, you could add
+    </p>
+
+    <pre><code>&lt;&lt;printingchunk&gt;&gt;=
 plot(rnorm(100))
 @</code></pre>
-<p>which would be replaced with that plot in the PDF.)</p>
-<p>The <code>&lt;%= x[1] %&gt;</code> notation is what does the magic -
-that will be replaced by <code>brew</code> + <code>knit</code>. Using
-the <code>\input</code> command allows means that ver1.tex and ver2.tex
-have to exist, but they should be LaTeX chunks, not a complete file
-(e.g. no header.)</p>
-<p>So our end result, assuming we have ver1.tex and ver2.tex as two
-different questions, is that we have two PDF files, named
-report_Alice.pdf and report_Bob.pdf, where both have the individuals’
-names in the first line, and then contain two different questions.</p>
-<p>As an additional note, there are two easy ways to print a lot of
-these simultaneously. First, you could call something like</p>
-<pre><code>for f in report_*.pdf; do lp  $f; done&lt;/pre&gt;</code></pre>
-<p>and passing any additional arguments to <code>lp</code>. Secondly,
-the command <code>pdfunite</code> in the <code>poppler</code> package
-can be used to merge the files. (Just ensure that each file has an even
-number of pages if you plan to print double-sided, padding each file
-with a <code>\newpage</code> if needed.)</p>
-<a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
-</body>
+
+    <p>
+      which would be replaced with that plot in the PDF.)
+    </p>
+
+    <p>
+      The <code>&lt;%= x[1] %&gt;</code> notation is what does the magic - that will be replaced by <code>brew</code>
+      + <code>knit</code>. Using the <code>\input</code> command allows means that ver1.tex and ver2.tex have to exist,
+      but they should be LaTeX chunks, not a complete file (e.g. no header.)
+    </p>
+
+    <p>
+      So our end result, assuming we have ver1.tex and ver2.tex as two different questions, is that we have two PDF
+      files, named report_Alice.pdf and report_Bob.pdf, where both have the individuals’ names in the first line, and
+      then contain two different questions.
+    </p>
+
+    <p>
+      As an additional note, there are two easy ways to print a lot of these simultaneously. First, you could call
+      something like
+    </p>
+
+    <pre><code>for f in report_*.pdf; do lp  $f; done&lt;/pre&gt;</code></pre>
+
+    <p>
+      and passing any additional arguments to <code>lp</code>. Secondly, the command <code>pdfunite</code> in
+      the <code>poppler</code> package can be used to merge the files. (Just ensure that each file has an even number of
+      pages if you plan to print double-sided, padding each file with a <code>\newpage</code> if needed.)
+    </p>
+
+    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+
+  </body>
+
 </html>
