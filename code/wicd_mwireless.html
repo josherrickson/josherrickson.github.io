@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Getting WICD to connect to MWireless</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css" type="text/css"/>
+    <link rel="stylesheet" href="../style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -14,13 +15,14 @@
     <h1>Getting WICD to connect to MWireless</h1>
 
     <p>
-      <strong>Note:</strong> There’s apparently a bug which results in “Bad Password” errors. Using PEAP with GTC may
-      work.
+      <strong>Note:</strong> There’s apparently a bug which results in “Bad
+      Password” errors. Using PEAP with GTC may work.
     </p>
 
     <ol type="1">
       <li>
-        Save the following into a file called “peap-mschapv2” in <code>/etc/wicd/encrytion/templates</code>:
+        Save the following into a file called “peap-mschapv2”
+        in <code>/etc/wicd/encrytion/templates</code>:
       </li>
     </ol>
     <pre><code>name = PEAP-MSCHAPV2
@@ -45,20 +47,24 @@ network={
 }</code></pre>
     <ol start="2" type="1">
       <li>
-        In the same directory, append the line “peap-mschapv2” to the end of file <code>active</code>.
+        In the same directory, append the line “peap-mschapv2” to the end of
+        file <code>active</code>.
       </li>
       <li>
-        Restart WICD, and when connecting to MWireless, choose the new PEAP-MSCHAPV2 encryption option. Identity and
-        Password are your Kerberos account, and Path to CA cert is the path to the security certificate
+        Restart WICD, and when connecting to MWireless, choose the new
+        PEAP-MSCHAPV2 encryption option. Identity and Password are your Kerberos
+        account, and Path to CA cert is the path to the security certificate
         available <a href="http://www.itcom.itd.umich.edu/wireless/connect/linux.php">here</a>.
       </li>
     </ol>
 
     <p>
-      Reference: <a href="http://kb.iu.edu/data/bbtc.html" class="uri">http://kb.iu.edu/data/bbtc.html</a>
+      Reference: <a href="http://kb.iu.edu/data/bbtc.html"
+      class="uri">http://kb.iu.edu/data/bbtc.html</a>
     </p>
 
-    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code
+    & Software</a>
 
   </body>
 </html>

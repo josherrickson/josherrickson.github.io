@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Hosting a git repo on UM Servers</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css" type="text/css"/>
+    <link rel="stylesheet" href="../style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -14,7 +15,8 @@
     <h1>Hosting a git repo on UM Servers</h1>
 
     <p>
-      This will host the bare repo on the UM’s AFS space. It can be cloned on the server or locally.
+      This will host the bare repo on the UM’s AFS space. It can be cloned on
+      the server or locally.
     </p>
 
     <ol type="1">
@@ -28,38 +30,42 @@
           </li>
 
           <li>
-              login servers - Equally easy, probably the best current option. Wouldn't be surprised if they're retired
-              soon too.
+              login servers - Equally easy, probably the best current option.
+              Wouldn't be surprised if they're retired soon too.
           </li>
 
           <li>
-              greatlakes servers - Most modern, most up-to-date software, but requires 2-factor on each login.
+              greatlakes servers - Most modern, most up-to-date software, but
+              requires 2-factor on each login.
           </li>
         </ul>
       </li>
 
       <li>
         <p>
-          If using SCS or login, <code>git</code> is quite old. You'll need to run
+          If using SCS or login, <code>git</code> is quite old. You'll need to
+          run
         </p>
 
         <pre><code>scl enable rh-git29 httpd24 -- git</code></pre>
 
         <p>
-          instead of just <code>git</code>. If you put the following line in your .zshrc (or the bash equivalent), you
-          can alias <code>git</code> to this.
+          instead of just <code>git</code>. If you put the following line in
+          your .zshrc (or the bash equivalent), you can alias <code>git</code>
+          to this.
         </p>
 
         <pre><code>alias git=&#39;scl enable rh-git29 httpd24 -- git&#39;</code></pre>
 
         <p>
-          Now using <code>git</code> will run the above, whereas <code>\git</code> will ignore the alias and run the old
+          Now using <code>git</code> will run the above,
+          whereas <code>\git</code> will ignore the alias and run the old
           version.
         </p>
 
         <p>
-          Confirm this worked with <code>git --version</code> and <code>\git --version</code>. (You may need to re-login
-          first.)
+          Confirm this worked with <code>git --version</code> and <code>\git
+          --version</code>. (You may need to re-login first.)
         </p>
       </li>
 
@@ -71,12 +77,14 @@
         <pre><code>git clone --bare [repo address]</code></pre>
 
         <p>
-          If you've never pushed your git repo up to a server you can clone from, or you are starting a new repo,
-          instead you can init the repo and then add it as the remote.
+          If you've never pushed your git repo up to a server you can clone
+          from, or you are starting a new repo, instead you can init the repo
+          and then add it as the remote.
         </p>
 
         <p>
-          On the server, create a directory called "[repo name].git". Within it, run:
+          On the server, create a directory called "[repo name].git". Within it,
+          run:
         </p>
 
         <pre><code>git init --bare</code></pre>
@@ -103,16 +111,18 @@ git remote add origin [uniqname]@greatlakes.arc.ts.umich.edu:/afs/umich.edu/user
 
     <ul>
       <li>
-          Pulling and pushing requires a password (UM Servers don’t allow logging in with SSH keys).
+          Pulling and pushing requires a password (UM Servers don’t allow
+          logging in with SSH keys).
       </li>
 
       <li>
-          Other users cannot clone this repository. If you really need to share, you can push the up-to-date working
-          directory to Github or others.
+          Other users cannot clone this repository. If you really need to share,
+          you can push the up-to-date working directory to Github or others.
       </li>
     </ul>
 
-    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
+    <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code
+    & Software</a>
 
   </body>
 

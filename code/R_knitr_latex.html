@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Creating Variants of a File with R + Knitr + Brew + LaTeX</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css" type="text/css"/>
+    <link rel="stylesheet" href="../style.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Josh Errickson, Josh, Errickson, Statistics, R, Stata" lang="en-us">
     <meta name="Author" content="Josh Errickson">
@@ -18,14 +19,17 @@
     </p>
 
     <p>
-      I had the need to create personalized exams for students - There were three sets of size seven, three and one
-      respectively, of which each student essentially received one randomly. This setup could be useful in other
-      settings involving the need for multiple files based on a template, and some variable.
+      I had the need to create personalized exams for students - There were
+      three sets of size seven, three and one respectively, of which each
+      student essentially received one randomly. This setup could be useful in
+      other settings involving the need for multiple files based on a template,
+      and some variable.
     </p>
 
     <p>
-      First, you need in R some way to differentiate the variants. A data frame where each row is a variant works
-      perfectly. Considering the following example
+      First, you need in R some way to differentiate the variants. A data frame
+      where each row is a variant works perfectly. Considering the following
+      example
     </p>
 
     <pre><code>&gt; data
@@ -34,8 +38,9 @@
 2    Bob ver2</code></pre>
 
     <p>
-      Here, <code>X1</code> is a name I want to include in the output, and <code>X2</code> refers to some larger change
-      I want to make. In my personalized exam setup, that was two different questions.
+      Here, <code>X1</code> is a name I want to include in the output,
+      and <code>X2</code> refers to some larger change I want to make. In my
+      personalized exam setup, that was two different questions.
     </p>
 
     <p>
@@ -59,13 +64,13 @@ return(out.file)
 apply(data, 1, genReports, prepend=&quot;report_&quot;)</code></pre>
 
     <p>
-      <code>brew</code> and <code>knit</code> handle replacing any R code, and then <code>texi2pdf</code> generates the
-      actual PDF.
+      <code>brew</code> and <code>knit</code> handle replacing any R code, and
+      then <code>texi2pdf</code> generates the actual PDF.
     </p>
 
     <p>
-      That code references a template.Rnw file. That can be just a regular LaTeX file, with a small change. A minimal
-      example is below.
+      That code references a template.Rnw file. That can be just a regular LaTeX
+      file, with a small change. A minimal example is below.
     </p>
 
     <pre><code>\documentclass{article}
@@ -76,8 +81,8 @@ Name: &lt;%= x[1] %&gt;
 \end{document}</code></pre>
 
     <p>
-      (Note that you can also put Knitr code, which is similar to Sweave, directly in the file to run R code. For
-      example, you could add
+      (Note that you can also put Knitr code, which is similar to Sweave,
+      directly in the file to run R code. For example, you could add
     </p>
 
     <pre><code>&lt;&lt;printingchunk&gt;&gt;=
@@ -89,28 +94,33 @@ plot(rnorm(100))
     </p>
 
     <p>
-      The <code>&lt;%= x[1] %&gt;</code> notation is what does the magic - that will be replaced by <code>brew</code>
-      + <code>knit</code>. Using the <code>\input</code> command allows means that ver1.tex and ver2.tex have to exist,
-      but they should be LaTeX chunks, not a complete file (e.g. no header.)
+      The <code>&lt;%= x[1] %&gt;</code> notation is what does the magic - that
+      will be replaced by <code>brew</code> + <code>knit</code>. Using
+      the <code>\input</code> command allows means that ver1.tex and ver2.tex
+      have to exist, but they should be LaTeX chunks, not a complete file
+      (e.g. no header.)
     </p>
 
     <p>
-      So our end result, assuming we have ver1.tex and ver2.tex as two different questions, is that we have two PDF
-      files, named report_Alice.pdf and report_Bob.pdf, where both have the individuals’ names in the first line, and
-      then contain two different questions.
+      So our end result, assuming we have ver1.tex and ver2.tex as two different
+      questions, is that we have two PDF files, named report_Alice.pdf and
+      report_Bob.pdf, where both have the individuals’ names in the first line,
+      and then contain two different questions.
     </p>
 
     <p>
-      As an additional note, there are two easy ways to print a lot of these simultaneously. First, you could call
-      something like
+      As an additional note, there are two easy ways to print a lot of these
+      simultaneously. First, you could call something like
     </p>
 
     <pre><code>for f in report_*.pdf; do lp  $f; done&lt;/pre&gt;</code></pre>
 
     <p>
-      and passing any additional arguments to <code>lp</code>. Secondly, the command <code>pdfunite</code> in
-      the <code>poppler</code> package can be used to merge the files. (Just ensure that each file has an even number of
-      pages if you plan to print double-sided, padding each file with a <code>\newpage</code> if needed.)
+      and passing any additional arguments to <code>lp</code>. Secondly, the
+      command <code>pdfunite</code> in the <code>poppler</code> package can be
+      used to merge the files. (Just ensure that each file has an even number of
+      pages if you plan to print double-sided, padding each file with
+      a <code>\newpage</code> if needed.)
     </p>
 
     <a href='../index.html'>Home</a> | <a href='../code.html'>Back to Misc Code & Software</a>
