@@ -28,13 +28,13 @@ body {
     margin: 0 auto;
     padding: 15px 0 80px 0;
     color: var(--base02);
-    background: var(--base2);
+    background-color: var(--base2);
 }
 
 @media (prefers-color-scheme: dark) {
     body {
         color: var(--base2);
-        background: var(--base02);
+        background-color: var(--base02);
     }
 }
 
@@ -72,6 +72,27 @@ h4 {
 }
 
 pre {
-    margin-left: 5%;
+    font-size: 14px;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px;
     color: var(--base1);
+    background-color: var(--base02);
+}
+
+@media (prefers-color-scheme: dark) {
+    pre {
+        color: var(--base02);
+        background-color: var(--base1);
+    }
+}
+
+code {
+    color: var(--base01);
+}
+
+@media (prefers-color-scheme: dark) {
+    code {
+        color: var(--base1);
+    }
 }
