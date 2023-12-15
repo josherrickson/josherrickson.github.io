@@ -49,6 +49,19 @@ body a:hover {
     text-decoration: none;
 }
 
+/* These two bits make sure that links inside code (e.g "[`text`](...)") use
+ code text formatting, but have the proper colors.*/
+a code {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover code {
+    color: var(--base2);
+    background-color: var(--blue);
+    text-decoration: none;
+}
+
 h1 {
     font-size: 200%;
     color: var(--green);
@@ -80,11 +93,22 @@ pre {
     background-color: var(--base02);
 }
 
+pre > code {
+    /* Need this to avoid `code` below clobbering it */
+    color: var(--base1);
+}
+
 @media (prefers-color-scheme: dark) {
     pre {
         color: var(--base02);
         background-color: var(--base1);
     }
+
+    pre > code {
+        /* Need this to avoid `code` below clobbering it */
+        color: var(--base02);
+    }
+
 }
 
 code {
