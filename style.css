@@ -17,8 +17,12 @@
     --cyan: #2aa198;
     --green: #859900;
 
+
+    --code_dark: #272822;
+    --code_light: #f8f8f2;
+
     /* This enables the use of dark themes */
-     color-scheme: light dark;
+    color-scheme: light dark;
 }
 
 body {
@@ -30,6 +34,7 @@ body {
     color: var(--base02);
     background-color: var(--base2);
 }
+
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -62,13 +67,31 @@ a:hover code {
     text-decoration: none;
 }
 
+p.warning
+{
+    background-color: #FEADAD;
+    border-left: solid 4px var(--red);
+    line-height: 18px;
+    overflow: hidden;
+    padding: 10px 60px;
+}
+
+p.note
+{
+    background-color: #A7CEFA;
+    border-left: solid 4px var(--blue);
+    line-height: 18px;
+    overflow: hidden;
+    padding: 10px 60px;
+}
+
 h1 {
-    font-size: 200%;
+    font-size: 225%;
     color: var(--green);
 }
 
 h2 {
-    font-size: 150%;
+    font-size: 175%;
     color: var(--cyan);
     font-style: italic;
 }
@@ -84,39 +107,201 @@ h4 {
     text-decoration: underline;
 }
 
+.image_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.centered {
+    width: 50%; /* Adjust the width as needed */
+    margin: 0 auto;
+}
+
+/**********************************************************************
+Code chunk stuff
+**********************************************************************/
+
+
 pre {
     font-size: 14px;
     margin-left: 2%;
     margin-right: 2%;
     padding: 10px;
-    color: var(--base1);
-    background-color: var(--base02);
-}
-
-pre > code {
-    /* Need this to avoid `code` below clobbering it */
-    color: var(--base1);
+    background-color: var(--code_light);
+    color: var(--code_dark);
+    /* white-space: pre-line; */
 }
 
 @media (prefers-color-scheme: dark) {
     pre {
-        color: var(--base02);
-        background-color: var(--base1);
+        background-color: var(--code_dark);
+        color: var(--code_light);
     }
-
-    pre > code {
-        /* Need this to avoid `code` below clobbering it */
-        color: var(--base02);
-    }
-
 }
 
-code {
+pre.r_output {
+    /* Only for R output */
+    color: var(--base00);
+}
+
+code:not(pre code) {
     color: var(--base01);
 }
 
 @media (prefers-color-scheme: dark) {
-    code {
+    code:not(pre code) {
         color: var(--base1);
+    }
+}
+
+/**********************************************************************
+Syntax hightlighing bits
+**********************************************************************/
+
+.keyword {
+    color: var(--green);
+}
+
+.operator {
+    color: var(--blue);
+}
+
+.numeric {
+    color: var(--red);
+}
+
+.comment {
+    color: var(--base0);
+}
+
+.string {
+    color: var(--yellow);
+}
+
+/**********************************************************************
+Floating TOC stuff
+https://css-tricks.com/sticky-table-of-contents-with-scrolling-active-states/
+**********************************************************************/
+
+/* 1. Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+body > nav {
+	  position: sticky;
+	  top: 2rem;
+	  align-self: start;
+}
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+    text-decoration: underline;
+	  font-weight: 900;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+	  padding-left: 0;
+	  /* border-left: 1px solid #efefef; */
+}
+
+.section-nav :not(p) a {
+	  text-decoration: none;
+	  display: block;
+	  padding: .125rem 0;
+	  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+/** Poor man's reset **/
+* {
+	  box-sizing: border-box;
+}
+
+nav ul, nav ol {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+}
+
+nav li {
+	  margin-left: 1rem;
+}
+
+/** page layout **/
+body.statsnotes {
+	  display: grid;
+	  grid-template-columns: 1fr 15em;
+	  max-width: 100em;
+	  width: 90%;
+	  margin: 0 auto;
+}
+
+/** enlarge the sections for this demo, so that we have a long scrollable page **/
+/* section { */
+/* 	padding-bottom: 20rem; */
+/* } */
+
+/**********************************************************************
+Sticky section for Poisson approx
+**********************************************************************/
+
+/* Style for the container that holds the sticky header and content */
+.poisson-results-container {
+    position: relative;
+    max-width: 100%; /* Set your desired width */
+    margin: 0 auto;
+}
+
+/* Style for the sticky header */
+.poisson-results-header {
+    position: sticky;
+    top: 0;
+    background-color: inherit;
+    padding: 15px;
+    z-index: 100;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.poisson-results-tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid var(--base0);
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color 0.1s ease;
+    background-color: var(--base1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .poisson-results-tab {
+        background-color: var(--base01);
+    }
+}
+
+.poisson-results-tab:hover {
+    background-color: var(--yellow);
+}
+
+.poisson-active-tab {
+    background-color: var(--orange) !important;
+}
+
+/**********************************************************************
+Index search
+**********************************************************************/
+
+.highlight {
+    background-color: yellow;
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlight {
+        color: var(--base02)
     }
 }
