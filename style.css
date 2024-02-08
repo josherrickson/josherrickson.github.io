@@ -43,6 +43,14 @@ body {
     }
 }
 
+@media only screen and (max-width: 600px) {
+  /* Your CSS rules for small displays go here */
+  body {
+      margin-left: 2%;
+      margin-right: 2%;
+  }
+}
+
 body a {
     color: var(--blue);
     text-decoration: none;
