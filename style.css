@@ -44,11 +44,11 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  /* Your CSS rules for small displays go here */
-  body {
-      margin-left: 2%;
-      margin-right: 2%;
-  }
+    /* Your CSS rules for small displays go here */
+    body {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
 }
 
 body a {
@@ -130,6 +130,7 @@ h4 {
     text-decoration: underline;
 }
 
+
 .image_center {
     display: block;
     margin-left: auto;
@@ -137,7 +138,7 @@ h4 {
     width: 60%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .image_center {
         width: 90% !important;
     }
@@ -214,4 +215,73 @@ Syntax hightlighing bits
 
 .string {
     color: var(--yellow);
+}
+
+
+/**********************************************************************
+Tabs for resources on main page
+**********************************************************************/
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs label {
+    order: 1;
+    display: block;
+    padding: 5px;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background ease .5s;
+    color: var(--blue);
+}
+
+.tabs .tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+}
+
+.tab {
+    background: var(--base3);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tab {
+        background: var(--base03);
+    }
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+    background: var(--base02);
+    color: var(--base2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tabs input[type="radio"]:checked + label {
+        background: var(--base2);
+        color: var(--base02);
+    }
+}
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .tabs .tab, .tabs label {
+        order: initial;
+    }
+
+    .tabs label {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0.2rem;
+    }
 }
