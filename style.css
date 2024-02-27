@@ -171,8 +171,9 @@ pre {
     padding: 10px;
     background-color: var(--code_light);
     color: var(--code_dark);
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    /* white-space: pre-wrap; */
+    /* word-wrap: break-word; */
+    overflow-x: scroll;
 }
 
 @media (prefers-color-scheme: dark) {
