@@ -108,6 +108,16 @@ p.note
     }
 }
 
+p#license {
+    color: var(--base1);
+}
+
+@media (prefers-color-scheme: dark) {
+    p#license {
+        color: var(--base01);
+    }
+}
+
 h1 {
     font-size: 225%;
     color: var(--green);
