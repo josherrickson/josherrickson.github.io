@@ -163,6 +163,12 @@ h4 {
         -webkit-filter: invert(1);
         filter: invert(1);
     }
+
+    .image_invert:hover {
+        -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+
 }
 
 .centered {
