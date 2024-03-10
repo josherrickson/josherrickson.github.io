@@ -1,83 +1,146 @@
 :root {
-    /* Based on solarized-dark - http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/*/
-    --base03: #002b36;
-    --base02: #073642;
-    --base01: #586e75;
-    --base00: #657b83;
-    --base0: #839496;
-    --base1: #93a1a1;
-    --base2: #eee8d5;
-    --base3: #fdf6e3;
-    --yellow: #b58900;
-    --orange: #cb4b16;
-    --red: #dc322f;
-    --magenta: #d33682;
-    --violet: #6c71c4;
-    --blue: #268bd2;
-    --cyan: #2aa198;
-    --green: #859900;
-
-
-    --code_dark: #272822;
-    --code_light: #f8f8f2;
-
-    /* This enables the use of dark themes */
-    color-scheme: light dark;
+    --light: #f8f8f8;
+    --grey0: #f0f0f0;
+    --grey1: #a1a1a1;
+    --grey2: #585858;
+    --grey3: #0f0f0f;
+    --dark:  #040404;
+    --a_light: darkgreen;
+    --a_dark:  darkseagreen
 }
 
 body {
     font-family: sans-serif;
-    font-size: 16px;
-    max-width: 600px;
+    font-size: 1.5em;
+    max-width: 90%;
     margin: 0 auto;
     padding: 15px 0 80px 0;
-    color: var(--base02);
-    background-color: var(--base2);
+    color: var(--dark);
+    background-color: var(--light);
 }
 
 
 @media (prefers-color-scheme: dark) {
     body {
-        color: var(--base2);
-        background-color: var(--base02);
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    /* Your CSS rules for small displays go here */
-    body {
-        margin-left: 2%;
-        margin-right: 2%;
+        color: var(--light);
+        background-color: var(--dark);
     }
 }
 
 body a {
-    color: var(--blue);
-    text-decoration: none;
+    color: var(--a_light);
+    text-decoration: underline;
 }
 
 body a:hover {
-    color: var(--base2);
-    background-color: var(--blue);
+    color: var(--light);
+    background-color: var(--a_light);
     text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body a {
+        color: var(--a_dark);
+    }
+
+    body a:hover {
+        color: var(--dark);
+        background-color: var(--a_dark);
+    }
 }
 
 /* These two bits make sure that links inside code (e.g "[`text`](...)") use
  code text formatting, but have the proper colors.*/
-a code {
-    color: var(--blue);
-    text-decoration: none;
+/* a code { */
+/*     color: var(--blue); */
+/*     text-decoration: none; */
+/* } */
+
+/* a code:not(pre code) { */
+/*     color: var(--blue); /\* Ensure the color matches the first rule *\/ */
+/*     text-decoration: none; /\* Ensure the text-decoration matches the first rule *\/ */
+/* } */
+
+/* a:hover code { */
+/*     color: var(--base2); */
+/*     background-color: var(--blue); */
+/*     text-decoration: none; */
+/* } */
+
+
+h1 {
+    font-size: 150%;
 }
 
-a code:not(pre code) {
-    color: var(--blue); /* Ensure the color matches the first rule */
-    text-decoration: none; /* Ensure the text-decoration matches the first rule */
+h2 {
+    font-size: 125%;
 }
 
-a:hover code {
-    color: var(--base2);
-    background-color: var(--blue);
-    text-decoration: none;
+h3 {
+    font-size: 125%;
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+h4 {
+    font-size: 110%;
+    text-decoration: underline;
+}
+
+.centered {
+    width: 50%; /* Adjust the width as needed */
+    text-align: center;
+    margin: 0 auto;
+}
+
+/**********************************************************************
+Image specifications
+**********************************************************************/
+
+.image_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+    .image_center {
+        width: 90% !important;
+    }
+}
+
+.inline-image {
+    vertical-align: middle;
+    height: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .image_invert {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+
+    .image_invert:hover {
+        -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+
+}
+
+
+/*********************************************************************
+Special p's - warnings, notes and license
+**********************************************************************/
+
+p#license {
+    color: var(--grey1);
+}
+
+@media (prefers-color-scheme: dark) {
+    p#license {
+        color: var(--grey2);
+    }
 }
 
 p.warning
@@ -108,94 +171,23 @@ p.note
     }
 }
 
-p#license {
-    color: var(--base1);
-}
-
-@media (prefers-color-scheme: dark) {
-    p#license {
-        color: var(--base01);
-    }
-}
-
-h1 {
-    font-size: 225%;
-    color: var(--green);
-}
-
-h2 {
-    font-size: 175%;
-    color: var(--cyan);
-    font-style: italic;
-}
-
-h3 {
-    font-size: 125%;
-    color: var(--cyan);
-    text-decoration: underline;
-}
-
-h4 {
-    font-size: 110%;
-    text-decoration: underline;
-}
-
-
-.image_center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-}
-
-.inline-image {
-    vertical-align: middle;
-}
-
-@media screen and (max-width: 768px) {
-    .image_center {
-        width: 90% !important;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .image_invert {
-        -webkit-filter: invert(1);
-        filter: invert(1);
-    }
-
-    .image_invert:hover {
-        -webkit-filter: invert(0);
-        filter: invert(0);
-    }
-
-}
-
-.centered {
-    width: 50%; /* Adjust the width as needed */
-    margin: 0 auto;
-}
-
 /**********************************************************************
 Code chunk stuff
 **********************************************************************/
 
 pre {
-    font-size: 14px;
+    /* font-size: 14px; */
     margin-left: 2%;
     margin-right: 2%;
     padding: 10px;
-    background-color: var(--code_light);
-    color: var(--code_dark);
-    /* white-space: pre-wrap; */
-    /* word-wrap: break-word; */
+    background-color: var(--grey1);
     overflow-x: scroll;
 }
 
 @media (prefers-color-scheme: dark) {
     pre {
-        background-color: var(--code_dark);
-        color: var(--code_light);
+        background-color: var(--grey2);
+        color: var(--light);
     }
 }
 
@@ -256,7 +248,13 @@ Tabs for resources on main page
     cursor: pointer;
     font-weight: bold;
     transition: background ease .5s;
-    color: var(--blue);
+    color: var(--a_light);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tabs label {
+        color: var(--a_dark);
+    }
 }
 
 .tabs .tab {
@@ -267,12 +265,12 @@ Tabs for resources on main page
 }
 
 .tab {
-    background: var(--base3);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
     .tab {
-        background: var(--base03);
+    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.3);
     }
 }
 
@@ -281,14 +279,14 @@ Tabs for resources on main page
 }
 
 .tabs input[type="radio"]:checked + label {
-    background: var(--base02);
-    color: var(--base2);
+    background: var(--dark);
+    color: var(--light);
 }
 
 @media (prefers-color-scheme: dark) {
     .tabs input[type="radio"]:checked + label {
-        background: var(--base2);
-        color: var(--base02);
+        background: var(--light);
+        color: var(--dark);
     }
 }
 .tabs input[type="radio"]:checked + label + .tab {
@@ -305,4 +303,22 @@ Tabs for resources on main page
         margin-right: 0;
         margin-top: 0.2rem;
     }
+}
+
+/**********************************************************************
+Index search
+**********************************************************************/
+
+.highlight {
+    background-color: yellow;
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlight {
+        color: var(--base02)
+    }
+}
+
+#filterInput, #resetButton {
+    font-size: 1em;
 }
