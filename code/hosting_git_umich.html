@@ -47,15 +47,15 @@
           run
         </p>
 
-        <pre><code>scl enable rh-git29 httpd24 -- git</code></pre>
+        <pre data-lang="Bash"><code>scl enable rh-git29 httpd24 -- git</code></pre>
 
         <p>
           instead of just <code>git</code>. If you put the following line in
-          your .zshrc (or the bash equivalent), you can alias <code>git</code>
+          your .zshrc (or the Bash equivalent), you can alias <code>git</code>
           to this.
         </p>
 
-        <pre><code>alias git=&#39;scl enable rh-git29 httpd24 -- git&#39;</code></pre>
+        <pre data-lang="Bash"><code>alias git=&#39;scl enable rh-git29 httpd24 -- git&#39;</code></pre>
 
         <p>
           Now using <code>git</code> will run the above,
@@ -74,7 +74,7 @@
           Next, you'll do a bare-repo clone on the server:
         </p>
 
-        <pre><code>git clone --bare [repo address]</code></pre>
+        <pre data-lang="Bash"><code>git clone --bare [repo address]</code></pre>
 
         <p>
           If you've never pushed your git repo up to a server you can clone
@@ -87,13 +87,13 @@
           run:
         </p>
 
-        <pre><code>git init --bare</code></pre>
+        <pre data-lang="Bash"><code>git init --bare</code></pre>
 
         <p>
           Finally, locally, run one of (depending on choice of server):
         </p>
 
-        <pre><code>git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
+        <pre data-lang="Bash"><code>git remote add origin [uniqname]@scs.dsc.umich.edu:[path-to-bare-repo].git
 git remote add origin [uniqname]@login.itd.umich.edu:[path-to-bare-repo].git
 git remote add origin [uniqname]@greatlakes.arc.ts.umich.edu:/afs/umich.edu/user/u/n/uniqname/[path-to-bare-repo].git</code></pre>
       </li>

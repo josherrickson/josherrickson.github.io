@@ -5,8 +5,13 @@
     --grey2: #585858;
     --grey3: #0f0f0f;
     --dark:  #040404;
-    --a_light: darkgreen;
-    --a_dark:  darkseagreen
+    --light_highlight: darkgreen;
+    --dark_highlight:  darkseagreen;
+
+    --light_red: #FEADAD;
+    --dark_red:  #AB1616;
+    --light_blue: #A7CEFA;
+    --dark_blue:  #004FA8;
 }
 
 body {
@@ -28,45 +33,55 @@ body {
 }
 
 body a {
-    color: var(--a_light);
+    color: var(--light_highlight);
     text-decoration: underline;
 }
 
 body a:hover {
     color: var(--light);
-    background-color: var(--a_light);
+    background-color: var(--light_highlight);
     text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
     body a {
-        color: var(--a_dark);
+        color: var(--dark_highlight);
     }
 
     body a:hover {
         color: var(--dark);
-        background-color: var(--a_dark);
+        background-color: var(--dark_highlight);
     }
 }
 
-/* These two bits make sure that links inside code (e.g "[`text`](...)") use
- code text formatting, but have the proper colors.*/
+/***** These bits make sure that links inside code (e.g "[`text`](...)") use
+ code text formatting, but have the proper colors. *****/
+
+/* This particular chunk seems not needed? */
 /* a code { */
-/*     color: var(--blue); */
+/*     color: var(--light_hightlight); */
 /*     text-decoration: none; */
 /* } */
 
-/* a code:not(pre code) { */
-/*     color: var(--blue); /\* Ensure the color matches the first rule *\/ */
-/*     text-decoration: none; /\* Ensure the text-decoration matches the first rule *\/ */
-/* } */
+a code:not(pre code) {
+    color: var(--light_highlight);
+}
 
-/* a:hover code { */
-/*     color: var(--base2); */
-/*     background-color: var(--blue); */
-/*     text-decoration: none; */
-/* } */
+a:hover code {
+    color: var(--light);
+    background-color: var(--light_highlight);
+}
 
+@media (prefers-color-scheme: dark) {
+    a code:not(pre code) {
+        color: var(--dark_highlight);
+    }
+
+    a:hover code {
+        color: var(--dark);
+        background-color: var(--dark_highlight);
+    }
+}
 
 h1 {
     font-size: 150%;
@@ -145,29 +160,43 @@ p#license {
 
 p.warning
 {
-    background-color: #FEADAD;
-    border-left: solid 4px var(--red);
+    background-color: var(--light_red);
+    border-left: solid 10px var(--dark_red);
     line-height: 18px;
     overflow: hidden;
     padding: 10px 60px;
+}
+
+p.warning::before {
+    content: "Warning: ";
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+    p.warning {
+    background-color: var(--dark_red);
+    border-left: solid 10px var(--light_red);
+    }
 }
 
 p.note
 {
-    background-color: #A7CEFA;
-    border-left: solid 4px var(--blue);
+    background-color: var(--light_blue);
+    border-left: solid 10px var(--dark_blue);
     line-height: 18px;
     overflow: hidden;
     padding: 10px 60px;
 }
 
+p.note::before {
+    content: "Note: ";
+    font-weight: bold;
+}
+
 @media (prefers-color-scheme: dark) {
     p.note {
-        background-color: #004FA8;
-    }
-
-    p.warning {
-        background-color: #AB1616;
+        background-color: var(--dark_blue);
+        border-left: solid 10px var(--light_blue);
     }
 }
 
@@ -181,7 +210,7 @@ pre {
     margin-right: 2%;
     padding: 10px;
     background-color: var(--grey1);
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -191,119 +220,59 @@ pre {
     }
 }
 
-pre.r_output {
-    /* Only for R output */
-    color: var(--base00);
-}
-
-code:not(pre code) {
-    color: var(--base01);
-}
-
-@media (prefers-color-scheme: dark) {
-    code:not(pre code) {
-        color: var(--base1);
-    }
-}
-
-/**********************************************************************
-Syntax hightlighing bits
-**********************************************************************/
-
-.keyword {
-    color: var(--green);
-}
-
-.operator {
-    color: var(--blue);
-}
-
-.numeric {
-    color: var(--red);
-}
-
-.comment {
-    color: var(--base0);
-}
-
-.string {
-    color: var(--yellow);
-}
-
-
-/**********************************************************************
-Tabs for resources on main page
-**********************************************************************/
-
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tabs label {
-    order: 1;
+pre[data-lang]::before {
+    content: " " attr(data-lang);
     display: block;
-    padding: 5px;
-    margin-right: 0.2rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background ease .5s;
-    color: var(--a_light);
-}
-
-@media (prefers-color-scheme: dark) {
-    .tabs label {
-        color: var(--a_dark);
-    }
-}
-
-.tabs .tab {
-    order: 99;
-    flex-grow: 1;
-    width: 100%;
-    display: none;
-}
-
-.tab {
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-@media (prefers-color-scheme: dark) {
-    .tab {
-    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.3);
-    }
-}
-
-.tabs input[type="radio"] {
-    display: none;
-}
-
-.tabs input[type="radio"]:checked + label {
-    background: var(--dark);
+    margin: -10px; /* reset margin to take up whole space */
+    margin-bottom: 10px; /* Don't overlap text */
+    height: 1.5em;
+    line-height: 1.5em;
+    background-color: var(--dark);
     color: var(--light);
 }
 
 @media (prefers-color-scheme: dark) {
-    .tabs input[type="radio"]:checked + label {
-        background: var(--light);
+    pre[data-lang]::before {
+        background-color: var(--light);
         color: var(--dark);
     }
 }
-.tabs input[type="radio"]:checked + label + .tab {
-    display: block;
+
+/* Inline code */
+code:not(pre code) {
+    color: var(--grey2);
 }
 
-@media (max-width: 768px) {
-    .tabs .tab, .tabs label {
-        order: initial;
-    }
-
-    .tabs label {
-        width: 100%;
-        margin-right: 0;
-        margin-top: 0.2rem;
+@media (prefers-color-scheme: dark) {
+    code:not(pre code) {
+        color: var(--grey1);
     }
 }
+
+
+/**********************************************************************
+Grid for materials
+**********************************************************************/
+
+.content-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, auto));
+    column-gap: 25px;
+    row-gap: 25px;
+}
+
+.content-box>* {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+    .content-box>* {
+        box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.3);
+    }
+}
+
 
 /**********************************************************************
 Index search
@@ -315,10 +284,30 @@ Index search
 
 @media (prefers-color-scheme: dark) {
     .highlight {
-        color: var(--base02)
+        color: var(--dark)
     }
 }
 
 #filterInput, #resetButton {
     font-size: 1em;
+}
+
+/**********************************************************************
+Blockquotes
+**********************************************************************/
+
+blockquote {
+  font-family:serif;
+  font-style:italic;
+  padding:1%;
+  margin-inline:0px;
+  border-left:8px solid var(--light_highlight) ;
+  line-height:1;
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+    blockquote {
+        border-left:8px solid var(--dark_highlight) ;
+    }
 }

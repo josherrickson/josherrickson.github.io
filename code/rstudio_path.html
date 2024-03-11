@@ -14,12 +14,12 @@
   <body>
     <h1>Making RStudio respect the $PATH on OS X</h1>
 
-    <p>
-      Update 7/30/20: Doing the following causes an issue on Catalina with R
-      4.0.2 (“<code>exec: rm: not found</code>” or “<code>exec: sh: not
-      found</code>” or similar). Delete or rename the <code>.Renviron</code>
-      file to restore functionality. I’m leaving this page up for historical
-      reasons but it may not be necessary in most scenarios anymore.
+    <p class="warning">
+      Doing the following causes an issue on Catalina with R 4.0.2 ("<code>exec:
+      rm: not found</code>" or "<code>exec: sh: not found</code>" or similar).
+      Delete or rename the <code>.Renviron</code> file to restore functionality.
+      I’m leaving this page up for historical reasons but it may not be
+      necessary in most scenarios anymore. (Updated July 2020)
     </p>
 
     <p>
@@ -28,7 +28,7 @@
       following:
     </p>
 
-    <pre><code>echo PATH=$PATH &gt; ~/.Renviron</code></pre>
+    <pre data-lang="Bash"><code>echo PATH=$PATH &gt; ~/.Renviron</code></pre>
 
     <p>
       then RStudio will source this file when opening.
@@ -42,7 +42,7 @@
       You can check if this is working by running
     </p>
 
-    <pre><code>system(&quot;echo $PATH&quot;)</code></pre>
+    <pre data-lang="R"><code>system(&quot;echo $PATH&quot;)</code></pre>
 
     <p>
       Reference: <a href="http://stackoverflow.com/questions/31121645/rstudio-shows-a-different-path-variable"

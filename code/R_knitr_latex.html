@@ -32,7 +32,7 @@
       example
     </p>
 
-    <pre><code>&gt; data
+    <pre data-lang="R"><code>&gt; data
       X1   X2
 1  Alice ver1
 2    Bob ver2</code></pre>
@@ -47,7 +47,7 @@
       The R code to handle this is as follows.
     </p>
 
-    <pre><code>library(brew)
+    <pre data-lang="R"><code>library(brew)
 library(tools)
 library(knitr)
 
@@ -73,7 +73,7 @@ apply(data, 1, genReports, prepend=&quot;report_&quot;)</code></pre>
       file, with a small change. A minimal example is below.
     </p>
 
-    <pre><code>\documentclass{article}
+    <pre data-lang="LaTeX/Sweave"><code>\documentclass{article}
 \begin{document}
 Name: &lt;%= x[1] %&gt;
 
@@ -85,7 +85,7 @@ Name: &lt;%= x[1] %&gt;
       directly in the file to run R code. For example, you could add
     </p>
 
-    <pre><code>&lt;&lt;printingchunk&gt;&gt;=
+    <pre data-lang="LaTeX/Sweave"><code>&lt;&lt;printingchunk&gt;&gt;=
 plot(rnorm(100))
 @</code></pre>
 
@@ -113,7 +113,7 @@ plot(rnorm(100))
       simultaneously. First, you could call something like
     </p>
 
-    <pre><code>for f in report_*.pdf; do lp  $f; done&lt;/pre&gt;</code></pre>
+    <pre data-lang="Bash"><code>for f in report_*.pdf; do lp  $f; done&lt;/pre&gt;</code></pre>
 
     <p>
       and passing any additional arguments to <code>lp</code>. Secondly, the
