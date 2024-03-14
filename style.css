@@ -153,12 +153,12 @@ Special p's - warnings, notes and license
 **********************************************************************/
 
 p#license {
-    color: var(--grey1);
+    font-size: .66em;
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (max-width: 768px) {
     p#license {
-        color: var(--grey2);
+        font-size: 1em;
     }
 }
 
