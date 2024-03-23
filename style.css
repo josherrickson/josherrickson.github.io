@@ -14,7 +14,7 @@
 
 body {
     font-family: sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     max-width: 90%;
     margin: 0 auto;
     padding: 15px 0 80px 0;
@@ -27,12 +27,6 @@ body {
     body {
         color: var(--light);
         background-color: var(--dark);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 1em;
     }
 }
 
@@ -260,17 +254,10 @@ Grid for materials
 
 .content-box {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
     column-gap: 25px;
     row-gap: 25px;
 }
-
-@media screen and (max-width: 768px) {
-    .content-box {
-        grid-template-columns: repeat(auto-fill, minmax(300px, auto));
-    }
-}
-
 
 .content-box>* {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
