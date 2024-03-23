@@ -22,6 +22,11 @@ body {
     background-color: var(--light);
 }
 
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1em;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     body {
